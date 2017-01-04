@@ -1,0 +1,421 @@
+body {
+	font-family: 'Raleway';
+	background-color: #d5d5d5;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+.inner-pad { height: 100px; }
+.no-pad { padding: 0; }
+.no-pad-right { padding-right: 0; }
+.no-pad-left { padding-left: 0; }
+.clear { clear:both; }
+
+/*---------------------------- NAVBAR ----------------------------*/
+.navbar-inverse {
+    background-color: black;
+    border: 0;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+    padding: 0;
+}
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+#jb-logo {
+    transition: 0.3s;
+}
+#jb-title {
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 70px;
+
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+     color: white; 
+}
+
+/* Bounce To Bottom */
+.hover-orange {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hover-orange:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ff9800;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hover-orange:hover, .hover-orange:focus, .hover-orange:active {
+  color: white;
+}
+.hover-orange:hover:before, .hover-orange:focus:before, .hover-orange:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+.hover-orange.active {
+  background: #ff9800;
+}
+
+.nav .nav-divider {
+	height: 50px;
+	border-right: 1px solid grey;
+    margin: 0;
+}
+
+.cart-count {
+    background-color: #ff9800;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 7px;
+}
+
+/*---------------------------- LOGIN ----------------------------*/
+.modal-content {
+    width: 400px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.modal-header {
+    background-color: #ff9800;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/*---------------------------- HEADER ----------------------------*/
+
+.bg-header {
+	height: 550px;
+	background-color: grey;
+	background: url("../img/pexels-photo-01.jpg");
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+.header-title {
+	margin-top: 200px;
+	font-size: 72px;
+    letter-spacing: -8px;
+	color: white;
+	line-height: 0.9;
+}
+.header-sub {
+	margin-top: -15px;
+	font-size: 32px;
+	color: white;
+}
+
+#scroll-header {
+	transition: 0.5s;
+}
+#jb-header {
+	font-family: 'Montserrat';
+	mix-blend-mode: overlay;
+	transition: 0.3s;
+}
+
+#header-overlay {
+	height: 500px;
+    width: 100%;
+	background: url("../img/geo-overlay.jpg");
+	mix-blend-mode: multiply;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    transition: 0.5s;
+}
+
+.down-butt {
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	border-radius: 100px;
+	background-color: #d5d5d5;
+	margin: 0 auto;
+	margin-top: -50px;
+	margin-bottom: 32px;
+	transition: 0.5s;
+}
+.down-butt i {
+	font-size: 52px;
+	color: grey;
+	margin-top: 25px;
+	transition: 0.5s;
+}
+.down-butt:hover {
+	background-color: white;
+	transition: 0.3s;
+}
+.down-butt:hover i {
+	color: #ff9800;
+	transition: 0.3s;
+}
+
+/*---------------------------- ROW HEADERS ----------------------------*/
+.page-header {
+    display: -webkit-inline-box;
+	border: 0;
+	background-color: #d5d5d5;
+	color: black;
+	font-weight: bold;
+	padding: 0 10px;
+	margin-left: 30px;
+}
+.page-header-border {
+	width: 100%;
+	border-bottom: 3px dashed grey;
+	margin-bottom: -60px;
+	margin-top: 50px;
+}
+
+.page-header.services {
+    font-size: 26px;
+}
+.page-header-border.services {
+	margin-bottom: -60px;
+	margin-top: 0px;
+}
+
+/*---------------------------- SERVICES ----------------------------*/
+
+.content-title-box {
+	height: 350px;
+    width: 100%;
+	background-color: #ff9800;
+	border-radius: 5px;
+	overflow: hidden;
+	padding: 20px;
+	margin-bottom: 25px;
+    display: table;
+}
+.content-title {
+	font-family: 'Montserrat';
+	text-align: right;
+	font-size: 32px;
+    letter-spacing: -2px;
+	color: white;
+	line-height: 0.9;
+	display: table-cell;
+	vertical-align: middle;
+}
+.content-title b {
+	font-size: 72px;
+    letter-spacing: -6px;
+}
+
+.serv-box {
+	height: 350px;
+	background-color: white;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-bottom: 25px;
+	transition: 0.5s;
+}
+.serv-img {
+	height: 180px;
+	overflow: hidden;
+}
+.serv-heading {
+	width: 100%;
+	background-color: grey;
+	color: white;
+	padding: 3px 20px;
+	transition: 0.3s;
+}
+.serv-body {
+    color: black;
+	padding: 20px 20px;
+}
+
+.serv-box:hover {
+	margin-top: -5px;
+	margin-bottom: 30px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+	transition: 0.3s;
+}
+.serv-box:hover .serv-heading {
+	background-color: #ff9800;
+	transition: 0.3s;
+}
+
+.client img{
+	max-width: 100%;
+	max-height: 90px;
+    text-align: center;
+    display: -webkit-box;
+	margin: auto;
+	margin: 50px 0;
+}
+
+/*---------------------------- SERVICES PAGE ----------------------------*/
+
+.list-head {
+	background-color: #ff9800;
+	color: white;
+	font-weight: bold;
+}
+.list-head.price {
+	padding: 0px 20px;
+    font-size: 14px;
+    line-height: 2;
+}
+.list-group-item.sub-item {
+	padding-left: 30px;
+}
+
+.serv-main-title {
+	font-family: 'Montserrat';
+    margin-top: -35px;
+    letter-spacing: -1px;
+}
+@media (max-width: 990px) {
+	.serv-main-title { margin-top: 0; }
+}
+.serv-main-box {
+	background-color: white;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.total-price {
+	border: 2px solid #ff9800;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+	margin-top: -10px;
+    padding: 5px 10px;
+}
+.serv-main-up {
+	padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px; 
+	transition: 0.3s;
+}
+.serv-main-up p {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 13px;
+	margin-bottom: 0; 
+	transition: 0.3s;
+}
+.serv-main-up.browse { background-color: #ff9800; border-top-right-radius: 0; border-bottom-right-radius: 0; border: 1px solid white; }
+.serv-main-up.create { background-color: #8bc34a; border-radius: 0; border: 1px solid white; }
+.serv-main-up.upload { background-color: #337ab7; border-top-left-radius: 0; border-bottom-left-radius: 0;  border: 1px solid white; }
+
+.serv-main-up:hover {
+	border: 1px dashed grey;
+	background-color: white;
+	transition: 0.5s;
+}
+.serv-main-up:hover p {
+	color: black;
+	transition: 0.5s;
+}
+
+.tg { 
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.tg td { 
+	font-size: 14px;
+	padding: 10px 5px;
+	border: 1px solid grey;
+	overflow: hidden;
+	word-break: normal;
+}
+.tg th { 
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px 5px;
+	border: 1px solid grey;
+	overflow: hidden;
+	word-break: normal;
+}
+.tg .tg-yw4l {
+	vertical-align: top
+}
+
+/*---------------------------- FOOTER ----------------------------*/
+
+footer {
+	height: 300px;
+	background-color: black;
+	color: white;
+	font-size: 12px;
+	border-top: 5px solid #ff9800;
+	padding: 30px 0;
+	margin-bottom: 0;
+}
+
+.footer-head {
+	color: #ff9800;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.footer-info p i {
+	margin-right: 10px;
+}
+.copyright {
+	font-size: 10px;
+	text-align: center;
+}
+
+.social-med p {
+	text-align: left;
+}
+.social-med p i {
+	height: 30px;
+	width: 30px;
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	background-color: #ff9800;
+	padding-top: 7px;
+	transition: 0.5s;
+}
+.social-med p i:hover{
+	background-color: white;
+	color: black;
+	transition: 0.3s;
+}

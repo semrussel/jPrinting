@@ -2,11 +2,6 @@
 
 @section('title') Jimbes Printing @stop
 
-@section('nav') 
-    <li><a class="hover-orange active" href="/">Home</a></li>
-    <li><a class="hover-orange" href="/services">Services</a></li>
-@stop
-
 @section('content') 
     <!-- Header -->
     <div id="scroll-header" class="bg-header">
@@ -29,7 +24,7 @@
                     <p class="content-title">Our <b>SERVICES</b></p>
                 </div>
             </div>
-            <a href="/services">
+            <a href="/services-tshirt">
                 <div class="col-md-4">
                     <div class="serv-box">
                         <div class="serv-img">
@@ -44,7 +39,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/services">
+            <a href="/services-tshirt">
                 <div class="col-md-4">
                     <div class="serv-box">
                         <div class="serv-img">
@@ -59,7 +54,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/services">
+            <a href="/services-tshirt">
                 <div class="col-md-4">
                     <div class="serv-box">
                         <div class="serv-img">
@@ -74,7 +69,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/services">
+            <a href="/services-tshirt">
                 <div class="col-md-4">
                     <div class="serv-box">
                         <div class="serv-img">
@@ -89,7 +84,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/services">
+            <a href="/services-tshirt">
                 <div class="col-md-4">
                     <div class="serv-box">
                         <div class="serv-img">

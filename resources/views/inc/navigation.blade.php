@@ -17,7 +17,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                @yield('nav')
+                <li><a id="home-nav" class="hover-orange" href="/">Home</a></li>
+                <li><a class="hover-orange" href="/services-tshirt">Services</a></li>
                 <li><a class="hover-orange" href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <li class="nav-divider"></li>
                 <li><a href="#"><span class="cart-count">0 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a></li>
@@ -30,12 +31,12 @@
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content login">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Login</h4>
             </div>
-            <div class="modal-body" style="padding: 50px 100px">
+            <div class="modal-body" style="padding: 50px 50px">
                 <input type="text" id="login-username" class="form-control" placeholder="Username" required>
                 <br>
                 <input type="password" id="login-password" class="form-control" placeholder="Password" required>

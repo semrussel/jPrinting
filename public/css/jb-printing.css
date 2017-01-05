@@ -105,11 +105,23 @@ a, a:hover {
     padding: 5px 7px;
 }
 
-/*---------------------------- LOGIN ----------------------------*/
+/*---------------------------- MODALS ----------------------------*/
 .modal-content {
-    width: 400px;
     margin: auto;
     margin-top: 150px;
+}
+
+.modal-content.login {
+    width: 50%;
+}
+.modal-content.browse {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.modal-content.browse .modal-body{
+    height: 500px;
+    overflow-y: scroll;
 }
 
 .modal-header {
@@ -317,6 +329,7 @@ a, a:hover {
 
 .total-price {
 	border: 2px solid #ff9800;
+	font-family: 'Montserrat';
     font-size: 18px;
     font-weight: bold;
     text-align: right;

@@ -8,6 +8,16 @@ $(document).on('click', 'a', function(event){
     }
 });
 
+/*=========== SEL-ACTIVE ===========*/
+$(function() {
+    if(location.pathname.split("/")[1] == "" || location.pathname.split("/")[1] == null) {
+        $('.nav li a#home-nav').addClass('active');
+    } else {
+        $('.nav li a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+    }      
+    // alert(location.pathname.split("/")[1] + " " + location.pathname.split("/")[2] + " " + location.pathname.split("/")[3]);
+});
+
 /*=========== BADASS HEADER ===========*/
 $(window).scroll(function() {
 

@@ -18,3 +18,5 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/services', 'ServicesController@index');
+Route::get('/services-tshirt', 'ServicesController@seeTshirt');
+Route::get('/services-lgfor-tarpaulin', 'ServicesController@seeLgforTarpaulin');

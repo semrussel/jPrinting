@@ -12,7 +12,16 @@ use Parser;
 class ServicesController extends Controller
 {
     public function index(){
-		
-    	return view('services');
+    	// return view('services-main');
+    	return view('services-main');
     }
+
+    public function seeTshirt(){
+    	return view('services.tshirt');
+    }
+
+    public function seeLgforTarpaulin(){
+    	return view('services.lgfor-tarpaulin');
+    }
+
 }

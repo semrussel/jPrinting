@@ -66,6 +66,8 @@
         </div>
     </footer>
 
+    <a id="scroller-top" href="body"><div id="scroller-top-div" class="up-butt"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></a>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 

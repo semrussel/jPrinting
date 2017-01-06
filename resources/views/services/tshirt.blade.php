@@ -101,11 +101,11 @@
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="$ 1.00" disabled="true"></div>
     <div class="clear"></div><hr>
     
-    <p class="list-head price">TOTAL</p>
+    <!-- <p class="list-head price">TOTAL</p>
     <div class="col-xs-12 no-pad total-price">$ 1.00</div>
-    <div class="clear"></div>
-    
-    <br>
+    <div class="clear"></div>     
+    <br>-->
+
     <div class="col-xs-6 col-xs-offset-6 no-pad"><button type="button" class="btn btn-primary" style="width: 100%;">Confirm</button></div>
 </div>
 <!-- /.Price Calculator -->

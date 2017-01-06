@@ -19,9 +19,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a id="home-nav" class="hover-orange" href="/">Home</a></li>
                 <li><a class="hover-orange" href="/services-tshirt">Services</a></li>
-                <li><a class="hover-orange" href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                <li class="nav-divider"></li>
-                <li><a href="#"><span class="cart-count">0 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a></li>
+                <li><a class="hover-orange" href="#" data-toggle="modal" data-target="#login-modal">Login | Register</a></li>
+
+                <!-- <li class="nav-divider"></li>
+                <li><a href="#"><span class="cart-count">0 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a></li> -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -34,16 +35,18 @@
         <div class="modal-content login">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Login</h4>
+                <h4 class="modal-title" id="myModalLabel">Login | Register</h4>
             </div>
             <div class="modal-body" style="padding: 50px 50px">
                 <input type="text" id="login-username" class="form-control" placeholder="Username" required>
                 <br>
                 <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                <br>
+                <p>Don't have an Account? <a href="/register">Sign up here.</a></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-primary">Login</button>
             </div>
         </div>
     </div>

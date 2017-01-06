@@ -3,7 +3,7 @@ $(document).on('click', 'a', function(event){
         event.preventDefault();
         
         $('html, body').animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top - 30
+            scrollTop: $( $.attr(this, 'href') ).offset().top - 50
         }, 500);
     }
 });
@@ -29,7 +29,9 @@ $(window).scroll(function() {
         document.getElementById('jb-title').style.opacity = "1";
         document.getElementById('jb-header').style.opacity = "0";
 
-        document.getElementById('header-overlay').style.opacity = "0.5";
+        // document.getElementById('header-overlay').style.opacity = "0.5";
+        document.getElementById('scroller-top-div').style.opacity = "1";
+
      }
     else
      {
@@ -39,8 +41,9 @@ $(window).scroll(function() {
         document.getElementById('jb-title').style.opacity = "0";
         document.getElementById('jb-header').style.opacity = "1";
 
-        document.getElementById('header-overlay').style.opacity = "0";
+        // document.getElementById('header-overlay').style.opacity = "0";
+        document.getElementById('scroller-top-div').style.opacity = "0";
      }
  });
 
-EPPZScrollTo.scrollVerticalToElementById('signup_form', 20);
+// EPPZScrollTo.scrollVerticalToElementById('signup_form', 20);

@@ -22,3 +22,5 @@ Route::get('/services-tshirt', 'ServicesController@seeTshirt');
 Route::get('/services-lgfor-tarpaulin', 'ServicesController@seeLgforTarpaulin');
 
 Route::get('/register', 'RegisterController@index');
+
+Route::get('/request-quote', 'QuoteController@index');

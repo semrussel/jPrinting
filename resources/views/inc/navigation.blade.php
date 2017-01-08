@@ -19,6 +19,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a id="home-nav" class="hover-orange" href="/">Home</a></li>
                 <li><a class="hover-orange" href="/services-tshirt">Services</a></li>
+                <li><a class="hover-orange" href="/request-quote">Request a Quote</a></li>
                 <li><a class="hover-orange" href="#" data-toggle="modal" data-target="#login-modal">Login | Register</a></li>
 
                 <!-- <li class="nav-divider"></li>

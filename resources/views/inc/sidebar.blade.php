@@ -9,4 +9,8 @@
         <b>Main Address</b><br>
         301 Quirino Highway, Brgy. Baesa, Quezon City, Philippines
     </p>
+    <p class="list-group-item">
+        <b>Contact Number</b><br>
+        0932 547 1020
+    </p>
 </div>

@@ -15,6 +15,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css"  
+          href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/jb-printing.css" rel="stylesheet">
 
@@ -76,6 +79,15 @@
 
     <!-- CUSTOM Script-->
     <script src="js/jb-printing.js"></script>
+
+    <script href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <!-- <script type="text/javascript">
+         if ({{ Input::old('autoOpenModal', 'false') }}) {
+            //JavaScript code that open up your modal.
+            $('#login-modal').modal('show');
+        }
+    </script> -->
 
 </body>
 

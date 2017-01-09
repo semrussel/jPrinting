@@ -14,21 +14,18 @@
 // Route::get('/', function () {
 //     return view('index');
 // });
+Auth::routes();
 
 Route::get('/', 'HomeController@index');
-
-// Route::get('login', array('uses' => 'HomeController@showLogin'));
-// Route::post('login', array('uses' => 'HomeController@doLogin'));
+Route::get('/home', 'HomeController@index');
 
 Route::get('/services', 'ServicesController@index');
 Route::get('/services-tshirt', 'ServicesController@seeTshirt');
 Route::get('/services-lgfor-tarpaulin', 'ServicesController@seeLgforTarpaulin');
 
-Route::get('/register', 'RegisterController@index');
+Route::get('/admin', 'AdminController@index');
 
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index');

@@ -27,6 +27,7 @@ Route::get('/services-lgfor-tarpaulin', 'ServicesController@seeLgforTarpaulin');
 Route::get('/register', 'RegisterController@index');
 
 Route::get('/request-quote', 'QuoteController@index');
+Route::post('/create-request', 'QuoteController@create');
 
 Auth::routes();
 

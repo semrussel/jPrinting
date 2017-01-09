@@ -13,7 +13,12 @@ class AdminController extends Controller
 {
     public function index(){
     	// return view('services-main');
-    	return view('admin-login');
+    	return view('admin.login');
+    }
+
+    public function adminDash(){
+    	// return view('services-main');
+    	return view('admin.dashboard');
     }
 
 }

@@ -3,14 +3,6 @@
 @section('title') Jimbes Printing @stop
 
 @section('content') 
-    <!-- Header -->
-    <!-- <div id="scroll-header" class="bg-header">
-        <div id="jb-header" class="container">
-            <p class="header-title"><b>JIMBES</b> PRINTING</p>
-            <p class="header-sub">Simply the Best</p>
-        </div>
-    </div> -->
-
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
@@ -59,7 +51,7 @@
     <!-- Page Content -->
     <div class="container">
 
-        <!-- Services -->
+        <!-- SERVICES -->
         <div id="scroll-content" class="row">
             <div class="col-md-4">
                 <div class="content-title-box">
@@ -146,32 +138,66 @@
                 </a>
             </div>
             
-        </div>
-        <!-- /.row -->
+        </div><!-- /.row -->
 
+    </div><!-- /.container -->
+
+    <!-- MISSION VISION -->
+    <div id="scroll-mv" class="row">
+
+        <div class="col-md-6 mv mi">
+            <h1>Our<br><b>MISSION</b></h1>
+            <p><b>Jimbes Printing is committed to providing excellent service and total satisfaction to every customer by giving them the highest level of quality printing at a cost effective rate and on-time delivery commitment.</b></p>
+            <p>It is also the humble objective of Jimbes Printing to provide job opportunities and trainings to qualified enthusiasts by giving them actual trainings on the operations of printing machinery. Trainees are being handled properly by seasoned production managers and highly-experienced operators.</p>
+            <p>In our modest capacity, it is has been our mission to help reduce the unemployment rate of our country and contribute to the growth of our economy by creating productive skilled citizens.</p>
+        </div>
+
+        <div class="col-md-6 mv vi">
+            <h1>Our<br><b>VISION</b></h1>
+            <p><b>Jimbes Printing envisions itself to become the printer of choice if not the best alternative service bureau of all companies and corporations of various industries.</b></p>
+            <p>From our humble beginning, we see ourselves as the commercial printer that shows compassion and concern to every client as we treat each of them as business partners – we support them by giving cost effective and quality services.</p>
+            <p>We seek long term business partnership. For this reason, we create, innovate, and maintain a channel of improvement to further and sustain enhancement of our products and services. We aim to be recognized in the printing industry and immerse ourselves successfully not only in the local market but in the global arena as well.</p>
+        </div>
+
+    </div><!-- /.row -->    
+
+    <div class="container">
+
+        <!-- ABOUT -->
+        <div id="scroll-about" class="row">
+            <div class="col-lg-12">
+                <div class="page-header-border"></div>
+                <h2 class="page-header">Our Company</h2>
+            </div>
+            <div class="col-md-6">
+                <p>Jimbes Printing is a commercial printer that offers quality and cost-effective printing services to companies that value every cost of production without compromise to quality and time element.</p>
+
+                <p>Registered at the Department of Trade and Industry dated February 21, 2007 valid until February 21, 2012 with certificate no. 00062760, Jimbes Printing is a legitimate business establishment that provides excellent service, peace of mind, and full satisfaction to every clientele.</p>
+
+                <p>Licensed to operate by the City Mayor of Caloocan with permit no. 07-018673 issued on March 12, 2007, Jimbes printing is an honest taxpayer with registration and permit no. OCN 4RC000312608 issued by the Bureau of Internal Revenue on March 22, 2007.</p>
+
+                <p>It is the noble intention of Jimbes Printing to be the best alternative service bureau of practical companies, which are very particular with production cost, quality, and excellence – a constructive challenge that brings out the best in our staff from the management down to our tank and files.</p>
+
+                <p>Jimbes Printing is presently enjoying positive feedbacks from clientele of various industries and it gives utmost attribution and credit to its quality control, production managers, and operators, among other plant crew for their voluntary concern to every customers. All our staff gives every customer a good run for their money and trust for each and every one of them is committed to excellence.</p>
+                
+                <p>Moreover, Jimbes Printing is always happy to serve the meticulous taste of its clientele to promote long term business partnership and warrants their utmost satisfaction.</p>
+
+                <p>Creativity is our Passion. We seek your satisfaction. Your meticulous taste is our motivation. We print beyond your imagination.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="img/pexels-photo-07.jpg" alt="">
+                <h3>Corporate Virtues</h3>
+                <p>We Believe that in striving for <b>EXCELLENCE</b>, it must be seasoned with <b>HONESTY</b>, <b>POSITIVE ATTITUDE</b>, <b>LOVE FOR WORK</b>, <b>PUNCTUALITY</b>, and <b>COMMITMENT</b> in order to meet the meticulous taste of every clientele. We believe that these are the ingredients to success.</p>
+            </div>
+
+        </div><!-- /.row -->
+
+        <!-- CLIENTS -->
         <div id="scroll-clients" class="row">
             <div class="col-lg-12">
                 <div class="page-header-border"></div>
                 <h2 class="page-header">Our Clients</h2>
             </div>
-            <!-- <div class="col-sm-2 col-xs-4 client">
-                <img src="img/logo-bsm.png">
-            </div>
-            <div class="col-sm-2 col-xs-4 client">
-                <img src="img/logo-bananaleaf.png">
-            </div>
-            <div class="col-sm-2 col-xs-4 client">
-                <img src="img/logo-mazda.png">
-            </div>
-            <div class="col-sm-2 col-xs-4 client">
-                <img src="img/logo-toyota.png">
-            </div>
-            <div class="col-sm-2 col-xs-4 client">
-                <img src="img/logo-petron.png">
-            </div>
-            <div class="col-sm-2 col-xs-4 client">
-                <img src="img/logo-magicmelt.png">
-            </div> -->
 
             <div class="col-md-3 col-sm-6">
                 <div class="client-box">
@@ -318,22 +344,16 @@
                 </div>
             </div>
 
-        </div>
-        <!-- /.row --> 
+        </div><!-- /.row --> 
 
-        <!-- Features Section -->
+        <!-- PLANTS? -->
         <div id="scroll-about" class="row">
             <div class="col-lg-12">
                 <div class="page-header-border"></div>
-                <h2 class="page-header">Our Company</h2>
+                <h2 class="page-header">Plant Equipments</h2>
             </div>
             <div class="col-md-6">
-                <p>Jimbes Printing was founded to provide high quality and cost-effective printing services. Our team has created numerous superior printing needs for both multinational and local companies for more than nine years now. These include printing of annual reports, books, calendars, brochures, newsletters, magazines, flyers, corporate folders, manuals, paper placemats, greeting cards and invitations, souvenir programs, stickers, posters, tags, tickets, business cards, receipts, letterhead, paper bags and the like.</p>
-                <p>As a company our commitment has always been to provide excellent service and utmost satisfaction to our clients. Our commitment to quality is matched by our commitment to fast turnaround and competitive pricing. Hence, the superior quality and great service has earned us many satisfied repeat clients.</p>
-                <p>Creativity is our Passion. We seek your satisfaction. Your meticulous taste is our motivation. We print beyond your imagination.</p>
-
-                <div class="clear"></div><br>
-                <p class="list-head price" style="background-color: grey; margin: 0;">Plant Equipments</p>
+                <!-- <p class="list-head price" style="background-color: grey; margin: 0;">Plant Equipments</p> -->
                 <table class="tg">
                     <tr>
                         <th class="tg-yw4l">Equipment</th>
@@ -413,14 +433,18 @@
                 </table>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="img/pexels-photo-07.jpg" alt="">
-                <!-- <br>
-                <img class="img-responsive" src="img/pexels-photo-09.jpeg" alt=""> -->
+                <h3>Quality Services</h3>
+                <p>Jimbes Printing is capable of printing high quality brochures, corporate folders, books, instruction manuals, greeting cards and invitations, souvenir programs, flyers, stickers, leaflets, catalogues, posters, post cards, tags, tickets, business cards, receipts, letterhead and other office forms. We print newspaper, magazine, and corporate newsletters. We also offer services on fabrication of paper bags, boxes and the like.</p>
+                <h3>Suppliers</h3>
+                <p>Star Paper Corporation, EMBU Integrated & Trading Corporation, NAPPCO, ADAO, PAPPCO, Polyprogress Business Corporation, Prestige Paper Products, Emerald, Grafika, Diamond Printers Supply, ScanXpress Digital Systems Enterprises, Laser Scanner Center, Inc., CGI Design And Enterprise, and PLP Graphics And Designs.</p>
+                <h3>Affiliates</h3>
+                <ul>
+                    <li>FDB Printing</li>
+                    <li>Andy and Vita Printing Enterprises</li>
+                </ul>
             </div>
 
-        </div>
-        <!-- /.row -->
+        </div><!-- /.row -->
 
-    </div>
-    <!-- /.container -->
+    </div><!-- /.container -->
 @stop

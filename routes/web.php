@@ -17,6 +17,9 @@
 
 Route::get('/', 'HomeController@index');
 
+// Route::get('login', array('uses' => 'HomeController@showLogin'));
+// Route::post('login', array('uses' => 'HomeController@doLogin'));
+
 Route::get('/services', 'ServicesController@index');
 Route::get('/services-tshirt', 'ServicesController@seeTshirt');
 Route::get('/services-lgfor-tarpaulin', 'ServicesController@seeLgforTarpaulin');

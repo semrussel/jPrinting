@@ -38,17 +38,34 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Login | Register</h4>
             </div>
-            <div class="modal-body" style="padding: 50px 50px">
-                <input type="text" id="login-username" class="form-control" placeholder="Username" required>
-                <br>
-                <input type="password" id="login-password" class="form-control" placeholder="Password" required>
-                <br>
-                <p>Don't have an Account? <a href="/register">Sign up here.</a></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Login</button>
-            </div>
+
+            <form data-toggle="validator" class="form-horizontal" role="form" id='form-create-user' action="{{ url('login') }}">
+                <div class="modal-body" style="padding: 50px 75px">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        </div>
+                        <br>
+                    <p class="center">Don't have an Account? <a href="/register"><br>Sign up here.</a></p>
+
+                    <!-- <input type="text" id="login-username" class="form-control" placeholder="Username" required>
+                    <br>
+                    <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                    <br>
+                    <p>Don't have an Account? <a href="/register">Sign up here.</a></p> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Login</button> -->
+                    <div class="form-group" style="display: -webkit-inline-box; margin: 0;">
+                        <input type="submit" class="form-control btn btn-primary" id="btn_login" value="Login">
+                        <!-- <input type="hidden" name="_id" value="0"> -->
+                    </div>
+                </div>
+            </form>
+
         </div>
     </div>
 </div>

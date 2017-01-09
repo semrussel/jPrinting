@@ -12,8 +12,18 @@ a, a:hover {
 .no-pad-right { padding-right: 0; }
 .no-pad-left { padding-left: 0; }
 .clear { clear:both; }
+.center { text-align: center; }
+
+
+/*---------------------------- BOOTS OVERIDE ----------------------------*/
+
+/*.btn-primary {
+    background-color: #2e4d50;
+    border-color: #1a292c;
+}*/
 
 /*---------------------------- NAVBAR ----------------------------*/
+
 .navbar-inverse {
     background-color: black;
     border: 0;
@@ -108,7 +118,7 @@ a, a:hover {
 /*---------------------------- MODALS ----------------------------*/
 .modal-content {
     margin: auto;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .modal-content.login {

@@ -27,3 +27,7 @@ Route::get('/services-lgfor-tarpaulin', 'ServicesController@seeLgforTarpaulin');
 Route::get('/register', 'RegisterController@index');
 
 Route::get('/request-quote', 'QuoteController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

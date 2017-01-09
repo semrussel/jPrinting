@@ -20,7 +20,30 @@
                 <li><a id="home-nav" class="hover-orange" href="/">Home</a></li>
                 <li><a class="hover-orange" href="/services-tshirt">Services</a></li>
                 <li><a class="hover-orange" href="/request-quote">Request a Quote</a></li>
-                <li><a class="hover-orange" href="#" data-toggle="modal" data-target="#login-modal">Login | Register</a></li>
+                
+                @if (Auth::guest())
+                    <li><a class="hover-orange" href="#" data-toggle="modal" data-target="#login-modal">Login | Register</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ url('/logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
 
                 <!-- <li class="nav-divider"></li>
                 <li><a href="#"><span class="cart-count">0 <i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a></li> -->
@@ -39,13 +62,30 @@
                 <h4 class="modal-title" id="myModalLabel">Login | Register</h4>
             </div>
 
-            <form data-toggle="validator" class="form-horizontal" role="form" id='form-create-user' action="{{ url('login') }}">
+            <form data-toggle="validator" class="form-horizontal" role="form" id='form-create-user' method="POST" action="{{ url('/login') }}">
+                {{ csrf_field() }}
+
                 <div class="modal-body" style="padding: 50px 75px">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" required autofocus>
+
+                            <!-- <script type="text/javascript">
+                                swal("Here's a message!");
+                            </script> -->
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                             
+                             @if ($errors->has('password'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif
                         </div>
                         <br>
                     <p class="center">Don't have an Account? <a href="/register"><br>Sign up here.</a></p>
@@ -69,3 +109,4 @@
         </div>
     </div>
 </div>
+

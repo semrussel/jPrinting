@@ -587,51 +587,51 @@ a, a:hover {
 
 /*---------------------------- FOOTER ----------------------------*/
 
-	footer {
-		height: 300px;
-		background-color: black;
-		color: white;
-		font-size: 12px;
-		border-top: 5px solid #ff3d00;
-		padding: 30px 0;
-		margin-bottom: 0;
-	}
+footer {
+	height: 300px;
+	background-color: black;
+	color: white;
+	font-size: 12px;
+	border-top: 5px solid #ff3d00;
+	padding: 30px 0;
+	margin-bottom: 0;
+}
 
-	.footer-head {
-		color: #ff9800;
-		font-size: 14px;
-		font-weight: bold;
-		margin-bottom: 20px;
-	}
-	.footer-info p i {
-		margin-right: 10px;
-	}
-	.copyright {
-		font-size: 10px;
-		text-align: center;
-	}
+.footer-head {
+	color: #ff9800;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.footer-info p i {
+	margin-right: 10px;
+}
+.copyright {
+	font-size: 10px;
+	text-align: center;
+}
 
-	.social-med p {
-		text-align: left;
-	}
-	.social-med p i {
-		height: 30px;
-		width: 30px;
-		font-size: 18px;
-		text-align: center;
-		color: white;
-		background-color: #ff9800;
-		padding-top: 7px;
-		transition: 0.5s;
-	}
-	.social-med p i:hover{
-		background-color: white;
-		color: black;
-		transition: 0.3s;
-	}
-	#customProDiv{
+.social-med p {
+	text-align: left;
+}
+.social-med p i {
+	height: 30px;
+	width: 30px;
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	background-color: #ff9800;
+	padding-top: 7px;
+	transition: 0.5s;
+}
+.social-med p i:hover{
+	background-color: white;
+	color: black;
+	transition: 0.3s;
+}
+#customProDiv{
 	display: none;
-	}
-	#existProDiv{
-		display: none;
-	}
+}
+#existProDiv{
+	display: none;
+}

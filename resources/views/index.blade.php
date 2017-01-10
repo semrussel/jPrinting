@@ -60,15 +60,15 @@
             </div>
 
             <div class="col-md-4">
-                <a href="/services-tshirt">
+                <a href="/services-calendars">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-01.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
-                            <h4><i class="fa fa-calendar" aria-hidden="true"></i><br><b>Calendars</b></h4>
+                            <h4><b>Calendars</b></h4>
                         </div>
                     </div>
                 </a>
-                <a href="/services-tshirt">
+                <a href="/services-stickers">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-02.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
@@ -78,19 +78,19 @@
                 </a>
             </div>
 
-            <a href="/services-tshirt">
+            <a href="/services-invitations">
                 <div class="col-md-4">
                     <div class="serv-box">
                         <div class="serv-img" style="background: url('img/serv-03.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
-                            <h4><i class="fa fa-male" aria-hidden="true"></i><b>T-shirt Printing</b><i class="fa fa-female" aria-hidden="true"></i></h4>
+                            <h4><b>Invitations</b></h4>
                         </div>
                     </div>
                 </div>
             </a>
 
             <div class="col-md-4">
-                <a href="/services-tshirt">
+                <a href="/services-newsletters">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-04.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
@@ -98,29 +98,29 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services-tshirt">
+                <a href="/services-books">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-05.jpeg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
-                            <h4><i class="fa fa-book" aria-hidden="true"></i><br><b>Books</b></h4>
+                            <h4><b>Books</b></h4>
                         </div>
                     </div>
                 </a>
             </div>
 
-            <a href="/services-tshirt">
+            <a href="/services-yearbooks">
                 <div class="col-md-4">
                     <div class="serv-box">
                         <div class="serv-img" style="background: url('img/serv-06.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
-                            <h4><i class="fa fa-group" aria-hidden="true"></i><b>Yearbooks</b><i class="fa fa-mortar-board" aria-hidden="true"></i></h4>
+                            <h4><b>Yearbooks</b></h4>
                         </div>
                     </div>
                 </div>
             </a>
 
             <div class="col-md-4">
-                <a href="/services-tshirt">
+                <a href="/services-business-cards">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-07.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services-tshirt">
+                <a href="/services-gift-wrappers">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-08.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">

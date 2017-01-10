@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a id="home-nav" class="hover-orange" href="/">Home</a></li>
-                <li><a class="hover-orange" href="/services-tshirt">Services</a></li>
+                <li><a class="hover-orange" href="/services">Services</a></li>
                 <li><a class="hover-orange" href="/request-quote">Request a Quote</a></li>
                 
                 @if (Auth::guest())

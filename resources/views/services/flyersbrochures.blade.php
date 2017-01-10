@@ -1,9 +1,9 @@
-@extends('services-main')
+@extends('template.services')
 
-@section('serv-name') <b>T-Shirt & Silkscreen Printing</b>  @stop
+@section('serv-name') <b>Services</b> | Flyers & Brochures  @stop
 
 @section('serv-img') 
-    <img src="img/shirt-samp.png" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-20.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -70,27 +70,28 @@
 <!-- Price Calculator -->
 <div class="col-md-4">
     <p class="list-head price">Options</p>
+    <p><b>Name</b></p>
+    <select class="form-control" id="sel1">
+        <option>Flyers, 1-side</option>
+        <option>Flyers, 2-sides</option>
+        <option>Brochures, Bi- fold</option>
+        <option>Brochures, Tri- fold</option>
+        <option>Brochures, Quad- fold</option>
+    </select>
+    <div class="clear"></div><br>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
+        <option>8.5in x 11 in</option>
+        <option>11 in x 8.5 in</option>
+        <option>4.25 in x 5.5 in</option>
+        <option>5 in x 5 in</option>
     </select>
     <div class="clear"></div><br>
-    <p><b>Color</b></p>
+    <p><b>Paper Type</b></p>
     <select class="form-control" id="sel1">
-        <option>Black</option>
-        <option>White</option>
-        <option>Blue</option>
-        <option>Red</option>
+        <option>100 gsm, coated paper</option>
+        <option>170 gsm, coated paper</option>
     </select>
-    <div class="clear"></div><br>
-
-    <p><b>Text</b> | Front</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Front Text" required></div>
-    <div class="clear"></div><br>
-    <p><b>Text</b> | Back</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Back Text" required></div>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

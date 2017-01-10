@@ -498,8 +498,12 @@ a, a:hover {
 
 	.list-head {
 		background-color: #ff9800;
-		color: white;
+		color: white !important;
 		font-weight: bold;
+	}
+	a.list-group-item:hover {
+	    color: white;
+	    background-color: #ff9800;
 	}
 	.list-head.price {
 		padding: 0px 20px;

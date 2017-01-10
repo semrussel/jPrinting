@@ -24,19 +24,23 @@
                 <?php $user = Auth::user();?>
                 @if (Auth::check())
                 <div class="col-md-12">
-                    <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Full Name" required value="{{$user->name}}">
-                    <br>
+                    <b class="col-xs-12 col-sm-6 col-md-3">Full Name:</b>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="fullname" name="fullname" class="form-control" required value="{{$user->name}}"></div>
+                    <br><br>
                 </div>
                 <div class="col-md-12">
-                    <input type="text" id="email" name="email" class="form-control" placeholder="Email Address" required value="{{$user->email}}">
+                    <b class="col-xs-12 col-sm-6 col-md-3">Email Address:</b>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="email" name="email" class="form-control" required value="{{$user->email}}"></div>
                 </div>
                 @else
                 <div class="col-md-12">
-                    <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Full Name" required>
-                    <br>
+                    <b class="col-xs-12 col-sm-6 col-md-3">Full Name:</b>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="fullname" name="fullname" class="form-control" required></div>
+                    <br><br>
                 </div>
                 <div class="col-md-12">
-                    <input type="text" id="street" class="form-control" placeholder="Email Address" required>
+                    <b class="col-xs-12 col-sm-6 col-md-3">Email Address:</b>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="street" class="form-control" required></div>
                 </div>
                 @endif
             </div>
@@ -46,7 +50,10 @@
                 <div class="clear"></div>
 
                 <div class="col-md-12">
-                    <input type="text" id="title" name="title" class="form-control" placeholder="Quote Title" required><br>
+                    <b class="col-xs-12 col-sm-6 col-md-3">Quote Title:</b>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="title" name="title" class="form-control" required></div>
+                    <br><br>
+                    
                     <b class="col-xs-4 col-sm-3">Quote Type:</b>
                     <label class="col-xs-4 col-sm-3"><input type="radio" id="existing" name="optradio" value="existing"> Existing Product</label>
                     <label class="col-xs-4 col-sm-3"><input type="radio" id="custom" name="optradio" value="custom"> Custom Product</label>
@@ -150,17 +157,23 @@
                         </select>
                         <br>
                     </div>
-                    <input type="text" id="quantity" name="quantity" class="form-control" placeholder="Quantity" required><br>
-                    <input type="text" id="size" name="size" class="form-control" placeholder="Size"><br>
-                    <input type="text" id="pns" name="pns" class="form-control" placeholder="Paper/Stock"><br>
-                    <input type="text" id="snp" name="snp" class="form-control" placeholder="Sides/Pages"><br>
+                    <b class="col-xs-12">Quantity:</b><br>
+                    <input type="text" id="quantity" name="quantity" class="form-control" required><br>
+                    <b class="col-xs-12">Size:</b><br>
+                    <input type="text" id="size" name="size" class="form-control"><br>
+                    <b class="col-xs-12">Paper / Stock:</b><br>
+                    <input type="text" id="pns" name="pns" class="form-control"><br>
+                    <b class="col-xs-12">Sides / Pages:</b><br>
+                    <input type="text" id="snp" name="snp" class="form-control"><br>
+                    <b class="col-xs-12">Lamination:</b><br>
                     <select name="lamination" id="lamination" class="form-control">
                         <option value="none">Select Lamination</option>
                         <option value="matte">Matte</option>
                         <option value="gloss">Gloss</option>
                     </select>
                     <br>
-                    <textarea class="form-control" rows="5" id="details" name="details" placeholder="Additional Details"></textarea><br>
+                    <b class="col-xs-12">Additional Details:</b><br>
+                    <textarea class="form-control" rows="5" id="details" name="details"></textarea><br>
                     <input type="file" name="attachment" class="form-control"><br>
                     <input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit'>
                     <div class="clear"></div><br>

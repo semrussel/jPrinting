@@ -43,24 +43,85 @@
 <table class="tg">
     <tr>
         <th class="tg-yw4l">Size</th>
-        <th class="tg-yw4l">Quantity</th>
-        <th class="tg-yw4l">Price</th>
+        <th class="tg-yw4l">Basis Weight</th>
+        <th class="tg-yw4l">Width</th>
+        <th class="tg-yw4l">Gusset</th>
+        <th class="tg-yw4l">Height</th>
+        <th class="tg-yw4l">Package Quantity</th>  
     </tr>
     <tr>
-        <td class="tg-yw4l"> Small</td>
-        <td class="tg-yw4l"> 1</td>
-        <td class="tg-yw4l"> $ 1.00</td>
+        <td class="tg-yw4l"> #1</td>
+        <td class="tg-yw4l"> 30 lbs</td>
+        <td class="tg-yw4l"> 3 1/2”</td>
+        <td class="tg-yw4l"> 2”</td>
+        <td class="tg-yw4l"> 6 1/2”</td>
+        <td class="tg-yw4l"> 100</td>
     </tr>
     <tr>
-        <td class="tg-yw4l"> Medium</td>
-        <td class="tg-yw4l"> 1</td>
-        <td class="tg-yw4l"> $ 5.00</td>
+        <td class="tg-yw4l"> #2</td>
+        <td class="tg-yw4l"> 30 lbs</td>
+        <td class="tg-yw4l"> 4 1/4”</td>
+        <td class="tg-yw4l"> 2 3/8”</td>
+        <td class="tg-yw4l"> 8 3/16”</td>
+        <td class="tg-yw4l"> 500</td>
     </tr>
     <tr>
-        <td class="tg-yw4l"> Large</td>
-        <td class="tg-yw4l"> 1</td>
-        <td class="tg-yw4l"> $ 10.00</td>
+        <td class="tg-yw4l"> #4</td>
+        <td class="tg-yw4l"> 30 lbs</td>
+        <td class="tg-yw4l"> 5”</td>
+        <td class="tg-yw4l"> 3 1/8”</td>
+        <td class="tg-yw4l"> 9 3/4”</td>
+        <td class="tg-yw4l"> 500</td>
     </tr>
+    <tr>
+        <td class="tg-yw4l"> #6</td>
+        <td class="tg-yw4l"> 35 lbs</td>
+        <td class="tg-yw4l"> 6”</td>
+        <td class="tg-yw4l"> 3 5/8”</td>
+        <td class="tg-yw4l"> 11”</td>
+        <td class="tg-yw4l"> 500</td>
+    </tr>
+    <tr>
+        <td class="tg-yw4l"> #8</td>
+        <td class="tg-yw4l"> 35 lbs</td>
+        <td class="tg-yw4l"> 6 1/8”</td>
+        <td class="tg-yw4l"> 4”</td>
+        <td class="tg-yw4l"> 12 3/8”</td>
+        <td class="tg-yw4l"> 500</td>
+    </tr>
+    <tr>
+        <td class="tg-yw4l"> #10</td>
+        <td class="tg-yw4l"> 35 lbs</td>
+        <td class="tg-yw4l"> 6 9/16”</td>
+        <td class="tg-yw4l"> 4 1/6”</td>
+        <td class="tg-yw4l"> 13 3/16”</td>
+        <td class="tg-yw4l"> 500</td>
+    </tr>
+    <tr>
+        <td class="tg-yw4l"> #12</td>
+        <td class="tg-yw4l"> 40 lbs</td>
+        <td class="tg-yw4l"> 7”</td>
+        <td class="tg-yw4l"> 4 1/2”</td>
+        <td class="tg-yw4l"> 13 3/4”</td>
+        <td class="tg-yw4l"> 500</td>
+    </tr>
+    <tr>
+        <td class="tg-yw4l"> #16</td>
+        <td class="tg-yw4l"> 40 lbs</td>
+        <td class="tg-yw4l"> 7 3/4”</td>
+        <td class="tg-yw4l"> 4 7/8”</td>
+        <td class="tg-yw4l"> 15 3/4”</td>
+        <td class="tg-yw4l"> 500</td>
+    </tr>
+    <tr>
+        <td class="tg-yw4l"> #25</td>
+        <td class="tg-yw4l"> 40 lbs</td>
+        <td class="tg-yw4l"> 8 3/8”</td>
+        <td class="tg-yw4l"> 5 1/4”</td>
+        <td class="tg-yw4l"> 18”</td>
+        <td class="tg-yw4l"> 500</td>
+    </tr>
+
 </table>
 <!-- /.Pricing -->
 
@@ -72,25 +133,16 @@
     <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
+        <option>#1</option>
+        <option>#2</option>
+        <option>#4</option>
+        <option>#6</option>
+        <option>#8</option>
+        <option>#10</option>
+        <option>#12</option>
+        <option>#16</option>
+        <option>#25</option> 
     </select>
-    <div class="clear"></div><br>
-    <p><b>Color</b></p>
-    <select class="form-control" id="sel1">
-        <option>Black</option>
-        <option>White</option>
-        <option>Blue</option>
-        <option>Red</option>
-    </select>
-    <div class="clear"></div><br>
-
-    <p><b>Text</b> | Front</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Front Text" required></div>
-    <div class="clear"></div><br>
-    <p><b>Text</b> | Back</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Back Text" required></div>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

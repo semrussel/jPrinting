@@ -66,6 +66,12 @@
                         <div class="serv-heading">
                             <h4><b>Calendars</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-calendars-poster"><div class="serv-sub-item">Poster Calendar</div></a>
+                            <a href="/services-calendars-monthly"><div class="serv-sub-item">Monthly Wall Calendar</div></a>
+                            <a href="/services-calendars-table"><div class="serv-sub-item">Table Tent Calendar</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </a>
                 <a href="/services-stickers">
@@ -73,6 +79,12 @@
                         <div class="serv-img" style="background: url('img/serv-02.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Sticker & Labels</b></h4>
+                        </div>
+                        <div class="serv-sub">
+                            <a href="/services-stickers-round"><div class="serv-sub-item">Vinyl Round Sticker</div></a>
+                            <a href="/services-stickers-square"><div class="serv-sub-item">Vinyl Square Sticker</div></a>
+                            <a href="/services-stickers-rectangle"><div class="serv-sub-item">Vinyl Rectangle Sticker</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
                         </div>
                     </div>
                 </a>
@@ -126,6 +138,11 @@
                         <div class="serv-heading">
                             <h4><b>Business Cards</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-business-cards-1side"><div class="serv-sub-item">Business Cards, 1-side</div></a>
+                            <a href="/services-business-cards-2side"><div class="serv-sub-item">Business Cards, 2-side</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </a>
                 <a href="/services-gift-wrappers">
@@ -137,6 +154,10 @@
                     </div>
                 </a>
             </div>
+
+            <a href="/services"><div class="col-xs-12 view-all">
+                View All Services <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            </div></a>
             
         </div><!-- /.row -->
 

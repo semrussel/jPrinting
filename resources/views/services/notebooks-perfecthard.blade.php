@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Office Forms  @stop
+@section('serv-name') <b>Services</b> | Notebooks | Perfect Bound Notebook, Hard Cover @stop
 
 @section('serv-img') 
-    <img src="img/serv-15.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-19.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -70,16 +70,23 @@
 <!-- Price Calculator -->
 <div class="col-md-4">
     <p class="list-head price">Options</p>
-    <p><b>Size</b></p>
+    <p><b>No. of Sheets</b></p>
     <select class="form-control" id="sel1">
-        <option>8.5in x 11in</option>
-        <option>8.27in x 11.69in</option>
-        <option>8.5in x 13in</option>
+        <option>50 Sheets</option>
+        <option>100 Sheets</option>
     </select>
     <div class="clear"></div><br>
-    <p><b>Paper</b></p>
+    <p><b>Inner Pages</b> | Printing</p>
     <select class="form-control" id="sel1">
-        <option>Book #80</option>
+        <option>No Print (Plain)</option>
+        <option>B/W Prints</option>
+        <option>Colored Prints</option>
+    </select>
+    <div class="clear"></div><br>
+    <p><b>Inner Pages</b> | Pages Type</p>
+    <select class="form-control" id="sel1">
+        <option>Bevania 85 gsm, White</option>
+        <option>Bevania 85 gsm, Ivory</option>
     </select>
     <div class="clear"></div><hr>
     

@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Stickers & Labels  @stop
+@section('serv-name') <b>Services</b> | Calendars | Table Tent Calendar @stop
 
 @section('serv-img') 
-    <img src="img/serv-02.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-01.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -72,25 +72,9 @@
     <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
+        <option>5.5in x 8.25in</option>
+        <option>8.25in x 4in</option>
     </select>
-    <div class="clear"></div><br>
-    <p><b>Color</b></p>
-    <select class="form-control" id="sel1">
-        <option>Black</option>
-        <option>White</option>
-        <option>Blue</option>
-        <option>Red</option>
-    </select>
-    <div class="clear"></div><br>
-
-    <p><b>Text</b> | Front</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Front Text" required></div>
-    <div class="clear"></div><br>
-    <p><b>Text</b> | Back</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Back Text" required></div>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

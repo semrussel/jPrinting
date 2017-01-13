@@ -12,8 +12,11 @@ $(document).on('click', 'a', function(event){
 $(function() {
     if(location.pathname.split("/")[1] == "" || location.pathname.split("/")[1] == null) {
         $('.nav li a#home-nav').addClass('active');
+    } else if(location.pathname.split("/")[1] == "admin") {
+        $('.ad-dash div a[href^="/' + location.pathnameh.split("-")[1] + '"]').addClass('active');
     } else {
-        $('.nav li a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+        var highpath = location.pathname.split("/")[1];
+        $('.nav li a[href^="/' + highpath.split("-")[0] + '"]').addClass('active');
     }      
     // alert(location.pathname.split("/")[1] + " " + location.pathname.split("/")[2] + " " + location.pathname.split("/")[3]);
 });

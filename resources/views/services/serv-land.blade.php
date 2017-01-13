@@ -16,22 +16,34 @@
         <div class="col-md-9 serv-main-box" style="padding: 20px 10px;">
             
             <div class="col-md-6">
-                <a href="/services-calendars">
+                <!-- <a href="/services-calendars"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-01.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Calendars</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-calendars-poster"><div class="serv-sub-item">Poster Calendar</div></a>
+                            <a href="/services-calendars-monthly"><div class="serv-sub-item">Monthly Wall Calendar</div></a>
+                            <a href="/services-calendars-table"><div class="serv-sub-item">Table Tent Calendar</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </a>
-                <a href="/services-stickers">
+                <!-- </a> -->
+                <!-- <a href="/services-stickers"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-02.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Sticker & Labels</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-stickers-round"><div class="serv-sub-item">Vinyl Round Sticker</div></a>
+                            <a href="/services-stickers-square"><div class="serv-sub-item">Vinyl Square Sticker</div></a>
+                            <a href="/services-stickers-rectangle"><div class="serv-sub-item">Vinyl Rectangle Sticker</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </a>
+                <!-- </a> -->
             </div>
 
             <div class="col-md-6">
@@ -73,14 +85,19 @@
             </div>
 
             <div class="col-md-6">
-                <a href="/services-business-cards">
+                <!-- <a href="/services-business-cards"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-07.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Business Cards</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-business-cards-1side"><div class="serv-sub-item">Business Cards, 1-side</div></a>
+                            <a href="/services-business-cards-2side"><div class="serv-sub-item">Business Cards, 2-side</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </a>
+                <!-- </a> -->
                 <a href="/services-gift-wrappers">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-08.jpg'); background-size: cover; background-position: center center;"></div>
@@ -130,14 +147,19 @@
             </div>
 
             <div class="col-md-6">
-                <a href="/services-tickets">
+                <!-- <a href="/services-tickets"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-13.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Tickets</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-tickets-1side"><div class="serv-sub-item">Tickets, 1-side</div></a>
+                            <a href="/services-tickets-2side"><div class="serv-sub-item">Tickets, 2-side</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </a>
+                <!-- </a> -->
                 <a href="/services-posters">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-14.png'); background-size: cover; background-position: center center;"></div>
@@ -176,33 +198,53 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services-receipts">
+                <!-- <a href="/services-receipts"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-18.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Receipts</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-receipts-carbon"><div class="serv-sub-item">Carbon Form</div></a>
+                            <a href="/services-receipts-carbonless"><div class="serv-sub-item">Carbonless Form</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </a>
+                <!-- </a> -->
             </div>
 
             <div class="col-md-6">
-                <a href="/services-notebooks">
+                <!-- <a href="/services-notebooks"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-19.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Notebooks</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-notebooks-wire-soft"><div class="serv-sub-item">Wire Bound, Soft Cover</div></a>
+                            <a href="/services-notebooks-wire-hard"><div class="serv-sub-item">Wire Bound, Hard Cover</div></a>
+                            <a href="/services-notebooks-perfect-soft"><div class="serv-sub-item">Perfect Bound, Soft Cover</div></a>
+                            <a href="/services-notebooks-perfect-hard"><div class="serv-sub-item">Perfect Bound, Hard Cover</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </a>
-                <a href="/services-flyers-brochures">
+                <!-- </a> -->
+                <!-- <a href="/services-flyers-brochures"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-20.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Flyers / Brochures</b></h4>
                         </div>
+                        <div class="serv-sub">
+                            <a href="/services-flyers-1side"><div class="serv-sub-item">Flyers, 1-side</div></a>
+                            <a href="/services-flyers-2side"><div class="serv-sub-item">Flyers, 2-side</div></a>
+                            <a href="/services-brochures-bifold"><div class="serv-sub-item">Brochures, Bi-fold</div></a>
+                            <a href="/services-brochures-trifold"><div class="serv-sub-item">Brochures, Tri-fold</div></a>
+                            <a href="/services-brochures-quadfold"><div class="serv-sub-item">Brochures, Quad-fold</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </div>
                     </div>
-                </a>
+                <!-- </a> -->
             </div>
             
         </div>

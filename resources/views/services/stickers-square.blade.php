@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Tickets  @stop
+@section('serv-name') <b>Services</b> | Stickers & Labels | Vinyl Square Sticker @stop
 
 @section('serv-img') 
-    <img src="img/serv-13.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-02.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -72,22 +72,29 @@
     <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>6in x 4in</option>
-        <option>5in x 3.5in</option>
+        <option>2.00” x 2.00”</option>
+        <option>2.25” x 2.25”</option>
+        <option>2.50” x 2.50”</option>
+        <option>2.75” x 2.75”</option>
+        <option>3.00” x 3.00”</option>
+        <option>3.25” x 3.25”</option>
+        <option>3.50” x 3.50”</option>
+        <option>3.75” x 3.75”</option>
+        <option>4.00” x 4.00”</option>
+        <option>4.25” x 4.25”</option>
+        <option>4.50” x 4.50”</option>
+        <option>4.75” x 4.75”</option>
+        <option>5.00” x 5.00”</option>
+        <option>5.25” x 5.25”</option>
+        <option>5.50” x 5.50”</option>
+        <option>5.75” x 5.75”</option>
+        <option>6.00” x 6.00”</option>
     </select>
     <div class="clear"></div><br>
-    <p><b>Paper Type</b></p>
+    <p><b>Substrate</b></p>
     <select class="form-control" id="sel1">
-        <option>C2S 300 gsm</option>
-        <option>Foldcote 12</option>
-    </select>
-    <div class="clear"></div><br>
-    <p><b>Perforation</b></p>
-    <select class="form-control" id="sel1">
-        <option>None</option>
-        <option>Basic perforation</option>
-        <option>Micro perforation</option>
-        <option>Triangle perforation</option>
+        <option>White Vinyl Sticker</option>
+        <option>Transparent Vinyl Sticker</option>
     </select>
     <div class="clear"></div><hr>
     

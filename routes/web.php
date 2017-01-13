@@ -43,6 +43,7 @@ Route::get('/services-flyers-brochures', 'ServicesController@callFlyersbrochures
 
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin-dash', 'AdminController@adminDash');
+Route::post('/admin-login', 'AdminController@login');
 
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');

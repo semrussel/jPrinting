@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Office Forms  @stop
+@section('serv-name') <b>Services</b> | Business Cards | 2-Side @stop
 
 @section('serv-img') 
-    <img src="img/serv-15.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-07.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -72,14 +72,32 @@
     <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>8.5in x 11in</option>
-        <option>8.27in x 11.69in</option>
-        <option>8.5in x 13in</option>
+        <option>2 IN x 3.5 IN</option>
+        <option>3.5 X 2 IN</option>
     </select>
     <div class="clear"></div><br>
-    <p><b>Paper</b></p>
+    <p><b>Paper Type</b></p>
     <select class="form-control" id="sel1">
-        <option>Book #80</option>
+        <option>C2S 300 gsm</option>
+        <option>C2S 350 gsm</option>
+        <option>Bevania 300 gsm (White, Ivory)</option>
+        <option>Old Mill 300 gsm (White, Ivory)</option>
+    </select>
+    <div class="clear"></div><br>
+    <p><b>Lamination</b></p>
+    <select class="form-control" id="sel1">
+        <option>No lamination</option>
+        <option>Matte lamination</option>
+        <option>Glossy lamination</option>
+    </select>
+    <div class="clear"></div><br>
+    <p><b>Rounded Corners</b></p>
+    <select class="form-control" id="sel1">
+        <option>No rounded</option>
+        <option>1-Corner</option>
+        <option>2-Corner</option>
+        <option>3-Corner</option>
+        <option>4-Corner</option>
     </select>
     <div class="clear"></div><hr>
     

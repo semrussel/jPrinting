@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Flyers & Brochures  @stop
+@section('serv-name') <b>Services</b> | Calendars | Poster Calendar @stop
 
 @section('serv-img') 
-    <img src="img/serv-20.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-01.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -70,27 +70,17 @@
 <!-- Price Calculator -->
 <div class="col-md-4">
     <p class="list-head price">Options</p>
-    <p><b>Name</b></p>
-    <select class="form-control" id="sel1">
-        <option>Flyers, 1-side</option>
-        <option>Flyers, 2-sides</option>
-        <option>Brochures, Bi- fold</option>
-        <option>Brochures, Tri- fold</option>
-        <option>Brochures, Quad- fold</option>
-    </select>
-    <div class="clear"></div><br>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>8.5in x 11 in</option>
-        <option>11 in x 8.5 in</option>
-        <option>4.25 in x 5.5 in</option>
-        <option>5 in x 5 in</option>
+        <option>13in x 19in</option>
+        <option>24 in x 36 in</option>
     </select>
     <div class="clear"></div><br>
-    <p><b>Paper Type</b></p>
+    <p><b>Lamination</b></p>
     <select class="form-control" id="sel1">
-        <option>100 gsm, coated paper</option>
-        <option>170 gsm, coated paper</option>
+        <option>None</option>
+        <option>Glossy</option>
+        <option>Matte</option>
     </select>
     <div class="clear"></div><hr>
     

@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Business Cards  @stop
+@section('serv-name') <b>Services</b> | Flyers | 1-Side  @stop
 
 @section('serv-img') 
-    <img src="img/serv-07.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-20.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -70,40 +70,18 @@
 <!-- Price Calculator -->
 <div class="col-md-4">
     <p class="list-head price">Options</p>
-    <p><b>Name</b></p>
-    <select class="form-control" id="sel1">
-        <option>Business Cards - Business Cards, 1-side</option>
-        <option>Business Cards - Business Cards, 2-sides</option>
-    </select>
-    <div class="clear"></div><br>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>2 IN x 3.5 IN</option>
-        <option>3.5 X 2 IN</option>
+        <option>8.5in x 11 in</option>
+        <option>11 in x 8.5 in</option>
+        <option>4.25 in x 5.5 in</option>
+        <option>5 in x 5 in</option>
     </select>
     <div class="clear"></div><br>
     <p><b>Paper Type</b></p>
     <select class="form-control" id="sel1">
-        <option>C2S 300 gsm</option>
-        <option>C2S 350 gsm</option>
-        <option>Bevania 300 gsm (White, Ivory)</option>
-        <option>Old Mill 300 gsm (White, Ivory)</option>
-    </select>
-    <div class="clear"></div><br>
-    <p><b>Lamination</b></p>
-    <select class="form-control" id="sel1">
-        <option>No lamination</option>
-        <option>Matte lamination</option>
-        <option>Glossy lamination</option>
-    </select>
-    <div class="clear"></div><br>
-    <p><b>Rounded Corners</b></p>
-    <select class="form-control" id="sel1">
-        <option>No rounded</option>
-        <option>1-Corner</option>
-        <option>2-Corner</option>
-        <option>3-Corner</option>
-        <option>4-Corner</option>
+        <option>100 gsm, coated paper</option>
+        <option>170 gsm, coated paper</option>
     </select>
     <div class="clear"></div><hr>
     

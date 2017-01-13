@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Office Forms  @stop
+@section('serv-name') <b>Services</b> | Calendars | Monthly Wall Calendar  @stop
 
 @section('serv-img') 
-    <img src="img/serv-15.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-01.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -72,14 +72,8 @@
     <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>8.5in x 11in</option>
-        <option>8.27in x 11.69in</option>
-        <option>8.5in x 13in</option>
-    </select>
-    <div class="clear"></div><br>
-    <p><b>Paper</b></p>
-    <select class="form-control" id="sel1">
-        <option>Book #80</option>
+        <option>13in x 19in</option>
+        <option>24 in x 36 in</option>
     </select>
     <div class="clear"></div><hr>
     

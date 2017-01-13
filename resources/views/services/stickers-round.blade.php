@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Office Forms  @stop
+@section('serv-name') <b>Services</b> | Stickers & Labels | Vinyl Round Sticker @stop
 
 @section('serv-img') 
-    <img src="img/serv-15.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-02.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -72,14 +72,29 @@
     <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>8.5in x 11in</option>
-        <option>8.27in x 11.69in</option>
-        <option>8.5in x 13in</option>
+        <option>2.00” x 2.00”</option>
+        <option>2.25” x 2.25”</option>
+        <option>2.50” x 2.50”</option>
+        <option>2.75” x 2.75”</option>
+        <option>3.00” x 3.00”</option>
+        <option>3.25” x 3.25”</option>
+        <option>3.50” x 3.50”</option>
+        <option>3.75” x 3.75”</option>
+        <option>4.00” x 4.00”</option>
+        <option>4.25” x 4.25”</option>
+        <option>4.50” x 4.50”</option>
+        <option>4.75” x 4.75”</option>
+        <option>5.00” x 5.00”</option>
+        <option>5.25” x 5.25”</option>
+        <option>5.50” x 5.50”</option>
+        <option>5.75” x 5.75”</option>
+        <option>6.00” x 6.00”</option>
     </select>
     <div class="clear"></div><br>
-    <p><b>Paper</b></p>
+    <p><b>Substrate</b></p>
     <select class="form-control" id="sel1">
-        <option>Book #80</option>
+        <option>White Vinyl Sticker</option>
+        <option>Transparent Vinyl Sticker</option>
     </select>
     <div class="clear"></div><hr>
     

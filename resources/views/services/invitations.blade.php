@@ -72,25 +72,15 @@
     <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
+        <option>5in x 3in</option>
+        <option>6in x 4in</option>
+        <option>7in x 5in</option>
     </select>
     <div class="clear"></div><br>
-    <p><b>Color</b></p>
+    <p><b>Paper Type</b></p>
     <select class="form-control" id="sel1">
-        <option>Black</option>
-        <option>White</option>
-        <option>Blue</option>
-        <option>Red</option>
+        <option>FOLD COTE 12</option>
     </select>
-    <div class="clear"></div><br>
-
-    <p><b>Text</b> | Front</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Front Text" required></div>
-    <div class="clear"></div><br>
-    <p><b>Text</b> | Back</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Back Text" required></div>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

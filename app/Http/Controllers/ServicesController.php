@@ -16,34 +16,26 @@ class ServicesController extends Controller
     	return view('services.serv-land');
     }
 
-    // callCalendars
-    // callStickers
-    // callInvitations
-    // callNewsletters
-    // callBooks
-    // callYearbooks
-    // callBusinesscards
-    // callGiftwrappers
-    // callSouvenirPrograms
-    // callPaperBags
-    // callBagtags
-    // callCorporateFolders
-    // callTickets
-    // callPosters
-    // callOfficeforms
-    // callCertificates
-    // callBoxes
-    // callReceipts
-    // callNotebooks
-    // callFlyersbrochures
-
-
-    public function callCalendars(){
-    	return view('services.calendars');
+    public function callCalendarsPoster(){
+    	return view('services.calendars-poster');
     }
-    public function callStickers(){
-        return view('services.stickers');
+    public function callCalendarsMonthly(){
+        return view('services.calendars-monthly');
     }
+    public function callCalendarsTable(){
+        return view('services.calendars-table');
+    }
+    // --->
+    public function callStickersRound(){
+        return view('services.stickers-round');
+    }
+    public function callStickersSquare(){
+        return view('services.stickers-square');
+    }
+     public function callStickersRectangle(){
+        return view('services.stickers-rectangle');
+    }
+    // --->
     public function callInvitations(){
         return view('services.invitations');
     }
@@ -56,9 +48,14 @@ class ServicesController extends Controller
     public function callYearbooks(){
         return view('services.yearbooks');
     }
-    public function callBusinesscards(){
-        return view('services.businesscards');
+    // --->
+    public function callBusinesscards1Side(){
+        return view('services.businesscards-1side');
     }
+    public function callBusinesscards2Side(){
+        return view('services.businesscards-2side');
+    }
+    // --->
     public function callGiftwrappers(){
         return view('services.giftwrappers');
     }
@@ -75,9 +72,14 @@ class ServicesController extends Controller
     public function callCorporateFolders(){
         return view('services.corporatefolders');
     }
-    public function callTickets(){
-        return view('services.tickets');
+    // --->
+    public function callTickets1Side(){
+        return view('services.tickets-1side');
     }
+    public function callTickets2Side(){
+        return view('services.tickets-2side');
+    }
+    // --->
     public function callPosters(){
         return view('services.posters');
     }
@@ -90,14 +92,41 @@ class ServicesController extends Controller
     public function callBoxes(){
         return view('services.boxes');
     }
-    public function callReceipts(){
-        return view('services.receipts');
+    // --->
+    public function callReceiptsCarbon(){
+        return view('services.receipts-carbon');
     }
-    public function callNotebooks(){
-        return view('services.notebooks');
+    public function callReceiptsCarbonless(){
+        return view('services.receipts-carbonless');
     }
-    public function callFlyersbrochures(){
-        return view('services.flyersbrochures');
+    // --->
+    public function callNotebooksWireSoft(){
+        return view('services.notebooks-wiresoft');
+    }
+    public function callNotebooksWireHard(){
+        return view('services.notebooks-wirehard');
+    }
+    public function callNotebooksPerfectSoft(){
+        return view('services.notebooks-perfectsoft');
+    }
+    public function callNotebooksPerfectHard(){
+        return view('services.notebooks-perfecthard');
+    }
+    // --->
+    public function callFlyers1Side(){
+        return view('services.flyers-1side');
+    }
+    public function callFlyers2Side(){
+        return view('services.flyers-2side');
+    }
+    public function callBrochuresBifold(){
+        return view('services.brochures-bifold');
+    }
+    public function callBrochuresTrifold(){
+        return view('services.brochures-trifold');
+    }
+    public function callBrochuresQuadfold(){
+        return view('services.brochures-quadfold');
     }
 
 }

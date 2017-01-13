@@ -1,9 +1,9 @@
 @extends('template.services')
 
-@section('serv-name') <b>Services</b> | Notebooks  @stop
+@section('serv-name') <b>Services</b> | Tickets | 1-Side @stop
 
 @section('serv-img') 
-    <img src="img/serv-19.jpg" width="100%" style="border: 1px solid grey">
+    <img src="img/serv-13.jpg" width="100%" style="border: 1px solid grey">
 @stop               
 
 @section('browse-modal') 
@@ -72,25 +72,23 @@
     <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
+        <option>6in x 4in</option>
+        <option>5in x 3.5in</option>
     </select>
     <div class="clear"></div><br>
-    <p><b>Color</b></p>
+    <p><b>Paper Type</b></p>
     <select class="form-control" id="sel1">
-        <option>Black</option>
-        <option>White</option>
-        <option>Blue</option>
-        <option>Red</option>
+        <option>C2S 300 gsm</option>
+        <option>Foldcote 12</option>
     </select>
     <div class="clear"></div><br>
-
-    <p><b>Text</b> | Front</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Front Text" required></div>
-    <div class="clear"></div><br>
-    <p><b>Text</b> | Back</p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="Back Text" required></div>
+    <p><b>Perforation</b></p>
+    <select class="form-control" id="sel1">
+        <option>None</option>
+        <option>Basic perforation</option>
+        <option>Micro perforation</option>
+        <option>Triangle perforation</option>
+    </select>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

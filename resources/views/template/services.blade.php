@@ -20,11 +20,11 @@
 
                 @yield('serv-img')
 
-                <a href="#" data-toggle="modal" data-target="#browse-modal">
+                <!-- <a href="#" data-toggle="modal" data-target="#browse-modal">
                     <div class="col-xs-2 no-pad"><div class="serv-main-up browse">
                         <p><i class="fa fa-external-link" aria-hidden="true"></i> Browse<p>
                     </div></div>
-                </a>
+                </a> -->
 
                 @yield('browse-modal')
 
@@ -34,11 +34,11 @@
                     </div></div>
                 </a> -->
 
-                <a href="#" data-toggle="modal" data-target="#upload-modal">
+                <!-- <a href="#" data-toggle="modal" data-target="#upload-modal">
                     <div class="col-xs-2 no-pad"><div class="serv-main-up upload">
                         <p><i class="fa fa-upload" aria-hidden="true"></i> Upload<p>
                     </div></div>
-                </a>
+                </a> -->
 
                 <!-- UPLOAD MODAL -->
                 <div class="modal fade" id="upload-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -77,8 +77,19 @@
         
             </div>
 
-            @yield('price-calculator')
-            
+            <div class="col-md-4">
+                <p class="list-head price">Options</p>
+                <p><b>Design</b></p>
+                <form>
+                    <fieldset id="design-option">
+                        <label class="col-xs-12 col-sm-6"><input type="radio" id="btn-dbrowse" name="optradio" value="" checked="true"> Browse</label>
+                        <label class="col-xs-12 col-sm-6"><input type="radio" id="btn-dupload" name="optradio" value=""> Upload</label>
+                    </fieldset>
+                </form>
+                <div class="clear"></div><hr>
+                @yield('price-calculator')
+            </div>
+
         </div>
     </div>
     <!-- /.row -->

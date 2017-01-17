@@ -68,8 +68,6 @@
 
 @section('price-calculator')
 <!-- Price Calculator -->
-<div class="col-md-4">
-    <p class="list-head price">Options</p>
     <p><b>Size</b></p>
     <select class="form-control" id="sel1">
         <option>6in x 4in</option>
@@ -105,6 +103,5 @@
     <br>-->
 
     <div class="col-xs-6 col-xs-offset-6 no-pad"><button type="button" class="btn btn-primary" style="width: 100%;">Confirm</button></div>
-</div>
 <!-- /.Price Calculator -->
 @stop

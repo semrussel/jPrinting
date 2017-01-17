@@ -50,3 +50,24 @@ $(window).scroll(function() {
  });
 
 // EPPZScrollTo.scrollVerticalToElementById('signup_form', 20);
+
+
+/*=========== BROWSE OR UPLOAD?? MAKE YER CHOICE SCRUB!!! ===========*/
+$(document).on('click', 'input', function(event){
+    if(this.id.indexOf('btn-d')== 0) {
+        // event.preventDefault();
+        
+        if(this.id == 'btn-dbrowse') {
+            document.getElementById('d-browse').style.display = "block";
+            document.getElementById('d-upload').style.display = "none";
+            // document.getElementById('d-browse').style.height = "auto";
+            // document.getElementById('d-upload').style.height = "0";
+        }
+        if(this.id == 'btn-dupload') {
+            document.getElementById('d-browse').style.display = "none";
+            document.getElementById('d-upload').style.display = "block";
+            // document.getElementById('d-browse').style.height = "0";
+            // document.getElementById('d-upload').style.height = "auto";
+        }
+    }
+});

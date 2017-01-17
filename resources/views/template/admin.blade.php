@@ -28,6 +28,8 @@
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Montserrat">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.css"/>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -66,7 +68,21 @@
     <!-- CUSTOM Script-->
     <!-- <script src="js/jb-printing.js"></script> -->
 
-    <script href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#' + location.pathname.split("-")[1]).addClass('active'); 
+        });
+
+        $(document).ready(function() {
+            $('#order-table').DataTable();
+        } );
+    </script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.js"></script>
+
+    <!-- <script href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script href="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script href="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script> -->
 
 </body>
 

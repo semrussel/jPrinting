@@ -67,8 +67,8 @@ Route::get('/services-brochures-quadfold', 'ServicesController@callBrochuresQuad
 
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin-dash', 'AdminController@adminDash');
-Route::get('/admin-order', 'AdminController@adminOrder');
-Route::get('/admin-request-for-quotes', 'AdminController@adminRequestQuotes');
+Route::get('/admin-orders', 'AdminController@adminOrders');
+Route::get('/admin-request-quotes', 'AdminController@adminRequestQuotes');
 Route::post('/admin-login', 'AdminController@login');
 
 Route::get('/request-quote', 'QuoteController@index');

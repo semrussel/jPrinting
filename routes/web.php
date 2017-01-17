@@ -19,6 +19,8 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
+Route::get('/login', 'HomeController@Login');
+
 Route::get('/services', 'ServicesController@index');
 
 Route::get('/services-calendars-poster', 'ServicesController@callCalendarsPoster');

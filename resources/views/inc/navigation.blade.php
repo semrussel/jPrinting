@@ -22,7 +22,8 @@
                 <li><a class="hover-orange" href="/request-quote">Request a Quote</a></li>
                 
                 @if (Auth::guest())
-                    <li><a class="hover-orange" href="#" data-toggle="modal" data-target="#login-modal">Login | Register</a></li>
+                    <!-- <li><a class="hover-orange" href="#" data-toggle="modal" data-target="#login-modal">Login | Register</a></li> -->
+                    <li><a class="hover-orange" href="/login">Login | Register</a></li>
                 @else
                     <li class="nav-divider"></li>
                     <li class="dropdown">

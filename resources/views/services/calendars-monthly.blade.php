@@ -8,7 +8,7 @@
             @for($i=1; $i<=6; $i++)
                 <div class="col-sm-6 col-md-4 no-pad-left">
                     <label style="display: block;">
-                        <div class="serv-img" style="background: url('img/calendars-monthly/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
+                        <div class="serv-browse" style="background: url('img/calendars-monthly/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
                         <div><p><input type="radio" id="brw-{{ $i }}" name="optradio" value=""
                         @if($i==1) checked="true" @endif >
                         Design #{{ $i }}

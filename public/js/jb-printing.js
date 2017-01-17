@@ -13,7 +13,7 @@ $(function() {
     if(location.pathname.split("/")[1] == "" || location.pathname.split("/")[1] == null) {
         $('.nav li a#home-nav').addClass('active');
     } else if(location.pathname.split("/")[1] == "admin") {
-        $('.ad-dash div a[href^="/' + location.pathnameh.split("-")[1] + '"]').addClass('active');
+        $('.ad-dash div a[href^="/' + location.pathname.split("-")[1] + '"]').addClass('active');
     } else {
         var highpath = location.pathname.split("/")[1];
         $('.nav li a[href^="/' + highpath.split("-")[0] + '"]').addClass('active');

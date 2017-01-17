@@ -59,4 +59,30 @@ class AdminController extends Controller
     	
     }
 
+    public function adminOrders(){
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                return view('admin.order');
+            }
+        }
+        
+    }
+
+    public function adminRequestQuotes(){
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                return view('admin.requestquote');
+            }
+        }
+        
+    }
+
 }

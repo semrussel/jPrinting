@@ -14,6 +14,22 @@ a, a:hover {
 .clear { clear:both; }
 .center { text-align: center; }
 
+.admin-table {
+	background-color: white;
+}
+.admin-button {
+	background-color: #2e4d50;
+    color: white;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.admin-button:hover {
+	background-color: #ff3d00;
+}
+
 /*---------------------------- NAVBAR ----------------------------*/
 
 	.navbar-inverse {

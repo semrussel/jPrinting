@@ -20,13 +20,14 @@
         </fieldset>
     </div>
     <div id="d-upload" class="design-box" style="display: none;"> 
-        <img src="img/serv-14.png" width="100%" style="border: 1px solid grey">
-        <a href="#" data-toggle="modal" data-target="#upload-modal">
-            <div class="col-xs-2 no-pad"><div class="serv-main-up upload">
-                <p><i class="fa fa-upload" aria-hidden="true"></i> Upload<p>
-            </div></div>
-        </a>
+        <img id="upload-img" src="img/serv-14.png" width="100%" style="border: 1px solid grey">
+        <div class="clear"></div><br>
+        <input class="btn btn-primary" type="file" name="pic" accept="image/*">
     </div>
+    <div class="clear"></div><hr>
+    <p><b>Additional Details</b></p>
+        <textarea class="form-control" rows="8" id="comment">Title:&#13;Sub Title:&#13;Date:&#13;Time:&#13;Address:&#13;Extras:&#13;Delivery Address:</textarea>
+    <div class="clear"></div><br>
 @stop
 
 @section('pricing') 
@@ -78,9 +79,6 @@
         <option>No Lamination</option>
         <option>Glossy/Matte Lamination</option>
     </select>
-    <div class="clear"></div><br>
-    <p><b>Additional Details</b></p>
-        <textarea class="form-control" rows="8" id="comment">Title:&#13;Sub Title:&#13;Date:&#13;Time:&#13;Address:&#13;Extras:&#13;Delivery Address:</textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>
@@ -96,6 +94,6 @@
     <div class="clear"></div>     
     <br>-->
 
-    <div class="col-xs-6 col-xs-offset-6 no-pad"><button type="button" class="btn btn-primary" style="width: 100%;">Confirm</button></div>
+    <div class="col-xs-6 col-xs-offset-6 no-pad"><button type="button" class="btn btn-primary" style="width: 100%;">Submit</button></div>
 <!-- /.Price Calculator -->
 @stop

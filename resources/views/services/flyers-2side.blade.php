@@ -76,13 +76,12 @@
     </select>
     <div class="clear"></div><br>
     <p><b>Additional Details</b></p>
-        <textarea class="form-control" rows="4" id="comment"></textarea>
+        <textarea class="form-control" rows="6" id="comment">Title:&#13;Sub Title:&#13;Front Text:&#13;Back Text:&#13;Extras:</textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="1" required></div>
-    <div class="clear"></div><br>
-    
+    <div class="clear"></div><br>Sub Title:&#13;Front Text:&#13;Back Text:&#13;Extras:
     <p><b>Shipping Cost</b> <i class="fa fa-tags" aria-hidden="true"></i></p>
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="$ 1.00" disabled="true"></div>
     <div class="clear"></div><hr>

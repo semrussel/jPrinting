@@ -87,9 +87,9 @@
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="1" required></div>
     <div class="clear"></div><br>
     
-    <p><b>Shipping Cost</b> <i class="fa fa-tags" aria-hidden="true"></i></p>
+    <!-- <p><b>Shipping Cost</b> <i class="fa fa-tags" aria-hidden="true"></i></p>
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="$ 1.00" disabled="true"></div>
-    <div class="clear"></div><hr>
+    <div class="clear"></div><hr> -->
     
     <!-- <p class="list-head price">TOTAL</p>
     <div class="col-xs-12 no-pad total-price">$ 1.00</div>

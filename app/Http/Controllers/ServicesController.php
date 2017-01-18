@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Parser;
+use Auth;
 
 
 class ServicesController extends Controller
@@ -17,116 +18,252 @@ class ServicesController extends Controller
     }
 
     public function callCalendarsPoster(){
-    	return view('services.calendars-poster');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.calendars-poster');
+        }
     }
     public function callCalendarsMonthly(){
-        return view('services.calendars-monthly');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.calendars-monthly');
+        }
     }
     public function callCalendarsTable(){
-        return view('services.calendars-table');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.calendars-table');
+        }
     }
     // --->
     public function callStickersRound(){
-        return view('services.stickers-round');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.stickers-round');
+        }
     }
     public function callStickersSquare(){
-        return view('services.stickers-square');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.stickers-square');
+        }
     }
      public function callStickersRectangle(){
-        return view('services.stickers-rectangle');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.stickers-rectangle');
+        }
     }
     // --->
     public function callInvitations(){
-        return view('services.invitations');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.invitations');
+        }
     }
     public function callNewsletters(){
-        return view('services.newsletters');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.newsletters');
+        }
     }
     public function callBooks(){
-        return view('services.books');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.books');
+        }
     }
     public function callYearbooks(){
-        return view('services.yearbooks');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.yearbooks');
+        }
     }
     // --->
     public function callBusinesscards1Side(){
-        return view('services.businesscards-1side');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.businesscards-1side');
+        }
     }
     public function callBusinesscards2Side(){
-        return view('services.businesscards-2side');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.businesscards-2side');
+        }
     }
     // --->
     public function callGiftwrappers(){
-        return view('services.giftwrappers');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.giftwrappers');
+        }
     }
     public function callSouvenirPrograms(){
-        return view('services.souvenirprograms');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.souvenirprograms');
+        }
     }
     public function callPaperBags(){
-        return view('services.paperbags');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.paperbags');
+        }
     }
 
     public function callBagtags(){
-        return view('services.bagtags');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.bagtags');
+        }
     }
     public function callCorporateFolders(){
-        return view('services.corporatefolders');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.corporatefolders');
+        }
     }
     // --->
     public function callTickets1Side(){
-        return view('services.tickets-1side');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.tickets-1side');
+        }
     }
     public function callTickets2Side(){
-        return view('services.tickets-2side');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.tickets-2side');
+        }
     }
     // --->
     public function callPosters(){
-        return view('services.posters');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.posters');
+        }
     }
     public function callOfficeforms(){
-        return view('services.officeforms');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.officeforms');
+        }
     }
     public function callCertificates(){
-        return view('services.certificates');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.certificates');
+        }
     }
     public function callBoxes(){
-        return view('services.boxes');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.boxes');
+        }
     }
     // --->
     public function callReceiptsCarbon(){
-        return view('services.receipts-carbon');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.receipts-carbon');
+        }
     }
     public function callReceiptsCarbonless(){
-        return view('services.receipts-carbonless');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.receipts-carbonless');
+        }
     }
     // --->
     public function callNotebooksWireSoft(){
-        return view('services.notebooks-wiresoft');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.notebooks-wiresoft');
+        }
     }
     public function callNotebooksWireHard(){
-        return view('services.notebooks-wirehard');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.notebooks-wirehard');
+        }
     }
     public function callNotebooksPerfectSoft(){
-        return view('services.notebooks-perfectsoft');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.notebooks-perfectsoft');
+        }
     }
     public function callNotebooksPerfectHard(){
-        return view('services.notebooks-perfecthard');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.notebooks-perfecthard');
+        }
     }
     // --->
     public function callFlyers1Side(){
-        return view('services.flyers-1side');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.flyers-1side');
+        }
     }
     public function callFlyers2Side(){
-        return view('services.flyers-2side');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.flyers-2side');
+        }
     }
     public function callBrochuresBifold(){
-        return view('services.brochures-bifold');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.brochures-bifold');
+        }
     }
     public function callBrochuresTrifold(){
-        return view('services.brochures-trifold');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.brochures-trifold');
+        }
     }
     public function callBrochuresQuadfold(){
-        return view('services.brochures-quadfold');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('services.brochures-quadfold');
+        }
     }
 
 }

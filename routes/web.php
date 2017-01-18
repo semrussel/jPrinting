@@ -76,4 +76,4 @@ Route::post('/admin-login', 'AdminController@login');
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');
 
-
+Route::post('/create-order', 'OrderController@create');

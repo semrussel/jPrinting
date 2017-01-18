@@ -80,7 +80,7 @@
     </select>
     <div class="clear"></div><br>
     <p><b>Additional Details</b></p>
-        <textarea class="form-control" rows="7" id="comment">Title:&#13;Sub Title:&#13;Date:&#13;Time:&#13;Address:&#13;Extras:</textarea>
+        <textarea class="form-control" rows="8" id="comment">Title:&#13;Sub Title:&#13;Date:&#13;Time:&#13;Address:&#13;Extras:&#13;Delivery Address:</textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

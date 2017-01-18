@@ -72,6 +72,9 @@
         <option>Cover: 300 gsm C2S(Colored) ; Inside: 100 gsm C2S (Colored)</option>
         <option>Cover: 300 gsm C2S(Colored) ; Inside: 100 gsm C2S (B/W)</option>
     </select>
+    <div class="clear"></div><br>
+    <p><b>Additional Details</b></p>
+        <textarea class="form-control" rows="4" id="comment"></textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

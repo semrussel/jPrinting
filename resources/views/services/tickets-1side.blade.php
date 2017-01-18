@@ -3,37 +3,30 @@
 @section('serv-name') <b>Services</b> | Tickets | 1-Side @stop
 
 @section('serv-img') 
-    <img src="img/serv-13.jpg" width="100%" style="border: 1px solid grey">
-@stop               
-
-@section('browse-modal') 
-<div class="modal fade" id="browse-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document" style="width: 80%">
-        <div class="modal-content browse">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Browse</h4>
-            </div>
-            <div class="modal-body">
-                
-                @for($i=1; $i<=5; $i++)
-                    <div class="col-sm-6 col-md-3">
-                        <a href="#">
-                            <img src="img/bl-shirt-0{{ $i }}.jpg" width="100%" style="border: 1px solid grey; margin-bottom: 5px">
-                            <p>Borderlands Shirt #{{ $i }}</p>
-                        </a>
-                    </div>
-                @endfor
-
-                <div class="clear"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Confirm</button>
-            </div>
-        </div>
+    <div id="d-browse" class="design-box">
+        <fieldset id="browse-field">
+            @for($i=1; $i<=5; $i++)
+                <div class="col-sm-6 col-md-4 no-pad-left">
+                    <label style="display: block;">
+                        <div class="serv-browse" style="background: url('img/tickets-1side/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
+                        <div><p><input type="radio" id="brw-{{ $i }}" name="optradio" value=""
+                        @if($i==1) checked="true" @endif >
+                        Design #{{ $i }}
+                        </input></p></div>
+                        </div>
+                    </label>
+                </div>
+            @endfor
+        </fieldset>
     </div>
-</div>
+    <div id="d-upload" class="design-box" style="display: none;"> 
+        <img src="img/serv-13.jpg" width="100%" style="border: 1px solid grey">
+        <a href="#" data-toggle="modal" data-target="#upload-modal">
+            <div class="col-xs-2 no-pad"><div class="serv-main-up upload">
+                <p><i class="fa fa-upload" aria-hidden="true"></i> Upload<p>
+            </div></div>
+        </a>
+    </div>
 @stop
 
 @section('pricing') 
@@ -87,6 +80,9 @@
         <option>Micro perforation</option>
         <option>Triangle perforation</option>
     </select>
+    <div class="clear"></div><br>
+    <p><b>Additional Details</b></p>
+        <textarea class="form-control" rows="4" id="comment"></textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

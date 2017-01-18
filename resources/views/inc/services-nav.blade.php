@@ -27,11 +27,11 @@
     <!-- ======================================================== 5 -->
     <a href="/services-paper-bags" class="list-group-item"><b>Paper Bags</b></a>
     <!-- ======================================================== 6 -->
-    <a href="/services-bag-tags" class="list-group-item"><b>PVC ID / Bag Tags</b></a>
+    <!-- <a href="/services-bag-tags" class="list-group-item"><b>PVC ID / Bag Tags</b></a> -->
     <!-- ======================================================== 7 -->
     <a href="/services-invitations" class="list-group-item"><b>Invitations</b></a>
     <!-- ======================================================== 8 -->
-    <a href="/services-newsletters" class="list-group-item"><b>News Letters</b></a>
+    <!-- <a href="/services-newsletters" class="list-group-item"><b>News Letters</b></a> -->
     <!-- ======================================================== 9 -->
     <a class="list-group-item" data-remote="true" href="#sub-9" id="cat-9" data-toggle="collapse" data-parent="#sub-9">
         <span><b>Business Cards</b></span>
@@ -42,7 +42,7 @@
         <a href="/services-business-cards-2side" class="list-group-item sub-item">Business Card, 2-side</a>
     </div>
     <!-- ======================================================== 1 -->
-    <a href="/services-corporate-folders" class="list-group-item"><b>Corporate Folders</b></a>
+    <!-- <a href="/services-corporate-folders" class="list-group-item"><b>Corporate Folders</b></a> -->
     <!-- ======================================================== 10 -->
     <a class="list-group-item" data-remote="true" href="#sub-10" id="cat-10" data-toggle="collapse" data-parent="#sub-10">
         <span><b>Tickets</b></span>
@@ -57,11 +57,11 @@
     <!-- ======================================================== 12 -->
     <a href="/services-office-forms" class="list-group-item"><b>Office Forms</b></a>
     <!-- ======================================================== 13 -->
-    <a href="/services-yearbooks" class="list-group-item"><b>Yearbooks</b></a>
+    <!-- <a href="/services-yearbooks" class="list-group-item"><b>Yearbooks</b></a> -->
     <!-- ======================================================== 14 -->
     <a href="/services-certificates" class="list-group-item"><b>Certificates</b></a>
     <!-- ======================================================== 15 -->
-    <a href="/services-boxes" class="list-group-item"><b>Boxes</b></a>
+    <!-- <a href="/services-boxes" class="list-group-item"><b>Boxes</b></a> -->
     <!-- ======================================================== 16 -->
     <a class="list-group-item" data-remote="true" href="#sub-16" id="cat-16" data-toggle="collapse" data-parent="#sub-16">
         <span><b>Receipts</b></span>
@@ -72,7 +72,7 @@
         <a href="/services-receipts-carbonless" class="list-group-item sub-item">Carbonless Form</a>
     </div>
     <!-- ======================================================== 17 -->
-    <a href="/services-gift-wrappers" class="list-group-item"><b>Gift Wrappers</b></a>
+    <!-- <a href="/services-gift-wrappers" class="list-group-item"><b>Gift Wrappers</b></a> -->
     <!-- ======================================================== 18 -->
     <a class="list-group-item" data-remote="true" href="#sub-18" id="cat-18" data-toggle="collapse" data-parent="#sub-18">
         <span><b>Notebooks</b></span>

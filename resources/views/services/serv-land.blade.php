@@ -29,6 +29,8 @@
                             <i class="fa fa-caret-left" aria-hidden="true"></i>
                         </div>
                     </div>
+            </div>
+            <div class="col-md-6">
                 <!-- </a> -->
                 <!-- <a href="/services-stickers"> -->
                     <div class="serv-box-sm">
@@ -55,14 +57,14 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services-newsletters">
+                <!-- <a href="/services-newsletters">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-04.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>News Letters</b></h4>
                         </div>
                     </div>
-                </a>
+                </a> -->
             </div>
 
             <div class="col-md-6">
@@ -74,14 +76,14 @@
                         </div>
                     </div>
                 </a>
-                <a href="/services-yearbooks">
+                <!-- <a href="/services-yearbooks">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-06.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Yearbooks</b></h4>
                         </div>
                     </div>
-                </a>
+                </a> -->
             </div>
 
             <div class="col-md-6">
@@ -98,14 +100,14 @@
                         </div>
                     </div>
                 <!-- </a> -->
-                <a href="/services-gift-wrappers">
+                <!-- <a href="/services-gift-wrappers">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-08.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Gift Wrappers</b></h4>
                         </div>
                     </div>
-                </a>
+                </a> -->
             </div>
 
             <div class="col-md-6">
@@ -117,6 +119,8 @@
                         </div>
                     </div>
                 </a>
+            </div>
+            <div class="col-md-6">
                 <a href="/services-paper-bags">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-10.jpg'); background-size: cover; background-position: center center;"></div>
@@ -127,7 +131,7 @@
                 </a>
             </div>
 
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <a href="/services-bag-tags">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-11.jpg'); background-size: cover; background-position: center center;"></div>
@@ -144,7 +148,7 @@
                         </div>
                     </div>
                 </a>
-            </div>
+            </div> -->
 
             <div class="col-md-6">
                 <!-- <a href="/services-tickets"> -->
@@ -160,6 +164,8 @@
                         </div>
                     </div>
                 <!-- </a> -->
+            </div>
+            <div class="col-md-6">
                 <a href="/services-posters">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-14.png'); background-size: cover; background-position: center center;"></div>
@@ -179,6 +185,8 @@
                         </div>
                     </div>
                 </a>
+            </div>
+            <div class="col-md-6">
                 <a href="/services-certificates">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-16.jpg'); background-size: cover; background-position: center center;"></div>
@@ -190,14 +198,14 @@
             </div>
 
             <div class="col-md-6">
-                <a href="/services-boxes">
+                <!-- <a href="/services-boxes">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-17.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
                             <h4><b>Boxes</b></h4>
                         </div>
                     </div>
-                </a>
+                </a> -->
                 <!-- <a href="/services-receipts"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-18.jpg'); background-size: cover; background-position: center center;"></div>
@@ -229,6 +237,8 @@
                         </div>
                     </div>
                 <!-- </a> -->
+            </div>
+            <div class="col-md-6">
                 <!-- <a href="/services-flyers-brochures"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-20.jpg'); background-size: cover; background-position: center center;"></div>

@@ -60,7 +60,7 @@
             </div>
 
             <div class="col-md-4">
-                <a href="/services-calendars">
+                <!-- <a href="/services-calendars"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-01.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
@@ -73,8 +73,8 @@
                             <i class="fa fa-caret-left" aria-hidden="true"></i>
                         </div>
                     </div>
-                </a>
-                <a href="/services-stickers">
+                <!-- </a> -->
+                <!-- <a href="/services-stickers"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-02.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
@@ -87,7 +87,7 @@
                             <i class="fa fa-caret-left" aria-hidden="true"></i>
                         </div>
                     </div>
-                </a>
+                <!-- </a> -->
             </div>
 
             <a href="/services-invitations">
@@ -102,14 +102,19 @@
             </a>
 
             <div class="col-md-4">
-                <a href="/services-newsletters">
+                <!-- <a href="/services-newsletters"> -->
                     <div class="serv-box-sm">
-                        <div class="serv-img" style="background: url('img/serv-04.jpg'); background-size: cover; background-position: center center;"></div>
+                        <div class="serv-img" style="background: url('img/serv-13.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
-                            <h4><b>News Letters</b></h4>
+                            <h4><b>Tickets</b></h4>
+                        </div>
+                        <div class="serv-sub">
+                            <a href="/services-tickets-1side"><div class="serv-sub-item">Tickets, 1-side</div></a>
+                            <a href="/services-tickets-2side"><div class="serv-sub-item">Tickets, 2-side</div></a>
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
                         </div>
                     </div>
-                </a>
+                <!-- </a> -->
                 <a href="/services-books">
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-05.jpeg'); background-size: cover; background-position: center center;"></div>
@@ -120,19 +125,19 @@
                 </a>
             </div>
 
-            <a href="/services-yearbooks">
+            <a href="/services-posters">
                 <div class="col-md-4">
                     <div class="serv-box">
-                        <div class="serv-img" style="background: url('img/serv-06.jpg'); background-size: cover; background-position: center center;"></div>
+                        <div class="serv-img" style="background: url('img/serv-14.png'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
-                            <h4><b>Yearbooks</b></h4>
+                            <h4><b>Posters</b></h4>
                         </div>
                     </div>
                 </div>
             </a>
 
             <div class="col-md-4">
-                <a href="/services-business-cards">
+                <!-- <a href="/services-business-cards"> -->
                     <div class="serv-box-sm">
                         <div class="serv-img" style="background: url('img/serv-07.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
@@ -144,12 +149,12 @@
                             <i class="fa fa-caret-left" aria-hidden="true"></i>
                         </div>
                     </div>
-                </a>
-                <a href="/services-gift-wrappers">
+                <!-- </a> -->
+                <a href="/services-office-forms">
                     <div class="serv-box-sm">
-                        <div class="serv-img" style="background: url('img/serv-08.jpg'); background-size: cover; background-position: center center;"></div>
+                        <div class="serv-img" style="background: url('img/serv-15.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
-                            <h4><b>Gift Wrappers</b></h4>
+                            <h4><b>Office Forms</b></h4>
                         </div>
                     </div>
                 </a>

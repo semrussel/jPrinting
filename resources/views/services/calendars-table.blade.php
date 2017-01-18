@@ -66,6 +66,9 @@
         <option>5.5in x 8.25in</option>
         <option>8.25in x 4in</option>
     </select>
+    <div class="clear"></div><br>
+    <p><b>Additional Details</b></p>
+        <textarea class="form-control" rows="4" id="comment"></textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

@@ -26,7 +26,7 @@
     </div>
     <div class="clear"></div><hr>
     <p><b>Additional Details</b></p>
-        <textarea class="form-control" rows="8" id="comment">Title:&#13;Sub Title:&#13;Date:&#13;Time:&#13;Address:&#13;Extras:&#13;Delivery Address:</textarea>
+        <textarea class="form-control" rows="7" id="comment">Title:&#13;Sub Title:&#13;Date:&#13;Time:&#13;Address:&#13;Extras:&#13;</textarea>
     <div class="clear"></div><br>
 @stop
 
@@ -85,9 +85,9 @@
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="1" required></div>
     <div class="clear"></div><br>
     
-    <!-- <p><b>Shipping Cost</b> <i class="fa fa-tags" aria-hidden="true"></i></p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="$ 1.00" disabled="true"></div>
-    <div class="clear"></div><hr> -->
+    <p><b>Delivery Address</b></p>
+    <div class="col-xs-12 no-pad"><textarea class="form-control" rows="3" id="delivery-address"></textarea></div>
+    <div class="clear"></div><hr>
     
     <!-- <p class="list-head price">TOTAL</p>
     <div class="col-xs-12 no-pad total-price">$ 1.00</div>

@@ -31,7 +31,7 @@
 
 @section('pricing') 
 <!-- Pricing -->
-<div class="clear"></div><br>
+<!-- <div class="clear"></div><br>
 <p class="list-head price" style="background-color: grey; margin: 0;">Pricing</p>
 <table class="tg">
     <tr>
@@ -54,7 +54,7 @@
         <td class="tg-yw4l"> 1</td>
         <td class="tg-yw4l"> $ 10.00</td>
     </tr>
-</table>
+</table> -->
 <!-- /.Pricing -->
 
 @stop
@@ -72,6 +72,10 @@
         <option>Cover: 300 gsm C2S(Colored) ; Inside: 100 gsm C2S (Colored)</option>
         <option>Cover: 300 gsm C2S(Colored) ; Inside: 100 gsm C2S (B/W)</option>
     </select>
+    <div class="clear"></div><br>
+    <p><b>Additional Details</b></p>
+        <textarea class="form-control" rows="5" id="comment">Title:&#13;Sub Title:&#13;Date:&#13;Extras:
+        </textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

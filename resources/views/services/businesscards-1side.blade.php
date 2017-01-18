@@ -9,7 +9,7 @@
                 <div class="col-sm-6 col-md-4 no-pad-left">
                     <label style="display: block;">
                         <div class="serv-browse" style="background: url('img/businesscards-1side/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
-                        <div><p><input type="radio" id="brw-{{ $i }}" name="optradio" value=""
+                        <div><p><input type="radio" id="brw-{{ $i }}" name="design" value="{{ $i }}"
                         @if($i==1) checked="true" @endif >
                         Design #{{ $i }}
                         </input></p></div>
@@ -20,13 +20,14 @@
         </fieldset>
     </div>
     <div id="d-upload" class="design-box" style="display: none;"> 
-        <img src="img/serv-07.jpg" width="100%" style="border: 1px solid grey">
-        <a href="#" data-toggle="modal" data-target="#upload-modal">
-            <div class="col-xs-2 no-pad"><div class="serv-main-up upload">
-                <p><i class="fa fa-upload" aria-hidden="true"></i> Upload<p>
-            </div></div>
-        </a>
+        <img id="upload-img" name="file" src="img/serv-07.jpg" width="100%" style="border: 1px solid grey">
+        <div class="clear"></div><br>
+        <input class="btn btn-primary" type="file" name="pic" accept="image/*">
     </div>
+    <div class="clear"></div><hr>
+    <p><b>Additional Details</b></p>
+        <textarea name="description" class="form-control" rows="6" id="comment" required>Name:&#13;Company:&#13;Contact No:&#13;Address:&#13;Website:&#13;Extras:</textarea>
+    <div class="clear"></div><br>
 @stop
 
 @section('pricing') 
@@ -62,13 +63,13 @@
 @section('price-calculator')
 <!-- Price Calculator -->
     <p><b>Size</b></p>
-    <select class="form-control" id="sel1">
+    <select class="form-control" id="sel1" name="size">
         <option>2 IN x 3.5 IN</option>
         <option>3.5 X 2 IN</option>
     </select>
     <div class="clear"></div><br>
     <p><b>Paper Type</b></p>
-    <select class="form-control" id="sel1">
+    <select class="form-control" id="sel2" name="paper">
         <option>C2S 300 gsm</option>
         <option>C2S 350 gsm</option>
         <option>Bevania 300 gsm (White, Ivory)</option>
@@ -76,32 +77,28 @@
     </select>
     <div class="clear"></div><br>
     <p><b>Lamination</b></p>
-    <select class="form-control" id="sel1">
+    <select class="form-control" id="sel3" name="lamination">
         <option>No lamination</option>
         <option>Matte lamination</option>
         <option>Glossy lamination</option>
     </select>
     <div class="clear"></div><br>
     <p><b>Rounded Corners</b></p>
-    <select class="form-control" id="sel1">
+    <select class="form-control" id="sel4" name="corner">
         <option>No rounded</option>
         <option>1-Corner</option>
         <option>2-Corner</option>
         <option>3-Corner</option>
         <option>4-Corner</option>
     </select>
-    <div class="clear"></div><br>
-    <p><b>Additional Details</b></p>
-        <textarea class="form-control" rows="7" id="comment">Name:&#13;Company:&#13;Contact No:&#13;Address:&#13;Website:&#13;Extras:
-        </textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="1" required></div>
+    <div class="col-xs-12 no-pad"><input name="quantity" type="text" id="width" class="form-control" placeholder="1" required></div>
     <div class="clear"></div><br>
     
-    <p><b>Shipping Cost</b> <i class="fa fa-tags" aria-hidden="true"></i></p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="$ 1.00" disabled="true"></div>
+    <p><b>Delivery Address</b></p>
+    <div class="col-xs-12 no-pad"><textarea name="address" class="form-control" rows="3" id="delivery-address" required></textarea></div>
     <div class="clear"></div><hr>
     
     <!-- <p class="list-head price">TOTAL</p>
@@ -109,6 +106,7 @@
     <div class="clear"></div>     
     <br>-->
 
-    <div class="col-xs-6 col-xs-offset-6 no-pad"><button type="button" class="btn btn-primary" style="width: 100%;">Confirm</button></div>
+    <input type="hidden" value="business cards | 1-side" name="product">
+    <div class="col-xs-6 col-xs-offset-6 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 <!-- /.Price Calculator -->
 @stop

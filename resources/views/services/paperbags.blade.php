@@ -20,13 +20,14 @@
         </fieldset>
     </div>
     <div id="d-upload" class="design-box" style="display: none;"> 
-        <img src="img/serv-10.jpg" width="100%" style="border: 1px solid grey">
-        <a href="#" data-toggle="modal" data-target="#upload-modal">
-            <div class="col-xs-2 no-pad"><div class="serv-main-up upload">
-                <p><i class="fa fa-upload" aria-hidden="true"></i> Upload<p>
-            </div></div>
-        </a>
+        <img id="upload-img" src="img/serv-10.jpg" width="100%" style="border: 1px solid grey">
+        <div class="clear"></div><br>
+        <input class="btn btn-primary" type="file" name="pic" accept="image/*">
     </div>
+    <div class="clear"></div><hr>
+    <p class="col-xs-12"><b>Additional Details</b></p>
+    <textarea class="form-control" rows="4" id="comment">Extras:&#13;Delivery Address:</textarea>
+    <div class="clear"></div><br>
 @stop
 
 @section('pricing') 
@@ -134,18 +135,11 @@
         <option>#16</option>
         <option>#25</option> 
     </select>
-    <div class="clear"></div><br>
-    <p><b>Additional Details</b></p>
-        <textarea class="form-control" rows="4" id="comment"></textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="1" required></div>
     <div class="clear"></div><br>
-    
-    <p><b>Shipping Cost</b> <i class="fa fa-tags" aria-hidden="true"></i></p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="$ 1.00" disabled="true"></div>
-    <div class="clear"></div><hr>
     
     <!-- <p class="list-head price">TOTAL</p>
     <div class="col-xs-12 no-pad total-price">$ 1.00</div>

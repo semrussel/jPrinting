@@ -31,7 +31,7 @@
 
 @section('pricing') 
 <!-- Pricing -->
-<div class="clear"></div><br>
+<!-- <div class="clear"></div><br>
 <p class="list-head price" style="background-color: grey; margin: 0;">Pricing</p>
 <table class="tg">
     <tr>
@@ -54,7 +54,7 @@
         <td class="tg-yw4l"> 1</td>
         <td class="tg-yw4l"> $ 10.00</td>
     </tr>
-</table>
+</table> -->
 <!-- /.Pricing -->
 
 @stop

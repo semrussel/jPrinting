@@ -115,11 +115,11 @@
                         </div>
                     </div>
                 <!-- </a> -->
-                <a href="/services-books">
+                <a href="/services-paper-bags">
                     <div class="serv-box-sm">
-                        <div class="serv-img" style="background: url('img/serv-05.jpeg'); background-size: cover; background-position: center center;"></div>
+                        <div class="serv-img" style="background: url('img/serv-10.jpg'); background-size: cover; background-position: center center;"></div>
                         <div class="serv-heading">
-                            <h4><b>Books</b></h4>
+                            <h4><b>Paper Bags</b></h4>
                         </div>
                     </div>
                 </a>

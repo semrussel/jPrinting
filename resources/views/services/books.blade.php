@@ -20,13 +20,13 @@
         </fieldset>
     </div>
     <div id="d-upload" class="design-box" style="display: none;"> 
-        <img id="upload-img" src="img/serv-05.jpeg" width="100%" style="border: 1px solid grey">
+        <img id="upload-img" name="file" src="img/serv-05.jpeg" width="100%" style="border: 1px solid grey">
         <div class="clear"></div><br>
         <input class="btn btn-primary" type="file" name="pic" accept="image/*">
     </div>
     <div class="clear"></div><hr>
-    <p class="col-xs-12"><b>Additional Details</b></p>
-    <textarea class="form-control" rows="5" id="comment">Title&#13;Sub Title:&#13;Extras:&#13;Delivery Address:</textarea>
+    <p><b>Additional Details</b></p>
+        <textarea name="description" class="form-control" rows="7" id="comment">Title:&#13;Sub Title:&#13;Extras:&#13;</textarea>
     <div class="clear"></div><br>
 @stop               
 
@@ -88,6 +88,10 @@
     <p><b>Quantity</b></p>
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="1" required></div>
     <div class="clear"></div><br>
+    
+    <p><b>Delivery Address</b></p>
+    <div class="col-xs-12 no-pad"><textarea class="form-control" rows="3" id="delivery-address"></textarea></div>
+    <div class="clear"></div><hr>
     
     <!-- <p class="list-head price">TOTAL</p>
     <div class="col-xs-12 no-pad total-price">$ 1.00</div>

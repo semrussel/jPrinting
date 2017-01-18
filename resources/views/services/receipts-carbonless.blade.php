@@ -84,7 +84,8 @@
     </select>
     <div class="clear"></div><br>
     <p><b>Additional Details</b></p>
-        <textarea class="form-control" rows="4" id="comment"></textarea>
+        <textarea class="form-control" rows="4" id="comment">Company:&#13;Address:&#13;Contact No:
+        </textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

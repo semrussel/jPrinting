@@ -76,7 +76,7 @@
     </select>
     <div class="clear"></div><br>
     <p><b>Additional Details</b></p>
-        <textarea class="form-control" rows="4" id="comment"></textarea>
+        <textarea class="form-control" rows="5" id="comment">Title:&#13;Sub Title:&#13;Front Text:&#13;Extras:</textarea>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>

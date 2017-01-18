@@ -20,7 +20,7 @@
         </fieldset>
     </div>
     <div id="d-upload" class="design-box" style="display: none;"> 
-        <img src="img/serv-14.png" width="100%" style="border: 1px solid grey">
+        <img id="upload-img" src="img/serv-14.png" width="100%" style="border: 1px solid grey">
         <div class="clear"></div><br>
         <input class="btn btn-primary" type="file" name="pic" accept="image/*">
     </div>
@@ -94,6 +94,6 @@
     <div class="clear"></div>     
     <br>-->
 
-    <div class="col-xs-6 col-xs-offset-6 no-pad"><button type="button" class="btn btn-primary" style="width: 100%;">Confirm</button></div>
+    <div class="col-xs-6 col-xs-offset-6 no-pad"><button type="button" class="btn btn-primary" style="width: 100%;">Submit</button></div>
 <!-- /.Price Calculator -->
 @stop

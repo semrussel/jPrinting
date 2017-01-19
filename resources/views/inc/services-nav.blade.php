@@ -13,7 +13,7 @@
         <a href="/services-calendars-table" class="list-group-item sub-item">Table Tent Calendar</a>
     </div>
     <!-- ======================================================== 3 -->
-    <a href="/services-books" class="list-group-item"><b>Books</b></a>
+    <!-- <a href="/services-books" class="list-group-item"><b>Books</b></a> -->
     <!-- ======================================================== 4-->
     <a class="list-group-item" data-remote="true" href="#sub-4" id="cat-4" data-toggle="collapse" data-parent="#sub-4">
         <span><b>Stickers / Labels</b></span>

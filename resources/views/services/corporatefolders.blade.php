@@ -95,8 +95,8 @@
     <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="1" required></div>
     <div class="clear"></div><br>
     
-    <p><b>Shipping Cost</b> <i class="fa fa-tags" aria-hidden="true"></i></p>
-    <div class="col-xs-12 no-pad"><input type="text" id="width" class="form-control" placeholder="$ 1.00" disabled="true"></div>
+    <p><b>Delivery Address</b></p>
+    <div class="col-xs-12 no-pad"><textarea class="form-control" rows="3" id="delivery-address"></textarea></div>
     <div class="clear"></div><hr>
     
     <!-- <p class="list-head price">TOTAL</p>

@@ -23,12 +23,12 @@
 			            </tr>
 			        </thead>
 			        <tbody>
-			        	@for($i=1; $i<=25; $i++)
+			        	@for($i=0; $i<count($orders); $i++)
 				            <tr>
-				                <td>{{ $i }}</td>
-				                <td>Invitation</td>
-				                <td>100</td>
-				                <td>Active</td>
+				                <td>{{ $orders[$i]->id }}</td>
+				                <td>{{ ucwords($orders[$i]->product) }}</td>
+				                <td>{{ ucwords($orders[$i]->quantity) }}</td>
+				                <td>{{ ucwords($orders[$i]->status) }}</td>
 				                <td><button class="admin-button">Send Price</button></td>
 				            </tr>
 			            @endfor

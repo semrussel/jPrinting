@@ -9,7 +9,7 @@
                 <div class="col-sm-6 col-md-4 no-pad-left">
                     <label style="display: block;">
                         <div class="serv-browse" style="background: url('img/posters/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
-                        <div><p><input type="radio" id="brw-{{ $i }}" name="optradio" value=""
+                        <div><p><input type="radio" id="brw-{{ $i }}" name="design" value="{{ $i }}"
                         @if($i==1) checked="true" @endif >
                         Design #{{ $i }}
                         </input></p></div>
@@ -26,7 +26,7 @@
     </div>
     <div class="clear"></div><hr>
     <p><b>Additional Details</b></p>
-        <textarea name="description" class="form-control" rows="7" id="comment">Title:&#13;Sub Title:&#13;Date:&#13;Time:&#13;Address:&#13;Extras:&#13;</textarea>
+        <textarea name="description" class="form-control" rows="7" id="comment" required>Title:&#13;Sub Title:&#13;Date:&#13;Time:&#13;Address:&#13;Extras:&#13;</textarea>
     <div class="clear"></div><br>
 @stop
 
@@ -68,7 +68,7 @@
     </select>
     <div class="clear"></div><br>
     <p><b>Paper Type</b></p>
-    <select class="form-control" id="sel2" name="paper">
+    <select class="form-control" id="sel2" name="paperType">
         <option>C2S 100/170 gsm</option>
         <option>Foldcote 12</option>
         <option>Old Mill/Bevania 300 gsm (White or Ivory only)</option>
@@ -77,23 +77,24 @@
     <p><b>Lamination</b></p>
     <select class="form-control" id="sel3" name="lamination">
         <option>No Lamination</option>
-        <option>Glossy/Matte Lamination</option>
+        <option>Glossy Lamination</option>
+        <option>Matte Lamination</option>
     </select>
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>
-    <div class="col-xs-12 no-pad"><input name="quality" type="text" id="width" class="form-control" placeholder="1" required></div>
+    <div class="col-xs-12 no-pad"><input name="quantity" type="text" id="width" class="form-control" placeholder="1" required></div>
     <div class="clear"></div><br>
     
     <p><b>Delivery Address</b></p>
-    <div class="col-xs-12 no-pad"><textarea name="address" class="form-control" rows="3" id="delivery-address"></textarea></div>
+    <div class="col-xs-12 no-pad"><textarea name="address" class="form-control" rows="3" id="delivery-address" required></textarea></div>
     <div class="clear"></div><hr>
     
     <!-- <p class="list-head price">TOTAL</p>
     <div class="col-xs-12 no-pad total-price">$ 1.00</div>
     <div class="clear"></div>     
     <br>-->
-
+    <input type="hidden" value="poster" name="product">
     <div class="col-xs-6 col-xs-offset-6 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 <!-- /.Price Calculator -->
 

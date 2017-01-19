@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Parser;
 use Auth;
-
+use DB;
 
 class AdminController extends Controller
 {
@@ -66,7 +66,12 @@ class AdminController extends Controller
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
-                return view('admin.order');
+
+                $orders = DB::table('orders')->orderBy('updated_at','desc')->get();
+
+                //return $orders;
+
+                return view('admin.order')->with('orders',$orders);
             }
         }
         

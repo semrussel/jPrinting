@@ -264,4 +264,37 @@
 </div>
 <!-- container -->
 
+<!-- success modal -->
+<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Order</h4>
+            </div>
+            <div class="modal-body">
+                
+                <div class="center">
+                    <i class="fa fa-check-circle" aria-hidden="true" style="color: #8BC34A; font-size: 120px;"></i>
+                    <h2>Order Completed!</h2>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Continue</button>
+                <!-- <button type="button" class="btn btn-primary">Confirm</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@if(isset($_GET['check']))
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#success-modal").modal("show")
+    });
+</script>
+@endif
+
 @stop

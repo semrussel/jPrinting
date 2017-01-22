@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/login', 'HomeController@Login');
 
+Route::get('/profile', 'UserController@Profile');
+
 Route::get('/services', 'ServicesController@index');
 
 Route::get('/services-calendars-poster', 'ServicesController@callCalendarsPoster');
@@ -70,6 +72,7 @@ Route::get('/services-brochures-quadfold', 'ServicesController@callBrochuresQuad
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin-dash', 'AdminController@adminDash');
 Route::get('/admin-orders', 'AdminController@adminOrders');
+Route::get('/admin-orders-view', 'AdminController@adminOrdersView'); //order-view
 Route::get('/admin-request-quotes', 'AdminController@adminRequestQuotes');
 Route::post('/admin-login', 'AdminController@login');
 

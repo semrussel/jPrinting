@@ -29,7 +29,7 @@
 				                <td>Invitation</td>
 				                <td>100</td>
 				                <td>Active</td>
-				                <td><button class="admin-button">Send Price</button></td>
+				                <td><button class="admin-button">View Request</button></td>
 				            </tr>
 			            @endfor
 		            </tbody>

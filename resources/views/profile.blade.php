@@ -14,15 +14,16 @@
         <div class="col-md-3">
             @include('inc/sidebar')
         </div>
-        <h3 class="serv-main-title col-md-offset-3"><b>Registration</b></h3>
+        <h3 class="serv-main-title col-md-offset-3"><b>User Profile</b></h3>
         <div class="col-md-9 serv-main-box">
 
-            <div class="page-header-border"></div>
-            <h2 class="page-header serv">Customer Information</h2>
-            <div class="clear"></div>
+            <div class="col-xs-12">
+                <div class="page-header-border"></div>
+                <h2 class="page-header serv">Customer Information</h2>
+                <div class="clear"></div>
+            </div>
 
             <div class="col-md-8">
-
 
                 <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                     {{ csrf_field() }}
@@ -74,17 +75,18 @@
                         <label for="password" class="col-md-4 control-label">Password</label>
 
                         <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password" required>
+                            <button class="btn btn-primary" href="#">Change Password</button>
+                            <!-- <input id="password" type="password" class="form-control" name="password" required>
 
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password') }}</strong>
                                 </span>
-                            @endif
+                            @endif -->
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
                         <div class="col-md-6">
@@ -98,45 +100,43 @@
                                 Register
                             </button>
                         </div>
-                    </div>
+                    </div> -->
                 </form>
 
             </div>
+            <div class="clear"></div>
 
-
-            <!-- <div class="col-lg-12">
+            <div class="col-xs-12">
                 <div class="page-header-border"></div>
-                <h2 class="page-header serv">Customer Information</h2>
+                <h2 class="page-header serv">Order List</h2>
                 <div class="clear"></div>
-
-                <div class="col-md-6">
-                    <input type="text" id="fname" class="form-control" placeholder="First Name" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="Street" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="State" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="Zip Code" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="Company Name" required>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" id="sname" class="form-control" placeholder="Last Name" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="Country" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="City" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="Phone" required>
-                </div>
             </div>
-            <div class="col-lg-12">
-                <div class="page-header-border"></div>
-                <h2 class="page-header serv">Login Information</h2>
-                <div class="clear"></div>
 
-                <div class="col-md-6">
-                    <input type="text" id="fname" class="form-control" placeholder="Email" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="Password" required><br>
-                    <input type="text" id="street" class="form-control" placeholder="Confirm Password" required><br>
+            <div class="col-md-12">
+                <table id="order-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                            <!-- <th>Action</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for($i=0; $i<15; $i++)
+                            <tr>
+                                <td>{{ $i }}</td>
+                                <td>Product</td>
+                                <td>100</td>
+                                <td>On the Way</td>
+                                <!-- <td><button class="admin-button">Cancel</button></td> -->
+                            </tr>
+                        @endfor
+                    </tbody>
+                </table>
+            </div>
 
-                    <button type="button" class="btn btn-primary">Submit</button>
-                    <div class="clear"></div><br>
-                </div>
-            </div> -->
         </div>
     </div>
     <!-- /.row -->

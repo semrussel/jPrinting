@@ -29,7 +29,7 @@
 				                <td>{{ ucwords($orders[$i]->product) }}</td>
 				                <td>{{ ucwords($orders[$i]->quantity) }}</td>
 				                <td>{{ ucwords($orders[$i]->status) }}</td>
-				                <td><button class="admin-button">Send Price</button></td>
+				                <td><button href="/admin-orders-view" class="admin-button">View Order</button></td>
 				            </tr>
 			            @endfor
 		            </tbody>

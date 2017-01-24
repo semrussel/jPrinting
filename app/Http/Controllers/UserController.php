@@ -28,6 +28,10 @@ class UserController extends Controller
 
     public function Profile()
     {
-        return view('profile');
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+            return view('profile');
+        }
     }
 }

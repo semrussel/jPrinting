@@ -49,8 +49,8 @@
                 <p><b>Design</b></p>
                 
                     <fieldset id="design-option">
-                        <label class="col-xs-12 col-sm-6"><input type="radio" id="btn-dbrowse" name="designType" value="" checked="true"> Browse</label>
-                        <label class="col-xs-12 col-sm-6"><input type="radio" id="btn-dupload" name="designType" value=""> Upload</label>
+                        <label class="col-xs-12 col-sm-6"><input value="Browse" type="radio" id="btn-dbrowse" name="designType" value="" checked="true"> Browse</label>
+                        <label class="col-xs-12 col-sm-6"><input value="Upload" type="radio" id="btn-dupload" name="designType" value=""> Upload</label>
                     </fieldset>
                 
                 <div class="clear"></div><hr>

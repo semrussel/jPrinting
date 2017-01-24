@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/">
-                <img id="jb-logo" src="img/jb_logo.jpg" width="100px">
+                <img id="jb-logo" src="{{ url('img/jb_logo.jpg') }}" width="100px">
                 <span id="jb-title"><b>Jimbes</b> Printing</span>
             </a>
         </div>

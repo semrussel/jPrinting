@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Twilio;
+use Auth;
+use Session;
 
 class HomeController extends Controller
 {
@@ -51,6 +53,6 @@ class HomeController extends Controller
         Auth::logout();
         Session::flush();
 
-        return redirect('/login');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/login');
     }
 }

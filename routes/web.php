@@ -27,6 +27,7 @@ Route::get('/profile', 'UserController@Profile');
 Route::get('/profile-order/{id}', 'UserController@ProfileOrder');
 Route::get('/profile-request', 'UserController@ProfileRequest');
 
+
 Route::get('/services', 'ServicesController@index');
 
 Route::get('/services-calendars-poster', 'ServicesController@callCalendarsPoster');
@@ -87,3 +88,6 @@ Route::post('/create-request', 'QuoteController@create');
 
 Route::post('/create-order', 'OrderController@create');
 Route::post('/sendPrice', 'OrderController@sendPrice');
+Route::post('/sendTrans', 'OrderController@sendTrans');
+Route::post('/cancel-order', 'OrderController@cancel');
+Route::post('/confirm-payment', 'OrderController@confirm');

@@ -8,7 +8,7 @@
 
 <!-- Page Content -->
 <div class="container">
-<form name="createOrder" action="{{ url('/create-order') }}" method="POST" >
+<form name="createOrder" action="{{ url('/create-order') }}" method="POST" enctype="multipart/form-data">
     <!-- Services -->
     <div class="row">
         <div class="col-md-3">

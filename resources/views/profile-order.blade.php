@@ -137,32 +137,34 @@
 			    
 			    <!-- -- -->
 			    <input type="hidden" value="brochures | bi-fold" name="product">
-			    <form action="{{ url('/sendPrice') }}" method="POST">
+			    
 				    <div class="col-xs-4 right"><p><b>Price: </b></p></div>
-				    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" disabled></div>
-				    <input type="hidden" value="{{ $order[0]->id }}" name="id">
+				    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" disabled value="{{ $order[0]->price }}"></div>
+				    
 				    <div class="clear"></div><br>
 
-				    
-				    <div class="col-xs-4 col-xs-offset-8 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
+				   <form method="POST" action="{{ url('/sendTrans') }}"> 
+				    <div class="col-xs-4 col-xs-offset-8 no-pad"><input @if($order[0]->price == 0)  disabled @endif type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 				    <div class="clear"></div><br>
-	    		</form>
+	    		
     		</div>
 
     		<div class="col-xs-6">
-    			<div class="col-xs-4 right"><p><b>Transaction ID: </b></p></div>
-			    <div class="col-xs-8 no-pad"><input value="" name="transaction" type="text" id="width" class="form-control"></div>
-			    <div class="clear"></div><br>
-
-			    <div class="col-xs-4 right"><p><b>Bank: </b></p></div>
-			    <div class="col-xs-8 no-pad"><input value="" name="bank" type="text" id="width" class="form-control"></div>
-			    <div class="clear"></div><hr>
+    			
+	    			<div class="col-xs-4 right"><p><b>Transaction ID: </b></p></div>
+				    <div class="col-xs-8 no-pad"><input @if($order[0]->transaction_number != 'NONE') value="{{ $order[0]->transaction_number }}"  disabled @else value="" @endif @if($order[0]->price == 0)  disabled @endif name="transaction" type="text" id="width" class="form-control" required></div>
+				    <div class="clear"></div><br>
+				    <input type="hidden" value="{{ $order[0]->id }}" name="id">
+				    <div class="col-xs-4 right"><p><b>Bank: </b></p></div>
+				    <div class="col-xs-8 no-pad"><input @if($order[0]->bank != 'NONE') value="{{ $order[0]->bank }}"  disabled @else value="" @endif name="bank" @if($order[0]->price == 0)  disabled @endif type="text" id="width" class="form-control" required></div>
+				    <div class="clear"></div><hr>
+				</form>
 
 		    	<div class="col-xs-12"><p><b>Design: </b></p></div>
 		    	@if($order[0]->designType == 'Browse')
 		    		<img class="col-xs-12" src="{{ url('img/'.$order[0]->product.'/des-'.$order[0]->design.'.jpg') }}">
 		    	@else
-		    		<img class="col-xs-12" src="/img/bl-shirt-01.jpg">
+		    		<img class="col-xs-12" src="{{ $order[0]->file }}">
 		    	@endif
 			</div>
 

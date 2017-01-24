@@ -34,9 +34,11 @@ class QuoteController extends Controller
     	$requestQuote->lamination = $request->input('lamination');
     	$requestQuote->details = $request->input('details');
     	$requestQuote->attachment = $request->input('attachment');
+        $requestQuote->price = 0;
+        $requestQuote->status = 'Waiting for Price';
     	$requestQuote->save();
         
-    	return 'done';
+    	return 'Request sent!';
     }
 
 

@@ -27,6 +27,8 @@ class CreateRequestTable extends Migration
             $table->string('lamination')->nullable();
             $table->string('details')->nullable();
             $table->string('attachment')->nullable();
+            $table->integer('price');
+            $table->string('status');
             $table->timestamps();
         });
     }

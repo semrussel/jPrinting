@@ -201,6 +201,7 @@ function createRequest(){
         data : formdata,
         success : function(data){
             alert(data);
+            window.location = "{{ url('/profile') }}";
         }
     })
 }

@@ -79,7 +79,7 @@ Route::get('/admin-dash', 'AdminController@adminDash');
 Route::get('/admin-orders', 'AdminController@adminOrders');
 Route::get('/admin-orders-view/{id}', 'AdminController@adminOrdersView'); //order-view
 Route::get('/admin-request-quotes', 'AdminController@adminRequestQuotes');
-Route::get('/admin-request-view', 'AdminController@adminRequestsView'); //request-view
+Route::get('/admin-request-view/{id}', 'AdminController@adminRequestsView'); //request-view
 Route::post('/admin-login', 'AdminController@login');
 
 

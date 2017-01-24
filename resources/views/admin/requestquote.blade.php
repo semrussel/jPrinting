@@ -23,13 +23,13 @@
 			            </tr>
 			        </thead>
 			        <tbody>
-			        	@for($i=1; $i<=25; $i++)
+			        	@for($i=0; $i<count($requests); $i++)
 				            <tr>
-				                <td>{{ $i }}</td>
-				                <td>Invitation</td>
-				                <td>100</td>
-				                <td>Active</td>
-				                <td><button href="/admin-requests-view" class="admin-button">View Request</button></td>
+				                <td>{{ $requests[$i]->id }}</td>
+				                <td>{{ $requests[$i]->product }}</td>
+				                <td>{{ $requests[$i]->quantity }}</td>
+				                <td>{{ $requests[$i]->status }}</td>
+				                <td><a href="/admin-request-view/{{ $requests[$i]->id }}" class="admin-button">View Request</a></td>
 				            </tr>
 			            @endfor
 		            </tbody>

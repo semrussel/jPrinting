@@ -1,17 +1,24 @@
-@extends('template.admin')
+@extends('template.main')
 
 @section('title') Jimbes Printing @stop
 
 @section('content') 
-    
-<div class="col-md-10 col-md-offset-2 dash-main">
 
-	<div class="row">
-		<div class="col-xs-12">
+<div class="inner-pad"></div>
 
-			<p class="col-xs-12 dash-title"><b>Orders</b></p>
+<!-- Page Content -->
+<div class="container">
 
-			<div class="col-xs-6">
+    <!-- Services -->
+    <div class="row">
+        <div class="col-md-3">
+            @include('inc/sidebar')
+        </div>
+        <h3 class="serv-main-title col-md-offset-3"><b>User Profile</b> | Order</h3>
+        <div class="col-md-9 serv-main-box">
+
+        	<div class="clear"></div><br>
+            <div class="col-xs-6">
 
 				<div class="col-xs-4 right"><p><b>Order ID: </b></p></div>
 			    <div class="col-xs-8 no-pad"><input value="{{ $order[0]->id }}" name="id" type="text" id="width" class="form-control" disabled></div>
@@ -132,7 +139,7 @@
 			    <input type="hidden" value="brochures | bi-fold" name="product">
 			    <form action="{{ url('/sendPrice') }}" method="POST">
 				    <div class="col-xs-4 right"><p><b>Price: </b></p></div>
-				    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" required></div>
+				    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" disabled></div>
 				    <input type="hidden" value="{{ $order[0]->id }}" name="id">
 				    <div class="clear"></div><br>
 
@@ -144,11 +151,11 @@
 
     		<div class="col-xs-6">
     			<div class="col-xs-4 right"><p><b>Transaction ID: </b></p></div>
-			    <div class="col-xs-8 no-pad"><input value="" name="transaction" type="text" id="width" class="form-control" disabled></div>
+			    <div class="col-xs-8 no-pad"><input value="" name="transaction" type="text" id="width" class="form-control"></div>
 			    <div class="clear"></div><br>
 
 			    <div class="col-xs-4 right"><p><b>Bank: </b></p></div>
-			    <div class="col-xs-8 no-pad"><input value="" name="bank" type="text" id="width" class="form-control" disabled></div>
+			    <div class="col-xs-8 no-pad"><input value="" name="bank" type="text" id="width" class="form-control"></div>
 			    <div class="clear"></div><hr>
 
 		    	<div class="col-xs-12"><p><b>Design: </b></p></div>
@@ -159,10 +166,9 @@
 		    	@endif
 			</div>
 
-	    </div>
-
-    </div><!-- /.row -->
+        </div>
+    </div>
+    <!-- /.row -->
 
 </div>
-
 @stop

@@ -39,4 +39,22 @@ class UserController extends Controller
             return view('profile')->with('orders',$orders);
         }
     }
+
+    public function ProfileOrder($id)
+    {
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                $order = DB::table('orders')->where('id',$id)->get();
+
+                //return $order;
+
+                return view('profile-order')->with('order',$order);
+            }
+        }
+    }
 }

@@ -12,17 +12,17 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css"  
           href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
-    <link href="css/modern-business.css" rel="stylesheet">
-    <link href="css/jb-printing.css" rel="stylesheet">
+    <link href="{{ url('css/modern-business.css') }}" rel="stylesheet">
+    <link href="{{ url('css/jb-printing.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ url('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css"
           href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" type="text/css"

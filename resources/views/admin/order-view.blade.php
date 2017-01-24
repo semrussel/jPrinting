@@ -64,7 +64,7 @@
 
 			    <div class="col-xs-4 right"><p><b>
 			    	<?php 
-			    		if(preg_match('[notebooks]', $vpro)) { echo 'No of Sheets:'; }
+			    		if(preg_match('[notebooks]', strtolower($vpro))) { echo 'No of Sheets:'; }
 			    		else { echo 'Size:'; } ?>
 			    </b></p></div>
 			    <div class="col-xs-8 no-pad"><input value="{{ $order[0]->size }}" name="size" type="text" id="width" class="form-control" disabled></div>
@@ -73,7 +73,7 @@
 			    @if($vpaper==1)
 				    <div class="col-xs-4 right"><p><b> 
 				    	<?php 
-				    		if(preg_match('[notebooks]', $vpro)) { echo 'Inner Pages - Pages Type:'; } 
+				    		if(preg_match('[notebooks]', strtolower($vpro))) { echo 'Inner Pages - Pages Type:'; } 
 				    		else { echo 'Paper Type:'; } ?>
 				    </b></p></div>
 				    <div class="col-xs-8 no-pad"><input value="{{ $order[0]->paperType }}"  name="paperType" type="text" id="width" class="form-control" disabled></div>
@@ -83,8 +83,8 @@
 				@if($vcolor==1)
 				    <div class="col-xs-4 right"><p><b>
 				    	<?php 
-				    		if(preg_match('[souvenir]', $vpro)) { echo 'Product:'; }
-				    		else if(preg_match('[notebooks]', $vpro)) { echo 'Inner Pages - Printing:'; } 
+				    		if(preg_match('[souvenir]', strtolower($vpro))) { echo 'Product:'; }
+				    		else if(preg_match('[notebooks]', strtolower($vpro))) { echo 'Inner Pages - Printing:'; } 
 				    		else { echo 'Color:'; } ?>
 				    </b></p></div>
 				    <div class="col-xs-8 no-pad"><input value="{{ $order[0]->color }}" name="color" type="text" id="width" class="form-control" disabled></div>

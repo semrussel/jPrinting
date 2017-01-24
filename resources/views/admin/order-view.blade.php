@@ -129,15 +129,17 @@
 			    <div class="clear"></div><hr>
 			    
 			    <!-- -- -->
-
-			    <div class="col-xs-4 right"><p><b>Price: </b></p></div>
-			    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" required></div>
-			    <div class="clear"></div><br>
-
 			    <input type="hidden" value="brochures | bi-fold" name="product">
-			    <div class="col-xs-4 col-xs-offset-8 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
-			    <div class="clear"></div><br>
-	    
+			    <form action="{{ url('/sendPrice') }}" method="POST">
+				    <div class="col-xs-4 right"><p><b>Price: </b></p></div>
+				    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" required></div>
+				    <input type="hidden" value="{{ $order[0]->id }}" name="id">
+				    <div class="clear"></div><br>
+
+				    
+				    <div class="col-xs-4 col-xs-offset-8 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
+				    <div class="clear"></div><br>
+	    		</form>
     		</div>
 
     		<div class="col-xs-6">

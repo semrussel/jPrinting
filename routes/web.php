@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/login', 'HomeController@Login');
 
+Route::get('/logoutUser', 'HomeController@Logout');
+
 Route::get('/profile', 'UserController@Profile');
 
 Route::get('/services', 'ServicesController@index');
@@ -77,7 +79,9 @@ Route::get('/admin-request-quotes', 'AdminController@adminRequestQuotes');
 Route::get('/admin-request-view', 'AdminController@adminRequestsView'); //request-view
 Route::post('/admin-login', 'AdminController@login');
 
+
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');
 
 Route::post('/create-order', 'OrderController@create');
+Route::post('/sendPrice', 'OrderController@sendPrice');

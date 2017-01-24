@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Parser;
 use Carbon;
 use DB;
+use Auth;
 use App\Order;
 
 
@@ -20,6 +21,10 @@ class OrderController extends Controller
         
         $requestQuote = new Order();
         $requestQuote->product = $request->input('product');
+        $requestQuote->price = 0;
+        $requestQuote->order_by = Auth::user()->id;
+        $requestQuote->bank = 'NONE';
+        $requestQuote->transaction_number = 'NONE';
         $requestQuote->design = $request->input('design');
         $requestQuote->file = $request->input('pic');
         $requestQuote->designType = $request->input('designType');
@@ -37,7 +42,14 @@ class OrderController extends Controller
         $requestQuote->status = 'Validating';
         $requestQuote->save();
 
-    	return 'done';
+    	return redirect('/profile?success=1');
+    }
+
+    public function sendPrice(Request $request){
+        
+        DB::table('orders')->where('id', $request->input('id'))->update(array('price' => $request->input('price'), 'status' => 'Waiting for Payment'));
+
+        return 'done';
     }
 
 

@@ -18,10 +18,11 @@ class ServicesController extends Controller
     }
 
     public function callCalendarsPoster(){
-        if (Auth::guest()) {
-            return redirect('/login?check=1');
-        }else{
+        if (Auth::check()) {
             return view('services.calendars-poster');
+            
+        }else{
+            return redirect('/login?check=1');
         }
     }
     public function callCalendarsMonthly(){

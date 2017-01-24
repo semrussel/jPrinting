@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use DB;
 
 class UserController extends Controller
 {
@@ -31,7 +33,10 @@ class UserController extends Controller
         if (Auth::guest()) {
             return redirect('/login?check=1');
         }else{
-            return view('profile');
+
+            $orders = DB::table('orders')->where('order_by',Auth::user()->id)->get();
+
+            return view('profile')->with('orders',$orders);
         }
     }
 }

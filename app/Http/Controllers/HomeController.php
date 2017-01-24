@@ -45,4 +45,12 @@ class HomeController extends Controller
     {
         return view('login');
     }
+
+    public function Logout()
+    {
+        Auth::logout();
+        Session::flush();
+
+        return redirect('/login');
+    }
 }

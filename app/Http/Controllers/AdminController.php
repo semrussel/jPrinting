@@ -39,7 +39,7 @@ class AdminController extends Controller
     	 		return redirect('/admin-dash');
     	 	}
     	 }else{
-    	 	return view('admin.dashboard')->with('error','Invalid Email/Password');
+    	 	return view('admin.login')->with('error','Invalid Email/Password');
     	 }
 
 

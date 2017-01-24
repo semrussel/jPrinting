@@ -35,12 +35,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for($i=0; $i<15; $i++)
+                        @for($i=0; $i<count($orders); $i++)
                             <tr>
-                                <td>{{ $i }}</td>
-                                <td>Product</td>
-                                <td>100</td>
-                                <td>On the Way</td>
+                                <td>{{ $orders[$i]->id }}</td>
+                                <td>{{ $orders[$i]->product }}</td>
+                                <td>{{ $orders[$i]->quantity }}</td>
+                                <td>{{ $orders[$i]->status }}</td>
                                 <!-- <td><button class="admin-button">Cancel</button></td> -->
                             </tr>
                         @endfor
@@ -54,4 +54,9 @@
 
 </div>
 <!-- container -->
+@if(isset($_GET['success']))
+<script>
+alert('Order Success! Wait for our email regarding the price!');
+</script>
+@endif
 @stop

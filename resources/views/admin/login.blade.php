@@ -7,6 +7,9 @@
 <div class="container" style="margin-top: 120px; margin-bottom: 120px;">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            @if(isset($error))
+            <div class="center"><span class="help-block" style="color:red;"><strong>You need to login to proceed to that page</strong></span></div>
+            @endif
             <div class="panel panel-default">
                 <div class="panel-heading"><b>Administrator</b> | Login</div>
                 <div class="panel-body">

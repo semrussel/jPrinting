@@ -9,14 +9,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 
-			<p class="col-xs-12 dash-title"><b>Orders</b>
-				@if($order[0]->status == 'Validating Payment')
-				                	<form action="{{ url('/confirm-payment') }}" method="POST">
-                                        <input type="hidden" name="id" value="{{ $order[0]->id }}"> 
-                                        <input type="submit" value="Validate Payment" class="admin-button">
-                                    </form>
-                @endif
-			</p>
+			<p class="col-xs-12 dash-title"><b>Orders</b></p>
 
 			<div class="col-xs-6">
 				
@@ -155,6 +148,15 @@
 				    <div class="clear"></div><br>
 	    		@endif
 
+		    	@if($order[0]->status == 'Validating Payment')
+		    		<div class="col-xs-4 col-xs-offset-8 no-pad">
+	                	<form action="{{ url('/confirm-payment') }}" method="POST">
+	                        <input type="hidden" name="id" value="{{ $order[0]->id }}"> 
+	                        <input type="submit" value="Validate Payment" class="btn btn-primary" style="width: 100%;">
+	                    </form>
+                    </div>
+                    <div class="clear"></div><br>
+                @endif
 
     		</div>
 

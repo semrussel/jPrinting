@@ -17,35 +17,77 @@
         <h3 class="serv-main-title col-md-offset-3"><b>User Profile</b></h3>
         <div class="col-md-9 serv-main-box">
 
-            <div class="col-xs-12">
-                <div class="page-header-border"></div>
-                <h2 class="page-header serv">Order List</h2>
-                <div class="clear"></div>
-            </div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#m1"><b>Orders</b></a></li>
+                <li><a data-toggle="tab" href="#m2"><b>Requests for Quote</b></a></li>
+            </ul>
 
-            <div class="col-md-12">
-                <table id="order-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Product Name</th>
-                            <th>Quantity</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @for($i=0; $i<count($orders); $i++)
-                            <tr>
-                                <td>{{ $orders[$i]->id }}</td>
-                                <td>{{ $orders[$i]->product }}</td>
-                                <td>{{ $orders[$i]->quantity }}</td>
-                                <td>{{ $orders[$i]->status }}</td>
-                                <td><a href="/profile-order/{{ $orders[$i]->id }}" class="admin-button">View Order</button></td>
-                            </tr>
-                        @endfor
-                    </tbody>
-                </table>
+            <div class="tab-content">
+                <div id="m1" class="tab-pane fade in active">
+                    <div class="col-xs-12">
+                        <div class="page-header-border"></div>
+                        <h2 class="page-header serv">Order List</h2>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <table id="order-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for($i=0; $i<count($orders); $i++)
+                                    <tr>
+                                        <td>{{ $orders[$i]->id }}</td>
+                                        <td>{{ $orders[$i]->product }}</td>
+                                        <td>{{ $orders[$i]->quantity }}</td>
+                                        <td>{{ $orders[$i]->status }}</td>
+                                        <td><a href="/profile-order/{{ $orders[$i]->id }}" class="admin-button">View Order</button></td>
+                                    </tr>
+                                @endfor
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="m2" class="tab-pane fade">
+                    <div class="col-xs-12">
+                        <div class="page-header-border"></div>
+                        <h2 class="page-header serv">Request for Quote List</h2>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <table id="request-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for($i=0; $i<count($orders); $i++)
+                                    <tr>
+                                        <td>{{ $orders[$i]->id }}</td>
+                                        <td>{{ $orders[$i]->product }}</td>
+                                        <td>{{ $orders[$i]->quantity }}</td>
+                                        <td>{{ $orders[$i]->status }}</td>
+                                        <td><a href="/profile-order/{{ $orders[$i]->id }}" class="admin-button">View Order</button></td>
+                                    </tr>
+                                @endfor
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
         </div>

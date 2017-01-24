@@ -91,6 +91,7 @@
 
         $(document).ready(function() {
             $('#order-table').DataTable();
+            $('#request-table').DataTable();
         } );
     </script>
 

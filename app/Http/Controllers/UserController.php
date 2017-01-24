@@ -51,10 +51,24 @@ class UserController extends Controller
             }else{
                 $order = DB::table('orders')->where('id',$id)->get();
 
-                //return $order;
-
                 return view('profile-order')->with('order',$order);
             }
         }
+    }
+
+    public function profileRequest()
+    {
+        // if (Auth::guest()) {
+        //     return redirect('/login?check=1');
+        // }else{
+
+        //     if (Auth::user()->type == 'client') {
+        //         return redirect('/');
+        //     }else{
+        //         $order = DB::table('orders')->where('id',$id)->get();
+
+                return view('profile-request');
+        //     }
+        // }
     }
 }

@@ -8,7 +8,7 @@
             @for($i=1; $i<=7; $i++)
                 <div class="col-sm-6 col-md-4 no-pad-left">
                     <label style="display: block;">
-                        <div class="serv-browse" style="background: url('img/paperbags/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
+                        <div class="serv-browse" style="background: url('img/paper bags/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
                         <div><p><input type="radio" id="brw-{{ $i }}" name="design" value="{{ $i }}"
                         @if($i==1) checked="true" @endif >
                         Design #{{ $i }}

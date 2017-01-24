@@ -76,13 +76,13 @@
     <a id="scroller-top" href="body"><div id="scroller-top-div" class="up-butt"><i class="fa fa-arrow-up" aria-hidden="true"></i></div></a>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{{ url('js/jquery.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ url('js/bootstrap.min.js') }}"></script>
 
     <!-- CUSTOM Script-->
-    <script src="js/jb-printing.js"></script>
+    <script src="{{ url('js/jb-printing.js') }}"></script>
 
     <script type="text/javascript">
         $(function() {

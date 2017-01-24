@@ -52,8 +52,7 @@
                                         <td>{{ $orders[$i]->status }}</td>
                                         <td>
                                             <a href="/profile-order/{{ $orders[$i]->id }}" class="admin-button">View Order</a>
-                                       
-                                            <form action="{{ url('/cancel-order') }}" method="POST">
+                                            <form action="{{ url('/cancel-order') }}" method="POST" style="margin-top: 5px;">
                                                 <input type="hidden" name="id" value="{{ $orders[$i]->id }}"> 
                                                 <input type="submit" value="Cancel Order" class="admin-button">
                                             </form>

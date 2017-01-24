@@ -8,7 +8,7 @@
             @for($i=1; $i<=5; $i++)
                 <div class="col-sm-6 col-md-4 no-pad-left">
                     <label style="display: block;">
-                        <div class="serv-browse" style="background: url('img/notebooks-perfecthard/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
+                        <div class="serv-browse" style="background: url('img/notebooks perfect hard/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
                         <div><p><input type="radio" id="brw-{{ $i }}" name="design" value="{{ $i }}"
                         @if($i==1) checked="true" @endif >
                         Design #{{ $i }}
@@ -95,7 +95,7 @@
     <div class="clear"></div>     
     <br>-->
 
-    <input type="hidden" value="notebooks | perfect bound, hard cover" name="product">
+    <input type="hidden" value="notebooks perfect hard" name="product">
     <div class="col-xs-6 col-xs-offset-6 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 <!-- /.Price Calculator -->
 @stop

@@ -34,14 +34,14 @@
 			    	$vpro = ucwords($order[0]->product);
 
 			    	$vpaper = 0;
-			    	if (preg_match('[invitations|business cards|tickets|posters|office forms|certificates|receipts|notebooks|flyers|borchures]', strtolower($vpro))) { $vpaper = 1; }
+			    	if (preg_match('[invitations|business cards|tickets|posters|office forms|certificates|notebooks|flyers|borchures]', strtolower($vpro))) { $vpaper = 1; }
 
 			    	$vcolor = 0;
-			    	if (preg_match('[souvenir|receipts|notebooks]', strtolower($vpro))) { 
+			    	if (preg_match('[souvenir|receipt|notebooks]', strtolower($vpro))) { 
 			    		$vcolor = 1; }
 
 			    	$vcolorPly = 0;
-			    	if (preg_match('[receipts]', strtolower($vpro))) { 
+			    	if (preg_match('[receipt]', strtolower($vpro))) { 
 			    		$vcolorPly = 1; }
 			    	
 			    	$vlamination = 0;
@@ -64,7 +64,7 @@
 
 			    <div class="col-xs-4 right"><p><b>
 			    	<?php 
-			    		if(preg_match('[notebooks]', $vpro)) { echo 'No of Sheets:'; }
+			    		if(preg_match('[notebooks]', strtolower($vpro))) { echo 'No of Sheets:'; }
 			    		else { echo 'Size:'; } ?>
 			    </b></p></div>
 			    <div class="col-xs-8 no-pad"><input value="{{ $order[0]->size }}" name="size" type="text" id="width" class="form-control" disabled></div>
@@ -73,7 +73,7 @@
 			    @if($vpaper==1)
 				    <div class="col-xs-4 right"><p><b> 
 				    	<?php 
-				    		if(preg_match('[notebooks]', $vpro)) { echo 'Inner Pages - Pages Type:'; } 
+				    		if(preg_match('[notebooks]', strtolower($vpro))) { echo 'Inner Pages - Pages Type:'; } 
 				    		else { echo 'Paper Type:'; } ?>
 				    </b></p></div>
 				    <div class="col-xs-8 no-pad"><input value="{{ $order[0]->paperType }}"  name="paperType" type="text" id="width" class="form-control" disabled></div>
@@ -83,8 +83,8 @@
 				@if($vcolor==1)
 				    <div class="col-xs-4 right"><p><b>
 				    	<?php 
-				    		if(preg_match('[souvenir]', $vpro)) { echo 'Product:'; }
-				    		else if(preg_match('[notebooks]', $vpro)) { echo 'Inner Pages - Printing:'; } 
+				    		if(preg_match('[souvenir]', strtolower($vpro))) { echo 'Product:'; }
+				    		else if(preg_match('[notebooks]', strtolower($vpro))) { echo 'Inner Pages - Printing:'; } 
 				    		else { echo 'Color:'; } ?>
 				    </b></p></div>
 				    <div class="col-xs-8 no-pad"><input value="{{ $order[0]->color }}" name="color" type="text" id="width" class="form-control" disabled></div>

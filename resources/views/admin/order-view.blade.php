@@ -27,14 +27,14 @@
 			    	$vpro = ucwords($order[0]->product);
 
 			    	$vpaper = 0;
-			    	if (preg_match('[invitations|business cards|tickets|posters|office forms|certificates|receipts|notebooks|flyers|borchures]', strtolower($vpro))) { $vpaper = 1; }
+			    	if (preg_match('[invitations|business cards|tickets|posters|office forms|certificates|notebooks|flyers|borchures]', strtolower($vpro))) { $vpaper = 1; }
 
 			    	$vcolor = 0;
-			    	if (preg_match('[souvenir|receipts|notebooks]', strtolower($vpro))) { 
+			    	if (preg_match('[souvenir|receipt|notebooks]', strtolower($vpro))) { 
 			    		$vcolor = 1; }
 
 			    	$vcolorPly = 0;
-			    	if (preg_match('[receipts]', strtolower($vpro))) { 
+			    	if (preg_match('[receipt]', strtolower($vpro))) { 
 			    		$vcolorPly = 1; }
 			    	
 			    	$vlamination = 0;

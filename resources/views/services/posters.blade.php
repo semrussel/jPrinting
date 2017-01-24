@@ -68,7 +68,7 @@
     </select>
     <div class="clear"></div><br>
     <p><b>Paper Type</b></p>
-    <select class="form-control" id="sel2" name="paperType">
+    <select class="form-control" id="sel2" name="paper">
         <option>C2S 100/170 gsm</option>
         <option>Foldcote 12</option>
         <option>Old Mill/Bevania 300 gsm (White or Ivory only)</option>

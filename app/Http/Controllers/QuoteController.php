@@ -41,5 +41,12 @@ class QuoteController extends Controller
     	return 'Request sent!';
     }
 
+    public function sendQPrice(Request $request){
+        
+        DB::table('request')->where('id', $request->input('id'))->update(array('price' => $request->input('price'), 'status' => 'Quote Received'));
+
+        return redirect('/admin-request-quotes?success=1');
+    }
+
 
 }

@@ -126,13 +126,23 @@
 			    
 			    <!-- -- -->
 
-			    <div class="col-xs-4 right"><p><b>Price: </b></p></div>
-			    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" required></div>
-			    <div class="clear"></div><br>
+			    @if($request[0]->price == 0)
+			    <form action="{{ url('/sendQPrice') }}" method="POST">
+				    <div class="col-xs-4 right"><p><b>Price: </b></p></div>
+				    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" required></div>
+				    <input type="hidden" value="{{ $request[0]->id }}" name="id">
+				    <div class="clear"></div><br>
 
-			    <input type="hidden" value="brochures | bi-fold" name="product">
-			    <div class="col-xs-4 col-xs-offset-8 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
-			    <div class="clear"></div><br>
+				    
+				    <div class="col-xs-4 col-xs-offset-8 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
+				    <div class="clear"></div><br>
+	    		</form>
+	    		@else
+	    			<div class="col-xs-4 right"><p><b>Price: </b></p></div>
+				    <div class="col-xs-8 no-pad"><input name="price" disabled type="text" id="width" class="form-control" required value="{{ $request[0]->price }}"></div>
+				    
+				    <div class="clear"></div><br>
+	    		@endif
 	    
     		</div>
 

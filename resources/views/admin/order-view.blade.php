@@ -129,7 +129,7 @@
 			    <div class="clear"></div><hr>
 			    
 			    <!-- -- -->
-			    <input type="hidden" value="brochures | bi-fold" name="product">
+			    <input type="hidden" value="{{ $order[0]->product }}" name="product">
 			    @if($order[0]->price == 0)
 			    <form action="{{ url('/sendPrice') }}" method="POST">
 				    <div class="col-xs-4 right"><p><b>Price: </b></p></div>

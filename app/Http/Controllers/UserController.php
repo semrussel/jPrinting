@@ -34,9 +34,12 @@ class UserController extends Controller
             return redirect('/login?check=1');
         }else{
 
+            $quote = DB::table('request')->where('email',Auth::user()->email)->get();
             $orders = DB::table('orders')->where('order_by',Auth::user()->id)->get();
+            
+            //return $quote;
 
-            return view('profile')->with('orders',$orders);
+            return view('profile')->with('orders',$orders)->with('quote',$quote);
         }
     }
 
@@ -51,19 +54,14 @@ class UserController extends Controller
         }
     }
 
-    public function profileRequest()
+    public function profileRequest($id)
     {
-        // if (Auth::guest()) {
-        //     return redirect('/login?check=1');
-        // }else{
+        if (Auth::guest()) {
+            return redirect('/login?check=1');
+        }else{
+                $quote = DB::table('request')->where('id',$id)->get();
 
-        //     if (Auth::user()->type == 'client') {
-        //         return redirect('/');
-        //     }else{
-        //         $order = DB::table('orders')->where('id',$id)->get();
-
-                return view('profile-request');
-        //     }
-        // }
+                return view('profile-request')->with('quote',$quote);
+        }
     }
 }

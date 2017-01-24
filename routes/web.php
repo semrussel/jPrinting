@@ -25,7 +25,7 @@ Route::get('/logoutUser', 'HomeController@Logout');
 
 Route::get('/profile', 'UserController@Profile');
 Route::get('/profile-order/{id}', 'UserController@ProfileOrder');
-Route::get('/profile-request', 'UserController@ProfileRequest');
+Route::get('/profile-request/{id}', 'UserController@ProfileRequest');
 
 
 Route::get('/services', 'ServicesController@index');
@@ -85,6 +85,7 @@ Route::post('/admin-login', 'AdminController@login');
 
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');
+Route::post('/sendQPrice', 'QuoteController@sendQPrice');
 
 Route::post('/create-order', 'OrderController@create');
 Route::post('/sendPrice', 'OrderController@sendPrice');

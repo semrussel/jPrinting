@@ -83,13 +83,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @for($i=0; $i<count($orders); $i++)
+                                @for($i=0; $i<count($quote); $i++)
                                     <tr>
-                                        <td>{{ $orders[$i]->id }}</td>
-                                        <td>{{ $orders[$i]->product }}</td>
-                                        <td>{{ $orders[$i]->quantity }}</td>
-                                        <td>{{ $orders[$i]->status }}</td>
-                                        <td><a href="/profile-order/{{ $orders[$i]->id }}" class="admin-button">View Order</button></td>
+                                        <td>{{ $quote[$i]->id }}</td>
+                                        <td>{{ $quote[$i]->product }}</td>
+                                        <td>{{ $quote[$i]->quantity }}</td>
+                                        <td>{{ $quote[$i]->status }}</td>
+                                        <td><a href="/profile-request/{{ $quote[$i]->id }}" class="admin-button">View Quote</button></td>
                                     </tr>
                                 @endfor
                             </tbody>

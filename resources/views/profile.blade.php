@@ -31,7 +31,7 @@
                             <th>Product Name</th>
                             <th>Quantity</th>
                             <th>Status</th>
-                            <!-- <th>Action</th> -->
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,7 +41,7 @@
                                 <td>{{ $orders[$i]->product }}</td>
                                 <td>{{ $orders[$i]->quantity }}</td>
                                 <td>{{ $orders[$i]->status }}</td>
-                                <!-- <td><button class="admin-button">Cancel</button></td> -->
+                                <td><a href="/profile-order/{{ $orders[$i]->id }}" class="admin-button">View Order</button></td>
                             </tr>
                         @endfor
                     </tbody>

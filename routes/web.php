@@ -24,6 +24,7 @@ Route::get('/login', 'HomeController@Login');
 Route::get('/logoutUser', 'HomeController@Logout');
 
 Route::get('/profile', 'UserController@Profile');
+Route::get('/profile-order/{id}', 'UserController@ProfileOrder');
 
 Route::get('/services', 'ServicesController@index');
 

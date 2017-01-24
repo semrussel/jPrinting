@@ -108,4 +108,22 @@ class AdminController extends Controller
         
     }
 
+    public function adminRequestsView(){
+        // if (Auth::guest()) {
+        //     return redirect('/');
+        // }else{
+        //     if (Auth::user()->type == 'client') {
+        //         return redirect('/');
+        //     }else{
+
+                // $orders = DB::table('orders')->orderBy('updated_at','desc')->get();
+
+                //return $orders;
+
+                return view('admin.request-view');
+        //     }
+        // }
+        
+    }
+
 }

@@ -71,18 +71,26 @@ class OrderController extends Controller
         return redirect('/profile?cancel=1');
     }
 
-    public function confirm(Request $request){
-        
-        DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Ready for Pick up / Delivery'));
-
-        return redirect('/admin-orders?pay=1');
-    }
-
     public function sendTrans(Request $request){
         
         DB::table('orders')->where('id', $request->input('id'))->update(array('bank' => $request->input('bank'), 'transaction_number' => $request->input('transaction'), 'status' => 'Validating Payment'));
 
         return redirect('/profile?pay=1');
+    }
+
+    public function confirm(Request $request){
+        
+        DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Processing the Product'));
+
+        return redirect('/admin-orders?pay=1');
+    }
+
+
+    public function process(Request $request){
+        
+        DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Ready for Pick up / Delivery'));
+
+        return redirect('/admin-orders?process=1');
     }
 
 

@@ -158,6 +158,28 @@
                     <div class="clear"></div><br>
                 @endif
 
+                @if($order[0]->status == 'Processing the Product')
+                <div class="col-xs-4 col-xs-offset-8 no-pad">
+                	<form action="{{ url('/process-order') }}" method="POST">
+                        <input type="hidden" name="id" value="{{ $order[0]->id }}"> 
+                        <input type="submit" value="Ready for Delivery" class="btn btn-primary" style="width: 100%;">
+                    </form>
+                </div>
+                <div class="clear"></div><br>
+                @endif
+
+                @if($order[0]->status == 'Ready for Pick up / Delivery')
+                <div class="col-xs-4 col-xs-offset-8 no-pad">
+                	<form action="{{ url('/deliver-order') }}" method="POST">
+                        <input type="hidden" name="id" value="{{ $order[0]->id }}"> 
+                        <input type="submit" value="Deliver" class="btn btn-primary" style="width: 100%;">
+                    </form>
+                </div>
+                <div class="clear"></div><br>
+                @endif
+
+
+
     		</div>
 
     		<div class="col-xs-6">

@@ -129,7 +129,7 @@
 			    @if($request[0]->price == 0)
 			    <form action="{{ url('/sendQPrice') }}" method="POST">
 				    <div class="col-xs-4 right"><p><b>Price: </b></p></div>
-				    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" required></div>
+				    <div class="col-xs-8 no-pad"><input name="price" type="number" id="width" class="form-control" required></div>
 				    <input type="hidden" value="{{ $request[0]->id }}" name="id">
 				    <div class="clear"></div><br>
 

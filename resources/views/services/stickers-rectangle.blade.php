@@ -91,7 +91,7 @@
     <div class="clear"></div><hr>
     
     <p><b>Quantity</b></p>
-    <div class="col-xs-12 no-pad"><input name="quantity" type="text" id="width" class="form-control" placeholder="1" required></div>
+    <div class="col-xs-12 no-pad"><input name="quantity" type="number" id="width" class="form-control" placeholder="1" required></div>
     <div class="clear"></div><br>
     
     <p><b>Delivery Address</b></p>

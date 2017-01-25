@@ -56,4 +56,9 @@ alert('Successfully added price!');
 alert('Successfully confirmed a payment!');
 </script>
 @endif
+@if(isset($_GET['process']))
+<script>
+alert('Order has been processed!');
+</script>
+@endif
 @stop

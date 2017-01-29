@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.css"/>
 
+    <!-- <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script> -->
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -67,6 +69,10 @@
 
     <!-- CUSTOM Script-->
     <!-- <script src="js/jb-printing.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js"></script>
+
+    <script src="{{ url('js/graphs.js') }}"></script>
 
     <script type="text/javascript">
         $(function() {
@@ -79,6 +85,7 @@
     </script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.js"></script>
+    <script src="{{ url('js/graphs.js') }}"></script> 
 
     <!-- <script href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <script href="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>

@@ -82,6 +82,9 @@ Route::get('/admin-request-quotes', 'AdminController@adminRequestQuotes');
 Route::get('/admin-request-view/{id}', 'AdminController@adminRequestsView'); //request-view
 Route::post('/admin-login', 'AdminController@login');
 
+Route::get('/admin-reports-income', 'ReportController@income');
+Route::get('/admin-reports-cancel', 'ReportController@cancel');
+
 
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');

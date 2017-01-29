@@ -163,7 +163,7 @@
 					<div class="col-xs-4 col-xs-offset-8 no-pad">		
 						<center>--- or ---</center>
 					    <p><b>Pay through: </b></p>
-					    <a href="#" class="btn btn-primary" style="width: 100%;">Paypal</a>
+					    <a href="https://www.paypal.com/" class="btn btn-primary" style="width: 100%;">Paypal</a>
 			    	</div>
 		    	
 

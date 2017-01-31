@@ -8,7 +8,7 @@
 
 	<div class="row">
 		<div class="col-xs-12">
-
+		<form action="{{ url('/create-subprod') }}" method="POST">
 			<p class="col-xs-12 dash-title"><b>Products</b> | Add New Sub Product
 
 			<div class="col-xs-6">
@@ -16,8 +16,9 @@
 					<div class="col-xs-12"><p><b>Main Product:</b></p></div>
 				    <div class="col-xs-12 no-pad">
 					    <select class="form-control" id="mainproduct" name="mainproduct">
-					        <option>opt1</option>
-					        <option>opt2</option>
+					    	@foreach($products as $product)
+						        <option value="{{ $product->id }}">{{ $product->name }}</option>
+					        @endforeach
 					    </select>
 				    </div>
 				    <div class="clear"></div><br>

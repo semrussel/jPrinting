@@ -27,7 +27,13 @@
 				                <td>{{ $product->id }}</td>
 				                <td>{{ $product->name }}</td>
 				                <td>{{ geSubtProdName($product->main_id) }}</td>
-				                <td><a href="" class="admin-button">Edit</a> <a href="" class="admin-button">Delete</a></td>
+				                <td>
+				                	<a href="" class="admin-button">Edit</a>
+				                	<form action="{{ url('/delete-subprod') }}" method="POST">
+					                	<input type="hidden" name="id" value="{{ $product->id }}">
+					                	<input type="submit" value="Delete" class="admin-button">
+				                	</form>
+				                </td>
 				            </tr>
 			            @endforeach
 		            </tbody>
@@ -41,3 +47,15 @@
 </div>
 
 @stop
+
+@if(isset($_GET['success']))
+@if($_GET['success'] == 1)
+<script>
+alert('Successfully added Sub Product!');
+</script>
+@elseif($_GET['success'] == 2)
+<script>
+alert('Successfully deleted Sub Product!');
+</script>
+@endif
+@endif

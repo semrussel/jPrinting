@@ -94,6 +94,7 @@ Route::get('/admin-products-subproducts-add', 'ProductsController@subproductsadd
 Route::post('/create-mainprod', 'ProductsController@createMain');
 Route::post('/delete-mainprod', 'ProductsController@deleteMain');
 Route::post('/create-subprod', 'ProductsController@createSub');
+Route::post('/delete-subprod', 'ProductsController@deleteSub');
 
 Route::get('/admin-reports-income', 'ReportController@income');
 Route::get('/admin-reports-cancel', 'ReportController@cancel');

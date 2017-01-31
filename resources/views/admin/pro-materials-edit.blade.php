@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 
-			<p class="col-xs-12 dash-title"><b>Products</b> | Edit New Material
+			<p class="col-xs-12 dash-title"><b>Inventory</b> | Edit Material
 		<form id="mainprod-add" action="{{ url('/create-mainprod') }}" method="POST" enctype="multipart/form-data">
 			<div class="col-xs-6">
 				<div class="col-xs-12">

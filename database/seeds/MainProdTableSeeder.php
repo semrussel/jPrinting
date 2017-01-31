@@ -26,7 +26,6 @@ class MainProdTableSeeder extends Seeder
         $main->description= "Anbalak mo:
         					this:";
         $main->logo = 'img/serv-09.jpg';
-        $main->is_size= 1;
         $main->is_paperType= 1;
         $main->is_corner= 0;
         $main->is_lam= 0;

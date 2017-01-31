@@ -23,7 +23,8 @@
                         <?php $url = url('/services/main/'.$main[$i]->id); ?>
                         <a href="{{ $url }}">
                             <div class="serv-box-sm">
-                                <div class="serv-img" style="background: url('{{ url($main[$i]->logo)    }}'); background-size: cover; background-position: center center;"></div>
+
+                                <div class="serv-img" @if($main[$i]->logo != NULL) style="background: url('{{ url($main[$i]->logo) }}'); background-size: cover; background-position: center center;" @endif></div>
                                 <div class="serv-heading">
                                     <h4><b>{{ $main[$i]->name }}</b></h4>
                                 </div>

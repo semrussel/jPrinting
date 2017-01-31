@@ -9,8 +9,8 @@
 	<div class="row">
 		<div class="col-xs-12">
 
-			<p class="col-xs-12 dash-title"><b>Products</b> | Add New Main Product
-		<form id="mainprod-add" action="{{ url('/create-mainprod') }}" method="POST" enctype="multipart/form-data">
+			<p class="col-xs-12 dash-title"><b>Products</b> | Edit Main Product
+		<form id="mainprod-add" action="{{ url('/create-mainprod') }}" method="POST">
 			<div class="col-xs-6">
 				<div class="col-xs-12">
 			        <div class="col-xs-12"><p><b>Product Name: </b></p></div>
@@ -89,8 +89,11 @@
 
 				    </div>
 				    <div class="col-xs-4 col-xs-offset-8 no-pad">
+		                	<form action="" method="POST">
+		                        <input type="hidden" name="id" value=""> 
 		                        <input type="submit" value="Submit" class="btn btn-primary" style="width: 100%;">
-	                </div>
+		                    </form>
+	                    </div>
 				    <!-- <div id="has2" class="desc" style="display: none;">
 				    </div> -->
 				    

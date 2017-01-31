@@ -34,6 +34,7 @@
 					                	<input type="submit" value="Delete" class="admin-button">
 				                	</form>
 				                </td>
+
 				            </tr>
 			            @endforeach
 		            </tbody>

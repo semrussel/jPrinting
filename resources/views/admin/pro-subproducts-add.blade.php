@@ -9,10 +9,19 @@
 	<div class="row">
 		<div class="col-xs-12">
 
-			<p class="col-xs-12 dash-title"><b>Products</b> | Add New Main Product
+			<p class="col-xs-12 dash-title"><b>Products</b> | Add New Sub Product
 
 			<div class="col-xs-6">
 				<div class="col-xs-12">
+					<div class="col-xs-12"><p><b>Main Product:</b></p></div>
+				    <div class="col-xs-12 no-pad">
+					    <select class="form-control" id="mainproduct" name="mainproduct">
+					        <option>opt1</option>
+					        <option>opt2</option>
+					    </select>
+				    </div>
+				    <div class="clear"></div><br>
+
 			        <div class="col-xs-12"><p><b>Product Name: </b></p></div>
 				    <div class="col-xs-12 no-pad"><input value="" name="product" type="text" id="width" class="form-control" required></div>
 					<div class="clear"></div><br>

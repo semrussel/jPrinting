@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 
-			<p class="col-xs-12 dash-title"><b>Products</b> | Sub Products <a href="" class="add-button"><i class="fa fa-plus" aria-hidden="true"></i> Add New</a></p>
+			<p class="col-xs-12 dash-title"><b>Products</b> | Sub Products <a href="admin-products-subproducts-add" class="add-button"><i class="fa fa-plus" aria-hidden="true"></i> Add New</a></p>
 
 			<div class="col-xs-12">
 		        <table id="order-table" class="table table-bordered admin-table" cellspacing="0" width="100%">

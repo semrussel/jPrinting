@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 
-			<p class="col-xs-12 dash-title"><b>Products</b> | Add New Main Product
+			<p class="col-xs-12 dash-title"><b>Products</b> | Edit Main Product
 		<form id="mainprod-add" action="{{ url('/create-mainprod') }}" method="POST">
 			<div class="col-xs-6">
 				<div class="col-xs-12">

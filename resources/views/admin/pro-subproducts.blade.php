@@ -27,7 +27,7 @@
 				                <td>{{ $product->id }}</td>
 				                <td>{{ $product->name }}</td>
 				                <td>{{ geSubtProdName($product->main_id) }}</td>
-				                <td><a href="" class="admin-button">Edit</a> <a href="" class="admin-button">Delete</a></td>
+				                <td><a href="admin-products-subproducts-edit" class="admin-button">Edit</a> <a href="" class="admin-button">Delete</a></td>
 				            </tr>
 			            @endforeach
 		            </tbody>

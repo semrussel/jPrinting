@@ -101,8 +101,6 @@
                 else
                     $('#sec-colorply').fadeOut('slow');
             });
-
-                
         } );
 
         $(document).ready(function() {

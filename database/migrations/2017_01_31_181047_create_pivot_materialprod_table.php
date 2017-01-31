@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMaterialTable extends Migration
+class CreatePivotMaterialprodTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateMaterialTable extends Migration
      */
     public function up()
     {
-        Schema::create('materials', function (Blueprint $table) {
+        Schema::create('pivot_materialprod', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('reference_num');
-            $table->string('name');
-            $table->string('quantity');
+            $table->integer('material_id')->references('id')->on('material')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('service_id');
+            $table->integer('is_main');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateMaterialTable extends Migration
      */
     public function down()
     {
-        Schema::drop('material');
+        Schema::drop('pivot_materialprod');
     }
 }

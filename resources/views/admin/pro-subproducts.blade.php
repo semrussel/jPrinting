@@ -60,5 +60,9 @@ alert('Successfully added Sub Product!');
 <script>
 alert('Successfully deleted Sub Product!');
 </script>
+@elseif($_GET['success'] == 3)
+<script>
+alert('Successfully edited Sub Product!');
+</script>
 @endif
 @endif

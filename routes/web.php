@@ -106,8 +106,11 @@ Route::get('/admin-reports-cancel', 'ReportController@cancel');
 
 
 Route::get('/admin-inventory', 'InventoryController@inventory');
+Route::post('/create-material', 'InventoryController@create');
+Route::post('/delete-material', 'InventoryController@delete');
+Route::post('/edit-material', 'InventoryController@edit');
 Route::get('/admin-inventory-add', 'InventoryController@inventoryadd');
-Route::get('/admin-inventory-edit', 'InventoryController@inventoryedit');
+Route::get('/admin-inventory-edit/{id}', 'InventoryController@inventoryedit');
 
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');

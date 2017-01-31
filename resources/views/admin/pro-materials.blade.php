@@ -22,18 +22,22 @@
 			            </tr>
 			        </thead>
 			        <tbody>
+			        	@foreach($materials as $material)
 			        	<tr>
-			                <td>a</td>
-			                <td>a</td>
-			                <td>a</td>
-			                <td><span><a href="admin-inventory-edit" class="admin-button">Edit</a> 
+			                <td>{{ $material->reference_num }}</td>
+			                <td>{{ $material->name }}</td>
+			                <td>{{ $material->quantity }}</td>
+			                <td><span>
+			                <?php $url = url('admin-inventory-edit/'.$material->id); ?>
+			                <a href="{{ $url }}" class="admin-button">Edit</a> 
 
-			                <form action="" method="POST" style="display: -webkit-inline-box;">
-			                	<input type="hidden" name="id" value="">
+			                <form action="{{ url('/delete-material') }}" method="POST" style="display: -webkit-inline-box;">
+			                	<input type="hidden" name="id" value="{{ $material->id }}">
 			                	<input type="submit" value="Delete" class="admin-button">
 			            	</form></span>
 			            	</td>
 			            </tr>
+			            @endforeach
 		            </tbody>
 	            </table>
         	</div>
@@ -45,3 +49,18 @@
 </div>
 
 @stop
+@if(isset($_GET['success']))
+@if($_GET['success'] == 1)
+<script>
+alert('Successfully added Material!');
+</script>
+@elseif($_GET['success'] == 2)
+<script>
+alert('Successfully deleted Material!');
+</script>
+@elseif($_GET['success'] == 3)
+<script>
+alert('Successfully edited Material!');
+</script>
+@endif
+@endif

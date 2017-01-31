@@ -58,5 +58,9 @@ alert('Successfully added Main Product!');
 <script>
 alert('Successfully deleted Main Product!');
 </script>
+@elseif($_GET['success'] == 3)
+<script>
+alert('Successfully edited Main Product!');
+</script>
 @endif
 @endif

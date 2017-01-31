@@ -191,7 +191,7 @@ class ProductsController extends Controller
                 }
                 $sub->save();
 
-                if (count($request->input('sizeInput'))>1) {
+                if (count($request->input('sizeInput'))>0) {
                     foreach ($request->input('sizeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -216,7 +216,7 @@ class ProductsController extends Controller
                     }
                 }
 
-                if (count($request->input('paperTypeInput'))>1) {
+                if (count($request->input('paperTypeInput'))>0) {
                     foreach ($request->input('paperTypeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -241,7 +241,7 @@ class ProductsController extends Controller
                     }
                 }
 
-                if (count($request->input('colorPlyInput'))>1) {
+                if (count($request->input('colorPlyInput'))>0) {
                     foreach ($request->input('colorPlyInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -312,8 +312,8 @@ class ProductsController extends Controller
 
     public function editMain(Request $request){
 
-        $wew = DB::table('pivot_selectprod')->where('service_id', 14)->where('is_main', 1)->delete();
-        return $request->input('sizeInput');
+        $wew = DB::table('pivot_selectprod')->where('service_id', $request->input('id'))->where('is_main', 1)->delete();
+        
         if (count($request->input('sizeInput'))>0) {
                     foreach ($request->input('sizeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
@@ -485,17 +485,141 @@ class ProductsController extends Controller
         }
     }
 
-    public function subproductsedit() {
+    public function subproductsedit($id) {
         if (Auth::guest()) {
             return redirect('/');
         }else{
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
-                $main = DB::table('main_prod')->get();
-                return view('admin.pro-subproducts-edit');
+                $product = DB::table('sub_prod')->where('id',$id)->get();
+                $sizes = $sizes = DB::table('selects')
+                        ->join('pivot_selectprod', 'pivot_selectprod.select_id', '=', 'selects.id')
+                        ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',0)
+                        ->where('selects.type','size')->get();
+                $paperTypes = checkInputSub($id,$product[0]->is_paperType,'paperType');
+                $colorPlys = checkInputSub($id,$product[0]->is_colorFly,'colorPly');
+                return view('admin.pro-subproducts-edit')->with('product',$product[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             }
         }
+    }
+
+     public function editSub(Request $request){
+
+        $wew = DB::table('pivot_selectprod')->where('service_id', $request->input('id'))->where('is_main', 0)->delete();
+        
+        if (count($request->input('sizeInput'))>0) {
+                    foreach ($request->input('sizeInput') as $size) {
+                        $count = DB::table('selects')->where('name',$size)->count();
+                        if ($count == 0) {
+                            $select = new Select();
+                            $select->name = $size;
+                            $select->type = 'size';
+                            $select->save();
+
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }else{
+                            $select = DB::table('selects')->where('name',$size)->get();
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select[0]->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }
+                    }
+                }
+
+                if (count($request->input('paperTypeInput'))>0) {
+                    foreach ($request->input('paperTypeInput') as $size) {
+                        $count = DB::table('selects')->where('name',$size)->count();
+                        if ($count == 0) {
+                            $select = new Select();
+                            $select->name = $size;
+                            $select->type = 'paperType';
+                            $select->save();
+
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }else{
+                            $select = DB::table('selects')->where('name',$size)->get();
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select[0]->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }
+                    }
+                }
+
+                if (count($request->input('colorPlyInput'))>0) {
+                    foreach ($request->input('colorPlyInput') as $size) {
+                        $count = DB::table('selects')->where('name',$size)->count();
+                        if ($count == 0) {
+                            $select = new Select();
+                            $select->name = $size;
+                            $select->type = 'colorPly';
+                            $select->save();
+
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }else{
+                            $select = DB::table('selects')->where('name',$size)->get();
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select[0]->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }
+                    }
+                }
+        $is_paperType = 0;
+        $is_color = 0;
+        $is_colorFly = 0;
+        $is_lam = 0;
+        $is_per = 0;
+        $is_substrate = 0;
+        $is_corner = 0;
+        for ($i=0; $i < count($request->input('input')); $i++) { 
+                    if ($request->input('input')[$i] == 'Paper Type') {
+                        $is_paperType = 1;
+                    }else if ($request->input('input')[$i] == 'Color') {
+                        $is_color = 1;
+                    }else if ($request->input('input')[$i] == 'Color Ply') {
+                        $is_colorFly = 1;
+                    }else if ($request->input('input')[$i] == 'Lamination') {
+                        $is_lam = 1;
+                    }else if ($request->input('input')[$i] == 'Perforation') {
+                        $is_per = 1;
+                    }else if ($request->input('input')[$i] == 'Substrate') {
+                        $is_substrate = 1;
+                    }else{
+                        $is_corner = 1;
+                    }
+        }
+
+        DB::table('sub_prod')->where('id', $request->input('id'))
+        ->update(array('name' => $request->input('product'),
+                    'description' => $request->input('description'),
+                    'is_paperType' => $is_paperType,
+                    'is_color' => $is_color,
+                    'is_colorFly' => $is_colorFly,
+                    'is_lam' => $is_lam,
+                    'is_per' => $is_per,
+                    'is_substrate' => $is_substrate,
+                    'is_corner' => $is_corner
+        ));
+
+        return redirect('/admin-products-subproducts?success=3');
     }
 
     public function design() {

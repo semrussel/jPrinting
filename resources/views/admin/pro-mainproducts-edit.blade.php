@@ -38,7 +38,7 @@
 						<div class="clear"></div><br>
 
 					    <div class="col-xs-12"><p><b>Additional Details: </b></p></div>
-					    <div class="col-xs-12 no-pad"><textarea name="description" class="form-control" rows="5" id="description" required="">Extra:</textarea></div>
+					    <div class="col-xs-12 no-pad"><textarea name="description" class="form-control" rows="5" id="description" required="">{{ $product->description }}</textarea></div>
 					    <div class="clear"></div><br>
 
 						<div class="col-xs-4"><p><b>Other Options: </b></p></div>

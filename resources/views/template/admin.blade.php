@@ -95,11 +95,26 @@
                 else
                     $('#sec-colorply').fadeOut('slow');
             });
+
+                
         } );
+
+        $(document).ready(function() {
+            $("input[name$='has']").click(function() {
+                var test = $(this).val();
+
+                $("div.desc").hide();
+                $("#has" + test).show();
+            });
+        });
 
         var tagcount = 0;
 
-        $(document).keypress(function(e) {
+        $("input[name$='cars']").click(function() {
+        var test = $(this).val();
+
+        $("div.desc").hide();
+        $("#Cars" + test).show();
             if(e.which == 13) {
                 if ($('#p-size').is(':focus')) {
                     var div = document.getElementById('div-size');

@@ -22,13 +22,7 @@
 				    <div class="col-xs-12 no-pad"><input value="" name="name" type="text" id="width" class="form-control" required></div>
 					<div class="clear"></div><br>
 
-
-			        <div class="col-xs-12"><p><b>Pieces: </b></p></div>
-				    <div class="col-xs-12 no-pad"><input value="" name="pieces" type="number" id="width" class="form-control" required></div>
-					<div class="clear"></div><br>
-
-
-			        <div class="col-xs-12"><p><b>Quantity: </b></p></div>
+			        <div class="col-xs-12"><p><b>Quantity/Pieces: </b></p></div>
 				    <div class="col-xs-12 no-pad"><input value="" name="quantity" type="number" id="width" class="form-control" required></div>
 					<div class="clear"></div><br>
 

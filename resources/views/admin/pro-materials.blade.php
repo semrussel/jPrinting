@@ -15,9 +15,9 @@
 		        <table id="order-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>
+			                <th>Reference No</th>
 			                <th>Product Name</th>
-			                <th>Pieces</th>
-			                <th>Quantity</th>
+			                <th>Quantity/Pieces</th>
 			                <th>Action</th>
 			            </tr>
 			        </thead>

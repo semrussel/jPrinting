@@ -109,3 +109,5 @@ Route::post('/cancel-order', 'OrderController@cancel');
 Route::post('/confirm-payment', 'OrderController@confirm');
 Route::post('/process-order', 'OrderController@process');
 Route::post('/deliver-order', 'OrderController@deliver');
+
+Route::get('/admin-products-mainproducts-add-auto', 'ProductsController@mainproductsaddauto');

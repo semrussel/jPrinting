@@ -62,7 +62,8 @@ class ProductsController extends Controller
     }
 
     public function mainproductsadd() {
-        return view('admin.pro-mainproducts-add');
+        $size = DB::table('selects')->where('type','size')->get();
+        return view('admin.pro-mainproducts-add')->with('size',$size);
     }
 
     public function subproducts() {

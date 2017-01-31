@@ -159,5 +159,19 @@ class ProductsController extends Controller
         }
     }
 
+    public function mainproductsaddauto() {
+        $size = DB::table('selects')->where('type','size')->get();
+        $paperType = DB::table('selects')->where('type','paperType')->get();
+        $colorPly = DB::table('selects')->where('type','colorPly')->get();
+
+        return [
+            collect($size)->map(function($size) { return ['name' => $size->name]; }),
+            collect($paperType)->map(function($paperType) { return ['name' => $paperType->name]; }),
+            collect($colorPly)->map(function($colorPly) { return ['name' => $colorPly->name]; })
+        ];
+
+        
+    }
+
 
 }

@@ -30,6 +30,11 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.css"/>
 
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
     <!-- <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -63,6 +68,7 @@
 
     <!-- jQuery -->
     <script src="{{ url('js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url('js/jquery.autocomplete.js') }}"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ url('js/bootstrap.min.js') }}"></script>
@@ -145,13 +151,111 @@
                     $('#p-paper').val("");
                     $('#p-colorply').val("");
                 }
-            }
+
+                div = null;
+            } 
         });
 
         function removeVarTag(tagname) {
             var elem = document.getElementById(tagname);
             elem.remove();
         }
+
+        $.get('/admin-products-mainproducts-add-auto').success(function(data) {
+            var sizeresult = getAutoSize();
+
+            // console.log(sizeresult);
+            // this.setState(data);
+
+            function getAutoSize() {
+                var size = data[0];
+                return size.map(function(v) {
+                    return {'value': v.name, 'data': v.name};
+                });
+            }
+
+            $('#p-size').autocomplete({
+                autoSelectFirst: true,
+                lookup: sizeresult,
+                onSelect: function (suggestion) {
+                    var div = document.getElementById('div-size');
+
+                    div.innerHTML = div.innerHTML + 
+                        '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
+                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
+                        incont +
+                        '</span>';
+
+                    tagcount++;
+                    $('#p-size').val("");
+                    $('#p-paper').val("");
+                    $('#p-colorply').val("");
+                }
+            });
+        });
+
+        $.get('/admin-products-mainproducts-add-auto').success(function(data) {
+            var paperTyperesult = getAutoPaper();
+
+            function getAutoPaper() {
+                var paper = data[1];
+                return paper.map(function(v) {
+                    return {'value': v.name, 'data': v.name};
+                });
+            }
+
+            $('#p-paper').autocomplete({
+                autoSelectFirst: true,
+                lookup: paperTyperesult,
+                onSelect: function (suggestion) {
+                    var div = document.getElementById('div-paper');
+
+                    div.innerHTML = div.innerHTML + 
+                        '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
+                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
+                        incont +
+                        '</span>';
+
+                    tagcount++;
+                    $('#p-size').val("");
+                    $('#p-paper').val("");
+                    $('#p-colorply').val("");
+                }
+            });
+        });
+
+        $.get('/admin-products-mainproducts-add-auto').success(function(data) {
+            var colorPlyresult = getAutoColor();
+
+            function getAutoColor() {
+                var color = data[2];
+                return color.map(function(v) {
+                    return {'value': v.name, 'data': v.name};
+                });
+            }
+
+            $('#p-colorply').autocomplete({
+                autoSelectFirst: true,
+                lookup: colorPlyresult,
+                onSelect: function (suggestion) {
+                    var div = document.getElementById('div-colorply');
+
+                    div.innerHTML = div.innerHTML + 
+                        '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
+                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
+                        incont +
+                        '</span>';
+
+                    tagcount++;
+                    $('#p-size').val("");
+                    $('#p-paper').val("");
+                    $('#p-colorply').val("");
+                }
+            });
+        });
     </script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.js"></script>

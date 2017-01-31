@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 
-			<p class="col-xs-12 dash-title"><b>Products</b> | Materials <a href="admin-products-materials-add" class="add-button"><i class="fa fa-plus" aria-hidden="true"></i> Add New</a></p>
+			<p class="col-xs-12 dash-title"><b>Inventory</b> <a href="admin-inventory-add" class="add-button"><i class="fa fa-plus" aria-hidden="true"></i> Add New</a></p>
 
 			<div class="col-xs-12">
 		        <table id="order-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
@@ -26,7 +26,7 @@
 			                <td>a</td>
 			                <td>a</td>
 			                <td>a</td>
-			                <td><span><a href="admin-products-materials-edit" class="admin-button">Edit</a> 
+			                <td><span><a href="admin-inventory-edit" class="admin-button">Edit</a> 
 
 			                <form action="" method="POST" style="display: -webkit-inline-box;">
 			                	<input type="hidden" name="id" value="">

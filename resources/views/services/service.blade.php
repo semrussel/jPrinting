@@ -62,7 +62,7 @@
 
 @section('price-calculator')
 <!-- Price Calculator -->
-    @if($service->is_size != 0)
+    
     <p><b>Size</b></p>
     <select class="form-control" id="sel1" name="size">
         @foreach($sizes as $size)
@@ -70,7 +70,7 @@
         @endforeach
     </select>
     <div class="clear"></div><br>
-    @endif
+    
 
     @if($service->is_paperType != 0)
     <p><b>Paper Type</b></p>

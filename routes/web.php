@@ -87,14 +87,11 @@ Route::post('/admin-login', 'AdminController@login');
 Route::get('/admin-products-mainproducts', 'ProductsController@mainproducts');
 Route::get('/admin-products-subproducts', 'ProductsController@subproducts');
 Route::get('/admin-products-design', 'ProductsController@design');
-Route::get('/admin-products-materials', 'ProductsController@materials');
-
 Route::get('/admin-products-mainproducts-add', 'ProductsController@mainproductsadd');
 Route::get('/admin-products-subproducts-add', 'ProductsController@subproductsadd');
 Route::get('/admin-products-mainproducts-edit', 'ProductsController@mainproductsedit');
 Route::get('/admin-products-subproducts-edit', 'ProductsController@subproductsedit');
-Route::get('/admin-products-materials-add', 'ProductsController@materialsadd');
-Route::get('/admin-products-materials-edit', 'ProductsController@materialsedit');
+
 Route::post('/create-mainprod', 'ProductsController@createMain');
 Route::post('/delete-mainprod', 'ProductsController@deleteMain');
 Route::post('/create-subprod', 'ProductsController@createSub');
@@ -105,7 +102,10 @@ Route::post('/edit-mainprod', 'ProductsController@editMain');
 Route::get('/admin-reports-income', 'ReportController@income');
 Route::get('/admin-reports-cancel', 'ReportController@cancel');
 
-Route::get('/admin-inventory', 'InventoryController@index');
+
+Route::get('/admin-inventory', 'InventoryController@inventory');
+Route::get('/admin-inventory-add', 'InventoryController@inventoryadd');
+Route::get('/admin-inventory-edit', 'InventoryController@inventoryedit');
 
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');

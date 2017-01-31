@@ -8,7 +8,7 @@ function checkInput($id,$go,$input)
             ->where('selects.type',$input)->get();
         return $data;
 	}else{
-		return 'wew';	
+		return NULL;	
 	}
 	
 }

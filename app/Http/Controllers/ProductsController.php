@@ -301,10 +301,47 @@ class ProductsController extends Controller
                         ->join('pivot_selectprod', 'pivot_selectprod.select_id', '=', 'selects.id')
                         ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',1)
                         ->where('selects.type','size')->get();
-                return view('admin.pro-mainproducts-edit')->with('product',$product[0])->with('sizes',$sizes);
+                $paperTypes = checkInput($id,$product[0]->is_paperType,'paperType');
+                $colorPlys = checkInput($id,$product[0]->is_colorFly,'colorPly');
+
+                return view('admin.pro-mainproducts-edit')->with('product',$product[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             }
         }
         
+    }
+
+    public function editMain(Request $request){
+
+        for ($i=0; $i < count($request->input('input')); $i++) { 
+                    if ($request->input('input')[$i] == 'Paper Type') {
+                        $is_paperType = 1;
+                    }else if ($request->input('input')[$i] == 'Color') {
+                        $is_color = 1;
+                    }else if ($request->input('input')[$i] == 'Color Ply') {
+                        $is_colorFly = 1;
+                    }else if ($request->input('input')[$i] == 'Lamination') {
+                        $is_lam = 1;
+                    }else if ($request->input('input')[$i] == 'Perforation') {
+                        $is_per = 1;
+                    }else if ($request->input('input')[$i] == 'Substrate') {
+                        $is_substrate = 1;
+                    }else{
+                        $is_corner = 1;
+                    }
+        }
+
+        DB::table('main_prod')->where('id', $request->input('id'))
+        ->update(array('name' => $request->input('name'), 
+                    'is_subcat' => $request->input('has'),
+                    'description' => $request->input('description'),
+                    'is_paperType' => $is_paperType,
+                    'is_color' => $is_color,
+                    'is_colorFly' => $is_colorFly,
+                    'is_lam' => $is_lam,
+                    'is_per' => $is_per,
+                    'is_substrate' => $is_substrate,
+                    'is_corner' => $is_corner,
+        ));
     }
 
     public function deleteMain(Request $request) {

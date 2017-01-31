@@ -82,7 +82,58 @@
 
         $(document).ready(function() {
             $('#order-table').DataTable();
+
+            $('#opt-paper').change(function(){
+                if(this.checked)
+                    $('#sec-paper').fadeIn('slow');
+                else
+                    $('#sec-paper').fadeOut('slow');
+            });
+            $('#opt-colorply').change(function(){
+                if(this.checked)
+                    $('#sec-colorply').fadeIn('slow');
+                else
+                    $('#sec-colorply').fadeOut('slow');
+            });
         } );
+
+        var tagcount = 0;
+
+        $(document).keypress(function(e) {
+            if(e.which == 13) {
+                if ($('#p-size').is(':focus')) {
+                    var div = document.getElementById('div-size');
+                    var incont = $('#p-size').val();
+                }
+                if ($('#p-paper').is(':focus')) {
+                    var div = document.getElementById('div-paper');
+                    var incont = $('#p-paper').val();
+                }
+                if ($('#p-colorply').is(':focus')) {
+                    var div = document.getElementById('div-colorply');
+                    var incont = $('#p-colorply').val();
+                }
+
+                if (incont != "" && incont != null) {
+                    div.innerHTML = div.innerHTML + 
+                        '<span name="' + incont + '" id="vartag-' + incont + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
+                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + incont + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incont  + '-' + tagcount + '\')">' +
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
+                        incont +
+                        '</span>';
+
+                    tagcount++;
+                    $('#p-size').val("");
+                    $('#p-paper').val("");
+                    $('#p-colorply').val("");
+                }
+            }
+        });
+
+        function removeVarTag(tagname) {
+            var elem = document.getElementById(tagname);
+            elem.remove();
+        }
     </script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.js"></script>

@@ -27,6 +27,10 @@ class ProductsController extends Controller
         return view('admin.pro-subproducts');
     }
 
+    public function subproductsadd() {
+        return view('admin.pro-subproducts-add');
+    }
+
     public function design() {
         return view('admin.pro-design');
     }

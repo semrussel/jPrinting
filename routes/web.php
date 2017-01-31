@@ -30,6 +30,9 @@ Route::get('/profile-request/{id}', 'UserController@ProfileRequest');
 
 Route::get('/services', 'ServicesController@index');
 
+Route::get('/services/main/{id}', 'ServicesController@serviceMain');
+Route::get('/services/sub/{id}', 'ServicesController@serviceSub');
+
 Route::get('/services-calendars-poster', 'ServicesController@callCalendarsPoster');
 Route::get('/services-calendars-monthly', 'ServicesController@callCalendarsMonthly');
 Route::get('/services-calendars-table', 'ServicesController@callCalendarsTable');

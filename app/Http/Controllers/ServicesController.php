@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Parser;
 use Auth;
-
+use DB;
 
 class ServicesController extends Controller
 {
@@ -16,6 +16,27 @@ class ServicesController extends Controller
     	// return view('services-main');
     	return view('services.serv-land');
     }
+
+    public function serviceMain($id){
+        if (Auth::check()) {
+            $service = DB::table('main_prod')->where('id',$id)->get();
+            return view('services.service')->with('service',$service[0]);
+            
+        }else{
+            return redirect('/login?check=1');
+        }
+    }
+
+    public function serviceSub($id){
+        if (Auth::check()) {
+            $service = DB::table('sub_prod')->where('id',$id)->get();
+            return view('services.service')->with('service',$service[0]);
+            
+        }else{
+            return redirect('/login?check=1');
+        }
+    }
+
 
     public function callCalendarsPoster(){
         if (Auth::check()) {

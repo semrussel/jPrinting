@@ -10,17 +10,17 @@
 		<div class="col-xs-12">
 
 			<p class="col-xs-12 dash-title"><b>Products</b> | Add New Main Product
-
+		<form action="{{ url('/create-mainprod') }}" method="POST">
 			<div class="col-xs-6">
 				<div class="col-xs-12">
 			        <div class="col-xs-12"><p><b>Product Name: </b></p></div>
-				    <div class="col-xs-12 no-pad"><input value="" name="product" type="text" id="width" class="form-control" required></div>
+				    <div class="col-xs-12 no-pad"><input value="" name="name" type="text" id="width" class="form-control" required></div>
 					<div class="clear"></div><br>
 
 					<div class="col-xs-4"><p><b>Has Sub Products:</b></p></div>
 					<div class="col-xs-8" id="hassub-group">
 					    <div class="col-xs-6"><input type="radio" name="has" checked="checked" value="1"/> True</div>
-					    <div class="col-xs-6"><input type="radio" name="has" value="2"/> False</div>
+					    <div class="col-xs-6"><input type="radio" name="has" value="0"/> False</div>
 					</div>
 				    <div class="clear"></div><br>
 
@@ -39,15 +39,15 @@
 
 						<div class="col-xs-8 checkbox">
 					    	<div class="col-xs-6">
-			  					<label><input id="opt-paper" type="checkbox" value="">Paper Type</label>
-			  					<br><label><input id="opt-color" type="checkbox" value="">Color</label>
-			  					<br><label><input id="opt-colorply" type="checkbox" value="">Color Ply</label>
+			  					<label><input id="opt-paper" name="input[]" type="checkbox" value="Paper Type">Paper Type</label>
+			  					<br><label><input id="opt-color" name="input[]" type="checkbox" value="Color">Color</label>
+			  					<br><label><input id="opt-colorply" name="input[]" type="checkbox" value="Color Ply">Color Ply</label>
 							</div>
 							<div class="col-xs-6">
-			  					<label><input id="opt-lamination" type="checkbox" value="">Lamination</label>
-			  					<br><label><input id="opt-perforation" type="checkbox" value="">Perforation</label>
-			  					<br><label><input id="opt-substrate" type="checkbox" value="">Substrate</label>
-			  					<br><label><input id="opt-corner" type="checkbox" value="">Corners</label>
+			  					<label><input id="opt-lamination" name="input[]" type="checkbox" value="Lamination">Lamination</label>
+			  					<br><label><input id="opt-perforation" name="input[]" type="checkbox" value="Perforation">Perforation</label>
+			  					<br><label><input id="opt-substrate" name="input[]" type="checkbox" value="Substrate">Substrate</label>
+			  					<br><label><input id="opt-corner" name="input[]" type="checkbox" value="Corners">Corners</label>
 							</div>
 						</div>
 
@@ -81,15 +81,16 @@
 						    <div class="clear"></div><hr>
 					    </div>
 
-					    <div class="col-xs-4 col-xs-offset-8 no-pad">
+					    
+	                    <div class="clear"></div><br>
+
+				    </div>
+				    <div class="col-xs-4 col-xs-offset-8 no-pad">
 		                	<form action="" method="POST">
 		                        <input type="hidden" name="id" value=""> 
 		                        <input type="submit" value="Submit" class="btn btn-primary" style="width: 100%;">
 		                    </form>
 	                    </div>
-	                    <div class="clear"></div><br>
-
-				    </div>
 				    <!-- <div id="has2" class="desc" style="display: none;">
 				    </div> -->
 				    
@@ -102,6 +103,7 @@
 	    		<img class="col-xs-12" src="{{ url('img/bl-shirt-01.jpg') }}">
 
 	    	</div>
+	    </form>
     	<div>
     </div><!-- /.row -->
 

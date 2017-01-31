@@ -19,11 +19,6 @@ class OrderController extends Controller
 
     public function create(Request $request){
 
-        
-        
-
-    
-
         $requestQuote = new Order();
         $requestQuote->product = $request->input('product');
         $requestQuote->price = 0;

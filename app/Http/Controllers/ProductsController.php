@@ -81,31 +81,82 @@ class ProductsController extends Controller
     }
 
     public function mainproductsadd() {
-        $size = DB::table('selects')->where('type','size')->get();
-        return view('admin.pro-mainproducts-add')->with('size',$size);
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                $size = DB::table('selects')->where('type','size')->get();
+                return view('admin.pro-mainproducts-add')->with('size',$size);
+            }
+        }
+        
     }
 
     public function deleteMain(Request $request) {
-        DB::table('main_prod')->where('id', $id)->delete();
-        return 'wew';
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                DB::table('main_prod')->where('id', $request->input('id'))->delete();
+
+             return redirect('/admin-products-mainproducts?success=2');
+            }
+        }
     }
 
     public function subproducts() {
-        $products = DB::table('sub_prod')->get();
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                $products = DB::table('sub_prod')->get();
 
-        return view('admin.pro-subproducts')->with('products',$products);
+                return view('admin.pro-subproducts')->with('products',$products);
+            }
+        }
+        
     }
 
     public function subproductsadd() {
-        return view('admin.pro-subproducts-add');
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                return view('admin.pro-subproducts-add');
+            }
+        }
     }
 
     public function design() {
-        return view('admin.pro-design');
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                return view('admin.pro-design');
+            }
+        }
     }
 
     public function materials() {
-        return view('admin.pro-materials');
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                return view('admin.pro-materials');
+            }
+        }
     }
 
 

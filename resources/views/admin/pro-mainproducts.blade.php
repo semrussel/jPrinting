@@ -47,3 +47,14 @@
 </div>
 
 @stop
+@if(isset($_GET['success']))
+@if($_GET['success'] == 1)
+<script>
+alert('Successfully added Main Product!');
+</script>
+@elseif($_GET['success'] == 2)
+<script>
+alert('Successfully deleted Main Product!');
+</script>
+@endif
+@endif

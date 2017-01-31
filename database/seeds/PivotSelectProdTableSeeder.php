@@ -11,8 +11,8 @@ class PivotSelectProdTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {   
-        //SIZE
+    {
+        //SIZE Calendars Poster
         $select = new PivotSelectProd;
         $select->select_id = 13;
         $select->service_id = 1;
@@ -25,6 +25,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Calendars Monthly
         $select = new PivotSelectProd;
         $select->select_id = 13;
         $select->service_id = 2;
@@ -37,6 +38,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Calendars Table Tent
         $select = new PivotSelectProd;
         $select->select_id = 15;
         $select->service_id = 3;
@@ -49,30 +51,18 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Stickers and labels Vinyl Round
         $select = new PivotSelectProd;
         $select->select_id = 23;
-        $select->service_id = 7;
+        $select->service_id = 4;
         $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
         $select->select_id = 24;
-        $select->service_id = 7;
+        $select->service_id = 4;
         $select->is_main = 0;
         $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 23;
-        $select->service_id = 8;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 24;
-        $select->service_id = 8;
-        $select->is_main = 0;
-        $select->save();
-
 
         $select = new PivotSelectProd;
         $select->select_id = 25;
@@ -188,6 +178,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Stickers and labels Vinyl Square
         $select = new PivotSelectProd;
         $select->select_id = 23;
         $select->service_id = 5;
@@ -314,6 +305,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Stickers and labels Vinyl Rect
         $select = new PivotSelectProd;
         $select->select_id = 23;
         $select->service_id = 6;
@@ -328,7 +320,7 @@ class PivotSelectProdTableSeeder extends Seeder
 
         $select = new PivotSelectProd;
         $select->select_id = 25;
-        $select->service_id = 4;
+        $select->service_id = 6;
         $select->is_main = 0;
         $select->save();
 
@@ -377,13 +369,13 @@ class PivotSelectProdTableSeeder extends Seeder
         $select = new PivotSelectProd;
         $select->select_id = 33;
         $select->service_id = 6;
-        $select->is_main = 1;
+        $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
         $select->select_id = 34;
         $select->service_id = 6;
-        $select->is_main =0;
+        $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
@@ -440,6 +432,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Invitations
         $select = new PivotSelectProd;
         $select->select_id = 44;
         $select->service_id = 3;
@@ -458,6 +451,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 1;
         $select->save();
 
+        // Size Business Cards 1-side
         $select = new PivotSelectProd;
         $select->select_id = 3;
         $select->service_id = 7;
@@ -470,6 +464,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Business Cards 2-side
         $select = new PivotSelectProd;
         $select->select_id = 3;
         $select->service_id = 8;
@@ -479,22 +474,30 @@ class PivotSelectProdTableSeeder extends Seeder
         $select = new PivotSelectProd;
         $select->select_id = 4;
         $select->service_id = 8;
-        $select->is_main = 0;
+        $select->is_main = 1;
         $select->save();
 
+        // Size Souvenir
         $select = new PivotSelectProd;
-        $select->select_id = 1;
+        $select->select_id = 9;
         $select->service_id = 5;
         $select->is_main = 1;
         $select->save();
 
         $select = new PivotSelectProd;
-        $select->select_id = 2;
+        $select->select_id = 10;
         $select->service_id = 5;
         $select->is_main = 1;
         $select->save();
 
+        // Size Paper bags
+        $select = new PivotSelectProd;
+        $select->select_id = 3;
+        $select->service_id = 6;
+        $select->is_main = 1;
+        $select->save();
 
+        // Size Tickets 1-side
         $select = new PivotSelectProd;
         $select->select_id = 11;
         $select->service_id = 9;
@@ -507,6 +510,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Tickets 2-side
         $select = new PivotSelectProd;
         $select->select_id = 11;
         $select->service_id = 10;
@@ -519,12 +523,14 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Posters
         $select = new PivotSelectProd;
         $select->select_id = 13;
         $select->service_id = 8;
         $select->is_main = 1;
         $select->save();
 
+        // Size Office Forms
         $select = new PivotSelectProd;
         $select->select_id = 47;
         $select->service_id = 9;
@@ -537,6 +543,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 1;
         $select->save();
 
+        // Size Certificates
         $select = new PivotSelectProd;
         $select->select_id = 17;
         $select->service_id = 10;
@@ -549,12 +556,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 1;
         $select->save();
 
-        $select = new PivotSelectProd;
-        $select->select_id = 19;
-        $select->service_id = 10;
-        $select->is_main = 1;
-        $select->save();
-
+        // Size Receipts Carbon
         $select = new PivotSelectProd;
         $select->select_id = 20;
         $select->service_id = 11;
@@ -573,6 +575,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Receipts Carbon less
         $select = new PivotSelectProd;
         $select->select_id = 20;
         $select->service_id = 12;
@@ -591,30 +594,41 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Notebooks Wire Bound, Soft Cover
         $select = new PivotSelectProd;
         $select->select_id = 21;
         $select->service_id = 13;
         $select->is_main = 0;
         $select->save();
 
+        // Size Notebooks Wire Bound, Hard Cover
         $select = new PivotSelectProd;
         $select->select_id = 21;
         $select->service_id = 14;
         $select->is_main = 0;
         $select->save();
 
+        // Size Notebooks Perfect Bound, Soft Cover
         $select = new PivotSelectProd;
         $select->select_id = 21;
         $select->service_id = 15;
         $select->is_main = 0;
         $select->save();
 
+        // Size Notebooks Perfect Bound, Hard Cover
         $select = new PivotSelectProd;
         $select->select_id = 21;
         $select->service_id = 16;
         $select->is_main = 0;
         $select->save();
 
+        // Size Flyers and Carbon 1-side
+        $select = new PivotSelectProd;
+        $select->select_id = 4;
+        $select->service_id = 17;
+        $select->is_main = 0;
+        $select->save();
+
         $select = new PivotSelectProd;
         $select->select_id = 5;
         $select->service_id = 17;
@@ -633,9 +647,10 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Flyers and Brochures 2-side
         $select = new PivotSelectProd;
-        $select->select_id = 8;
-        $select->service_id = 17;
+        $select->select_id = 4;
+        $select->service_id = 18;
         $select->is_main = 0;
         $select->save();
 
@@ -657,55 +672,51 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Size Flyers and Brochures
         $select = new PivotSelectProd;
-        $select->select_id = 8;
-        $select->service_id = 18;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 53;
+        $select->select_id = 9;
         $select->service_id = 19;
         $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
-        $select->select_id = 54;
+        $select->select_id = 10;
         $select->service_id = 19;
         $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
-        $select->select_id = 53;
+        $select->select_id = 9;
         $select->service_id = 20;
         $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
-        $select->select_id = 54;
+        $select->select_id = 10;
         $select->service_id = 20;
         $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
-        $select->select_id = 53;
+        $select->select_id = 9;
         $select->service_id = 21;
         $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
-        $select->select_id = 54;
+        $select->select_id = 10;
         $select->service_id = 21;
         $select->is_main = 0;
         $select->save();
 
-        //PAPER TYPE
+        // Paper type Invitations
         $select = new PivotSelectProd;
         $select->select_id = 68;
         $select->service_id = 3;
         $select->is_main = 1;
         $select->save();
 
+        // Paper type Business Cards 1-side
         $select = new PivotSelectProd;
         $select->select_id = 61;
         $select->service_id = 7;
@@ -730,6 +741,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Paper type Business Cars 2-side
         $select = new PivotSelectProd;
         $select->select_id = 61;
         $select->service_id = 8;
@@ -754,6 +766,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 0;
         $select->save();
 
+        // Paper type Souvenir Program
         $select = new PivotSelectProd;
         $select->select_id = 56;
         $select->service_id = 5;
@@ -766,55 +779,33 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 1;
         $select->save();
 
-        $select = new PivotSelectProd;
-        $select->select_id = 58;
-        $select->service_id = 5;
-        $select->is_main = 1;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 59;
-        $select->service_id = 5;
-        $select->is_main = 1;
-        $select->save();
-
+        // Paper type Tickets 1-side
         $select = new PivotSelectProd;
         $select->select_id = 61;
-        $select->service_id = 4;
+        $select->service_id = 9;
         $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
         $select->select_id = 68;
-        $select->service_id = 4;
+        $select->service_id = 9;
         $select->is_main = 0;
         $select->save();
 
+        // Paper type Tickets 2-side
         $select = new PivotSelectProd;
         $select->select_id = 61;
-        $select->service_id = 5;
+        $select->service_id = 10;
         $select->is_main = 0;
         $select->save();
 
         $select = new PivotSelectProd;
         $select->select_id = 68;
-        $select->service_id = 5;
+        $select->service_id = 10;
         $select->is_main = 0;
         $select->save();
 
-        $select = new PivotSelectProd;
-        $select->select_id = 61;
-        $select->service_id = 6;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 68;
-        $select->service_id = 6;
-        $select->is_main = 0;
-        $select->save();
-
-
+        // Paper type Posters
         $select = new PivotSelectProd;
         $select->select_id = 60;
         $select->service_id = 8;
@@ -825,7 +816,6 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->select_id = 68;
         $select->service_id = 8;
         $select->is_main = 1;
-        $select->save();
 
         $select = new PivotSelectProd;
         $select->select_id = 64;
@@ -839,6 +829,14 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 1;
         $select->save();
 
+        // Paper type Office Form
+        $select = new PivotSelectProd;
+        $select->select_id = 57;
+        $select->service_id = 9;
+        $select->is_main = 1;
+        $select->save();
+
+        // Paper type Certificates
         $select = new PivotSelectProd;
         $select->select_id = 60;
         $select->service_id = 10;
@@ -864,6 +862,12 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->save();
 
         $select = new PivotSelectProd;
+        $select->select_id = 64;
+        $select->service_id = 10;
+        $select->is_main = 1;
+        $select->save();
+
+        $select = new PivotSelectProd;
         $select->select_id = 70;
         $select->service_id = 10;
         $select->is_main = 1;
@@ -872,7 +876,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select = new PivotSelectProd;
         $select->select_id = 71;
         $select->service_id = 10;
-        $select->is_main =1;
+        $select->is_main = 1;
         $select->save();
 
         $select = new PivotSelectProd;
@@ -881,115 +885,7 @@ class PivotSelectProdTableSeeder extends Seeder
         $select->is_main = 1;
         $select->save();
 
-        $select = new PivotSelectProd;
-        $select->select_id = 73;
-        $select->service_id = 11;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 74;
-        $select->service_id = 11;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 73;
-        $select->service_id = 12;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 74;
-        $select->service_id = 12;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 63;
-        $select->service_id = 13;
-        $select->is_main =0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 63;
-        $select->service_id = 14;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 63;
-        $select->service_id = 15;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 63;
-        $select->service_id = 16;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 66;
-        $select->service_id = 17;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 67;
-        $select->service_id = 17;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 66;
-        $select->service_id = 18;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 67;
-        $select->service_id = 18;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 66;
-        $select->service_id = 19;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 67;
-        $select->service_id = 19;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 66;
-        $select->service_id = 20;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 67;
-        $select->service_id = 20;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 66;
-        $select->service_id = 21;
-        $select->is_main = 0;
-        $select->save();
-
-        $select = new PivotSelectProd;
-        $select->select_id = 67;
-        $select->service_id = 21;
-        $select->is_main = 0;
-        $select->save();
-
-        //COLORPLY
+        // Color fly Receipts Carbon
         $select = new PivotSelectProd;
         $select->select_id = 77;
         $select->service_id = 11;
@@ -1011,6 +907,96 @@ class PivotSelectProdTableSeeder extends Seeder
         $select = new PivotSelectProd;
         $select->select_id = 80;
         $select->service_id = 11;
+        $select->is_main = 0;
+        $select->save();
+
+        // Color fly Receipts CarbonLess
+        $select = new PivotSelectProd;
+        $select->select_id = 77;
+        $select->service_id = 12;
+        $select->is_main = 0;
+        $select->save();
+
+        $select = new PivotSelectProd;
+        $select->select_id = 78;
+        $select->service_id = 12;
+        $select->is_main = 0;
+        $select->save();
+
+        $select = new PivotSelectProd;
+        $select->select_id = 79;
+        $select->service_id = 12;
+        $select->is_main = 0;
+        $select->save();
+
+        $select = new PivotSelectProd;
+        $select->select_id = 80;
+        $select->service_id = 12;
+        $select->is_main = 0;
+        $select->save();
+
+        //  Paper type Flyers and Brochures 1-side
+        $select = new PivotSelectProd;
+        $select->select_id = 66;
+        $select->service_id = 17;
+        $select->is_main = 0;
+        $select->save();
+
+        $select = new PivotSelectProd;
+        $select->select_id = 67;
+        $select->service_id = 17;
+        $select->is_main = 0;
+        $select->save();
+
+        // Paper type Flyers and Brochures 2-side
+        $select = new PivotSelectProd;
+        $select->select_id = 66;
+        $select->service_id = 18;
+        $select->is_main = 0;
+        $select->save();
+
+        $select = new PivotSelectProd;
+        $select->select_id = 67;
+        $select->service_id = 18;
+        $select->is_main = 0;
+        $select->save();
+
+        // Flyers and Brochures Bi-fold
+        $select = new PivotSelectProd;
+        $select->select_id = 66;
+        $select->service_id = 19;
+        $select->is_main = 0;
+        $select->save();
+
+        $select = new PivotSelectProd;
+        $select->select_id = 67;
+        $select->service_id = 19;
+        $select->is_main = 0;
+        $select->save();
+
+        // Flyers and Brochures tri-Fold
+        $select = new PivotSelectProd;
+        $select->select_id = 66;
+        $select->service_id = 20;
+        $select->is_main = 0;
+        $select->save();
+
+        $select = new PivotSelectProd;
+        $select->select_id = 67;
+        $select->service_id = 20;
+        $select->is_main = 0;
+        $select->save();
+
+        // Flyers and Brochures Quad-fold
+        $select = new PivotSelectProd;
+        $select->select_id = 66;
+        $select->service_id = 21;
+        $select->is_main = 0;
+        $select->save();
+
+        $select = new PivotSelectProd;
+        $select->select_id = 67;
+        $select->service_id = 21;
         $select->is_main = 0;
         $select->save();
     }

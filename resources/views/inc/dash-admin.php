@@ -1,6 +1,6 @@
 <div class="ad-dash col-md-2">
     <div class="list-group">
-        <a id="dash" href="/admin-dash" class="list-group-item"><i class="fa fa-home" aria-hidden="true"></i> <b>Dashboard</b></a>
+        <a id="dash" href="/admin-dash" class="list-group-item"><i class="fa fa-tachometer" aria-hidden="true"></i> <b>Dashboard</b></a>
 
         <a id="products" class="list-group-item" data-remote="true" href="#sub-pro" id="cub-pro" data-toggle="collapse" data-parent="#sub-pro">
         <span><i class="fa fa-book" aria-hidden="true"></i> Maintenance</span>
@@ -27,5 +27,8 @@
 	        <a id="sub-cancel" href="/admin-reports-cancel" class="list-group-item sub-item" style="padding-left: 20px;">Cancelled Orders</a>
 	        <!-- <a href="/services-calendars-table" class="list-group-item sub-item">Table Tent Calendar</a> -->
 	    </div>
+
+        <a id="inventory" href="/admin-inventory" class="list-group-item"><i class="fa fa-archive" aria-hidden="true"></i> Inventory</a>
+
     </div>
 </div>

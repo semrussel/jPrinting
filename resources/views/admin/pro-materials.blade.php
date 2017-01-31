@@ -26,7 +26,7 @@
 			                <td>a</td>
 			                <td>a</td>
 			                <td>a</td>
-			                <td><span><a href="admin-products-mainproducts-edit" class="admin-button">Edit</a> 
+			                <td><span><a href="admin-products-materials-edit" class="admin-button">Edit</a> 
 
 			                <form action="" method="POST" style="display: -webkit-inline-box;">
 			                	<input type="hidden" name="id" value="">

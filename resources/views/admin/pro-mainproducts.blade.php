@@ -17,19 +17,19 @@
 			            <tr>
 			                <th>Product ID</th>
 			                <th>Product Name</th>
-			                <th>Status</th>
+			                <th>Has Sub Category</th>
 			                <th>Action</th>
 			            </tr>
 			        </thead>
 			        <tbody>
-			        	@for($i=0; $i<5; $i++)
+			        	@foreach($products as $product)
 				            <tr>
-				                <td>{{ $i }}</td>
-				                <td>Souvenir Program</td>
-				                <td>Available</td>
+				                <td>{{ $product->id }}</td>
+				                <td>{{ $product->name }}</td>
+				                <td>{{ checkBool($product->is_subcat) }}</td>
 				                <td><a href="" class="admin-button">Edit</a> <a href="" class="admin-button">Delete</a></td>
 				            </tr>
-			            @endfor
+			            @endforeach
 		            </tbody>
 	            </table>
         	</div>

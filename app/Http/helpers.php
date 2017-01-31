@@ -12,4 +12,12 @@ function checkInput($id,$go,$input)
 	}
 	
 }
+
+function checkBool($num){
+	if ($num == 1) {
+		return 'TRUE';
+	}else{
+		return 'FALSE';
+	}
+}
 ?>

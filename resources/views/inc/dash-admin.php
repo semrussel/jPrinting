@@ -3,7 +3,7 @@
         <a id="dash" href="/admin-dash" class="list-group-item"><i class="fa fa-home" aria-hidden="true"></i> <b>Dashboard</b></a>
 
         <a id="products" class="list-group-item" data-remote="true" href="#sub-pro" id="cub-pro" data-toggle="collapse" data-parent="#sub-pro">
-        <span><i class="fa fa-book" aria-hidden="true"></i> Products</span>
+        <span><i class="fa fa-book" aria-hidden="true"></i> Maintenance</span>
         <span class="badge" style="background: transparent; width: 10px;"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
         </a>
         <div class="collapse list-group-submenu" id="sub-pro">

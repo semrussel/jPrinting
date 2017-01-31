@@ -16,7 +16,10 @@ class ProductsController extends Controller
     }
 
     public function mainproducts() {
-        return view('admin.pro-mainproducts');
+
+        $products = DB::table('main_prod')->get();
+
+        return view('admin.pro-mainproducts')->with('products',$products);
     }
 
     public function mainproductsadd() {

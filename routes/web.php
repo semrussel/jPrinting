@@ -27,7 +27,6 @@ Route::get('/profile', 'UserController@Profile');
 Route::get('/profile-order/{id}', 'UserController@ProfileOrder');
 Route::get('/profile-request/{id}', 'UserController@ProfileRequest');
 
-
 Route::get('/services', 'ServicesController@index');
 
 Route::get('/services-calendars-poster', 'ServicesController@callCalendarsPoster');
@@ -82,9 +81,16 @@ Route::get('/admin-request-quotes', 'AdminController@adminRequestQuotes');
 Route::get('/admin-request-view/{id}', 'AdminController@adminRequestsView'); //request-view
 Route::post('/admin-login', 'AdminController@login');
 
+Route::get('/admin-products-mainproducts', 'ProductsController@mainproducts');
+Route::get('/admin-products-subproducts', 'ProductsController@subproducts');
+Route::get('/admin-products-design', 'ProductsController@design');
+Route::get('/admin-products-materials', 'ProductsController@materials');
+
+Route::get('/admin-products-mainproducts-add', 'ProductsController@mainproductsadd');
+Route::get('/admin-products-subproducts-add', 'ProductsController@subproductsadd');
+
 Route::get('/admin-reports-income', 'ReportController@income');
 Route::get('/admin-reports-cancel', 'ReportController@cancel');
-
 
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');

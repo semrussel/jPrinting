@@ -122,16 +122,19 @@
                     e.preventDefault();
                     var div = document.getElementById('div-size');
                     var incont = $('#p-size').val();
+                    var intype = 'size';
                 }
                 if ($('#p-paper').is(':focus')) {
                     e.preventDefault();
                     var div = document.getElementById('div-paper');
                     var incont = $('#p-paper').val();
+                    var intype = 'paperType';
                 }
                 if ($('#p-colorply').is(':focus')) {
                     e.preventDefault();
                     var div = document.getElementById('div-colorply');
                     var incont = $('#p-colorply').val();
+                    var intype = 'colorPly';
                 }
 
                 var incontstr = incont;
@@ -142,9 +145,10 @@
                     div.innerHTML = div.innerHTML + 
                         '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
                         '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
-                        '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
-                        '</span>';
+                        '</span>' + 
+                        '<input name="' + intype +'Input[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
@@ -183,9 +187,10 @@
                     div.innerHTML = div.innerHTML + 
                         '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
                         '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
-                        '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
-                        '</span>';
+                        '</span>' + 
+                        '<input name="sizeInput[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
@@ -214,9 +219,10 @@
                     div.innerHTML = div.innerHTML + 
                         '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
                         '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
-                        '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
-                        '</span>';
+                        '</span>' + 
+                        '<input name="paperTypeInput[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
@@ -245,9 +251,10 @@
                     div.innerHTML = div.innerHTML + 
                         '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
                         '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
-                        '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
-                        '</span>';
+                        '</span>' + 
+                        '<input name="colorPlyInput[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");

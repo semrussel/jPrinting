@@ -10,7 +10,7 @@
 		<div class="col-xs-12">
 
 			<p class="col-xs-12 dash-title"><b>Products</b> | Add New Main Product
-		<form action="{{ url('/create-mainprod') }}" method="POST">
+		<form id="mainprod-add" action="{{ url('/create-mainprod') }}" method="POST">
 			<div class="col-xs-6">
 				<div class="col-xs-12">
 			        <div class="col-xs-12"><p><b>Product Name: </b></p></div>

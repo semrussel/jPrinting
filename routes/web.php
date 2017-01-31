@@ -95,6 +95,8 @@ Route::get('/admin-products-subproducts-add', 'ProductsController@subproductsadd
 Route::get('/admin-reports-income', 'ReportController@income');
 Route::get('/admin-reports-cancel', 'ReportController@cancel');
 
+Route::get('/admin-inventory', 'InventoryController@index');
+
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');
 Route::post('/sendQPrice', 'QuoteController@sendQPrice');

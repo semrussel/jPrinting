@@ -111,6 +111,7 @@ Route::post('/delete-material', 'InventoryController@delete');
 Route::post('/edit-material', 'InventoryController@edit');
 Route::get('/admin-inventory-add', 'InventoryController@inventoryadd');
 Route::get('/admin-inventory-edit/{id}', 'InventoryController@inventoryedit');
+Route::get('/admin-inventory-tag', 'InventoryController@inventorytag');
 
 Route::get('/request-quote', 'QuoteController@index');
 Route::post('/create-request', 'QuoteController@create');
@@ -125,3 +126,4 @@ Route::post('/process-order', 'OrderController@process');
 Route::post('/deliver-order', 'OrderController@deliver');
 
 Route::get('/admin-products-mainproducts-add-auto', 'ProductsController@mainproductsaddauto');
+Route::get('/admin-inventory-auto', 'InventoryController@productsauto');

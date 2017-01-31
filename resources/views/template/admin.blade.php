@@ -134,6 +134,18 @@
                     var incont = $('#p-colorply').val();
                     var intype = 'colorPly';
                 }
+                if ($('#p-mainpro').is(':focus')) {
+                    e.preventDefault();
+                //     var div = document.getElementById('div-mainpro');
+                //     var incont = $('#p-mainpro').val();
+                //     var intype = 'mainpro';
+                }
+                if ($('#p-subpro').is(':focus')) {
+                    e.preventDefault();
+                //     var div = document.getElementById('div-subpro');
+                //     var incont = $('#p-subpro').val();
+                //     var intype = 'subpro';
+                }
 
                 var incontstr = incont;
                 incontstr = incontstr.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
@@ -152,6 +164,8 @@
                     $('#p-size').val("");
                     $('#p-paper').val("");
                     $('#p-colorply').val("");
+                    $('#p-mainpro').val("");
+                    $('#p-subpro').val("");
                 }
 
                 div = null;
@@ -182,7 +196,14 @@
                 autoSelectFirst: true,
                 lookup: sizeresult,
                 onSelect: function (suggestion) {
+                    e.preventDefault();
+
                     var div = document.getElementById('div-size');
+                    var incont = $('#p-size').val();
+                    var intype = 'size';
+
+                    var incontstr = incont;
+                    incontstr = incontstr.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
 
                     div.innerHTML = div.innerHTML + 
                         '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
@@ -190,7 +211,7 @@
                         '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
                         '</span>' + 
-                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="sizeInput[]" type="hidden" value="' + incont + '">';
+                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="' + intype +'Input[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
@@ -214,15 +235,22 @@
                 autoSelectFirst: true,
                 lookup: paperTyperesult,
                 onSelect: function (suggestion) {
-                    var div = document.getElementById('div-paper');
+                    e.preventDefault();
 
-                    div.innerHTML = div.innerHTML + 
+                    var div = document.getElementById('div-paper');
+                    var incont = $('#p-paper').val();
+                    var intype = 'paperType';
+
+                    var incontstr = incont;
+                    incontstr = incontstr.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
+
+                   div.innerHTML = div.innerHTML + 
                         '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
                         '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
                         '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
                         '</span>' + 
-                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="paperTypeInput[]" type="hidden" value="' + incont + '">';
+                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="' + intype +'Input[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
@@ -246,7 +274,14 @@
                 autoSelectFirst: true,
                 lookup: colorPlyresult,
                 onSelect: function (suggestion) {
+                    e.preventDefault();
+
                     var div = document.getElementById('div-colorply');
+                    var incont = $('#p-colorply').val();
+                    var intype = 'colorPly';
+
+                    var incontstr = incont;
+                    incontstr = incontstr.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
 
                     div.innerHTML = div.innerHTML + 
                         '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
@@ -254,12 +289,73 @@
                         '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
                         '</span>' + 
-                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="colorPlyInput[]" type="hidden" value="' + incont + '">';
+                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="' + intype +'Input[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
                     $('#p-paper').val("");
                     $('#p-colorply').val("");
+                }
+            });
+        });
+
+        $.get('/admin-inventory-auto').success(function(data) {
+            var mproresult = getAutoColor();
+
+            function getAutoColor() {
+                var mpro = data[0];
+                return mpro.map(function(v) {
+                    return {'value': v.name, 'data': v.name};
+                });
+            }
+
+            $('#p-mainpro').autocomplete({
+                autoSelectFirst: true,
+                lookup: mproresult,
+                onSelect: function (suggestion) {
+                    var div = document.getElementById('div-mainpro');
+                    var intype = 'mainpro';
+
+                    div.innerHTML = div.innerHTML + 
+                        '<span name="' + suggestion.data + '" id="vartag-' + suggestion.data + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
+                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + suggestion.data + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + suggestion.data  + '-' + tagcount + '\')">' +
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' +
+                        suggestion.data +
+                        '</span>' + 
+                        '<input id="vartag-' + suggestion.data + '-' + tagcount + '-in" name="' + intype +'Input[]" type="hidden" value="' + suggestion.data + '">';
+
+                    tagcount++;
+                    $('#p-mainpro').val("");
+                }
+            });
+        });
+        $.get('/admin-inventory-auto').success(function(data) {
+            var sproresult = getAutoColor();
+
+            function getAutoColor() {
+                var spro = data[1];
+                return spro.map(function(v) {
+                    return {'value': v.name, 'data': v.name};
+                });
+            }
+
+            $('#p-subpro').autocomplete({
+                autoSelectFirst: true,
+                lookup: sproresult,
+                onSelect: function (suggestion) {
+                    var div = document.getElementById('div-subpro');
+                    var intype = 'subpro';
+
+                    div.innerHTML = div.innerHTML + 
+                        '<span name="' + suggestion.data + '" id="vartag-' + suggestion.data + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
+                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + suggestion.data + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + suggestion.data  + '-' + tagcount + '\')">' +
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' +
+                        suggestion.data +
+                        '</span>' + 
+                        '<input id="vartag-' + suggestion.data + '-' + tagcount + '-in" name="' + intype +'Input[]" type="hidden" value="' + suggestion.data + '">';
+
+                    tagcount++;
+                    $('#p-subpro').val("");
                 }
             });
         });

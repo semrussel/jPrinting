@@ -101,4 +101,38 @@ class InventoryController extends Controller
         }
     }
 
+    public function inventorytag() {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+
+                return view('admin.pro-materials-tag');
+            }
+        }
+    }
+
+    public function productsauto() {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                $mpro = DB::table('main_prod')->where('is_subcat','0')->get();
+                $spro = DB::table('sub_prod')->get();
+
+                return [
+                    collect($mpro)->map(function($mpro) { return ['name' => $mpro->name]; }),
+                    collect($spro)->map(function($spro) { return ['name' => $spro->name]; })
+                ];
+            }
+        }
+        
+
+        
+    }
+
 }

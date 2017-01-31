@@ -34,7 +34,14 @@
 			                <form action="{{ url('/delete-material') }}" method="POST" style="display: -webkit-inline-box;">
 			                	<input type="hidden" name="id" value="{{ $material->id }}">
 			                	<input type="submit" value="Delete" class="admin-button">
-			            	</form></span>
+			            	</form>
+
+			            	<a href="/admin-inventory-tag" class="admin-button">Tag</a></span>
+
+			            	<!-- <form action="admin-inventory-tag" method="POST" style="display: -webkit-inline-box;">
+			                	<input type="hidden" name="id" value="">
+			                	<input type="submit" value="Tag" class="admin-button">
+			            	</form></span> -->
 			            	</td>
 			            </tr>
 			            @endforeach

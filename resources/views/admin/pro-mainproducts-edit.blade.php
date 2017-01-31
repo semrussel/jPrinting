@@ -14,22 +14,27 @@
 			<div class="col-xs-6">
 				<div class="col-xs-12">
 			        <div class="col-xs-12"><p><b>Product Name: </b></p></div>
-				    <div class="col-xs-12 no-pad"><input value="" name="name" type="text" id="width" class="form-control" required></div>
+				    <div class="col-xs-12 no-pad"><input value="{{ $product->name }}" name="name" type="text" id="width" class="form-control" required></div>
 					<div class="clear"></div><br>
 
 					<div class="col-xs-4"><p><b>Has Sub Products:</b></p></div>
 					<div class="col-xs-8" id="hassub-group">
-					    <div class="col-xs-6"><input type="radio" name="has" checked="checked" value="1"/> True</div>
-					    <div class="col-xs-6"><input type="radio" name="has" value="0"/> False</div>
+					    <div class="col-xs-6"><input type="radio" name="has" @if($product->is_subcat == 1 ) checked="checked" @endif value="1"/> True</div>
+					    <div class="col-xs-6"><input type="radio" name="has" @if($product->is_subcat == 0 ) checked="checked" @endif value="0"/> False</div>
 					</div>
 				    <div class="clear"></div><br>
 
-				    <div id="has0" class="desc" style="display:none">
+				    <div id="has0" class="desc" @if($product->is_subcat == 1 )style="display:none" @endif>
 
 				    	<div class="col-xs-12"><p><b>Sizes: </b></p></div>
 					    <div class="col-xs-12 no-pad"><input value="" name="12" type="text" id="p-size" class="form-control"></div>
 					    <div class="clear"></div>
-					    <div id="div-size"></div>
+					    <div id="div-size">
+					    	@foreach($sizes as $size)
+					    	<span name="{{ $size->name }}" id="{{ $size->name }}" contenteditable="false" class="tag-label"><button class="tag-label-btn" type="button" id="btn-{{ $size->name }}" onclick="removeVarTag('{{ $size->name }}')"><i class="fa fa-times" aria-hidden="true"></i></button>{{ $size->name }}</span>
+					    	<input name="sizeInput[]" type="hidden" value="{{ $size->name }}">
+					    	@endforeach
+					    </div>
 						<div class="clear"></div><br>
 
 					    <div class="col-xs-12"><p><b>Additional Details: </b></p></div>

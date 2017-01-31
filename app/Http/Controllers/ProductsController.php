@@ -288,15 +288,20 @@ class ProductsController extends Controller
         
     }
 
-    public function mainproductsedit() {
+    public function mainproductsedit($id) {
         if (Auth::guest()) {
             return redirect('/');
         }else{
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
-                $size = DB::table('selects')->where('type','size')->get();
-                return view('admin.pro-mainproducts-edit')->with('size',$size);
+
+                $product = DB::table('main_prod')->where('id',$id)->get();
+                $sizes = $sizes = DB::table('selects')
+                        ->join('pivot_selectprod', 'pivot_selectprod.select_id', '=', 'selects.id')
+                        ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',1)
+                        ->where('selects.type','size')->get();
+                return view('admin.pro-mainproducts-edit')->with('product',$product[0])->with('sizes',$sizes);
             }
         }
         

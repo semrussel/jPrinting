@@ -25,9 +25,10 @@ class ServicesController extends Controller
             ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',1)
             ->where('selects.type','size')->get();
             $paperTypes = checkInput($id,$service[0]->is_paperType,'paperType');
+            $colorPlys = checkInput($id,$service[0]->is_paperType,'colorPly');
             // return $sizes;
 
-            return view('services.service')->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes);
+            return view('services.service')->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
         }else{
             return redirect('/login?check=1');
@@ -42,7 +43,8 @@ class ServicesController extends Controller
             ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',0)
             ->where('selects.type','size')->get();
             $paperTypes = checkInput($id,$service[0]->is_paperType,'paperType');
-            return view('services.service')->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes);
+            $colorPlys = checkInput($id,$service[0]->is_paperType,'colorPly');
+            return view('services.service')->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
         }else{
             return redirect('/login?check=1');

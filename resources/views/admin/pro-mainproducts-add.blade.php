@@ -24,7 +24,7 @@
 					</div>
 				    <div class="clear"></div><br>
 
-				    <div id="has1" class="desc">
+				    <div id="has0" class="desc" style="display:none">
 
 				    	<div class="col-xs-12"><p><b>Sizes: </b></p></div>
 					    <div class="col-xs-12 no-pad"><input value="" name="12" type="text" id="p-size" class="form-control"></div>
@@ -56,6 +56,7 @@
 					    <div id="sec-paper" hidden>
 						    <div class="col-xs-4"><p><b>Paper Types: </b></p></div>
 						    <div class="col-xs-12 no-pad"><input value="" name="12" type="text" id="p-paper" class="form-control"></div>
+						    <div class="clear"></div>
 						    <div id="div-paper"></div>
 						    <div class="clear"></div><hr>
 					    </div>

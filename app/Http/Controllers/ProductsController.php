@@ -10,6 +10,9 @@ use Parser;
 use Auth;
 use DB;
 use App\MainProd;
+use App\PivotSelectProd;
+use App\Select;
+
 
 class ProductsController extends Controller
 {
@@ -45,7 +48,6 @@ class ProductsController extends Controller
                 $main->name = $request->input('name');
                 $main->is_subcat = $request->input('has');
                 $main->description = $request->input('description');
-                $main->description = $request->input('description');
                 if (isset($request->pic)) {
                     $imageName = time().'.'.$request->pic->getClientOriginalExtension();
                     $request->pic->move(public_path('images'), $imageName);
@@ -73,8 +75,94 @@ class ProductsController extends Controller
                 }
                 $main->save();
 
+                foreach ($request->input('sizeInput') as $size) {
+                    $count = DB::table('selects')->where('name',$size)->count();
+                    if ($count == 0) {
+                        $select = new Select();
+                        $select->name = $size;
+                        $select->type = 'size';
+                        $select->save();
+
+                        $pivot = new PivotSelectProd();
+                        $pivot->select_id = $select->id;
+                        $pivot->service_id = $main->id;
+                        $pivot->is_main = 1;
+                        $pivot->save();
+                    }else{
+                        $select = DB::table('selects')->where('name',$size)->get();
+                        $pivot = new PivotSelectProd();
+                        $pivot->select_id = $select[0]->id;
+                        $pivot->service_id = $main->id;
+                        $pivot->is_main = 1;
+                        $pivot->save();
+                    }
+                }
+
+                foreach ($request->input('paperTypeInput') as $size) {
+                    $count = DB::table('selects')->where('name',$size)->count();
+                    if ($count == 0) {
+                        $select = new Select();
+                        $select->name = $size;
+                        $select->type = 'paperType';
+                        $select->save();
+
+                        $pivot = new PivotSelectProd();
+                        $pivot->select_id = $select->id;
+                        $pivot->service_id = $main->id;
+                        $pivot->is_main = 1;
+                        $pivot->save();
+                    }else{
+                        $select = DB::table('selects')->where('name',$size)->get();
+                        $pivot = new PivotSelectProd();
+                        $pivot->select_id = $select[0]->id;
+                        $pivot->service_id = $main->id;
+                        $pivot->is_main = 1;
+                        $pivot->save();
+                    }
+                }
+
+                foreach ($request->input('colorPlyInput') as $size) {
+                    $count = DB::table('selects')->where('name',$size)->count();
+                    if ($count == 0) {
+                        $select = new Select();
+                        $select->name = $size;
+                        $select->type = 'colorPly';
+                        $select->save();
+
+                        $pivot = new PivotSelectProd();
+                        $pivot->select_id = $select->id;
+                        $pivot->service_id = $main->id;
+                        $pivot->is_main = 1;
+                        $pivot->save();
+                    }else{
+                        $select = DB::table('selects')->where('name',$size)->get();
+                        $pivot = new PivotSelectProd();
+                        $pivot->select_id = $select[0]->id;
+                        $pivot->service_id = $main->id;
+                        $pivot->is_main = 1;
+                        $pivot->save();
+                    }
+                }
+
 
                 return redirect('/admin-products-mainproducts?success=1');
+            }
+        }
+        
+    }
+
+    public function createSub(Request $request) {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+
+                
+
+
+                return 'wew';
             }
         }
         
@@ -108,6 +196,20 @@ class ProductsController extends Controller
         }
     }
 
+    public function deleteSub(Request $request) {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                DB::table('sub_prod')->where('id', $request->input('id'))->delete();
+
+             return redirect('/admin-products-subproducts?success=2');
+            }
+        }
+    }
+
     public function subproducts() {
         if (Auth::guest()) {
             return redirect('/');
@@ -130,6 +232,7 @@ class ProductsController extends Controller
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
+                $main = DB::table('main_prod')->get();
                 return view('admin.pro-subproducts-add');
             }
         }
@@ -160,15 +263,24 @@ class ProductsController extends Controller
     }
 
     public function mainproductsaddauto() {
-        $size = DB::table('selects')->where('type','size')->get();
-        $paperType = DB::table('selects')->where('type','paperType')->get();
-        $colorPly = DB::table('selects')->where('type','colorPly')->get();
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                $size = DB::table('selects')->where('type','size')->get();
+                $paperType = DB::table('selects')->where('type','paperType')->get();
+                $colorPly = DB::table('selects')->where('type','colorPly')->get();
 
-        return [
-            collect($size)->map(function($size) { return ['name' => $size->name]; }),
-            collect($paperType)->map(function($paperType) { return ['name' => $paperType->name]; }),
-            collect($colorPly)->map(function($colorPly) { return ['name' => $colorPly->name]; })
-        ];
+                return [
+                    collect($size)->map(function($size) { return ['name' => $size->name]; }),
+                    collect($paperType)->map(function($paperType) { return ['name' => $paperType->name]; }),
+                    collect($colorPly)->map(function($colorPly) { return ['name' => $colorPly->name]; })
+                ];
+            }
+        }
+        
 
         
     }

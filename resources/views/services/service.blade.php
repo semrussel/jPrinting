@@ -126,11 +126,9 @@
     @if($service->is_colorFly != 0)
     <p><b>Color of Ply</b></p>
     <select class="form-control" id="sel7" name="colorPly">
-        <option>White</option>
-        <option>Yellow</option>
-        <option>Pink</option>
-        <option>Green</option>
-        <option>Blue</option>
+        @foreach($colorPlys as $colorPly)
+        <option value="{{ $colorPly->name }}">{{ $colorPly->name }}</option>
+        @endforeach
     </select>
     <div class="clear"></div><br>
     @endif

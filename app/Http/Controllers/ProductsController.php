@@ -400,6 +400,30 @@ class ProductsController extends Controller
         }
     }
 
+    public function materialsadd() {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                return view('admin.pro-materials-add');
+            }
+        }
+    }
+
+    public function materialsedit() {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                return view('admin.pro-materials-edit');
+            }
+        }
+    }
+
     public function mainproductsaddauto() {
         if (Auth::guest()) {
             return redirect('/');

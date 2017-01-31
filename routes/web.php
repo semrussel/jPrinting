@@ -93,6 +93,8 @@ Route::get('/admin-products-mainproducts-add', 'ProductsController@mainproductsa
 Route::get('/admin-products-subproducts-add', 'ProductsController@subproductsadd');
 Route::get('/admin-products-mainproducts-edit', 'ProductsController@mainproductsedit');
 Route::get('/admin-products-subproducts-edit', 'ProductsController@subproductsedit');
+Route::get('/admin-products-materials-add', 'ProductsController@materialsadd');
+Route::get('/admin-products-materials-edit', 'ProductsController@materialsedit');
 Route::post('/create-mainprod', 'ProductsController@createMain');
 Route::post('/delete-mainprod', 'ProductsController@deleteMain');
 Route::post('/create-subprod', 'ProductsController@createSub');

@@ -81,10 +81,10 @@
     <script src="{{ url('js/graphs.js') }}"></script>
 
     <script type="text/javascript">
-        $(function() {
-            $('#' + location.pathname.split("-")[1]).addClass('active');
-            $('#sub-' + location.pathname.split("-")[2]).addClass('sub-active');  
-        });
+        // $(function() {
+        //     $('#' + location.pathname.split("-")[1]).addClass('active');
+        //     $('#sub-' + location.pathname.split("-")[2]).addClass('sub-active');  
+        // });
 
         $(document).ready(function() {
             $('#order-table').DataTable();

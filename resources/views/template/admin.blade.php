@@ -146,7 +146,7 @@
                         '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
                         '</span>' + 
-                        '<input name="' + intype +'Input[]" type="hidden" value="' + incont + '">';
+                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="' + intype +'Input[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
@@ -160,7 +160,9 @@
 
         function removeVarTag(tagname) {
             var elem = document.getElementById(tagname);
+            var elemin = document.getElementById(tagname+'-in');
             elem.remove();
+            elemin.remove();
         }
 
         $.get('/admin-products-mainproducts-add-auto').success(function(data) {
@@ -188,7 +190,7 @@
                         '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
                         '</span>' + 
-                        '<input name="sizeInput[]" type="hidden" value="' + incont + '">';
+                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="sizeInput[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
@@ -220,7 +222,7 @@
                         '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
                         '</span>' + 
-                        '<input name="paperTypeInput[]" type="hidden" value="' + incont + '">';
+                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="paperTypeInput[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");
@@ -252,7 +254,7 @@
                         '<i class="fa fa-times" aria-hidden="true"></i></button>' +
                         incont +
                         '</span>' + 
-                        '<input name="colorPlyInput[]" type="hidden" value="' + incont + '">';
+                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="colorPlyInput[]" type="hidden" value="' + incont + '">';
 
                     tagcount++;
                     $('#p-size').val("");

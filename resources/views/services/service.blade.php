@@ -65,8 +65,9 @@
     @if($service->is_size != 0)
     <p><b>Size</b></p>
     <select class="form-control" id="sel1" name="size">
-        <option>2 IN x 3.5 IN</option>
-        <option>3.5 X 2 IN</option>
+        @foreach($sizes as $size)
+        <option value="{{ $size->name }}">{{ $size->name }}</option>
+        @endforeach
     </select>
     <div class="clear"></div><br>
     @endif
@@ -74,10 +75,9 @@
     @if($service->is_paperType != 0)
     <p><b>Paper Type</b></p>
     <select class="form-control" id="sel2" name="paper">
-        <option>C2S 300 gsm</option>
-        <option>C2S 350 gsm</option>
-        <option>Bevania 300 gsm (White, Ivory)</option>
-        <option>Old Mill 300 gsm (White, Ivory)</option>
+        @foreach($paperTypes as $paperType)
+        <option value="{{ $paperType->name }}">{{ $paperType->name }}</option>
+        @endforeach
     </select>
     <div class="clear"></div><br>
     @endif
@@ -106,7 +106,7 @@
 
     @if($service->is_substrate != 0)
     <p><b>Substrate</b></p>
-    <select class="form-control" id="sel2" name="substrate">
+    <select class="form-control" id="sel5" name="substrate">
         <option>White Vinyl Sticker</option>
         <option>Transparent Vinyl Sticker</option>
     </select>
@@ -115,7 +115,7 @@
 
     @if($service->is_color != 0)
     <p><b>Color</b></p>
-    <select class="form-control" id="sel2" name="color">
+    <select class="form-control" id="sel6" name="color">
         <option>B & W</option>
         <option>Colored</option>
         <option>15 % Area-Colored</option>
@@ -125,7 +125,7 @@
 
     @if($service->is_colorFly != 0)
     <p><b>Color of Ply</b></p>
-    <select class="form-control" id="sel3" name="colorPly">
+    <select class="form-control" id="sel7" name="colorPly">
         <option>White</option>
         <option>Yellow</option>
         <option>Pink</option>
@@ -137,7 +137,7 @@
 
     @if($service->is_per != 0)
     <p><b>Perforation</b></p>
-    <select class="form-control" id="sel3" name="perforation">
+    <select class="form-control" id="sel8" name="perforation">
         <option>None</option>
         <option>Basic perforation</option>
         <option>Micro perforation</option>
@@ -164,4 +164,4 @@
     <input type="hidden" value="business cards 2-side" name="product">
     <div class="col-xs-6 col-xs-offset-6 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 <!-- /.Price Calculator -->
-@sto
+@stop

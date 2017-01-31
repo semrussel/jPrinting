@@ -20,7 +20,14 @@ class ServicesController extends Controller
     public function serviceMain($id){
         if (Auth::check()) {
             $service = DB::table('main_prod')->where('id',$id)->get();
-            return view('services.service')->with('service',$service[0]);
+            $sizes = DB::table('selects')
+            ->join('pivot_selectprod', 'pivot_selectprod.select_id', '=', 'selects.id')
+            ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',1)
+            ->where('selects.type','size')->get();
+            $paperTypes = checkInput($id,$service[0]->is_paperType,'paperType');
+            // return $sizes;
+
+            return view('services.service')->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes);
             
         }else{
             return redirect('/login?check=1');

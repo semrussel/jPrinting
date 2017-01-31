@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(MainProdTableSeeder::class);
         $this->call(SubProdTableSeeder::class);
+        $this->call(SelectsTableSeeder::class);
+        $this->call(PivotSelectProdTableSeeder::class);
 
     }
 }

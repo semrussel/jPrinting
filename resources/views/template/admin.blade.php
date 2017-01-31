@@ -128,10 +128,14 @@
                     var incont = $('#p-colorply').val();
                 }
 
+                var incontstr = incont;
+                incontstr = incontstr.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
+                // incontstr.replace('/[^a-zA-Z ]/g', ""));
+
                 if (incont != "" && incont != null) {
                     div.innerHTML = div.innerHTML + 
-                        '<span name="' + incont + '" id="vartag-' + incont + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
-                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + incont + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incont  + '-' + tagcount + '\')">' +
+                        '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
+                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
                         '<i class="fa fa-times" aria-hidden="true"></i></button>' + 
                         incont +
                         '</span>';

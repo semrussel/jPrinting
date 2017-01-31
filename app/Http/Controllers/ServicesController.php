@@ -42,8 +42,8 @@ class ServicesController extends Controller
             ->join('pivot_selectprod', 'pivot_selectprod.select_id', '=', 'selects.id')
             ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',0)
             ->where('selects.type','size')->get();
-            $paperTypes = checkInput($id,$service[0]->is_paperType,'paperType');
-            $colorPlys = checkInput($id,$service[0]->is_paperType,'colorPly');
+            $paperTypes = checkInputSub($id,$service[0]->is_paperType,'paperType');
+            $colorPlys = checkInputSub($id,$service[0]->is_paperType,'colorPly');
             return view('services.service')->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
         }else{

@@ -18,20 +18,18 @@
 			                <th>Product ID</th>
 			                <th>Product Name</th>
 			                <th>Main Product</th>
-			                <th>Status</th>
 			                <th>Action</th>
 			            </tr>
 			        </thead>
 			        <tbody>
-			        	@for($i=0; $i<5; $i++)
+			        	@foreach($products as $product)
 				            <tr>
-				                <td>{{ $i }}</td>
-				                <td>2-side</td>
-				                <td>Souvenir Program</td>
-				                <td>Available</td>
+				                <td>{{ $product->id }}</td>
+				                <td>{{ $product->name }}</td>
+				                <td>{{ geSubtProdName($product->main_id) }}</td>
 				                <td><a href="" class="admin-button">Edit</a> <a href="" class="admin-button">Delete</a></td>
 				            </tr>
-			            @endfor
+			            @endforeach
 		            </tbody>
 	            </table>
         	</div>

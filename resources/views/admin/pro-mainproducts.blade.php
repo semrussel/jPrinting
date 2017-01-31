@@ -27,7 +27,13 @@
 				                <td>{{ $product->id }}</td>
 				                <td>{{ $product->name }}</td>
 				                <td>{{ checkBool($product->is_subcat) }}</td>
-				                <td><a href="" class="admin-button">Edit</a> <a href="" class="admin-button">Delete</a></td>
+				                <td><a href="" class="admin-button">Edit</a> 
+
+				                <form action="{{ url('/delete-mainprod') }}" method="POST">
+				                	<input type="hidden" name="id" value="{{ $product->id }}">
+				                	<input type="submit" value="Delete" class="admin-button">
+				            	</form>
+				            	</td>
 				            </tr>
 			            @endforeach
 		            </tbody>

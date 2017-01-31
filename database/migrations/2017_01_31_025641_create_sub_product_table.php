@@ -18,14 +18,13 @@ class CreateSubProductTable extends Migration
             $table->integer('main_id');
             $table->string('name');
             $table->string('description');
-            $table->integer('is_size');
-            $table->integer('is_paperType');
-            $table->integer('is_corner');
-            $table->integer('is_lam');
-            $table->integer('is_substrate');
-            $table->integer('is_per');
-            $table->integer('is_color');
-            $table->integer('is_colorFly');
+            $table->integer('is_paperType')->nullable();
+            $table->integer('is_corner')->nullable();
+            $table->integer('is_lam')->nullable();
+            $table->integer('is_substrate')->nullable();
+            $table->integer('is_per')->nullable();
+            $table->integer('is_color')->nullable();
+            $table->integer('is_colorFly')->nullable();
             $table->timestamps();
         });
     }

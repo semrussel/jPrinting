@@ -17,48 +17,67 @@ class ProductsController extends Controller
     }
 
     public function mainproducts() {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
 
-        $products = DB::table('main_prod')->get();
+                $products = DB::table('main_prod')->get();
 
-        return view('admin.pro-mainproducts')->with('products',$products);
+                return view('admin.pro-mainproducts')->with('products',$products);
+            }
+        }
+
+        
     }
 
     public function createMain(Request $request) {
-
-        $main = new MainProd();
-        $main->name = $request->input('name');
-        $main->is_subcat = $request->input('has');
-        $main->description = $request->input('description');
-        $main->description = $request->input('description');
-        if (isset($request->pic)) {
-            $imageName = time().'.'.$request->pic->getClientOriginalExtension();
-            $request->pic->move(public_path('images'), $imageName);
-            $main->logo = url('images').'/'.$imageName;
+        if (Auth::guest()) {
+            return redirect('/');
         }else{
-            $main->logo = $request->input('pic');
-        }
-
-        for ($i=0; $i < count($request->input('input')); $i++) { 
-            if ($request->input('input')[$i] == 'Paper Type') {
-                $main->is_paperType = 1;
-            }else if ($request->input('input')[$i] == 'Color') {
-                $main->is_color = 1;
-            }else if ($request->input('input')[$i] == 'Color Ply') {
-                $main->is_colorFly = 1;
-            }else if ($request->input('input')[$i] == 'Lamination') {
-                $main->is_lam = 1;
-            }else if ($request->input('input')[$i] == 'Perforation') {
-                $main->is_per = 1;
-            }else if ($request->input('input')[$i] == 'Substrate') {
-                $main->is_substrate = 1;
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
             }else{
-                $main->is_corner = 1;
+
+                $main = new MainProd();
+                $main->name = $request->input('name');
+                $main->is_subcat = $request->input('has');
+                $main->description = $request->input('description');
+                $main->description = $request->input('description');
+                if (isset($request->pic)) {
+                    $imageName = time().'.'.$request->pic->getClientOriginalExtension();
+                    $request->pic->move(public_path('images'), $imageName);
+                    $main->logo = url('images').'/'.$imageName;
+                }else{
+                    $main->logo = $request->input('pic');
+                }
+
+                for ($i=0; $i < count($request->input('input')); $i++) { 
+                    if ($request->input('input')[$i] == 'Paper Type') {
+                        $main->is_paperType = 1;
+                    }else if ($request->input('input')[$i] == 'Color') {
+                        $main->is_color = 1;
+                    }else if ($request->input('input')[$i] == 'Color Ply') {
+                        $main->is_colorFly = 1;
+                    }else if ($request->input('input')[$i] == 'Lamination') {
+                        $main->is_lam = 1;
+                    }else if ($request->input('input')[$i] == 'Perforation') {
+                        $main->is_per = 1;
+                    }else if ($request->input('input')[$i] == 'Substrate') {
+                        $main->is_substrate = 1;
+                    }else{
+                        $main->is_corner = 1;
+                    }
+                }
+                $main->save();
+
+
+                return redirect('/admin-products-mainproducts?success=1');
             }
         }
-        $main->save();
-
-
-        return redirect('/admin-products-mainproducts?success=1');
+        
     }
 
     public function mainproductsadd() {
@@ -66,8 +85,15 @@ class ProductsController extends Controller
         return view('admin.pro-mainproducts-add')->with('size',$size);
     }
 
+    public function deleteMain(Request $request) {
+        DB::table('main_prod')->where('id', $id)->delete();
+        return 'wew';
+    }
+
     public function subproducts() {
-        return view('admin.pro-subproducts');
+        $products = DB::table('sub_prod')->get();
+
+        return view('admin.pro-subproducts')->with('products',$products);
     }
 
     public function subproductsadd() {

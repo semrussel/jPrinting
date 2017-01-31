@@ -92,6 +92,7 @@ Route::get('/admin-products-materials', 'ProductsController@materials');
 Route::get('/admin-products-mainproducts-add', 'ProductsController@mainproductsadd');
 Route::get('/admin-products-subproducts-add', 'ProductsController@subproductsadd');
 Route::post('/create-mainprod', 'ProductsController@createMain');
+Route::post('/delete-mainprod', 'ProductsController@deleteMain');
 
 Route::get('/admin-reports-income', 'ReportController@income');
 Route::get('/admin-reports-cancel', 'ReportController@cancel');

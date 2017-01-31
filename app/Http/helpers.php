@@ -13,6 +13,13 @@ function checkInput($id,$go,$input)
 	
 }
 
+function geSubtProdName($id)
+{
+	$name = DB::table('main_prod')->where('id',$id)->get();
+    
+	return $name[0]->name;
+}
+
 function checkBool($num){
 	if ($num == 1) {
 		return 'TRUE';

@@ -3,24 +3,24 @@
     
     <?php $main = DB::table('main_prod')->get(); ?>
     
-    @for($i=0;$i<count($main);$i++)
-        @if($main[$i]->is_subcat == 0)
-            <?php $url = url('/services/main/'.$main[$i]->id); ?>
-            <a href="{{ $url }}" class="list-group-item"><b>{{ $main[$i]->name }}</b></a>
+    @foreach($main as $m)
+        @if($m->is_subcat == 0)
+            <?php $url = url('/services/main/'.$m->id); ?>
+            <a href="{{ $url }}" class="list-group-item"><b>{{ $m->name }}</b></a>
         @else
-            <?php $sub = DB::table('sub_prod')->where('main_id',$main[$i]->id)->get(); ?>
-             <a class="list-group-item" data-remote="true" href="#sub-2" id="cat-2" data-toggle="collapse" data-parent="#sub-2">
-                <span><b>{{ $main[$i]->name }}</b></span>
+            <?php $sub = DB::table('sub_prod')->where('main_id',$m->id)->get(); ?>
+             <a class="list-group-item" data-remote="true" href="#sub-{{$m->id}}" id="cat-{{$m->id}}" data-toggle="collapse" data-parent="#sub-{{$m->id}}">
+                <span><b>{{ $m->name }}</b></span>
                 <span class="badge"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
             </a>
-            <div class="collapse list-group-submenu" id="sub-2">
-            @for($j=0;$j<count($sub);$j++)
-                <?php $url = url('/services/sub/'.$sub[$i]->id); ?>
-                <a href="{{ $url }}" class="list-group-item sub-item">{{ $sub[$j]->name }}</a>
-            @endfor
+            <div class="collapse list-group-submenu" id="sub-{{$m->id}}">
+            @foreach($sub as $s)
+                <?php $url = url('/services/sub/'.$s->id); ?>
+                <a href="{{ $url }}" class="list-group-item sub-item">{{ $s->name }}</a>
+            @endforeach
             </div>
         @endif
-    @endfor
+    @endforeach
 
 </div>
 

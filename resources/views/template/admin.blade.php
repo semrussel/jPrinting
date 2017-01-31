@@ -110,21 +110,20 @@
 
         var tagcount = 0;
 
-        $("input[name$='cars']").click(function() {
-        var test = $(this).val();
-
-        $("div.desc").hide();
-        $("#Cars" + test).show();
+         $(document).keypress(function(e) { 
             if(e.which == 13) {
                 if ($('#p-size').is(':focus')) {
+                    e.preventDefault();
                     var div = document.getElementById('div-size');
                     var incont = $('#p-size').val();
                 }
                 if ($('#p-paper').is(':focus')) {
+                    e.preventDefault();
                     var div = document.getElementById('div-paper');
                     var incont = $('#p-paper').val();
                 }
                 if ($('#p-colorply').is(':focus')) {
+                    e.preventDefault();
                     var div = document.getElementById('div-colorply');
                     var incont = $('#p-colorply').val();
                 }

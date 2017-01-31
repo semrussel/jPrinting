@@ -76,7 +76,8 @@
 
     <script type="text/javascript">
         $(function() {
-            $('#' + location.pathname.split("-")[1]).addClass('active'); 
+            $('#' + location.pathname.split("-")[1]).addClass('active');
+            $('#sub-' + location.pathname.split("-")[2]).addClass('sub-active');  
         });
 
         $(document).ready(function() {

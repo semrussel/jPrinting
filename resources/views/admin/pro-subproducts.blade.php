@@ -28,7 +28,9 @@
 				                <td>{{ $product->name }}</td>
 				                <td>{{ geSubtProdName($product->main_id) }}</td>
 				                <td>
-				                	<a href="" class="admin-button">Edit</a>
+				                	<?php $url = url('/edit-subprod/'.$product->id); ?>
+				                	<a href="{{ $url }}" class="admin-button">Edit</a>
+
 				                	<form action="{{ url('/delete-subprod') }}" method="POST">
 					                	<input type="hidden" name="id" value="{{ $product->id }}">
 					                	<input type="submit" value="Delete" class="admin-button">

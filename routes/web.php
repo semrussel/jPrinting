@@ -100,7 +100,9 @@ Route::post('/delete-mainprod', 'ProductsController@deleteMain');
 Route::post('/create-subprod', 'ProductsController@createSub');
 Route::post('/delete-subprod', 'ProductsController@deleteSub');
 Route::get('/edit-mainprod/{id}', 'ProductsController@mainproductsedit');
+Route::get('/edit-subprod/{id}', 'ProductsController@subproductsedit');
 Route::post('/edit-mainprod', 'ProductsController@editMain');
+Route::post('/edit-subprod', 'ProductsController@editSub');
 
 Route::get('/admin-reports-income', 'ReportController@income');
 Route::get('/admin-reports-cancel', 'ReportController@cancel');

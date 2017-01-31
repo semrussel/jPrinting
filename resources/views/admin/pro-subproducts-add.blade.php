@@ -38,20 +38,19 @@
 
 					<div class="col-xs-4"><p><b>Other Options: </b></p></div>
 
-					<div class="col-xs-8 checkbox">
-				    	<div class="col-xs-6">
-		  					<label><input id="opt-paper" type="checkbox" value="">Paper Type</label>
-		  					<br><label><input id="opt-color" type="checkbox" value="">Color</label>
-		  					<br><label><input id="opt-colorply" type="checkbox" value="">Color Ply</label>
+						<div class="col-xs-8 checkbox">
+					    	<div class="col-xs-6">
+			  					<label><input id="opt-paper" name="input[]" type="checkbox" value="Paper Type">Paper Type</label>
+			  					<br><label><input id="opt-color" name="input[]" type="checkbox" value="Color">Color</label>
+			  					<br><label><input id="opt-colorply" name="input[]" type="checkbox" value="Color Ply">Color Ply</label>
+							</div>
+							<div class="col-xs-6">
+			  					<label><input id="opt-lamination" name="input[]" type="checkbox" value="Lamination">Lamination</label>
+			  					<br><label><input id="opt-perforation" name="input[]" type="checkbox" value="Perforation">Perforation</label>
+			  					<br><label><input id="opt-substrate" name="input[]" type="checkbox" value="Substrate">Substrate</label>
+			  					<br><label><input id="opt-corner" name="input[]" type="checkbox" value="Corners">Corners</label>
+							</div>
 						</div>
-						<div class="col-xs-6">
-		  					<label><input id="opt-lamination" type="checkbox" value="">Lamination</label>
-		  					<br><label><input id="opt-perforation" type="checkbox" value="">Perforation</label>
-		  					<br><label><input id="opt-substrate" type="checkbox" value="">Substrate</label>
-		  					<br><label><input id="opt-corner" type="checkbox" value="">Corners</label>
-						</div>
-					</div>
-
 				    <div class="clear"></div><hr>
 
 				    <div id="sec-paper" hidden>
@@ -83,10 +82,10 @@
 				    </div>
 
 				    <div class="col-xs-4 col-xs-offset-8 no-pad">
-	                	<form action="" method="POST">
+	                	
 	                        <input type="hidden" name="id" value=""> 
 	                        <input type="submit" value="Submit" class="btn btn-primary" style="width: 100%;">
-	                    </form>
+	                    
                     </div>
                     <div class="clear"></div><br>
     			</div>

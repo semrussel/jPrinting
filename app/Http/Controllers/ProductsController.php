@@ -182,6 +182,20 @@ class ProductsController extends Controller
         
     }
 
+    public function mainproductsedit() {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                $size = DB::table('selects')->where('type','size')->get();
+                return view('admin.pro-mainproducts-edit')->with('size',$size);
+            }
+        }
+        
+    }
+
     public function deleteMain(Request $request) {
         if (Auth::guest()) {
             return redirect('/');
@@ -234,6 +248,19 @@ class ProductsController extends Controller
             }else{
                 $main = DB::table('main_prod')->get();
                 return view('admin.pro-subproducts-add');
+            }
+        }
+    }
+
+    public function subproductsedit() {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                $main = DB::table('main_prod')->get();
+                return view('admin.pro-subproducts-edit');
             }
         }
     }

@@ -10,6 +10,7 @@ use Parser;
 use Auth;
 use DB;
 use App\Material;
+use App\PivotMaterialProd;
 
 class InventoryController extends Controller
 {
@@ -101,7 +102,7 @@ class InventoryController extends Controller
         }
     }
 
-    public function inventorytag() {
+    public function inventorytag($id) {
         if (Auth::guest()) {
             return redirect('/');
         }else{
@@ -109,7 +110,40 @@ class InventoryController extends Controller
                 return redirect('/');
             }else{
 
-                return view('admin.pro-materials-tag');
+                return view('admin.pro-materials-tag')->with('id',$id);
+            }
+        }
+    }
+
+    public function createTag(Request $request) {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+
+                if ($request->input('has') ==  1) {
+                    foreach ($request->input('mainproInput') as $main) {
+                        $m = DB::table('main_prod')->where('name',$main)->get();
+                        $pivot = new PivotMaterialProd();
+                        $pivot->material_id = $request->input('id');
+                        $pivot->service_id = $m[0]->id;
+                        $pivot->is_main = 1;
+                        $pivot->save();
+                    }
+                }else{
+                    foreach ($request->input('mainproInput') as $main) {
+                        $m = DB::table('main_prod')->where('name',$main)->get();
+                        $pivot = new PivotMaterialProd();
+                        $pivot->material_id = $request->input('id');
+                        $pivot->service_id = $m[0]->id;
+                        $pivot->is_main = 0;
+                        $pivot->save();
+                    }
+                }
+
+                return redirect('/admin-inventory?success=4');
             }
         }
     }

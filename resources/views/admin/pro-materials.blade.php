@@ -35,8 +35,8 @@
 			                	<input type="hidden" name="id" value="{{ $material->id }}">
 			                	<input type="submit" value="Delete" class="admin-button">
 			            	</form>
-
-			            	<a href="/admin-inventory-tag" class="admin-button">Tag</a></span>
+			            	<?php $url2= url('/admin-inventory-tag/'.$material->id) ?>
+			            	<a href="{{ $url2 }}" class="admin-button">Tag</a></span>
 
 			            	<!-- <form action="admin-inventory-tag" method="POST" style="display: -webkit-inline-box;">
 			                	<input type="hidden" name="id" value="">

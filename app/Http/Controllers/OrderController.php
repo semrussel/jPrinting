@@ -83,6 +83,22 @@ class OrderController extends Controller
 
     public function process(Request $request){
         
+        $order = DB::table('orders')->where('id',$request->input('id'))->get();
+
+        $main = DB::table('main_prod')->where('name',ucwords($order[0]->product))->get();
+        $sub = DB::table('sub_prod')->where('name',ucwords($order[0]->product))->get();
+        
+        if (count($main) != 0) {
+            $update = DB::table('materials')->join('pivot_materialprod','pivot_materialprod.material_id', '=', 'materials.id')->where('pivot_materialprod.service_id',$main[0]->id)->where('pivot_materialprod.is_main',1)->get();
+        }else{
+            $update = DB::table('materials')->join('pivot_materialprod','pivot_materialprod.material_id', '=', 'materials.id')->where('pivot_materialprod.service_id',$sub[0]->id)->where('pivot_materialprod.is_main',0)->get();
+        }
+       
+       for ($i=0; $i < count($update); $i++) {
+            $value = $update[$i]->quantity - $order[0]->quantity;
+            DB::table('materials')->where('id', $update[$i]->material_id)->update(array('quantity' => $value));
+       }
+
         DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Ready for Pick up / Delivery'));
 
         return redirect('/admin-orders?process=1');

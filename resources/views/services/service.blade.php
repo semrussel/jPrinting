@@ -159,7 +159,7 @@
     <div class="clear"></div>     
     <br>-->
 
-    <input type="hidden" value="business cards 2-side" name="product">
+    <input type="hidden" value="{{ $service->name }}" name="product">
     <div class="col-xs-6 col-xs-offset-6 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 <!-- /.Price Calculator -->
 @stop

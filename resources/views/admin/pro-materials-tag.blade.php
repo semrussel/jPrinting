@@ -10,7 +10,7 @@
 		<div class="col-xs-12">
 
 			<p class="col-xs-12 dash-title"><b>Inventory</b> | Tag Material
-		<form id="mainprod-add" action="{{ url('/create-material') }}" method="POST" enctype="multipart/form-data">
+		<form id="mainprod-add" action="{{ url('/create-tag') }}" method="POST" enctype="multipart/form-data">
 			<div class="col-xs-6">
 				<div class="col-xs-12">
 
@@ -39,6 +39,7 @@
 
 				    </div>
 				    <div class="col-xs-4 col-xs-offset-8 no-pad">
+				    		<input type="hidden" name="id" value="{{ $id }}">
 		                        <input type="submit" value="Submit" class="btn btn-primary" style="width: 100%;">
 	                </div>
 				    <!-- <div id="has2" class="desc" style="display: none;">

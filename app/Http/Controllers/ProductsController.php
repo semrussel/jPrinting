@@ -44,7 +44,7 @@ class ProductsController extends Controller
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
-                return $request->input('sizeInput');
+                
                 $main = new MainProd();
                 $main->name = $request->input('name');
                 $main->is_subcat = $request->input('has');

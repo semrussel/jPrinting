@@ -44,7 +44,7 @@ class ProductsController extends Controller
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
-
+                return $request->input('sizeInput');
                 $main = new MainProd();
                 $main->name = $request->input('name');
                 $main->is_subcat = $request->input('has');
@@ -76,7 +76,7 @@ class ProductsController extends Controller
                 }
                 $main->save();
 
-                if (count($request->input('paperTypeInput'))>1) {
+                if (count($request->input('sizeInput'))>1) {
                     foreach ($request->input('sizeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -126,7 +126,7 @@ class ProductsController extends Controller
                     }
                 }
                 
-                if (count($request->input('paperTypeInput'))>1) {
+                if (count($request->input('colorPlyInput'))>1) {
                     foreach ($request->input('colorPlyInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {

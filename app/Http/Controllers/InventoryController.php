@@ -133,8 +133,8 @@ class InventoryController extends Controller
                         $pivot->save();
                     }
                 }else{
-                    foreach ($request->input('mainproInput') as $main) {
-                        $m = DB::table('main_prod')->where('name',$main)->get();
+                    foreach ($request->input('subproInput') as $main) {
+                        $m = DB::table('sub_prod')->where('name',$main)->get();
                         $pivot = new PivotMaterialProd();
                         $pivot->material_id = $request->input('id');
                         $pivot->service_id = $m[0]->id;

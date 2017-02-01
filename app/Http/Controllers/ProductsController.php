@@ -44,7 +44,7 @@ class ProductsController extends Controller
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
-                
+
                 $main = new MainProd();
                 $main->name = $request->input('name');
                 $main->is_subcat = $request->input('has');
@@ -437,6 +437,7 @@ class ProductsController extends Controller
                 return redirect('/');
             }else{
                 DB::table('main_prod')->where('id', $request->input('id'))->delete();
+                DB::table('sub_prod')->where('main_id', $request->input('id'))->delete();
 
              return redirect('/admin-products-mainproducts?success=2');
             }

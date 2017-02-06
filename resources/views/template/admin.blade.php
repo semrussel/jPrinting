@@ -95,6 +95,12 @@
                 else
                     $('#sec-paper').fadeOut('slow');
             });
+            $('#opt-color').change(function(){
+                if(this.checked)
+                    $('#sec-color').fadeIn('slow');
+                else
+                    $('#sec-color').fadeOut('slow');
+            });
             $('#opt-colorply').change(function(){
                 if(this.checked)
                     $('#sec-colorply').fadeIn('slow');
@@ -112,6 +118,10 @@
             });
         });
 
+        // ----------------------
+        // INPUT TAGGING
+        // ----------------------
+
         var tagcount = 0;
 
          $(document).keypress(function(e) { 
@@ -127,6 +137,12 @@
                     var div = document.getElementById('div-paper');
                     var incont = $('#p-paper').val();
                     var intype = 'paperType';
+                }
+                if ($('#p-color').is(':focus')) {
+                    e.preventDefault();
+                    var div = document.getElementById('div-color');
+                    var incont = $('#p-color').val();
+                    var intype = 'color';
                 }
                 if ($('#p-colorply').is(':focus')) {
                     e.preventDefault();
@@ -163,6 +179,7 @@
                     tagcount++;
                     $('#p-size').val("");
                     $('#p-paper').val("");
+                    $('#p-color').val("");
                     $('#p-colorply').val("");
                     $('#p-mainpro').val("");
                     $('#p-subpro').val("");
@@ -178,6 +195,10 @@
             elem.remove();
             elemin.remove();
         }
+
+        // ----------------------
+        // AUTO COMPLETE YO
+        // ----------------------
 
         $.get('/admin-products-mainproducts-add-auto').success(function(data) {
             var sizeresult = getAutoSize();
@@ -216,6 +237,7 @@
                     tagcount++;
                     $('#p-size').val("");
                     $('#p-paper').val("");
+                    $('#p-color').val("");
                     $('#p-colorply').val("");
                 }
             });
@@ -255,6 +277,47 @@
                     tagcount++;
                     $('#p-size').val("");
                     $('#p-paper').val("");
+                    $('#p-color').val("");
+                    $('#p-colorply').val("");
+                }
+            });
+        });
+
+        $.get('/admin-products-mainproducts-add-auto').success(function(data) {
+            var colorresult = getAutoPaper();
+
+            function getAutoColor() {
+                var color = data[1];
+                return color.map(function(v) {
+                    return {'value': v.name, 'data': v.name};
+                });
+            }
+
+            $('#p-color').autocomplete({
+                autoSelectFirst: true,
+                lookup: paperTyperesult,
+                onSelect: function (suggestion) {
+                    e.preventDefault();
+
+                    var div = document.getElementById('div-color');
+                    var incont = $('#p-color').val();
+                    var intype = 'color';
+
+                    var incontstr = incont;
+                    incontstr = incontstr.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
+
+                   div.innerHTML = div.innerHTML + 
+                        '<span name="' + incontstr + '" id="vartag-' + incontstr + '-' + tagcount + '" contenteditable="false" class="tag-label">' + 
+                        '<button class="tag-label-btn" type="button" id="btn-vartag-' + incontstr + '-' + tagcount + '" onclick="removeVarTag(\'vartag-' + incontstr  + '-' + tagcount + '\')">' +
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' +
+                        incont +
+                        '</span>' + 
+                        '<input id="vartag-' + incontstr + '-' + tagcount + '-in" name="' + intype +'Input[]" type="hidden" value="' + incont + '">';
+
+                    tagcount++;
+                    $('#p-size').val("");
+                    $('#p-paper').val("");
+                    $('#p-color').val("");
                     $('#p-colorply').val("");
                 }
             });
@@ -294,6 +357,7 @@
                     tagcount++;
                     $('#p-size').val("");
                     $('#p-paper').val("");
+                    $('#p-color').val("");
                     $('#p-colorply').val("");
                 }
             });
@@ -359,6 +423,46 @@
                 }
             });
         });
+
+        // ----------------------
+        // MATERIAL ROW ADDING
+        // ----------------------
+
+        var matrowcount = 2;
+
+        $( "#add-material" ).click(function() {
+            var div = document.getElementById('material-rows');
+
+            div.innerHTML = div.innerHTML +
+                '<div id="matrow-' + matrowcount + '" class="row">' + 
+                    '<hr>' +
+                    '<div class="col-sm-6">' + 
+                        '<div class="col-xs-12"><p><b>Product Name: </b></p></div>' + 
+                        '<div class="col-xs-12 no-pad"><input value="" name="name-' + 
+                            matrowcount + 
+                        '" type="text" id="width" class="form-control" required></div>' + 
+                    '</div>' + 
+                    '<div class="col-sm-5">' + 
+                        '<div class="col-xs-12"><p><b>Quantity/Pieces: </b></p></div>' + 
+                        '<div class="col-xs-12 no-pad"><input value="" name="quantity' + 
+                            matrowcount + 
+                        '" type="number" id="width" class="form-control" required></div>' + 
+                    '</div>' + 
+                    '<div class="col-sm-1">' + 
+                        '<button class="admin-button" type="button" id="mat-' + matrowcount + '" onclick="removeMatRow(\'matrow-' + 
+                            matrowcount + '\')">' + 
+                        '<i class="fa fa-times" aria-hidden="true"></i></button>' +
+                    '</div>' + 
+                    '<div class="clear"></div><br>' +
+                '</div>';
+
+            matrowcount++;
+        });
+
+        function removeMatRow(matname) {
+            var elem = document.getElementById(matname);
+            elem.remove();
+        }
     </script>
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.js"></script>

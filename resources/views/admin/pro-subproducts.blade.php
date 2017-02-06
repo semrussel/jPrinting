@@ -31,7 +31,7 @@
 				                	<?php $url = url('/edit-subprod/'.$product->id); ?>
 				                	<a href="{{ $url }}" class="admin-button">Edit</a>
 
-				                	<form action="{{ url('/delete-subprod') }}" method="POST">
+				                	<form action="{{ url('/delete-subprod') }}" method="POST" style="display: -webkit-inline-box;">
 					                	<input type="hidden" name="id" value="{{ $product->id }}">
 					                	<input type="submit" value="Delete" class="admin-button">
 				                	</form>

@@ -36,6 +36,8 @@ class CreateOrdersTable extends Migration
             $table->string('substrate')->nullable();
             $table->string('colorPly')->nullable();
             $table->string('status');
+            $table->string('paymentType');
+            $table->date('expected_delivery')->nullable();
             $table->timestamps();
         });
     }

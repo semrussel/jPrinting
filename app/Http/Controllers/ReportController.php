@@ -25,7 +25,7 @@ class ReportController extends Controller
     	}
 
     	// return $totalIncome;
-        return view('admin.rep-income')->with('totalIncome',$totalIncome);
+        return view('admin.rep-income')->with('totalIncome',$totalIncome)->with('orders',$orders);
     }
 
     public function cancel() {

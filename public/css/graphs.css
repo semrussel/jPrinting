@@ -67,6 +67,10 @@ body {
   background: #ff3d00;
   cursor: pointer;
 }
+#chart #bars li:hover .bar{
+  background: #ff3d00;
+  cursor: pointer;
+}
 #chart #bars li .bar:before {
   color: white;
   content: attr(data-percentage) '%';

@@ -36,6 +36,7 @@ class OrderController extends Controller
         
         $requestQuote->designType = $request->input('designType');
         $requestQuote->size = $request->input('size');
+        $requestQuote->paymentType = $request->input('payment');
         $requestQuote->quantity = $request->input('quantity');
         $requestQuote->address = $request->input('address');
         $requestQuote->paperType = $request->input('paper');

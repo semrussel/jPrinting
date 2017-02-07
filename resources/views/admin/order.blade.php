@@ -30,7 +30,7 @@
 				                <td>{{ ucwords($orders[$i]->product) }}</td>
 				                <td>{{ ucwords($orders[$i]->quantity) }}</td>
 				                <?php $name = DB::table('users')->where('id',$orders[$i]->order_by)->get(); ?>
-				                <th>{{ ucwords($name[0]->name) }}</th>
+				                <th>{{ ucwords($name[0]->firstName) }} {{ ucwords($name[0]->lastName) }}</th>
 				                <td>{{ ucwords($orders[$i]->status) }}</td>
 				                <td>
 				                	<a href="/admin-orders-view/{{ $orders[$i]->id }}" class="admin-button">View Order</a>

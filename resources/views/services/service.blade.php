@@ -62,7 +62,13 @@
 
 @section('price-calculator')
 <!-- Price Calculator -->
-    
+    <p><b>Payment:</b></p>
+    <select class="form-control" id="sel0" name="payment">
+        <option value="full">full</option>
+        <option value="half">half</option>
+    </select>
+    <div class="clear"></div><br>
+
     <p><b>Size</b></p>
     <select class="form-control" id="sel1" name="size">
         @foreach($sizes as $size)

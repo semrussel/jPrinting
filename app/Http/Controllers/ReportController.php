@@ -17,7 +17,15 @@ class ReportController extends Controller
     }
 
     public function income() {
-        return view('admin.rep-income');
+
+    	$orders = DB::table('orders')->get();
+    	$totalIncome = 0 ;
+    	for ($i=0; $i < count($orders); $i++) { 
+    		$totalIncome += $orders[$i]->price;
+    	}
+
+    	// return $totalIncome;
+        return view('admin.rep-income')->with('totalIncome',$totalIncome);
     }
 
     public function cancel() {

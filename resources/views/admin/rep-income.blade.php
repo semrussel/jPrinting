@@ -25,7 +25,7 @@
 					<div id="day" class="tab-pane fade in active">	
 						<div id="chart">
 							<ul id="numbers">
-								<li><span>100%</span></li>
+								<li><span>{{ $totalIncome }}</span></li>
 								<li><span>90%</span></li>
 								<li><span>80%</span></li>
 								<li><span>70%</span></li>

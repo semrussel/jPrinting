@@ -51,7 +51,64 @@
 					</div> -->
 
 					<?php
-						$totalIncome = 20000; //highest income
+						$jan = 0;
+						$feb = 0;
+						$mar = 0;
+						$apr = 0;
+						$may = 0;
+						$jun = 0;
+						$jul = 0;
+						$aug = 0;
+						$sep = 0;
+						$oct = 0;
+						$nov = 0;
+						$dec = 0;
+						for ($i=1; $i <=12 ; $i++) {
+							foreach ($months[$i] as $month) {
+							 	switch ($i) {
+								    case "1":
+								        $jan += $month->price;
+								        break;
+								    case "2":
+								        $feb += $month->price;
+								        break;
+								    case "3":
+								        $mar += $month->price;
+								        break;
+								    case "4":
+								        $apr += $month->price;
+								        break;
+								    case "5":
+								        $may += $month->price;
+								        break;
+								    case "6":
+								        $jun += $month->price;
+								        break;
+								    case "7":
+								        $jul += $month->price;
+								        break;
+								    case "8":
+								        $aug += $month->price;
+								        break;
+								    case "9":
+								        $sep += $month->price;
+								        break;
+								    case "10":
+								        $oct += $month->price;
+								        break;
+								    case "11":
+								        $nov += $month->price;
+								        break;
+								    case "12":
+								        $dec += $month->price;
+								        break;
+								    default:
+								        echo "Your favorite color is neither red, blue, nor green!";
+								} 
+							 } 
+							
+						}
+
 
 						$mon100 = number_format(round($totalIncome, 2), 0);
 						$mon90 = number_format(round(($totalIncome * 0.9), 2), 0);
@@ -83,8 +140,8 @@
 
 							<ul id="bars">
 								<?php
-									$monval = array(16500, 5000, 6500, 12000, 5500, 2300, 19300, 13000, 12043, 9000, 19000); //income per month
-									$monnam = array("Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+									$monval = array($jan, $feb, $mar, $apr, $may, $jun, $jul, $aug, $sep, $oct, $nov,$dec); //income per month
+									$monnam = array("Jan", "Feb", "Mar", "Apr","May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
 									$moncur = 0;
 
 									foreach ($monval as $val) {

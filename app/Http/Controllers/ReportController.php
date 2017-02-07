@@ -24,8 +24,12 @@ class ReportController extends Controller
     		$totalIncome += $orders[$i]->price;
     	}
 
-    	// return $totalIncome;
-        return view('admin.rep-income')->with('totalIncome',$totalIncome)->with('orders',$orders);
+    	for ($i=1; $i <= 12; $i++) { 
+    		$months[$i] = DB::table('orders')->whereMonth('created_at', '=', $i)->get();
+    	}
+    	
+
+        return view('admin.rep-income')->with('totalIncome',$totalIncome)->with('orders',$orders)->with('months',$months);
     }
 
     public function cancel() {

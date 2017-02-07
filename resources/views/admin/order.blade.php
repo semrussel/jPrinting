@@ -34,6 +34,7 @@
 				                <td>{{ ucwords($orders[$i]->status) }}</td>
 				                <td>
 				                	<a href="/admin-orders-view/{{ $orders[$i]->id }}" class="admin-button">View Order</a>
+				                	<a href="/change-order-status" class="admin-button">Change Status</a>
 				                </td>
 				            </tr>
 			            @endfor

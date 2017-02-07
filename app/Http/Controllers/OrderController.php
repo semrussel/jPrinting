@@ -105,5 +105,17 @@ class OrderController extends Controller
         return redirect('/admin-orders?process=1');
     }
 
+    public function changestat() {
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                return view('admin.order-stat');
+            }
+        }
+    }
+
 
 }

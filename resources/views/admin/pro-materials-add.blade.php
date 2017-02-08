@@ -18,7 +18,7 @@
 					    <div class="col-xs-12 no-pad"><input value="" name="refno" type="text" id="refno" class="form-control" required></div>
 						<div class="clear"></div><br>
 
-						<div class="col-xs-12"><p><b>Receeived By: </b></p></div>
+						<div class="col-xs-12"><p><b>Received By: </b></p></div>
 					    <div class="col-xs-12 no-pad"><input value="" name="revby" type="text" id="revby" class="form-control" required></div>
 						<div class="clear"></div><br>
 

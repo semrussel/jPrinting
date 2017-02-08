@@ -406,26 +406,37 @@ $( "#add-material" ).click(function() {
                 '<div class="col-xs-12"><p><b>Product Name: </b></p></div>' + 
                 '<div class="col-xs-12 no-pad"><input value="" name="name-' + 
                     matrowcount + 
-                '" type="text" id="width" class="form-control" required></div>' + 
+                '" type="text" id="name-' +
+                    matrowcount + 
+                '" class="form-control" required></div>' + 
             '</div>' + 
             '<div class="col-sm-5">' + 
                 '<div class="col-xs-12"><p><b>Quantity/Pieces: </b></p></div>' + 
                 '<div class="col-xs-12 no-pad"><input value="" name="quantity-' + 
                     matrowcount + 
-                '" type="number" id="width" class="form-control" required></div>' + 
+                '" type="number" id="quantity-' +
+                    matrowcount + 
+                '" class="form-control" required></div>' + 
             '</div>' + 
             '<div class="col-sm-1">' + 
-                '<button class="admin-button" type="button" id="mat-' + matrowcount + '" onclick="removeMatRow(\'matrow-' + 
+                '<button class="admin-button" type="button" id="matrev-' + matrowcount + '" onclick="removeMatRow(\'matrow-' + 
                     matrowcount + '\')">' + 
                 '<i class="fa fa-times" aria-hidden="true"></i></button>' +
             '</div>' + 
             '<div class="clear"></div><br>' +
         '</div>';
 
+    $('#matrev-'+(matrowcount-1)).hide();
+
+    $('#matrow-count').val(matrowcount);
     matrowcount++;
 });
 
 function removeMatRow(matname) {
     var elem = document.getElementById(matname);
+
+    matrowcount--;
+    $('#matrev-'+(matrowcount-1)).show();
+
     elem.remove();
 }

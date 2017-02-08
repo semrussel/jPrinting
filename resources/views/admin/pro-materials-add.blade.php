@@ -19,6 +19,10 @@
 					    <div class="col-xs-12 no-pad"><input value="" name="refno" type="text" id="refno" class="form-control" required></div>
 						<div class="clear"></div><br>
 
+						<div class="col-xs-12"><p><b>Receeived By: </b></p></div>
+					    <div class="col-xs-12 no-pad"><input value="" name="revby" type="text" id="revby" class="form-control" required></div>
+						<div class="clear"></div><br>
+
 						<div id="material-rows">
 							<div class="row">
 								<div class="col-sm-6">
@@ -32,6 +36,8 @@
 							</div>
 							<div class="clear"></div><br>
 						</div>
+
+    					<input type="hidden" value="1" name="matrow-count" id="matrow-count">
 					    <div class="col-xs-4 col-xs-offset-8 no-pad">
 			                        <input type="submit" value="Submit" class="btn btn-primary" style="width: 100%;">
 		                </div>

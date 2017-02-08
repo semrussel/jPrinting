@@ -24,7 +24,7 @@
 				<div class="tab-content">
 
 					<?php
-						$totalIncome = 20000;
+						// $totalIncome = 20000;
 
 						$jan = getFinal($jan);
 						$feb = getFinal($feb);

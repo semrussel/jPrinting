@@ -76,7 +76,7 @@ class ProductsController extends Controller
                 }
                 $main->save();
 
-                if (count($request->input('colorInput'))>1) {
+                if (count($request->input('colorInput'))!=0) {
                     foreach ($request->input('colorInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -101,7 +101,7 @@ class ProductsController extends Controller
                     }
                 }
                 
-                if (count($request->input('sizeInput'))>1) {
+                if (count($request->input('sizeInput'))!=0) {
                     foreach ($request->input('sizeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -126,7 +126,7 @@ class ProductsController extends Controller
                     }
                 }
 
-                if (count($request->input('paperTypeInput'))>1) {
+                if (count($request->input('paperTypeInput'))!=0) {
                     foreach ($request->input('paperTypeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -151,7 +151,7 @@ class ProductsController extends Controller
                     }
                 }
                 
-                if (count($request->input('colorPlyInput'))>1) {
+                if (count($request->input('colorPlyInput'))!=0) {
                     foreach ($request->input('colorPlyInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -216,7 +216,7 @@ class ProductsController extends Controller
                 }
                 $sub->save();
 
-                if (count($request->input('colorInput'))>0) {
+                if (count($request->input('colorInput'))!=0) {
                     foreach ($request->input('colorInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -241,7 +241,7 @@ class ProductsController extends Controller
                     }
                 }
 
-                if (count($request->input('sizeInput'))>0) {
+                if (count($request->input('sizeInput'))!=0) {
                     foreach ($request->input('sizeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -266,7 +266,7 @@ class ProductsController extends Controller
                     }
                 }
 
-                if (count($request->input('paperTypeInput'))>0) {
+                if (count($request->input('paperTypeInput'))!=0) {
                     foreach ($request->input('paperTypeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -291,7 +291,7 @@ class ProductsController extends Controller
                     }
                 }
 
-                if (count($request->input('colorPlyInput'))>0) {
+                if (count($request->input('colorPlyInput'))!=0) {
                     foreach ($request->input('colorPlyInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();
                         if ($count == 0) {
@@ -353,8 +353,9 @@ class ProductsController extends Controller
                         ->where('selects.type','size')->get();
                 $paperTypes = checkInput($id,$product[0]->is_paperType,'paperType');
                 $colorPlys = checkInput($id,$product[0]->is_colorFly,'colorPly');
+                $colors = checkInput($id,$product[0]->is_color,'color');
 
-                return view('admin.pro-mainproducts-edit')->with('product',$product[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
+                return view('admin.pro-mainproducts-edit')->with('product',$product[0])->with('sizes',$sizes)->with('colors',$colors)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             }
         }
         

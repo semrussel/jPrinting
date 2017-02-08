@@ -74,8 +74,12 @@
 									$moncur = 0;
 
 									foreach ($monval as $val) {
-										
-											$valr = round((($val / $totalIncome) * 100), 0);
+											if ($totalIncome !=0) {
+												$valr = round((($val / $totalIncome) * 100), 0);
+											}else{
+												$valr = 0;
+											}
+											
 											echo '<li><div data-percentage="'.$valr.'" class="bar"></div><span>'.$monnam[$moncur].'</span>';
 											$val = number_format($val, 0);
 											$valr = 85 - $valr;
@@ -152,7 +156,11 @@
 
 									foreach ($annval as $val) {
 										// if($val > 0) {
-											$valr = round((($val / $totalIncome) * 100), 0);
+											if ($totalIncome !=0) {
+												$valr = round((($val / $totalIncome) * 100), 0);
+											}else{
+												$valr = 0;
+											}
 											echo '<li id="ann-'.$anncur.'">';
 											echo '<div data-percentage="'.$valr.'" class="bar"';
 											if ($valr > 10) { echo 'style=":before{top:-25px;}"'; }

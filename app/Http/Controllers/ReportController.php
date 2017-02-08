@@ -47,10 +47,10 @@ class ReportController extends Controller
         return view('admin.rep-income')->with('mtotalIncome',$mtotalIncome)->with('totalIncome',$totalIncome)->with('orders',$orders)->with('jan',$jan)->with('feb',$feb)->with('mar',$mar)->with('apr',$apr)->with('may',$may)->with('jun',$jun)->with('jul',$jul)->with('aug',$aug)->with('sep',$sep)->with('oct',$oct)->with('nov',$nov)->with('dec',$dec);
     }
 
-    public function Canceled() {
-    	$CanceledOrders = DB::table('orders')->where('status','Canceleded')->get();
+    public function cancel() {
+    	$cancelOrders = DB::table('orders')->where('status','Canceleded')->get();
 
-        return view('admin.rep-Canceled')->with('CanceledOrders',$CanceledOrders);
+        return view('admin.rep-cancel')->with('cancelOrders',$cancelOrders);
     }
 
     

@@ -253,7 +253,7 @@ $.get('/admin-products-mainproducts-add-auto').success(function(data) {
     var colorresult = getAutoColor();
 
     function getAutoColor() {
-        var color = data[1];
+        var color = data[2];
         return color.map(function(v) {
             return {'value': v.name, 'data': v.name};
         });
@@ -293,7 +293,7 @@ $.get('/admin-products-mainproducts-add-auto').success(function(data) {
     var colorPlyresult = getAutoColor();
 
     function getAutoColor() {
-        var color = data[2];
+        var color = data[3];
         return color.map(function(v) {
             return {'value': v.name, 'data': v.name};
         });

@@ -24,6 +24,8 @@
 				<div class="tab-content">
 
 					<?php
+						// $totalIncome = 20000;
+
 						$jan = getFinal($jan);
 						$feb = getFinal($feb);
 						$mar = getFinal($mar);
@@ -39,17 +41,22 @@
 
 						// var_dump($jan);
 						// die(0);
-
-						$mon100 = number_format(round($totalIncome, 2), 0);
-						$mon90 = number_format(round(($totalIncome * 0.9), 2), 0);
-						$mon80 = number_format(round(($totalIncome * 0.8), 2), 0);
-						$mon70 = number_format(round(($totalIncome * 0.7), 2), 0);
-						$mon60 = number_format(round(($totalIncome * 0.6), 2), 0);
-						$mon50 = number_format(round(($totalIncome * 0.5), 2), 0);
-						$mon40 = number_format(round(($totalIncome * 0.4), 2), 0);
-						$mon30 = number_format(round(($totalIncome * 0.3), 2), 0);
-						$mon20 = number_format(round(($totalIncome * 0.2), 2), 0);
-						$mon10 = number_format(round(($totalIncome * 0.1), 2), 0);
+						if($totalIncome>0){
+							$mon100 = number_format(round($totalIncome, 2), 0);
+							$mon90 = number_format(round(($totalIncome * 0.9), 2), 0);
+							$mon80 = number_format(round(($totalIncome * 0.8), 2), 0);
+							$mon70 = number_format(round(($totalIncome * 0.7), 2), 0);
+							$mon60 = number_format(round(($totalIncome * 0.6), 2), 0);
+							$mon50 = number_format(round(($totalIncome * 0.5), 2), 0);
+							$mon40 = number_format(round(($totalIncome * 0.4), 2), 0);
+							$mon30 = number_format(round(($totalIncome * 0.3), 2), 0);
+							$mon20 = number_format(round(($totalIncome * 0.2), 2), 0);
+							$mon10 = number_format(round(($totalIncome * 0.1), 2), 0);
+						} else {
+							$mon100 = 0; $mon90 = 0; $mon80 = 0; $mon70 = 0;
+							$mon60 = 0; $mon50 = 0; $mon40 = 0; $mon30 = 0;
+							$mon20 = 0; $mon10 = 0;
+						}
 					?>
 
 					<div id="mon" class="tab-pane fade in active">
@@ -79,7 +86,6 @@
 											}else{
 												$valr = 0;
 											}
-											
 											echo '<li><div data-percentage="'.$valr.'" class="bar"></div><span>'.$monnam[$moncur].'</span>';
 											$val = number_format($val, 0);
 											$valr = 85 - $valr;
@@ -90,20 +96,26 @@
 								?>
 							</ul>
 						</div>	
+						<h4>Total Income for {{ date('Y') }}: {{ $mtotalIncome }}</h4>
 					</div>
 
 					<?php
-
-						$ann100 = number_format(round($totalIncome, 2), 0);
-						$ann90 = number_format(round(($totalIncome * 0.9), 2), 0);
-						$ann80 = number_format(round(($totalIncome * 0.8), 2), 0);
-						$ann70 = number_format(round(($totalIncome * 0.7), 2), 0);
-						$ann60 = number_format(round(($totalIncome * 0.6), 2), 0);
-						$ann50 = number_format(round(($totalIncome * 0.5), 2), 0);
-						$ann40 = number_format(round(($totalIncome * 0.4), 2), 0);
-						$ann30 = number_format(round(($totalIncome * 0.3), 2), 0);
-						$ann20 = number_format(round(($totalIncome * 0.2), 2), 0);
-						$ann10 = number_format(round(($totalIncome * 0.1), 2), 0);
+						if($totalIncome>0){
+							$ann100 = number_format(round($totalIncome, 2), 0);
+							$ann90 = number_format(round(($totalIncome * 0.9), 2), 0);
+							$ann80 = number_format(round(($totalIncome * 0.8), 2), 0);
+							$ann70 = number_format(round(($totalIncome * 0.7), 2), 0);
+							$ann60 = number_format(round(($totalIncome * 0.6), 2), 0);
+							$ann50 = number_format(round(($totalIncome * 0.5), 2), 0);
+							$ann40 = number_format(round(($totalIncome * 0.4), 2), 0);
+							$ann30 = number_format(round(($totalIncome * 0.3), 2), 0);
+							$ann20 = number_format(round(($totalIncome * 0.2), 2), 0);
+							$ann10 = number_format(round(($totalIncome * 0.1), 2), 0);
+						} else {
+							$ann100 = 0; $ann90 = 0; $ann80 = 0; $ann70 = 0;
+							$ann60 = 0; $ann50 = 0; $ann40 = 0; $ann30 = 0;
+							$ann20 = 0; $ann10 = 0;
+						}
 					?>
 
 					<div id="ann" class="tab-pane fade">
@@ -177,8 +189,6 @@
 					</div>
 				</div>	
 			</div>
-		
-		<h4>Total Income for {{ date('Y') }}: {{ $mtotalIncome }}</h4>
 		
 	    </div>
 

@@ -39,17 +39,14 @@ class InventoryController extends Controller
                 return redirect('/');
             }else{
 
-                for ($i=0; $i < $request->input('name'); $i++) { 
-                    # code...
+                for ($i=1; $i <= $request->input('matrow-count'); $i++) { 
+                    $material = new Material();
+                    $material->name = $request->input('name-'.$i);
+                    $material->reference_num = $request->input('refno');
+                    $material->quantity = $request->input('quantity-'.$i);
+                    $material->received_by = $request->input('revby');
+                    $material->save();
                 }
-
-                $material = new Material();
-                $material->name = $request->input('name');
-                $material->reference_num = $request->input('refno');
-                $material->quantity = $request->input('quantity');
-                $material->save();
-
-
 
                 return redirect('/admin-inventory?success=1');
             }

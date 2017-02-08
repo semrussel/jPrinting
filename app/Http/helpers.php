@@ -41,4 +41,12 @@ function checkBool($num){
 		return 'FALSE';
 	}
 }
+
+function getFinal($arrs){
+	$final = 0;
+	foreach ($arrs as $arr) {
+		$final += $arr->price;
+	}
+	return $final;
+}
 ?>

@@ -24,65 +24,18 @@
 				<div class="tab-content">
 
 					<?php
-					$totalIncome = 20000;
-
-						$jan = 0;
-						$feb = 0;
-						$mar = 0;
-						$apr = 0;
-						$may = 0;
-						$jun = 0;
-						$jul = 0;
-						$aug = 0;
-						$sep = 0;
-						$oct = 0;
-						$nov = 0;
-						$dec = 0;
-						for ($i=1; $i <=12 ; $i++) {
-							foreach ($months[$i] as $month) {
-							 	switch ($i) {
-								    case "1":
-								        $jan += $month->price;
-								        break;
-								    case "2":
-								        $feb += $month->price;
-								        break;
-								    case "3":
-								        $mar += $month->price;
-								        break;
-								    case "4":
-								        $apr += $month->price;
-								        break;
-								    case "5":
-								        $may += $month->price;
-								        break;
-								    case "6":
-								        $jun += $month->price;
-								        break;
-								    case "7":
-								        $jul += $month->price;
-								        break;
-								    case "8":
-								        $aug += $month->price;
-								        break;
-								    case "9":
-								        $sep += $month->price;
-								        break;
-								    case "10":
-								        $oct += $month->price;
-								        break;
-								    case "11":
-								        $nov += $month->price;
-								        break;
-								    case "12":
-								        $dec += $month->price;
-								        break;
-								    default:
-								        echo "Your favorite color is neither red, blue, nor green!";
-								} 
-							 } 
-							
-						}
+						$jan = getFinal($jan);
+						$feb = getFinal($feb);
+						$mar = getFinal($mar);
+						$apr = getFinal($apr);
+						$may = getFinal($may);
+						$jun = getFinal($jun);
+						$jul = getFinal($jul);
+						$aug = getFinal($aug);
+						$sep = getFinal($sep);
+						$oct = getFinal($oct);
+						$nov = getFinal($nov);
+						$dec = getFinal($dec);
 
 
 						$mon100 = number_format(round($totalIncome, 2), 0);
@@ -170,17 +123,27 @@
 
 							<ul id="bars">
 								<?php
-									$annval = array(
-										4000, 2000, 6000, 2000, 20000, 12000, 4000, 2000, 6000, 4000, 
-										2000, 6000, 6000, 2000, 20000, 12000, 4000, 2000, 6000, 4000,
-										4000, 2000, 6000, 2000, 20000, 12000, 4000, 2000, 0, 0,
-										20000, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-									$annnam = array(
-										"1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999",
-										"2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
-										"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019",
-										"2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029");
-									$anncur = 0;
+									for ($i=1990; $i <= 2029; $i++) { 
+										$wew = "year".$i;
+										$$wew = 0;
+										for ($j=0; $j < count($orders); $j++) {
+											if ($i == date('Y',strtotime($orders[$j]->created_at))) {
+												$$wew += $orders[$j]->price;
+											}
+											
+										}
+									}
+
+									for ($i=1990; $i <=2029 ; $i++) { 
+										$wew = "year".$i;
+										$annval[$i] = $$wew;
+									}
+
+									for ($i=1990; $i <=2029 ; $i++) { 
+										$annnam[$i] = $i;
+									}
+
+									$anncur = 1990;
 
 									foreach ($annval as $val) {
 										// if($val > 0) {
@@ -201,9 +164,9 @@
 					</div>
 				</div>	
 			</div>
-
-		<h4>Total Income: {{ $totalIncome }}</h4>
-
+		
+		<h4>Total Income for {{ date('Y') }}: {{ $mtotalIncome }}</h4>
+		
 	    </div>
 
     </div><!-- /.row -->

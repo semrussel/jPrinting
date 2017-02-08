@@ -22,35 +22,10 @@
 				</ul>
 
 				<div class="tab-content">
-					<!-- <div id="day" class="tab-pane fade in active">	
-						<div id="chart">
-							<ul id="numbers">
-								<li><span>{{ $totalIncome }}</span></li>
-								<li><span>90%</span></li>
-								<li><span>80%</span></li>
-								<li><span>70%</span></li>
-								<li><span>60%</span></li>
-								<li><span>50%</span></li>
-								<li><span>40%</span></li>
-								<li><span>30%</span></li>
-								<li><span>20%</span></li>
-								<li><span>10%</span></li>
-								<li><span>0%</span></li>
-							</ul>
-
-							<ul id="bars">
-								<li><div data-percentage="56" class="bar"></div><span>Monday</span></li>
-								<li><div data-percentage="33" class="bar"></div><span>Tuesday</span></li>
-								<li><div data-percentage="54" class="bar"></div><span>Wednesday</span></li>
-								<li><div data-percentage="94" class="bar"></div><span>Thursday</span></li>
-								<li><div data-percentage="44" class="bar"></div><span>Friday</span></li>
-								<li><div data-percentage="23" class="bar"></div><span>Saturday</span></li>
-								<li><div data-percentage="23" class="bar"></div><span>Sunday</span></li>
-							</ul>
-						</div>			
-					</div> -->
 
 					<?php
+					// $totalIncome = 20000;
+
 						$jan = 0;
 						$feb = 0;
 						$mar = 0;
@@ -135,12 +110,11 @@
 								<li><span>{{ $mon30 }}</span></li>
 								<li><span>{{ $mon20 }}</span></li>
 								<li><span>{{ $mon10 }}</span></li>
-								<li><span>0.00</span></li>
 							</ul>
 
 							<ul id="bars">
 								<?php
-									$monval = array($jan, $feb, $mar, $apr, $may, $jun, $jul, $aug, $sep, $oct, $nov,$dec); //income per month
+									$monval = array($jan, $feb, $mar, $apr, $may, $jun, $jul, $aug, $sep, $oct, $nov, $dec); //income per month
 									$monnam = array("Jan", "Feb", "Mar", "Apr","May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
 									$moncur = 0;
 
@@ -156,34 +130,51 @@
 							</ul>
 						</div>	
 					</div>
+
+					<?php
+
+						$ann100 = number_format(round($totalIncome, 2), 0);
+						$ann90 = number_format(round(($totalIncome * 0.9), 2), 0);
+						$ann80 = number_format(round(($totalIncome * 0.8), 2), 0);
+						$ann70 = number_format(round(($totalIncome * 0.7), 2), 0);
+						$ann60 = number_format(round(($totalIncome * 0.6), 2), 0);
+						$ann50 = number_format(round(($totalIncome * 0.5), 2), 0);
+						$ann40 = number_format(round(($totalIncome * 0.4), 2), 0);
+						$ann30 = number_format(round(($totalIncome * 0.3), 2), 0);
+						$ann20 = number_format(round(($totalIncome * 0.2), 2), 0);
+						$ann10 = number_format(round(($totalIncome * 0.1), 2), 0);
+					?>
+
 					<div id="ann" class="tab-pane fade">
 						<div id="chart">
 							<ul id="numbers">
-								<li><span>100%</span></li>
-								<li><span>90%</span></li>
-								<li><span>80%</span></li>
-								<li><span>70%</span></li>
-								<li><span>60%</span></li>
-								<li><span>50%</span></li>
-								<li><span>40%</span></li>
-								<li><span>30%</span></li>
-								<li><span>20%</span></li>
-								<li><span>10%</span></li>
-								<li><span>0%</span></li>
+								<li><span>{{ $ann100 }}</span></li>
+								<li><span>{{ $ann90 }}</span></li>
+								<li><span>{{ $ann80 }}</span></li>
+								<li><span>{{ $ann70 }}</span></li>
+								<li><span>{{ $ann60 }}</span></li>
+								<li><span>{{ $ann50 }}</span></li>
+								<li><span>{{ $ann40 }}</span></li>
+								<li><span>{{ $ann30 }}</span></li>
+								<li><span>{{ $ann20 }}</span></li>
+								<li><span>{{ $ann10 }}</span></li>
 							</ul>
 
 							<ul id="bars">
-								<li><div data-percentage="93" class="bar"></div><span>2007</span></li>
-								<li><div data-percentage="58" class="bar"></div><span>2008</span></li>
-								<li><div data-percentage="29" class="bar"></div><span>2009</span></li>
-								<li><div data-percentage="50" class="bar"></div><span>2010</span></li>
-								<li><div data-percentage="19" class="bar"></div><span>2011</span></li>
-								<li><div data-percentage="06" class="bar"></div><span>2012</span></li>
-								<li><div data-percentage="38" class="bar"></div><span>2013</span></li>
-								<li><div data-percentage="36" class="bar"></div><span>2014</span></li>
-								<li><div data-percentage="39" class="bar"></div><span>2015</span></li>
-								<li><div data-percentage="63" class="bar"></div><span>2016</span></li>
-								<li><div data-percentage="38" class="bar"></div><span>2017</span></li>
+								<?php
+									$annval = array(4000, 2000, 6000, 2000, 20000, 12000);
+									$annnam = array("2015", "2016", "2017", "2017", "2017", "2017");
+									$anncur = 0;
+
+									foreach ($annval as $val) {
+										$valr = round((($val / $totalIncome) * 100), 0);
+										echo '<li><div data-percentage="'.$valr.'" class="bar"></div><span>'.$annnam[$anncur].'</span>';
+										$val = number_format($val, 0);
+										$valr = 85 - $valr;
+										echo '<span class="real-val" style="top:'.$valr.'%;">'.$val.'</span></li>';
+										$anncur++;
+									}
+								?>
 							</ul>
 						</div>	
 					</div>

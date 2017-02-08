@@ -24,7 +24,7 @@
 				<div class="tab-content">
 
 					<?php
-					// $totalIncome = 20000;
+					$totalIncome = 20000;
 
 						$jan = 0;
 						$feb = 0;
@@ -119,12 +119,14 @@
 									$moncur = 0;
 
 									foreach ($monval as $val) {
-										$valr = round((($val / $totalIncome) * 100), 0);
-										echo '<li><div data-percentage="'.$valr.'" class="bar"></div><span>'.$monnam[$moncur].'</span>';
-										$val = number_format($val, 0);
-										$valr = 85 - $valr;
-										echo '<span class="real-val" style="top:'.$valr.'%;">'.$val.'</span></li>';
-										$moncur++;
+										if($val > 0) {
+											$valr = round((($val / $totalIncome) * 100), 0);
+											echo '<li><div data-percentage="'.$valr.'" class="bar"></div><span>'.$monnam[$moncur].'</span>';
+											$val = number_format($val, 0);
+											$valr = 85 - $valr;
+											echo '<span class="real-val" style="top:'.$valr.'%;">'.$val.'</span></li>';
+											$moncur++;
+										}
 									}
 								?>
 							</ul>
@@ -146,6 +148,12 @@
 					?>
 
 					<div id="ann" class="tab-pane fade">
+						<select class="form-control" id="annyear" name="annyear" style="margin-top:20px">
+					        <option>1990 - 1999</option>
+					        <option>2000 - 2009</option>
+					        <option selected="selected">2010 - 2019</option>
+					        <option>2020 - 2029</option>
+				        </select>
 						<div id="chart">
 							<ul id="numbers">
 								<li><span>{{ $ann100 }}</span></li>
@@ -162,16 +170,29 @@
 
 							<ul id="bars">
 								<?php
-									$annval = array(4000, 2000, 6000, 2000, 20000, 12000);
-									$annnam = array("2015", "2016", "2017", "2017", "2017", "2017");
+									$annval = array(
+										4000, 2000, 6000, 2000, 20000, 12000, 4000, 2000, 6000, 4000, 
+										2000, 6000, 6000, 2000, 20000, 12000, 4000, 2000, 6000, 4000,
+										4000, 2000, 6000, 2000, 20000, 12000, 4000, 2000, 0, 0,
+										20000, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+									$annnam = array(
+										"1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999",
+										"2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009",
+										"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019",
+										"2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029");
 									$anncur = 0;
 
 									foreach ($annval as $val) {
-										$valr = round((($val / $totalIncome) * 100), 0);
-										echo '<li><div data-percentage="'.$valr.'" class="bar"></div><span>'.$annnam[$anncur].'</span>';
-										$val = number_format($val, 0);
-										$valr = 85 - $valr;
-										echo '<span class="real-val" style="top:'.$valr.'%;">'.$val.'</span></li>';
+										// if($val > 0) {
+											$valr = round((($val / $totalIncome) * 100), 0);
+											echo '<li id="ann-'.$anncur.'">';
+											echo '<div data-percentage="'.$valr.'" class="bar"';
+											if ($valr > 10) { echo 'style=":before{top:-25px;}"'; }
+											echo '></div><span>'.$annnam[$anncur].'</span>';
+											$val = number_format($val, 0);
+											$valr = 85 - $valr;
+											echo '<span class="real-val" style="top:'.$valr.'%;">'.$val.'</span></li>';
+										// }
 										$anncur++;
 									}
 								?>

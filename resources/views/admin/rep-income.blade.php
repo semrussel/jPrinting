@@ -37,6 +37,8 @@
 						$nov = getFinal($nov);
 						$dec = getFinal($dec);
 
+						// var_dump($jan);
+						// die(0);
 
 						$mon100 = number_format(round($totalIncome, 2), 0);
 						$mon90 = number_format(round(($totalIncome * 0.9), 2), 0);
@@ -72,14 +74,14 @@
 									$moncur = 0;
 
 									foreach ($monval as $val) {
-										if($val > 0) {
+										
 											$valr = round((($val / $totalIncome) * 100), 0);
 											echo '<li><div data-percentage="'.$valr.'" class="bar"></div><span>'.$monnam[$moncur].'</span>';
 											$val = number_format($val, 0);
 											$valr = 85 - $valr;
 											echo '<span class="real-val" style="top:'.$valr.'%;">'.$val.'</span></li>';
 											$moncur++;
-										}
+										
 									}
 								?>
 							</ul>

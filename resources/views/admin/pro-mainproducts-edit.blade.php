@@ -82,7 +82,7 @@
 						    	@if($colors != NULL)
 						    	@foreach($colors as $size)
 							    	<span name="{{ $size->name }}" id="{{ $size->name }}" contenteditable="false" class="tag-label"><button class="tag-label-btn" type="button" id="btn-{{ $size->name }}" onclick="removeVarTag('{{ $size->name }}')"><i class="fa fa-times" aria-hidden="true">	</i></button>{{ $size->name }}</span>
-							    	<input id="{{ $size->name }}-in" name="sizeInput[]" type="hidden" value="{{ $size->name }}">
+							    	<input id="{{ $size->name }}-in" name="colorInput[]" type="hidden" value="{{ $size->name }}">
 							    	@endforeach
 						    	@endif
 						    </div>

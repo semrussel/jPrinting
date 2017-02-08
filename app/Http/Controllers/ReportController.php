@@ -48,7 +48,7 @@ class ReportController extends Controller
     }
 
     public function cancel() {
-    	$cancelOrders = DB::table('orders')->where('status','Canceleded')->get();
+    	$cancelOrders = DB::table('orders')->where('status','Canceled')->get();
 
         return view('admin.rep-cancel')->with('cancelOrders',$cancelOrders);
     }

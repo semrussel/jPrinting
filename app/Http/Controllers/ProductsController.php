@@ -78,7 +78,7 @@ class ProductsController extends Controller
 
                 if (count($request->input('colorInput'))!=0) {
                     foreach ($request->input('colorInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','color')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -91,7 +91,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 1;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','color')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $main->id;
@@ -103,7 +103,7 @@ class ProductsController extends Controller
                 
                 if (count($request->input('sizeInput'))!=0) {
                     foreach ($request->input('sizeInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','size')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -116,7 +116,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 1;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','size')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $main->id;
@@ -128,7 +128,7 @@ class ProductsController extends Controller
 
                 if (count($request->input('paperTypeInput'))!=0) {
                     foreach ($request->input('paperTypeInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','paperType')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -141,7 +141,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 1;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','paperType')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $main->id;
@@ -153,7 +153,7 @@ class ProductsController extends Controller
                 
                 if (count($request->input('colorPlyInput'))!=0) {
                     foreach ($request->input('colorPlyInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','colorPly')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -166,7 +166,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 1;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','colorPly')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $main->id;
@@ -218,7 +218,7 @@ class ProductsController extends Controller
 
                 if (count($request->input('colorInput'))!=0) {
                     foreach ($request->input('colorInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','color')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -231,7 +231,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 0;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','color')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $sub->id;
@@ -243,7 +243,7 @@ class ProductsController extends Controller
 
                 if (count($request->input('sizeInput'))!=0) {
                     foreach ($request->input('sizeInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','size')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -256,7 +256,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 0;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','size')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $sub->id;
@@ -268,7 +268,7 @@ class ProductsController extends Controller
 
                 if (count($request->input('paperTypeInput'))!=0) {
                     foreach ($request->input('paperTypeInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','paperType')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -281,7 +281,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 0;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','paperType')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $sub->id;
@@ -293,7 +293,7 @@ class ProductsController extends Controller
 
                 if (count($request->input('colorPlyInput'))!=0) {
                     foreach ($request->input('colorPlyInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','colorPly')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -306,7 +306,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 0;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','colorPly')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $sub->id;
@@ -364,10 +364,34 @@ class ProductsController extends Controller
     public function editMain(Request $request){
 
         $wew = DB::table('pivot_selectprod')->where('service_id', $request->input('id'))->where('is_main', 1)->delete();
-        
-        if (count($request->input('sizeInput'))>0) {
+                
+                if (count($request->input('colorInput'))!=0) {
+                    foreach ($request->input('colorInput') as $size) {
+                        $count = DB::table('selects')->where('type','color')->where('name',$size)->count();
+                        if ($count == 0) {
+                            $select = new Select();
+                            $select->name = $size;
+                            $select->type = 'color';
+                            $select->save();
+
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 1;
+                            $pivot->save();
+                        }else{
+                            $select = DB::table('selects')->where('type','color')->where('name',$size)->get();
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select[0]->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 1;
+                            $pivot->save();
+                        }
+                    }
+                }
+                if (count($request->input('sizeInput'))>0) {
                     foreach ($request->input('sizeInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','size')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -380,7 +404,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 1;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','size')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $request->input('id');
@@ -392,7 +416,7 @@ class ProductsController extends Controller
 
                 if (count($request->input('paperTypeInput'))>0) {
                     foreach ($request->input('paperTypeInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','paperType')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -405,7 +429,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 1;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','paperType')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $request->input('id');
@@ -417,7 +441,7 @@ class ProductsController extends Controller
 
                 if (count($request->input('colorPlyInput'))>0) {
                     foreach ($request->input('colorPlyInput') as $size) {
-                        $count = DB::table('selects')->where('name',$size)->count();
+                        $count = DB::table('selects')->where('type','colorPly')->where('name',$size)->count();
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
@@ -430,7 +454,7 @@ class ProductsController extends Controller
                             $pivot->is_main = 1;
                             $pivot->save();
                         }else{
-                            $select = DB::table('selects')->where('name',$size)->get();
+                            $select = DB::table('selects')->where('type','colorPly')->where('name',$size)->get();
                             $pivot = new PivotSelectProd();
                             $pivot->select_id = $select[0]->id;
                             $pivot->service_id = $request->input('id');
@@ -552,7 +576,9 @@ class ProductsController extends Controller
                         ->where('selects.type','size')->get();
                 $paperTypes = checkInputSub($id,$product[0]->is_paperType,'paperType');
                 $colorPlys = checkInputSub($id,$product[0]->is_colorFly,'colorPly');
-                return view('admin.pro-subproducts-edit')->with('product',$product[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
+                $colors = checkInputSub($id,$product[0]->is_color,'color');
+
+                return view('admin.pro-subproducts-edit')->with('product',$product[0])->with('sizes',$sizes)->with('colors',$colors)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             }
         }
     }
@@ -560,7 +586,31 @@ class ProductsController extends Controller
      public function editSub(Request $request){
 
         $wew = DB::table('pivot_selectprod')->where('service_id', $request->input('id'))->where('is_main', 0)->delete();
-        
+                
+                if (count($request->input('colorInput'))!=0) {
+                    foreach ($request->input('colorInput') as $size) {
+                        $count = DB::table('selects')->where('type','color')->where('name',$size)->count();
+                        if ($count == 0) {
+                            $select = new Select();
+                            $select->name = $size;
+                            $select->type = 'color';
+                            $select->save();
+
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }else{
+                            $select = DB::table('selects')->where('type','color')->where('name',$size)->get();
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select[0]->id;
+                            $pivot->service_id = $request->input('id');
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }
+                    }
+                }
         if (count($request->input('sizeInput'))>0) {
                     foreach ($request->input('sizeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();

@@ -73,11 +73,18 @@
 						    <div class="clear"></div><hr>
 					    </div>
 
-				    <div id="sec-color" hidden>
+				    <div id="sec-color" @if($product->is_color == 0 ) hidden @endif>
 					    <div class="col-xs-4"><p><b>Color: </b></p></div>
 					    <div class="col-xs-12 no-pad"><input value="" name="12" type="text" id="p-color" class="form-control"></div>
 					    <div class="clear"></div>
-					    <div id="div-color"></div>
+					    <div id="div-color">
+					    	@if($colors != NULL)
+						    	@foreach($colors as $size)
+							    	<span name="{{ $size->name }}" id="{{ $size->name }}" contenteditable="false" class="tag-label"><button class="tag-label-btn" type="button" id="btn-{{ $size->name }}" onclick="removeVarTag('{{ $size->name }}')"><i class="fa fa-times" aria-hidden="true">	</i></button>{{ $size->name }}</span>
+							    	<input id="{{ $size->name }}-in" name="colorInput[]" type="hidden" value="{{ $size->name }}">
+						    	@endforeach
+						    @endif
+					    </div>
 					    <div class="clear"></div><hr>
 				    </div>
 

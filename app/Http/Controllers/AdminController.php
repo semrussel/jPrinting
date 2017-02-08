@@ -67,7 +67,7 @@ class AdminController extends Controller
                 return redirect('/');
             }else{
 
-                $orders = DB::table('orders')->orderBy('updated_at','desc')->get();
+                $orders = DB::table('orders')->where('status','!=' , 'Canceled')->orderBy('updated_at','desc')->get();
 
                 //return $orders;
 

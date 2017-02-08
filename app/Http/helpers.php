@@ -42,6 +42,12 @@ function checkBool($num){
 	}
 }
 
+function getName($id){
+	$data = DB::table('users')->where('id',$id)->get();
+
+	return $data[0]->firstName.' '.$data[0]->lastName;
+}
+
 function getFinal($arrs){
 	$final = 0;
 	foreach ($arrs as $arr) {

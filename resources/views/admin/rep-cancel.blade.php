@@ -22,22 +22,17 @@
 			                <th>Product Name</th>
 			                <th>Quantity</th>
 			                <th>Customer</th>
-			                <th>Status</th>
-			                <th>Action</th>
+			                <th>Price</th>
 			            </tr>
 			        </thead>
 			        <tbody>
-			        	@for($i=0; $i<15; $i++)
+			        	@for($i=0; $i<count($cancelOrders); $i++)
 				            <tr>
-				                <td>{{ $i }}</td>
-				                <td>Product Name</td>
-				                <td>Quantity</td>
-				                <th>Customer</th>
-				                <td>Status</td>
-				                <td>
-				                	<!-- <a href="/admin-orders-view/" class="admin-button">View Order</a> -->
-				                	<!-- <a href="/change-order-status" class="admin-button">Change Status</a> -->
-				                </td>
+				                <td>{{ $cancelOrders[$i]->id }}</td>
+				                <td>{{ $cancelOrders[$i]->product }}</td>
+				                <td>{{ $cancelOrders[$i]->quantity }}</td>
+				                <th>{{ getName($cancelOrders[$i]->order_by) }}</th>
+				                <td>{{ $cancelOrders[$i]->price }}</td>
 				            </tr>
 			            @endfor
 		            </tbody>

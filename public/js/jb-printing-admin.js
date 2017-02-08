@@ -250,7 +250,7 @@ $.get('/admin-products-mainproducts-add-auto').success(function(data) {
 });
 
 $.get('/admin-products-mainproducts-add-auto').success(function(data) {
-    var colorresult = getAutoPaper();
+    var colorresult = getAutoColor();
 
     function getAutoColor() {
         var color = data[1];
@@ -261,7 +261,7 @@ $.get('/admin-products-mainproducts-add-auto').success(function(data) {
 
     $('#p-color').autocomplete({
         autoSelectFirst: true,
-        lookup: paperTyperesult,
+        lookup: colorresult,
         onSelect: function (suggestion) {
             e.preventDefault();
 
@@ -398,8 +398,15 @@ var matrowcount = 2;
 
 $( "#add-material" ).click(function() {
     var div = document.getElementById('material-rows');
+    var prod = [];
+    var quan = [];
 
-    div.innerHTML = div.innerHTML +
+    for (i=0; i<matrowcount; i++) {
+        prod[i] = $('#name-'+i).val(); 
+        quan[i] = $('#quintity-'+i).val();
+    }
+
+    div.innerHTML +=
         '<div id="matrow-' + matrowcount + '" class="row">' + 
             '<hr>' +
             '<div class="col-sm-6">' + 
@@ -425,6 +432,11 @@ $( "#add-material" ).click(function() {
             '</div>' + 
             '<div class="clear"></div><br>' +
         '</div>';
+
+    for (i=0; i<=matrowcount; i++) {
+        $('#name-'+i).val(prod[i]);
+        $('#quantity-'+i).val(quan[i]);
+    }
 
     $('#matrev-'+(matrowcount-1)).hide();
 

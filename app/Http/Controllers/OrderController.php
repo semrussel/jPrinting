@@ -62,7 +62,7 @@ class OrderController extends Controller
 
     public function cancel(Request $request){
         
-        DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Canceled'));
+        DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Cancelled'));
 
         return redirect('/profile?cancel=1');
     }

@@ -74,13 +74,11 @@
     <script src="{{ url('js/bootstrap.min.js') }}"></script>
 
     <!-- CUSTOM Script-->
-    <script src="{{ url('js/jb-printing-admin.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js"></script>
-
-    <script src="{{ url('js/graphs.js') }}"></script>
-
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/r-2.1.0/sc-1.4.2/datatables.min.js"></script>
+    <script src="{{ url('js/jb-printing-admin.js') }}"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js"></script> -->
+
     <script src="{{ url('js/graphs.js') }}"></script> 
 
     <!-- <script href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>

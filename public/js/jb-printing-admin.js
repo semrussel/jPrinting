@@ -37,6 +37,54 @@ $(document).ready(function() {
 });
 
 // ----------------------
+// ANNUAL YEAR VIS
+// ----------------------
+
+$(document).ready(function() {
+    var annyear = document.getElementsByTagName("li");
+    var aycount = 0;
+    for(var i = 0; i < annyear.length; i++) {
+        if(annyear[i].id.indexOf('ann-') == 0) {
+            if (aycount > 19 && aycount <= 29) {
+                annyear[i].style.display = "table-cell";
+            } else {
+                annyear[i].style.display = "none";
+            }
+            aycount++;
+        }
+    }
+});
+
+$( "#annyear" ).change(function() {
+    var optionSelected = this.value;
+    // alert( optionSelected );
+
+    var annyear = document.getElementsByTagName("li");
+    var aycount = 0;
+
+    for(var i = 0; i < annyear.length; i++) {
+        if(annyear[i].id.indexOf('ann-') == 0) {
+            
+            if (optionSelected == '1990 - 1999') {
+                if (aycount <= 9) { annyear[i].style.display = "table-cell";
+                } else { annyear[i].style.display = "none"; }
+            } else if (optionSelected == '2000 - 2009') {
+                if (aycount > 9 && aycount <= 19) { annyear[i].style.display = "table-cell";
+                } else { annyear[i].style.display = "none"; }
+            } else if (optionSelected == '2010 - 2019') {
+                if (aycount > 19 && aycount <= 29) { annyear[i].style.display = "table-cell";
+                } else { annyear[i].style.display = "none"; }
+            } else if (optionSelected == '2020 - 2029') {
+                if (aycount > 29) { annyear[i].style.display = "table-cell";
+                } else { annyear[i].style.display = "none"; }
+            }
+            aycount++;
+        }
+    }    
+    // alert( aycount );      
+});
+
+// ----------------------
 // INPUT TAGGING
 // ----------------------
 
@@ -362,7 +410,7 @@ $( "#add-material" ).click(function() {
             '</div>' + 
             '<div class="col-sm-5">' + 
                 '<div class="col-xs-12"><p><b>Quantity/Pieces: </b></p></div>' + 
-                '<div class="col-xs-12 no-pad"><input value="" name="quantity' + 
+                '<div class="col-xs-12 no-pad"><input value="" name="quantity-' + 
                     matrowcount + 
                 '" type="number" id="width" class="form-control" required></div>' + 
             '</div>' + 

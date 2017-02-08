@@ -104,6 +104,9 @@ Route::post('/edit-subprod', 'ProductsController@editSub');
 Route::get('/admin-reports-income', 'ReportController@income');
 Route::get('/admin-reports-cancel', 'ReportController@cancel');
 
+Route::get('/admin-design', 'DesignController@index');
+Route::get('/admin-design-add', 'DesignController@add');
+Route::get('/admin-design-edit', 'DesignController@edit');
 
 Route::get('/admin-inventory', 'InventoryController@inventory');
 Route::post('/create-material', 'InventoryController@create');

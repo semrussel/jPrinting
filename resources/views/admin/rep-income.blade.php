@@ -190,6 +190,8 @@
 				</div>	
 			</div>
 
+		<h4>Total Income: {{ $totalIncome }}</h4>
+
 	    </div>
 
     </div><!-- /.row -->

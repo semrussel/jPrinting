@@ -438,5 +438,7 @@ function removeMatRow(matname) {
     matrowcount--;
     $('#matrev-'+(matrowcount-1)).show();
 
+    $('#matrow-count').val(matrowcount-1);
+
     elem.remove();
 }

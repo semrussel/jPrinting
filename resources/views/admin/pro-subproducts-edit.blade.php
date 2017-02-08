@@ -73,19 +73,13 @@
 						    <div class="clear"></div><hr>
 					    </div>
 
-				    <!-- <div id="sec-color" hidden>
-						<div class="col-xs-4"><p style="margin:8px;"><b>Colors: </b></p></div>
-					    <div class="col-xs-8 checkbox">
-					    	<div class="col-xs-6">
-			  					<label><input type="checkbox" value="">Colored</label>
-			  					<br><label><input type="checkbox" value="">Colored 15%</label>
-							</div>
-							<div class="col-xs-6">
-			  					<label><input type="checkbox" value="">Black & White</label>
-							</div>
-						</div>
+				    <div id="sec-color" hidden>
+					    <div class="col-xs-4"><p><b>Color: </b></p></div>
+					    <div class="col-xs-12 no-pad"><input value="" name="12" type="text" id="p-color" class="form-control"></div>
+					    <div class="clear"></div>
+					    <div id="div-color"></div>
 					    <div class="clear"></div><hr>
-				    </div> -->
+				    </div>
 
 				    <div id="sec-colorply" @if($product->is_colorFly == 0 ) hidden @endif>
 							<div class="col-xs-12"><p><b>Color Ply: </b></p></div>

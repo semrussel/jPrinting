@@ -76,6 +76,31 @@ class ProductsController extends Controller
                 }
                 $main->save();
 
+                if (count($request->input('colorInput'))>1) {
+                    foreach ($request->input('colorInput') as $size) {
+                        $count = DB::table('selects')->where('name',$size)->count();
+                        if ($count == 0) {
+                            $select = new Select();
+                            $select->name = $size;
+                            $select->type = 'size';
+                            $select->save();
+
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select->id;
+                            $pivot->service_id = $main->id;
+                            $pivot->is_main = 1;
+                            $pivot->save();
+                        }else{
+                            $select = DB::table('selects')->where('name',$size)->get();
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select[0]->id;
+                            $pivot->service_id = $main->id;
+                            $pivot->is_main = 1;
+                            $pivot->save();
+                        }
+                    }
+                }
+                
                 if (count($request->input('sizeInput'))>1) {
                     foreach ($request->input('sizeInput') as $size) {
                         $count = DB::table('selects')->where('name',$size)->count();

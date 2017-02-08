@@ -18,6 +18,7 @@ class CreateMaterialTable extends Migration
             $table->string('reference_num');
             $table->string('name');
             $table->string('quantity');
+            $table->string('received_by');
             $table->timestamps();
         });
     }

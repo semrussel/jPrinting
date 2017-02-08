@@ -62,6 +62,7 @@ body {
   background: #2e4d50;
   position: absolute;
   bottom: 0;
+  overflow: hidden;
 }
 #chart #bars li .bar:hover {
   background: #ff3d00;

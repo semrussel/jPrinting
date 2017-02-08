@@ -71,3 +71,37 @@ $(document).on('click', 'input', function(event){
         }
     }
 });
+
+// ----------------------
+// CUSTOM DATATABLE FILTERING
+// ----------------------
+
+$.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+ 
+        if ( settings.nTable.id == 'ordersort-table' ) {
+            var order = $('#order-sort').val();
+            var mp = data[4]; // use data for the age column
+
+            if ( order == 'None' ) {
+                return true;
+            } if ( mp == order ) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+
+    }
+);
+
+$(document).ready(function() {
+    var table = $('#ordersort-table').DataTable();
+     
+    // Event listener to the two range filtering inputs to redraw on input
+    $('#order-sort').change( function() {
+        table.draw();
+    } );
+} );

@@ -454,3 +454,60 @@ function removeMatRow(matname) {
 
     elem.remove();
 }
+
+// ----------------------
+// CUSTOM DATATABLE FILTERING
+// ----------------------
+
+// var allowFilter = ['subprod-table'];
+
+$.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+ 
+        if ( settings.nTable.id == 'subprod-table' )
+        { 
+            var mainprod = $('#main-sort').val();
+            var mp = data[2]; // use data for the age column
+
+            if ( mainprod == 'None' ) {
+                return true;
+            } if ( mp == mainprod ) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if ( settings.nTable.id == 'ordersort-table' ) {
+            var order = $('#order-sort').val();
+            var mp = data[4]; // use data for the age column
+
+            if ( order == 'None' ) {
+                return true;
+            } if ( mp == order ) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+
+    }
+);
+
+$(document).ready(function() {
+
+    // $('#subprod-table').DataTable();
+    var table = $('#subprod-table').DataTable();
+     
+    // Event listener to the two range filtering inputs to redraw on input
+    $('#main-sort').change( function() {
+        table.draw();
+    } );
+
+    var table2 = $('#ordersort-table').DataTable();
+     
+    // Event listener to the two range filtering inputs to redraw on input
+    $('#order-sort').change( function() {
+        table2.draw();
+    } );
+} );

@@ -11,8 +11,21 @@
 
 			<p class="col-xs-12 dash-title"><b>Orders</b></p>
 
+			<div class="col-xs-6">
+				<span><b>Filter By:</b>
+				<select class="form-control" id="order-sort" name="order-sort" style="margin:10px 0; width: 50%; display: -webkit-inline-box;">
+					<option>None</option>
+					<option>Validating Order</option>
+					<option>Validating Payment</option>
+					<option>Waiting for Payment</option>
+					<option>Processing the Product</option>
+					<option>Ready for Pick up / Delivery</option>
+		        </select>
+		        </span>
+	        </div>
+
 			<div class="col-xs-12">
-		        <table id="order-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
+		        <table id="ordersort-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>
 			                <th>Order ID</th>

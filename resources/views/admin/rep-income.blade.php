@@ -101,12 +101,15 @@
 					?>
 
 					<div id="ann" class="tab-pane fade">
-						<select class="form-control" id="annyear" name="annyear" style="margin-top:20px">
+						<div class="col-xs-6">
+						<span><b>From:</b>
+						<select class="form-control" id="annyear" name="annyear" style="margin:10px 0; width: 50%; display: -webkit-inline-box;">
 					        <option>1990 - 1999</option>
 					        <option>2000 - 2009</option>
 					        <option selected="selected">2010 - 2019</option>
 					        <option>2020 - 2029</option>
 				        </select>
+				        </span>
 						<div id="chart">
 							<ul id="numbers">
 								<li><span>{{ $ann100 }}</span></li>

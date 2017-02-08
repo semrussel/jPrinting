@@ -516,7 +516,7 @@ class ProductsController extends Controller
                 return redirect('/');
             }else{
                 $products = DB::table('sub_prod')->get();
-                $mainprod = DB::table('main_prod')->where('is_subcat', '1');
+                $mainprod = DB::table('main_prod')->where('is_subcat', '1')->get();
 
                 return view('admin.pro-subproducts')->with('products',$products)->with('mainprod',$mainprod);
             }

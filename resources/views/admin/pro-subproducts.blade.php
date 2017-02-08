@@ -11,14 +11,19 @@
 
 			<p class="col-xs-12 dash-title"><b>Products</b> | Sub Products <a href="admin-products-subproducts-add" class="add-button"><i class="fa fa-plus" aria-hidden="true"></i> Add New</a></p>
 
-			<select class="form-control" id="main-sort" name="main-sort" style="margin:10px 0">
-				<!-- @foreach($mainprod as $mp)
-			        <option>{{ $mp->name }}</option>
-	            @endforeach -->
-	        </select>
+			<div class="col-xs-6">
+				<span><b>Filter By:</b>
+				<select class="form-control" id="main-sort" name="main-sort" style="margin:10px 0; width: 50%; display: -webkit-inline-box;">
+					<option>None</option>
+					@foreach($mainprod as $mp)
+				        <option>{{ $mp->name }}</option>
+		            @endforeach
+		        </select>
+		        </span>
+	        </div>
 
 			<div class="col-xs-12">
-		        <table id="order-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
+		        <table id="subprod-table" class="table table-bordered admin-table" cellspacing="0" width="100%">
 			        <thead>
 			            <tr>
 			                <th>Product ID</th>

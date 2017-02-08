@@ -13,8 +13,7 @@
 			<form id="mainprod-add" action="{{ url('/create-material') }}" method="POST" enctype="multipart/form-data">
 				<div class="col-xs-6">
 					<div class="col-xs-12">
-
-						<input type="hidden" value="1" name="countMaterials">
+						
 				        <div class="col-xs-12"><p><b>Reference No: </b></p></div>
 					    <div class="col-xs-12 no-pad"><input value="" name="refno" type="text" id="refno" class="form-control" required></div>
 						<div class="clear"></div><br>

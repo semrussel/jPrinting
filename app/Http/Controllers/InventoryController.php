@@ -38,11 +38,18 @@ class InventoryController extends Controller
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
+
+                for ($i=0; $i < $request->input('name'); $i++) { 
+                    # code...
+                }
+
                 $material = new Material();
                 $material->name = $request->input('name');
                 $material->reference_num = $request->input('refno');
                 $material->quantity = $request->input('quantity');
                 $material->save();
+
+
 
                 return redirect('/admin-inventory?success=1');
             }

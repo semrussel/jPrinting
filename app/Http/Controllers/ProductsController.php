@@ -82,7 +82,7 @@ class ProductsController extends Controller
                         if ($count == 0) {
                             $select = new Select();
                             $select->name = $size;
-                            $select->type = 'size';
+                            $select->type = 'color';
                             $select->save();
 
                             $pivot = new PivotSelectProd();
@@ -215,6 +215,31 @@ class ProductsController extends Controller
                     }
                 }
                 $sub->save();
+
+                if (count($request->input('colorInput'))>0) {
+                    foreach ($request->input('colorInput') as $size) {
+                        $count = DB::table('selects')->where('name',$size)->count();
+                        if ($count == 0) {
+                            $select = new Select();
+                            $select->name = $size;
+                            $select->type = 'color';
+                            $select->save();
+
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select->id;
+                            $pivot->service_id = $sub->id;
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }else{
+                            $select = DB::table('selects')->where('name',$size)->get();
+                            $pivot = new PivotSelectProd();
+                            $pivot->select_id = $select[0]->id;
+                            $pivot->service_id = $sub->id;
+                            $pivot->is_main = 0;
+                            $pivot->save();
+                        }
+                    }
+                }
 
                 if (count($request->input('sizeInput'))>0) {
                     foreach ($request->input('sizeInput') as $size) {

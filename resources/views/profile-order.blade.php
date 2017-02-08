@@ -140,9 +140,21 @@
 			    
 				    <div class="col-xs-4 right"><p><b>Price: </b></p></div>
 				    <div class="col-xs-8 no-pad"><input name="price" type="text" id="width" class="form-control" disabled value="{{ $order[0]->price }}"></div>
-				    
 				    <div class="clear"></div><br>
 				    
+				    @if($order[0]->expected_delivery != NULL)
+					    <?php
+						    $exp_date = strtotime($order[0]->expected_delivery);
+						    $exp_date = strtotime('+3 day',$exp_date);
+					    ?>
+					    <div class="col-xs-4 right"><p><b>Expected Date: </b></p></div>
+					    <div class="col-xs-8 no-pad"><input disabled name="date" value="{{ date('M-d-Y', strtotime($order[0]->expected_delivery)) }} to {{ date('M-d-Y',$exp_date) }}" type="text" id="date" class="form-control" required></div>
+					    <div class="clear"></div><br>
+				    @else
+				    	<div class="col-xs-4 right"><p><b>Expected Date: </b></p></div>
+					    <div class="col-xs-8 no-pad"><input disabled name="date" value="Waiting for Your Payment" type="text" id="date" class="form-control" required></div>
+					    <div class="clear"></div><br>
+				    @endif
 	    		
     		</div>
 

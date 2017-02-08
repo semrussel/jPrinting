@@ -55,7 +55,7 @@ class OrderController extends Controller
 
     public function sendPrice(Request $request){
         
-        DB::table('orders')->where('id', $request->input('id'))->update(array('price' => $request->input('price'), 'status' => 'Waiting for Payment'));
+        DB::table('orders')->where('id', $request->input('id'))->update(array('price' => $request->input('price'), 'status' => 'Waiting for Payment','expected_delivery' => $request->input('date')));
 
         return redirect('/admin-orders?success=1');
     }

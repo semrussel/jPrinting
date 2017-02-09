@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 
-			<p class="col-xs-12 dash-title"><b>Reports</b> | Income</p>
+			<p class="col-xs-12 dash-title"><b>Reports</b> | General Sales</p>
 
 			<div class="col-xs-6">
 				<ul class="nav nav-pills">
@@ -60,6 +60,7 @@
 					?>
 
 					<div id="mon" class="tab-pane fade in active">
+						<div style="margin:10px 0;"><span>Total Income for {{ date('Y') }}: <b>{{ $mtotalIncome }}</b></span></div>
 						<div id="chart">
 							<ul id="numbers">
 								<li><span>{{ $mon100 }}</span></li>
@@ -89,14 +90,13 @@
 											echo '<li><div data-percentage="'.$valr.'" class="bar"></div><span>'.$monnam[$moncur].'</span>';
 											$val = number_format($val, 0);
 											$valr = 85 - $valr;
-											echo '<span class="real-val" style="top:'.$valr.'%;">'.$val.'</span></li>';
+											echo '<span class="real-val" style="top:'.$valr.'%;">P'.$val.'</span></li>';
 											$moncur++;
 										
 									}
 								?>
 							</ul>
 						</div>	
-						<h4>Total Income for {{ date('Y') }}: {{ $mtotalIncome }}</h4>
 					</div>
 
 					<?php
@@ -119,7 +119,6 @@
 					?>
 
 					<div id="ann" class="tab-pane fade">
-						<div class="col-xs-6">
 						<span><b>From:</b>
 						<select class="form-control" id="annyear" name="annyear" style="margin:10px 0; width: 50%; display: -webkit-inline-box;">
 					        <option>1990 - 1999</option>
@@ -179,7 +178,7 @@
 											echo '></div><span>'.$annnam[$anncur].'</span>';
 											$val = number_format($val, 0);
 											$valr = 85 - $valr;
-											echo '<span class="real-val" style="top:'.$valr.'%;">'.$val.'</span></li>';
+											echo '<span class="real-val" style="top:'.$valr.'%;">P'.$val.'</span></li>';
 										// }
 										$anncur++;
 									}

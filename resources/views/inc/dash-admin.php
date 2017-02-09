@@ -22,7 +22,8 @@
         <span class="badge" style="background: transparent; width: 10px;"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
 	    </a>
 	    <div class="collapse list-group-submenu" id="sub-rep">
-	        <a id="sub-income" href="/admin-reports-income" class="list-group-item sub-item" style="padding-left: 20px;">Income</a>
+	        <a id="sub-income" href="/admin-reports-income" class="list-group-item sub-item" style="padding-left: 20px;">General Sales</a>
+            <a id="sub-comp" href="/admin-reports-comparison" class="list-group-item sub-item" style="padding-left: 20px;">Product Sales</a>
 	        <a id="sub-cancel" href="/admin-reports-cancel" class="list-group-item sub-item" style="padding-left: 20px;">Cancelled Orders</a>
 	        <!-- <a href="/services-calendars-table" class="list-group-item sub-item">Table Tent Calendar</a> -->
 	    </div>

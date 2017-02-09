@@ -20,6 +20,7 @@ class ServicesController extends Controller
     public function serviceMain($id){
         if (Auth::check()) {
             $service = DB::table('main_prod')->where('id',$id)->get();
+            $designs = DB::table('designs')->where('service_id',$id)->where('is_main',1)->get();
             $sizes = DB::table('selects')
             ->join('pivot_selectprod', 'pivot_selectprod.select_id', '=', 'selects.id')
             ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',1)
@@ -28,7 +29,7 @@ class ServicesController extends Controller
             $colorPlys = checkInput($id,$service[0]->is_paperType,'colorPly');
             // return $sizes;
 
-            return view('services.service')->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
+            return view('services.service')->with('designs',$designs)->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
         }else{
             return redirect('/login?check=1');
@@ -38,13 +39,14 @@ class ServicesController extends Controller
     public function serviceSub($id){
         if (Auth::check()) {
             $service = DB::table('sub_prod')->where('id',$id)->get();
+            $designs = DB::table('designs')->where('service_id',$id)->where('is_main',0)->get();
             $sizes = DB::table('selects')
             ->join('pivot_selectprod', 'pivot_selectprod.select_id', '=', 'selects.id')
             ->where('pivot_selectprod.service_id',$id)->where('pivot_selectprod.is_main',0)
             ->where('selects.type','size')->get();
             $paperTypes = checkInputSub($id,$service[0]->is_paperType,'paperType');
             $colorPlys = checkInputSub($id,$service[0]->is_paperType,'colorPly');
-            return view('services.service')->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
+            return view('services.service')->with('designs',$designs)->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
         }else{
             return redirect('/login?check=1');

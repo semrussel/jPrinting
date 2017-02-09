@@ -10,7 +10,7 @@
 		<div class="col-xs-12">
 
 			<p class="col-xs-12 dash-title"><b>Design</b> | Add New Design
-		<form id="mainprod-add" action="{{ url('/create-mainprod') }}" method="POST" enctype="multipart/form-data">
+		<form id="design-add" action="{{ url('/create-design') }}" method="POST" enctype="multipart/form-data">
 			<div class="col-xs-6">
 				<div class="col-xs-12">
 
@@ -23,16 +23,16 @@
 
 				    <div class="col-xs-6">
 					    <div id="has1" class="desc">
-					    	<select class="form-control" id="main-prod" name="main-prod" style="margin:35px 0;"">
+					    	<select class="form-control" id="main-prod" name="main-prod" style="margin:35px 0;">
 								@foreach($mainprod as $mp)
-							        <option>{{ $mp->name }}</option>
+							        <option value="{{ $mp->id }}">{{ $mp->name }}</option>
 					            @endforeach
 					        </select>
 					    </div>
 					    <div id="has0" class="desc" style="display:none">
-					    	<select class="form-control" id="sub-prod" name="sub-prod" style="margin:35px 0;"">
+					    	<select class="form-control" id="sub-prod" name="sub-prod" style="margin:35px 0;">
 								@foreach($subprod as $sp)
-							        <option>{{ $sp->name }}</option>
+					        		<option value="{{ $sp->id }}">{{ $sp->name }}</option>
 					            @endforeach
 					        </select>
 					    </div>
@@ -50,7 +50,7 @@
     			</div>
     		</div>
 			<div class="col-xs-6">
-		    	<div class="col-xs-12"><p><b>Design Image: </b> <input class="btn btn-primary" type="file" name="pic" accept="image/*"> </p></div>
+		    	<div class="col-xs-12"><p><b>Design Image: </b> <input class="btn btn-primary" type="file" name="pic" accept="image/*" required> </p></div>
 	    		<img class="col-xs-12" src="{{ url('img/bl-shirt-01.jpg') }}">
 
 	    	</div>

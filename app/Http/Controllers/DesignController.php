@@ -9,8 +9,7 @@ use App\Http\Controllers\Controller;
 use Parser;
 use Auth;
 use DB;
-use App\Material;
-use App\PivotMaterialProd;
+use App\Design;
 
 class DesignController extends Controller
 {
@@ -21,9 +20,9 @@ class DesignController extends Controller
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
-                // $materials = DB::table('materials')->get();
+                $designs = DB::table('designs')->get();
 
-                return view('admin.design');
+                return view('admin.design')->with('designs',$designs);
             }
         }
     }
@@ -39,6 +38,32 @@ class DesignController extends Controller
                 $subprod = DB::table('sub_prod')->get();
 
                 return view('admin.design-add')->with('mainprod',$mainprod)->with('subprod',$subprod);
+            }
+        }
+    }
+
+    public function create(Request $request){
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                $design = new Design();
+                $design->is_main = $request->input('has');
+                if ($request->input('has') == 1) {
+                    $design->service_id = $request->input('main-prod');
+                }else{
+                    $design->service_id = $request->input('sub-prod');
+                }
+                
+                $imageName = time().'.'.$request->pic->getClientOriginalExtension();
+                $request->pic->move(public_path('images'), $imageName);
+                $design->url = url('images').'/'.$imageName;
+                $design->save();
+
+                return "DONE!";
+
             }
         }
     }

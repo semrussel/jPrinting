@@ -26,17 +26,15 @@
 			                <th>ID</th>
 			                <th>Design</th>
 			                <th>Product</th>
-			                <th>Status</th>
 			                <th>Action</th>
 			            </tr>
 			        </thead>
 			        <tbody>
-		        		@for($i=0; $i<10; $i++)
+		        		@for($i=0; $i<count($designs); $i++)
 			        		<tr>
-			        			<td>{{ $i }}</td>
-			        			<td><img id="jb-logo" src="{{ url('img/jb_logo.jpg') }}" width="100%"></td>
-			        			<td>Calendar</td>
-			        			<td>Active</td>
+			        			<td>{{ $designs[$i]->id }}</td>
+			        			<td><img id="jb-logo" src="{{ url($designs[$i]->url) }}" width="100%"></td>
+			        			<td>{{ $designs[$i]->service_id }}</td>
 			        			<td>
 			        				<form action="" method="POST" style="display: -webkit-inline-box;">
 					                	<input type="hidden" name="id" value="">

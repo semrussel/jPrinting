@@ -13,7 +13,13 @@ class CreateDesignTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('designs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('url');
+            $table->integer('service_id');
+            $table->integer('is_main');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class CreateDesignTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('designs');
     }
 }

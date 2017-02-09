@@ -5,11 +5,12 @@
 @section('serv-img') 
     <div id="d-browse" class="design-box">
         <fieldset id="browse-field">
-            @for($i=1; $i<=8; $i++)
+            @for($i=1; $i<=5; $i++)
                 <div class="col-sm-6 col-md-4 no-pad-left">
                     <label style="display: block;">
-                        <div class="serv-browse" style="background: url('img/business cards 2-side/des-{{ $i }}.jpg'); background-position: center center;background-size: cover;">
-                        <div><p><input type="radio" id="brw-{{ $i }}" name="design" value="{{ $i }}"
+                        <?php $url = url('img/'.strtolower($service->name).'/des-'.$i.'.jpg'); ?>
+                        <div class="serv-browse" style="background: url('{{ $url }}'); background-position: center center;background-size: cover;">
+                        <div><p><input type="radio" id="brw-{{ $i }}" name="design" value="{{ $url }}"
                         @if($i==1) checked="true" @endif >
                         Design #{{ $i }}
                         </input></p></div>
@@ -17,6 +18,19 @@
                     </label>
                 </div>
             @endfor
+            @foreach($designs as $design)
+                <div class="col-sm-6 col-md-4 no-pad-left">
+                    <label style="display: block;">
+                        <div class="serv-browse" style="background: url('{{ $design->url }}'); background-position: center center;background-size: cover;">
+                        <div><p><input type="radio" id="brw-{{ $i }}" name="design" value="{{ $design->url }}"
+                        @if($i==1) checked="true" @endif >
+                        Design #{{ $i }}
+                        </input></p></div>
+                        </div>
+                    </label>
+                </div>
+                <?php $i++; ?>
+            @endforeach
         </fieldset>
     </div>
     <div id="d-upload" class="design-box" style="display: none;"> 

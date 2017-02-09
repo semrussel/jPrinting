@@ -199,7 +199,7 @@
 
 		    	<div class="col-xs-12"><p><b>Design: </b></p></div>
 		    	@if($order[0]->designType == 'Browse')
-		    		<img class="col-xs-12" src="{{ url('img/'.$order[0]->product.'/des-'.$order[0]->design.'.jpg') }}">
+		    		<img class="col-xs-12" src="{{ url($order[0]->design) }}">
 		    	@else
 		    		<img class="col-xs-12" src="{{ $order[0]->file }}">
 		    	@endif

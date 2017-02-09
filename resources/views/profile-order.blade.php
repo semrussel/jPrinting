@@ -166,16 +166,22 @@
 				    <div class="clear"></div><br>
 				    <input type="hidden" value="{{ $order[0]->id }}" name="id">
 				    <div class="col-xs-4 right"><p><b>Bank: </b></p></div>
-				    <div class="col-xs-8 no-pad"><input @if($order[0]->bank != 'NONE') value="{{ $order[0]->bank }}"  disabled @else value="" @endif name="bank" @if($order[0]->price == 0)  disabled @endif type="text" id="width" class="form-control" required></div>
+				    <div class="col-xs-8 no-pad">
+				    	<select @if($order[0]->price == 0)  disabled @endif @if($order[0]->bank != 'NONE') value="{{ $order[0]->bank }}"  disabled @else value="" @endif name="bank" class="form-control" required>
+				    		<option @if($order[0]->bank == 'BDO') selected @endif value="BDO">BDO</option>
+				    		<option @if($order[0]->bank == 'BPI') selected @endif value="BPI">BPI</option>
+				    		<option @if($order[0]->bank == 'SECURITY BANK') selected @endif value="SECURITY BANK">SECURITY BANK</option>
+				    	<select>
+				    </div>
 				    
 				    <div class="clear"></div><br>
-				    <div class="col-xs-4 col-xs-offset-8 no-pad">
+				    <div @if($order[0]->bank != 'NONE') hidden @endif class="col-xs-4 col-xs-offset-8 no-pad">
 				    	<input @if($order[0]->price == 0)  disabled @endif type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 				</form>
-					<div class="col-xs-4 col-xs-offset-8 no-pad">		
+					<div class="col-xs-4 col-xs-offset-8 no-pad" @if($order[0]->bank != 'NONE') hidden @endif>		
 						<center>--- or ---</center>
 					    <p><b>Pay through: </b></p>
-					    <a href="https://www.paypal.com/" class="btn btn-primary" style="width: 100%;">Paypal</a>
+					    <a href="https://sandbox.paypal.com/" class="btn btn-primary" style="width: 100%;">Paypal</a>
 			    	</div>
 		    	
 

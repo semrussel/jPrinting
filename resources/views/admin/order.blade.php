@@ -31,7 +31,10 @@
 			                <th>Order ID</th>
 			                <th>Product Name</th>
 			                <th>Quantity</th>
-			                <th>Customer</th>
+			                <th>Customer Name</th>
+			                <th>Customer Email</th>
+			                <th>Customer Contact No.</th>
+			                <th>Received Date</th>
 			                <th>Status</th>
 			                <th>Action</th>
 			            </tr>
@@ -44,10 +47,13 @@
 				                <td>{{ ucwords($orders[$i]->quantity) }}</td>
 				                <?php $name = DB::table('users')->where('id',$orders[$i]->order_by)->get(); ?>
 				                <th>{{ ucwords($name[0]->firstName) }} {{ ucwords($name[0]->lastName) }}</th>
+				                <th>{{ $name[0]->email }}</th>
+				                <th>{{ '+'.$name[0]->cpNum }}</th>
+				                <td>{{ $orders[$i]->created_at }}</td>
 				                <td>{{ ucwords($orders[$i]->status) }}</td>
 				                <td>
 				                	<a href="/admin-orders-view/{{ $orders[$i]->id }}" class="admin-button">View Order</a>
-				                	<a href="/change-order-status" class="admin-button">Change Status</a>
+				                	<!-- <a href="/change-order-status" class="admin-button">Change Status</a> -->
 				                </td>
 				            </tr>
 			            @endfor

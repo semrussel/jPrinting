@@ -18,6 +18,8 @@
 			                <th>Reference No</th>
 			                <th>Product Name</th>
 			                <th>Quantity/Pieces</th>
+			                <th>Received Date</th>
+			                <th>Received By</th>
 			                <th>Action</th>
 			            </tr>
 			        </thead>
@@ -27,6 +29,8 @@
 			                <td>{{ $material->reference_num }}</td>
 			                <td>{{ $material->name }}</td>
 			                <td>{{ $material->quantity }}</td>
+			                <td>{{ $material->created_at }}</td>
+			                <td>{{ $material->received_by }}</td>
 			                <td><span>
 			                <?php $url = url('admin-inventory-edit/'.$material->id); ?>
 			                <a href="{{ $url }}" class="admin-button">Edit</a> 

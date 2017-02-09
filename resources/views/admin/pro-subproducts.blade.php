@@ -37,7 +37,7 @@
 				            <tr>
 				                <td>{{ $product->id }}</td>
 				                <td>{{ $product->name }}</td>
-				                <td>{{ geSubtProdName($product->main_id) }}</td>
+				                <td>{{ getmainProdName($product->main_id) }}</td>
 				                <td>
 				                	<?php $url = url('/edit-subprod/'.$product->id); ?>
 				                	<a href="{{ $url }}" class="admin-button">Edit</a>

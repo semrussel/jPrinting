@@ -29,7 +29,10 @@ class ServicesController extends Controller
             $colorPlys = checkInput($id,$service[0]->is_paperType,'colorPly');
             // return $sizes;
 
-            return view('services.service')->with('designs',$designs)->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
+            $zero = DB::table('materials')->join('pivot_materialprod', 'pivot_materialprod.material_id','=','materials.id')
+            ->where('materials.quantity',0)->where('pivot_materialprod.service_id',$id)->count();
+
+            return view('services.service')->with('zero',$zero)->with('designs',$designs)->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
         }else{
             return redirect('/login?check=1');

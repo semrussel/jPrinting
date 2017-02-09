@@ -99,6 +99,8 @@ class OrderController extends Controller
 
     public function sendTrans(Request $request){
         
+        return $request->input('bank');
+
         DB::table('orders')->where('id', $request->input('id'))->update(array('bank' => $request->input('bank'), 'transaction_number' => $request->input('transaction'), 'status' => 'Validating Payment'));
 
         return redirect('/profile?pay=1');
@@ -168,7 +170,33 @@ class OrderController extends Controller
     public function deliver(Request $request){
         
         $order = DB::table('orders')->where('id',$request->input('id'))->get();
+        $users = DB::table('users')->where('id',$orders[0]->order_by)->get();
 
+        $arr_post_body = array(
+        "message_type" => "SEND",
+        "mobile_number" => $users[0]->cpNum,
+        "shortcode" => "2929025642",
+        "message_id" => "12345678901234567890123456789012",
+        "message" => urlencode("Hi We are from Jimbes Printing! We already Delivered your order! Thank you for patrionazing Jimbes Printing!"),
+        "client_id" => "37a3dc6152c57afbe664c02a640f1226ef85d5ab33409866cfab8c7c160bdcac",
+        "secret_key" => "7ecf073a12a56781a070fa4a25da3eaf5f24b5a21014117516c400a256c9ff60"
+        );
+        
+        $query_string = "";
+        foreach($arr_post_body as $key => $frow)
+        {
+            $query_string .= '&'.$key.'='.$frow;
+        }
+
+        $URL = "https://post.chikka.com/smsapi/request";
+
+        $curl_handler = curl_init();
+        curl_setopt($curl_handler, CURLOPT_URL, $URL);
+        curl_setopt($curl_handler, CURLOPT_POST, count($arr_post_body));
+        curl_setopt($curl_handler, CURLOPT_POSTFIELDS, $query_string);
+        curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, TRUE);
+        $response = curl_exec($curl_handler);
+        curl_close($curl_handler);
 
         DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Delivered'));
 

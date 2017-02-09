@@ -182,4 +182,10 @@
     <input type="hidden" value="{{ $service->name }}" name="product">
     <div class="col-xs-6 col-xs-offset-6 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 <!-- /.Price Calculator -->
+
+@if($zero != 0)
+<script>
+alert('The product you are about to order is out of stock so expect longer time to process your order');
+</script>
+@endif
 @stop

@@ -27,7 +27,7 @@
 				<ul class="nav nav-pills">
 					<!-- <li class="active"><a data-toggle="pill" href="#day">Daily</a></li> -->
 					<li class="active"><a data-toggle="pill" href="#mon">Monthly</a></li>
-					<li><a data-toggle="pill" href="#ann">Annually</a></li>
+					<!-- <li><a data-toggle="pill" href="#ann">Annually</a></li> -->
 				</ul>
 
 				<div class="tab-content">

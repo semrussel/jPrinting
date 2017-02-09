@@ -72,7 +72,22 @@ drawPieChart('canPie-Sep');
 drawPieChart('canPie-Oct');
 drawPieChart('canPie-Nov');
 drawPieChart('canPie-Dec');
+
+drawPieChart('canPie-Jan-sub');
+drawPieChart('canPie-Feb-sub');
+drawPieChart('canPie-Mar-sub');
+drawPieChart('canPie-Apr-sub');
+drawPieChart('canPie-May-sub');
+drawPieChart('canPie-Jun-sub');
+drawPieChart('canPie-Jul-sub');
+drawPieChart('canPie-Aug-sub');
+drawPieChart('canPie-Sep-sub');
+drawPieChart('canPie-Oct-sub');
+drawPieChart('canPie-Nov-sub');
+drawPieChart('canPie-Dec-sub');
+
 drawPieChart('canPie-Year');
+drawPieChart('canPie-Year-sub');
 
 /* Peak Chart Javascript
 =====================================================================*/

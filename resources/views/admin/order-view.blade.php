@@ -174,7 +174,7 @@
                 <div class="clear"></div><br>
                 @endif
 
-                @if($order[0]->status == 'Ready for Pick up / Delivery')
+                @if($order[0]->status == 'Ready for Delivery')
                 <div class="col-xs-4 col-xs-offset-8 no-pad">
                 	<form action="{{ url('/deliver-order') }}" method="POST">
                         <input type="hidden" name="id" value="{{ $order[0]->id }}"> 

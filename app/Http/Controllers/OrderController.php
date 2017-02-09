@@ -168,7 +168,7 @@ class OrderController extends Controller
 
     public function deliver(Request $request){
         
-        $order = DB::table('orders')->where('id',$request->input('id'))->get();
+        $orders = DB::table('orders')->where('id',$request->input('id'))->get();
         $users = DB::table('users')->where('id',$orders[0]->order_by)->get();
 
         $arr_post_body = array(

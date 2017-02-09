@@ -20,8 +20,7 @@
 <br>
 <p>6 August 2016</p>
 <br>
-<p><b>Ms Name LastName</b>
-<br><b>Cebu Gems Innovation and Center Development Center, Inc.</b></p>
+<p><b>{{ $customerName }}</b></p>
 <br>
 <p>Dear Ma'am:</p>
 <p>Greetings!</p>
@@ -30,24 +29,15 @@
 	<tr>
 		<th class="tg-yw4l">ITEM</th>
 		<th class="tg-yw4l">QTY.</th>
-		<th class="tg-yw4l">UNIT</th>
 		<th class="tg-yw4l">DESCRIPTION</th>
-		<th class="tg-yw4l">UNIT PRICE</th>
 		<th class="tg-yw4l">AMOUNT</th>
 	</tr>
 	<tr>
-		<td class="tg-yw4l">1</td>
-		<td class="tg-yw4l">1,500</td>
-		<td class="tg-yw4l">pcs.</td>
+		<td class="tg-yw4l">{{ $product }}</td>
+		<td class="tg-yw4l">{{ $quantity }}</td>
 		<td class="tg-yw4l">
-			<b>Poster</b>
-			<p>Size: 11x17"</p>
-			<p>Paper Stock</p>
-			<p>Full Color</p>
-			<br>
-			<p>VAT EXCLUSIVE</p>
+			<p>{{ $details }}</p>
 		</td>
-		<td class="tg-yw4l"></td>
 		<td class="tg-yw4l"></td>
 	</tr>
 </table>
@@ -66,11 +56,9 @@
 	</p>
 </div>
 <div style="float:left; width: 50%;">
-	<p>Conforme:
-	<br>Date:
+	<p>
+		Date: {{ date('M-d-Y') }}
 	</p>
 </div>
-
->>>>>>> 0e2fd5089f8c02d7896701f34ac6d8c6343e956d
 </body>
 </html>

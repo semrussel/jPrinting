@@ -10,6 +10,7 @@ use Parser;
 use Carbon;
 use DB;
 use App\RequestQuote;
+use Mail;
 
 
 class QuoteController extends Controller
@@ -42,8 +43,16 @@ class QuoteController extends Controller
     }
 
     public function sendQPrice(Request $request){
-        
+        $requestQ = DB::table('request')->where('id', $request->input('id'))->get();
         DB::table('request')->where('id', $request->input('id'))->update(array('price' => $request->input('price'), 'status' => 'Quote Received'));
+        $email = $requestQ[0]->email;
+        Mail::send('emails.send', ['customerName' => $requestQ[0]->fullname, 'title' => $requestQ[0]->title, 'product' => $requestQ[0]->product, 'quantity' => $requestQ[0]->quantity, 'details' => $requestQ[0]->details,'price' => $request->input('price')], function ($message) use ($email) {
+            $message->subject('Request for Quote');
+            $message->from('me@gmail.com', 'Christian Nwamba');
+
+            $message->to($email);
+
+        });
 
         return redirect('/admin-request-quotes?success=1');
     }

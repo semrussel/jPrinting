@@ -20,6 +20,7 @@ class MainProdTableSeeder extends Seeder
       $main->description = 'NONE';
       $main->logo = 'img/serv-01.jpg';
       $main->is_lam= 1;
+      $main->is_design= 1;
       $main->save();
 
       //2
@@ -35,6 +36,7 @@ class MainProdTableSeeder extends Seeder
       $main->is_per= 0;
       $main->is_color= 0;
       $main->is_colorFly= 0;
+      $main->is_design= 1;
       $main->save();
 
       //3
@@ -44,6 +46,7 @@ class MainProdTableSeeder extends Seeder
       $main->description= "";
       $main->logo = 'img/serv-03.jpg';
       $main->is_paperType= 1;
+      $main->is_design= 1;
       $main->save();
 
       //4
@@ -59,6 +62,7 @@ class MainProdTableSeeder extends Seeder
       $main->is_per= 0;
       $main->is_color= 0;
       $main->is_colorFly= 0;
+      $main->is_design= 1;
       $main->save();
 
       //5
@@ -74,6 +78,7 @@ class MainProdTableSeeder extends Seeder
       $main->is_per= 0;
       $main->is_color= 0;
       $main->is_colorFly= 0;
+      $main->is_design= 1;
       $main->save();
 
       //6
@@ -82,6 +87,7 @@ class MainProdTableSeeder extends Seeder
       $main->is_subcat = 0;
       $main->description= "";
       $main->logo = 'img/serv-02.jpg';
+      $main->is_design= 1;
       $main->save();
 
       //7
@@ -92,6 +98,7 @@ class MainProdTableSeeder extends Seeder
       $main->logo = 'img/serv-13.jpg';
       $main->is_paperType= 1;
       $main->is_per= 1;
+      $main->is_design= 1;
       $main->save();
 
       //8
@@ -102,6 +109,7 @@ class MainProdTableSeeder extends Seeder
       $main->logo = 'img/serv-02.jpg';
       $main->is_paperType= 1;
       $main->is_lam= 1;
+      $main->is_design= 1;
       $main->save();
 
       //9
@@ -111,6 +119,7 @@ class MainProdTableSeeder extends Seeder
       $main->description= "";
       $main->logo = 'img/serv-15.jpg';
       $main->is_paperType= 1;
+      $main->is_design= 1;
       $main->save();
 
       //10
@@ -120,6 +129,7 @@ class MainProdTableSeeder extends Seeder
       $main->description= "";
       $main->logo = 'img/serv-16.jpg';
       $main->is_paperType= 1;
+      $main->is_design= 1;
       $main->save();
 
       //11
@@ -131,6 +141,7 @@ class MainProdTableSeeder extends Seeder
       $main->is_paperType= 1;
       $main->is_color= 1;
       $main->is_colorFly= 1;
+      $main->is_design= 1;
       $main->save();
 
       //12
@@ -141,6 +152,7 @@ class MainProdTableSeeder extends Seeder
       $main->logo = 'img/serv-19.jpg';
       $main->is_paperType= 1;
       $main->is_color= 1;
+      $main->is_design= 1;
       $main->save();
 
       //13
@@ -150,6 +162,7 @@ class MainProdTableSeeder extends Seeder
       $main->description= "";
       $main->logo = 'img/serv-20.jpg';
       $main->is_paperType= 1;
+      $main->is_design= 1;
       $main->save();
 
     }

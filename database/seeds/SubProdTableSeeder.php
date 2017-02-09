@@ -18,6 +18,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 1;
       $sub->description= "";
       $sub->is_lam= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 2
@@ -26,6 +27,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 1;
       $sub->description= "";
       $sub->is_lam= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 3
@@ -34,6 +36,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 1;
       $sub->description= "";
       $sub->is_lam= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 4
@@ -42,6 +45,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 2;
       $sub->description= "";
       $sub->is_substrate= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 5
@@ -50,6 +54,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 2;
       $sub->description= "";
       $sub->is_substrate= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 6
@@ -58,6 +63,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 2;
       $sub->description= "";
       $sub->is_substrate= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 7
@@ -69,6 +75,7 @@ class SubProdTableSeeder extends Seeder
       $sub->is_corner= 1;
       $sub->is_lam= 1;
       $sub->is_substrate= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 8
@@ -80,6 +87,7 @@ class SubProdTableSeeder extends Seeder
       $sub->is_corner= 1;
       $sub->is_lam= 1;
       $sub->is_substrate= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 9
@@ -89,6 +97,7 @@ class SubProdTableSeeder extends Seeder
       $sub->description= "";
       $sub->is_paperType= 1;
       $sub->is_per= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 10
@@ -98,6 +107,7 @@ class SubProdTableSeeder extends Seeder
       $sub->description= "";
       $sub->is_paperType= 1;
       $sub->is_per= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 11
@@ -108,6 +118,7 @@ class SubProdTableSeeder extends Seeder
       $sub->is_paperType= 1;
       $sub->is_color= 1;
       $sub->is_colorFly= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 12
@@ -118,6 +129,7 @@ class SubProdTableSeeder extends Seeder
       $sub->is_paperType= 1;
       $sub->is_color= 1;
       $sub->is_colorFly= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 13
@@ -127,6 +139,7 @@ class SubProdTableSeeder extends Seeder
       $sub->description= "";
       $sub->is_paperType= 1;
       $sub->is_color= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 14
@@ -136,6 +149,7 @@ class SubProdTableSeeder extends Seeder
       $sub->description= "";
       $sub->is_paperType= 1;
       $sub->is_color= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 15
@@ -145,6 +159,7 @@ class SubProdTableSeeder extends Seeder
       $sub->description= "";
       $sub->is_paperType= 1;
       $sub->is_color= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 16
@@ -154,6 +169,7 @@ class SubProdTableSeeder extends Seeder
       $sub->description= "";
       $sub->is_paperType= 1;
       $sub->is_color= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 17
@@ -162,6 +178,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 13;
       $sub->description= "";
       $sub->is_paperType= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 18
@@ -170,6 +187,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 13;
       $sub->description= "";
       $sub->is_paperType= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 19
@@ -178,6 +196,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 13;
       $sub->description= "";
       $sub->is_paperType= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 20
@@ -186,6 +205,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 13;
       $sub->description= "";
       $sub->is_paperType= 1;
+      $sub->is_design= 1;
       $sub->save();
 
       // 21
@@ -194,6 +214,7 @@ class SubProdTableSeeder extends Seeder
       $sub->main_id = 13;
       $sub->description= "";
       $sub->is_paperType= 1;
+      $sub->is_design= 1;
       $sub->save();
     }
 }

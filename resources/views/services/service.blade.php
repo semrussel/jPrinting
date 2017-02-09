@@ -5,6 +5,7 @@
 @section('serv-img') 
     <div id="d-browse" class="design-box">
         <fieldset id="browse-field">
+            @if($service->is_design == 1)
             @for($i=1; $i<=5; $i++)
                 <div class="col-sm-6 col-md-4 no-pad-left">
                     <label style="display: block;">
@@ -18,6 +19,9 @@
                     </label>
                 </div>
             @endfor
+            @else
+            <?php $i=1; ?>
+            @endif
             @foreach($designs as $design)
                 <div class="col-sm-6 col-md-4 no-pad-left">
                     <label style="display: block;">

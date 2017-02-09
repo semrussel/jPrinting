@@ -180,8 +180,13 @@
 				</form>
 					<div class="col-xs-4 col-xs-offset-8 no-pad" @if($order[0]->bank != 'NONE') hidden @endif>		
 						<center>--- or ---</center>
-					    <p><b>Pay through: </b></p>
-					    <a href="https://sandbox.paypal.com/" class="btn btn-primary" style="width: 100%;">Paypal</a>
+					    <p><b>Pay through Paypal: </b></p>
+					    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="Q3ZWM5Y4DDZDY">
+<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
 			    	</div>
 		    	
 

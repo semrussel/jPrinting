@@ -178,17 +178,22 @@
 				    <div @if($order[0]->bank != 'NONE') hidden @endif class="col-xs-4 col-xs-offset-8 no-pad">
 				    	<input @if($order[0]->price == 0)  disabled @endif type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 				</form>
+				<!-- PAYPAL START-->
 					<div class="col-xs-4 col-xs-offset-8 no-pad" @if($order[0]->bank != 'NONE') hidden @endif>		
 						<center>--- or ---</center>
+
 					    <p><b>Pay through Paypal: </b></p>
 					    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="Q3ZWM5Y4DDZDY">
-<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
+						<input type="hidden" name="cmd" value="_s-xclick">
+						<input type="hidden" name="hosted_button_id" value="89Q2J9JKCK4S2">
+						<table>
+						<tr><td><input type="hidden" name="on0"  value="Amount">Amount</td></tr><tr><td><input type="hidden" value="{{ $order[0]->price }}" name="os0" maxlength="200"><input type="text" value="{{ $order[0]->price }}" disabled name="display" maxlength="200"></td></tr>
+						</table>
+						<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
 			    	</div>
-		    	
+		    	<!-- END PAYPAL -->
 
 			    <div class="clear"></div><hr>
 				

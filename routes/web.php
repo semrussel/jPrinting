@@ -134,3 +134,5 @@ Route::get('/change-order-status', 'OrderController@changestat');
 
 Route::get('/admin-products-mainproducts-add-auto', 'ProductsController@mainproductsaddauto');
 Route::get('/admin-inventory-auto', 'InventoryController@productsauto');
+
+Route::get('/sendtest', 'ReportController@sendtest');

@@ -34,10 +34,14 @@
 			        		<tr>
 			        			<td>{{ $designs[$i]->id }}</td>
 			        			<td><img id="jb-logo" src="{{ url($designs[$i]->url) }}" width="100%"></td>
-			        			<td>{{ $designs[$i]->service_id }}</td>
+			        			@if($designs[$i]->is_main == 1)
+			        				<td>{{ getmainProdName($designs[$i]->service_id) }}</td>
+			        			@else
+			        				<td>{{ getsubProdName($designs[$i]->service_id) }}</td>
+			        			@endif
 			        			<td>
-			        				<form action="" method="POST" style="display: -webkit-inline-box;">
-					                	<input type="hidden" name="id" value="">
+			        				<form action="{{ url('/delete-design') }}" method="POST" style="display: -webkit-inline-box;">
+					                	<input type="hidden" name="id" value="{{ $designs[$i]->id }}">
 					                	<input type="submit" value="Delete" class="admin-button">
 					            	</form>
 				            	</td>
@@ -56,17 +60,14 @@
 </div>
 @if(isset($_GET['success']))
 <script>
-alert('Successfully added price!');
+alert('Successfully added Design!');
 </script>
 @endif
-@if(isset($_GET['pay']))
+
+@if(isset($_GET['delete']))
 <script>
-alert('Successfully confirmed a payment!');
+alert('Successfully deleted Design!');
 </script>
 @endif
-@if(isset($_GET['process']))
-<script>
-alert('Order has been processed!');
-</script>
-@endif
+
 @stop

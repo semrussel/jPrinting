@@ -62,8 +62,22 @@ class DesignController extends Controller
                 $design->url = url('images').'/'.$imageName;
                 $design->save();
 
-                return "DONE!";
+                return redirect('/admin-design?success=1');
 
+            }
+        }
+    }
+
+    public function delete(Request $request){
+        if (Auth::guest()) {
+            return redirect('/');
+        }else{
+            if (Auth::user()->type == 'client') {
+                return redirect('/');
+            }else{
+                DB::table('designs')->where('id', $request->input('id'))->delete();
+
+                return redirect('/admin-design?delete=1');
             }
         }
     }

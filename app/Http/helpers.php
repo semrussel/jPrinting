@@ -27,9 +27,16 @@ function checkInputSub($id,$go,$input)
 	
 }
 
-function geSubtProdName($id)
+function getmainProdName($id)
 {
 	$name = DB::table('main_prod')->where('id',$id)->get();
+    
+	return $name[0]->name;
+}
+
+function getsubProdName($id)
+{
+	$name = DB::table('sub_prod')->where('id',$id)->get();
     
 	return $name[0]->name;
 }

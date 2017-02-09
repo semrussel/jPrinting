@@ -168,7 +168,7 @@
                         <br>
                     </div>
                     <b class="col-xs-12">Quantity:</b><br>
-                    <input type="text" id="quantity" name="quantity" class="form-control" required><br>
+                    <input type="number" id="quantity" name="quantity" class="form-control" required><br>
                     <b class="col-xs-12">Size:</b><br>
                     <input type="text" id="size" name="size" class="form-control"><br>
                     <b class="col-xs-12">Paper / Stock:</b><br>

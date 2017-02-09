@@ -138,8 +138,8 @@ class OrderController extends Controller
         $response = curl_exec($curl_handler);
         curl_close($curl_handler);
 
-        $main = DB::table('main_prod')->where('name',ucwords($order[0]->product))->get();
-        $sub = DB::table('sub_prod')->where('name',ucwords($order[0]->product))->get();
+        $main = DB::table('main_prod')->where('name',ucwords($orders[0]->product))->get();
+        $sub = DB::table('sub_prod')->where('name',ucwords($orders[0]->product))->get();
         
         if (count($main) != 0) {
             $update = DB::table('materials')->join('pivot_materialprod','pivot_materialprod.material_id', '=', 'materials.id')->where('pivot_materialprod.service_id',$main[0]->id)->where('pivot_materialprod.is_main',1)->get();

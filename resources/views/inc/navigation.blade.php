@@ -35,6 +35,11 @@
                             <li>
                                 <a href="{{ url('/profile') }}">Profile</a>
                             </li>
+                            @if(Auth::user()->type == 'admin')
+                            <li>
+                                <a href="{{ url('/admin') }}">Admin Dash</a>
+                            </li>
+                            @endif
                             <li>
                                 <a href="{{ url('/logoutUser') }}">
                                             Logout

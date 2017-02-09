@@ -30,12 +30,12 @@
                 </div>
                 <div class="col-md-12">
                     <b class="col-xs-12 col-sm-6 col-md-3">Email Address:</b>
-                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="email" disabled name="email" class="form-control" required value="{{$user->email}}"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="aemail" disabled name="aemail" class="form-control" required value="{{$user->email}}"><input type="hidden" id="email" name="email" class="form-control" required value="{{$user->email}}"></div>
                     <br><br>
                 </div>
                 <div class="col-md-12">
                     <b class="col-xs-12 col-sm-6 col-md-3">Cell Phone Number:</b>
-                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" value="{{$user->cpNum}}" id="street" class="form-control" required disabled></div>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" name="cpNum" value="{{$user->cpNum}}" id="street" class="form-control" required disabled><input type="hidden" id="cpNum" name="cpNum" class="form-control" required value="{{$user->cpNum}}"></div>
                 </div>
                 @else
                 <div class="col-md-12">

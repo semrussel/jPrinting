@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Twilio;
 use Auth;
+use Mail;
 use Session;
 
 class HomeController extends Controller
@@ -40,6 +41,7 @@ class HomeController extends Controller
 // );
 // $context  = stream_context_create($param);
 // return file_get_contents($url, false, $context);
+
         return view('index');
     }
 

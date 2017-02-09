@@ -65,7 +65,7 @@ class OrderController extends Controller
         "message_type" => "SEND",
         "mobile_number" => $users[0]->cpNum,
         "shortcode" => "2929025642",
-        "message_id" => $orders[0]->id.strtotime(date('n')).rand(100,999),
+        "message_id" => $orders[0]->id.strtotime(date('n')).rand(100,999).rand(1000,9999).rand(10000,99999),
         "message" => urlencode("Hi We are from Jimbes Printing! Kindly check your account we already sent the price for your order!"),
         "client_id" => "37a3dc6152c57afbe664c02a640f1226ef85d5ab33409866cfab8c7c160bdcac",
         "secret_key" => "7ecf073a12a56781a070fa4a25da3eaf5f24b5a21014117516c400a256c9ff60"
@@ -116,7 +116,7 @@ class OrderController extends Controller
         "message_type" => "SEND",
         "mobile_number" => $users[0]->cpNum,
         "shortcode" => "2929025642",
-        "message_id" => $orders[0]->id.strtotime(date('n')).rand(100,999),
+        "message_id" => $orders[0]->id.strtotime(date('n')).rand(100,999).rand(1000,9999).rand(10000,99999),
         "message" => urlencode("Hi We are from Jimbes Printing! We already validate your payment, we are now processing your order kindly check your online account to see the status of your order!"),
         "client_id" => "37a3dc6152c57afbe664c02a640f1226ef85d5ab33409866cfab8c7c160bdcac",
         "secret_key" => "7ecf073a12a56781a070fa4a25da3eaf5f24b5a21014117516c400a256c9ff60"
@@ -138,14 +138,6 @@ class OrderController extends Controller
         $response = curl_exec($curl_handler);
         curl_close($curl_handler);
 
-        return redirect('/admin-orders?pay=1');
-    }
-
-
-    public function process(Request $request){
-        
-        $order = DB::table('orders')->where('id',$request->input('id'))->get();
-
         $main = DB::table('main_prod')->where('name',ucwords($order[0]->product))->get();
         $sub = DB::table('sub_prod')->where('name',ucwords($order[0]->product))->get();
         
@@ -159,6 +151,15 @@ class OrderController extends Controller
             $value = $update[$i]->quantity - $order[0]->quantity;
             DB::table('materials')->where('id', $update[$i]->material_id)->update(array('quantity' => $value));
        }
+
+        return redirect('/admin-orders?pay=1');
+    }
+
+
+    public function process(Request $request){
+        
+        $order = DB::table('orders')->where('id',$request->input('id'))->get();
+
 
         DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Ready for Delivery'));
 
@@ -174,7 +175,7 @@ class OrderController extends Controller
         "message_type" => "SEND",
         "mobile_number" => $users[0]->cpNum,
         "shortcode" => "2929025642",
-        "message_id" => $orders[0]->id.strtotime(date('n')).rand(100,999),
+        "message_id" => $orders[0]->id.strtotime(date('n')).rand(100,999).rand(1000,9999).rand(10000,99999),
         "message" => urlencode("Hi We are from Jimbes Printing! We already Delivered your order! Thank you for patrionazing Jimbes Printing!"),
         "client_id" => "37a3dc6152c57afbe664c02a640f1226ef85d5ab33409866cfab8c7c160bdcac",
         "secret_key" => "7ecf073a12a56781a070fa4a25da3eaf5f24b5a21014117516c400a256c9ff60"

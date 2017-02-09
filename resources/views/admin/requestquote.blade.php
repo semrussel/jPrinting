@@ -41,5 +41,9 @@
     </div><!-- /.row -->
 
 </div>
-
+@if(isset($_GET['success']))
+<script>
+alert('Successfully added price!');
+</script>
+@endif
 @stop

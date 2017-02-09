@@ -19,7 +19,7 @@
 	        </div>
 	        <div class="col-md-3 ">
 	        	<div class="stat-box" style="background-color: #8bc34a;">
-	        		<p><i class="fa fa-flag" aria-hidden="true"></i>New Orders</p>
+	        		<p><i class="fa fa-flag" aria-hidden="true"></i>Orders</p>
 	        	</div>
 	        	<a href="{{ url('admin-orders') }}"><div class="stat-box-view" style="background-color: #4caf50;">View More</div></a>
 	        </div><div class="col-md-3 ">

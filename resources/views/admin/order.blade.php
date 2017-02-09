@@ -32,7 +32,7 @@
 			                <th>Product Name</th>
 			                <th>Quantity</th>
 			                <th>Customer Name</th>
-			                <th>Customer Email</th>
+			                <th>Price</th>
 			                <th>Customer Contact No.</th>
 			                <th>Received Date</th>
 			                <th>Status</th>
@@ -47,7 +47,7 @@
 				                <td>{{ ucwords($orders[$i]->quantity) }}</td>
 				                <?php $name = DB::table('users')->where('id',$orders[$i]->order_by)->get(); ?>
 				                <th>{{ ucwords($name[0]->firstName) }} {{ ucwords($name[0]->lastName) }}</th>
-				                <th>{{ $name[0]->email }}</th>
+				                <th>{{ $orders[$i]->price }}</th>
 				                <th>{{ '+'.$name[0]->cpNum }}</th>
 				                <td>{{ $orders[$i]->created_at }}</td>
 				                <td>{{ ucwords($orders[$i]->status) }}</td>

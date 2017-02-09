@@ -25,12 +25,17 @@
                 @if (Auth::check())
                 <div class="col-md-12">
                     <b class="col-xs-12 col-sm-6 col-md-3">Full Name:</b>
-                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="fullname" name="fullname" class="form-control" required value="{{$user->name}}"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="fullname" name="fullname" class="form-control" required value="{{$user->firstName}} {{$user->lastName}}"></div>
                     <br><br>
                 </div>
                 <div class="col-md-12">
                     <b class="col-xs-12 col-sm-6 col-md-3">Email Address:</b>
-                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="email" name="email" class="form-control" required value="{{$user->email}}"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="email" disabled name="email" class="form-control" required value="{{$user->email}}"></div>
+                    <br><br>
+                </div>
+                <div class="col-md-12">
+                    <b class="col-xs-12 col-sm-6 col-md-3">Cell Phone Number:</b>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" value="{{$user->cpNum}}" id="street" class="form-control" required disabled></div>
                 </div>
                 @else
                 <div class="col-md-12">
@@ -40,7 +45,12 @@
                 </div>
                 <div class="col-md-12">
                     <b class="col-xs-12 col-sm-6 col-md-3">Email Address:</b>
-                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="street" class="form-control" required></div>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input type="text" id="email" name="email" class="form-control" required></div>
+                    <br><br>
+                </div>
+                <div class="col-md-12">
+                    <b class="col-xs-12 col-sm-6 col-md-3">Cell Phone Number:</b>
+                    <div class="col-xs-12 col-sm-6 col-md-9"><input class="form-control contact-first" value="63" disabled=""><input type="text" id="cpNum" name="cpNum" class="form-control contact-next" required></div>
                 </div>
                 @endif
             </div>
@@ -62,11 +72,11 @@
                 <div class="col-md-6">
                     <br>
                     <div id="customProDiv">
-                        <input type="text" id="custom" name="product" class="form-control" placeholder="Custom Product Name">
+                        <input type="text" id="custom" name="product1" class="form-control" placeholder="Custom Product Name">
                         <br>
                     </div>
                     <div id="existProDiv">
-                        <select name="product" id="existing_products_title" class="form-control">
+                        <select name="product2" id="existing_products_title" class="form-control">
                             <option value="">Select Product</option>
                             <optgroup label="Exhibit Display">
                                 <option value="Potable Booth">Potable Booth</option>
@@ -174,7 +184,7 @@
                     <br>
                     <b class="col-xs-12">Additional Details:</b><br>
                     <textarea class="form-control" rows="5" id="details" name="details"></textarea><br>
-                    <input type="file" name="attachment" class="form-control"><br>
+                    <input type="file" name="attachment" class="form-control" required><br>
                     <input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit'>
                     <div class="clear"></div><br>
                 </div>

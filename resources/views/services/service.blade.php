@@ -140,9 +140,9 @@
     @if($service->is_color != 0)
     <p><b>Color</b></p>
     <select class="form-control" id="sel6" name="color">
-        <option>B & W</option>
-        <option>Colored</option>
-        <option>15 % Area-Colored</option>
+        @foreach($colors as $color)
+        <option value="{{ $color->name }}">{{ $color->name }}</option>
+        @endforeach
     </select>
     <div class="clear"></div><br>
     @endif

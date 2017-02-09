@@ -20,17 +20,28 @@
 			                <th>Quantity/Pieces</th>
 			                <th>Received Date</th>
 			                <th>Received By</th>
+			                <th>Tags</th>
 			                <th>Action</th>
 			            </tr>
 			        </thead>
 			        <tbody>
 			        	@foreach($materials as $material)
-			        	<tr>
+			        	<tr @if($material->quantity == 0) style="background-color:#de6969 !important;" @endif>
 			                <td>{{ $material->reference_num }}</td>
 			                <td>{{ $material->name }}</td>
 			                <td>{{ $material->quantity }}</td>
 			                <td>{{ $material->created_at }}</td>
 			                <td>{{ $material->received_by }}</td>
+			                <td>
+			                	<?php $mtags = DB::table('pivot_materialprod')->where('is_main',1)->where('material_id',$material->id)->get(); ?>
+			                	<?php $stags = DB::table('pivot_materialprod')->where('is_main',0)->where('material_id',$material->id)->get(); ?>
+			                	@foreach($mtags as $mtag)
+			                		<p>{{ getmainProdName($mtag->service_id) }}</p>
+			                	@endforeach
+			                	@foreach($stags as $stag)
+			                		<p>{{ getsubProdName($stag->service_id) }}</p>
+			                	@endforeach
+			                </td>
 			                <td><span>
 			                <?php $url = url('admin-inventory-edit/'.$material->id); ?>
 			                <a href="{{ $url }}" class="admin-button">Edit</a> 

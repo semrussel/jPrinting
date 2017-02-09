@@ -22,6 +22,7 @@ class CreateRequestTable extends Migration
             $table->string('product');
             $table->string('size');
             $table->string('quantity');
+            $table->string('cpNum');
             $table->string('paper_stock')->nullable();
             $table->string('side_pages')->nullable();
             $table->string('lamination')->nullable();

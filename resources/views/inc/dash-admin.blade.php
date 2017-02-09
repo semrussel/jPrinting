@@ -27,8 +27,8 @@
 	        <a id="sub-cancel" href="/admin-reports-cancel" class="list-group-item sub-item" style="padding-left: 20px;">Cancelled Orders</a>
 	        <!-- <a href="/services-calendars-table" class="list-group-item sub-item">Table Tent Calendar</a> -->
 	    </div>
-
-        <a id="inventory" href="/admin-inventory" class="list-group-item"><i class="fa fa-archive" aria-hidden="true"></i> Inventory</a>
+        <?php $count = DB::table('materials')->where('quantity',0)->count(); ?>
+        <a id="inventory" href="/admin-inventory" class="list-group-item"><i class="fa fa-archive" aria-hidden="true"></i> Inventory  @if($count != 0)<span>({{$count}})</span>@endif</a>
 
     </div>
 </div>

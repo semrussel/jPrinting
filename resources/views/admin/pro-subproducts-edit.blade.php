@@ -16,7 +16,7 @@
 					<div class="col-xs-12"><p><b>Main Product:</b></p></div>
 				    <div class="col-xs-12 no-pad">
 					    <select class="form-control" id="mainproduct" name="mainproduct" disabled>
-					        <option value="{{ $product->id }}">{{ geSubtProdName($product->main_id) }}</option>
+					        <option value="{{ $product->id }}">{{ getmainProdName($product->main_id) }}</option>
 					    </select>
 				    </div>
 				    <div class="clear"></div><br>

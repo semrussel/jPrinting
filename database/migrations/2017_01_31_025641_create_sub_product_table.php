@@ -25,6 +25,7 @@ class CreateSubProductTable extends Migration
             $table->integer('is_per')->nullable();
             $table->integer('is_color')->nullable();
             $table->integer('is_colorFly')->nullable();
+            $table->integer('is_design')->default(0);
             $table->timestamps();
         });
     }

@@ -80,5 +80,9 @@ alert('Successfully confirmed a payment!');
 <script>
 alert('Order has been processed!');
 </script>
+@if(isset($_GET['deliver']))
+<script>
+alert('Order has been delivered!');
+</script>
 @endif
 @stop

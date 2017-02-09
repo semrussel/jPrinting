@@ -77,6 +77,9 @@ class ReportController extends Controller
         return view('admin.rep-cancel')->with('cancelOrders',$cancelOrders);
     }
 
+    public function sendtest() {
+        return view('emails.send');
+    }  
     
 
 }

@@ -27,7 +27,7 @@
 				<ul class="nav nav-pills">
 					<!-- <li class="active"><a data-toggle="pill" href="#day">Daily</a></li> -->
 					<li class="active"><a data-toggle="pill" href="#mon">Monthly</a></li>
-					<li><a data-toggle="pill" href="#ann">Annually</a></li>
+					<!-- <li><a data-toggle="pill" href="#ann">Annually</a></li> -->
 				</ul>
 
 				<div class="tab-content">
@@ -53,7 +53,23 @@
 								'Dec' => array (40, 50, 30, 50, 20, 30)
 								);
 
-							$dval = array('Jan' => '','Feb' => '','Mar' => '','Apr' => '','May' => '','Jun' => '','Jul' => '','Aug' => '','Sep' => '','Oct' => '','Nov' => '','Dec' => ''); 
+							$monvalsub = array(
+								'Jan' => array (40, 50, 30, 50, 20, 60),
+								'Feb' => array (60, 120, 30, 50, 25, 100),
+								'Mar' => array (40, 50, 30, 50, 20, 30, 200, 120, 250, 100),
+								'Apr' => array (40, 50, 30, 50, 20, 30),
+								'May' => array (40, 50, 30, 50, 20, 30),
+								'Jun' => array (40, 50, 30, 50, 20, 30),
+								'Jul' => array (40, 50, 30, 50, 20, 30),
+								'Aug' => array (40, 50, 30, 50, 20, 30),
+								'Sep' => array (40, 50, 30, 50, 20, 30),
+								'Oct' => array (40, 50, 30, 50, 20, 30),
+								'Nov' => array (40, 50, 30, 50, 20, 30),
+								'Dec' => array (40, 50, 30, 50, 20, 30)
+								);
+
+							$dval = array('Jan' => '','Feb' => '','Mar' => '','Apr' => '','May' => '','Jun' => '','Jul' => '','Aug' => '','Sep' => '','Oct' => '','Nov' => '','Dec' => '');
+							$dvalsub = array('Jan' => '','Feb' => '','Mar' => '','Apr' => '','May' => '','Jun' => '','Jul' => '','Aug' => '','Sep' => '','Oct' => '','Nov' => '','Dec' => '');  
 						?>
 
 						<ul class="nav nav-pills mon-pill">
@@ -68,7 +84,7 @@
 						<div class="tab-content">
 							<?php $monfirst=true; ?>
 							@foreach ($monnam as $mon)
-								<?php $keycount=1; $montotal=0; ?>
+								<?php $keycount=1; $montotal=0; $montotalsub=0; ?>
 								@if ($monfirst) <div id="monpill-{{ $mon }}" class="tab-pane fade in active"> <?php $monfirst=false; ?>
 								@else <div id="monpill-{{ $mon }}" class="tab-pane fade">
 								@endif
@@ -80,12 +96,35 @@
 									$dval[$mon] .= '0'; 
 								?>
 
+								<h4>Main Products</h3>
 								<aside class="chart vert">
 									<canvas id="canPie-{{ $mon }}" width="300" height="200" data-values="{{ $dval[$mon] }}">
 									</canvas>
 									<ol class="legend">
 										@foreach ($monval[$mon] as $prodval)
 											<?php $prodper=number_format(($prodval/$montotal)*100, 0);?>
+											<li class="key s{{ $keycount }}">Sample = <b>P{{ $prodval }}</b> | {{ $prodper }}%</li>
+											<?php $keycount++; ?>
+										@endforeach
+									</ol>
+								</aside>
+
+								<?php 
+									$keycount=1; 
+									foreach ($monvalsub[$mon] as $val) { 
+										$dvalsub[$mon] .= $val.', ';
+										$montotalsub += $val; } 
+									$dvalsub[$mon] .= '0'; 
+								?>
+
+								<div class="clear"></div>
+								<h4>Sub Products</h3>
+								<aside class="chart vert">
+									<canvas id="canPie-{{ $mon }}-sub" width="300" height="200" data-values="{{ $dvalsub[$mon] }}">
+									</canvas>
+									<ol class="legend">
+										@foreach ($monvalsub[$mon] as $prodval)
+											<?php $prodper=number_format(($prodval/$montotalsub)*100, 0);?>
 											<li class="key s{{ $keycount }}">Sample = <b>P{{ $prodval }}</b> | {{ $prodper }}%</li>
 											<?php $keycount++; ?>
 										@endforeach
@@ -114,8 +153,23 @@
 								$valr .= '0'; 
 				        ?>
 
+				        <h4>Main Products</h3>
 				        <aside class="chart vert" style="width: 100%;">
 							<canvas id="canPie-Year" width="300" height="200" data-values="{{ $valr }}">
+							</canvas>
+							<ol class="legend">
+								@foreach ($annval as $prodval)
+									<?php $prodper=number_format(($prodval/$anntotal)*100, 0);?>
+									<li class="key s{{ $keycount }}">Sample = <b>P{{ $prodval }}</b> | {{ $prodper }}%</li>
+									<?php $keycount++; ?>
+								@endforeach
+							</ol>
+						</aside>
+
+						<div class="clear"></div>
+						<h4>Sub Products</h3>
+						<aside class="chart vert" style="width: 100%;">
+							<canvas id="canPie-Year-sub" width="300" height="200" data-values="{{ $valr }}">
 							</canvas>
 							<ol class="legend">
 								@foreach ($annval as $prodval)

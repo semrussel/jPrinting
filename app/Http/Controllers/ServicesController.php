@@ -57,7 +57,7 @@ class ServicesController extends Controller
             // return $sizes;
 
             $zero = DB::table('materials')->join('pivot_materialprod', 'pivot_materialprod.material_id','=','materials.id')
-            ->where('materials.quantity',0)->where('pivot_materialprod.service_id',$id)->count();
+            ->where('materials.quantity',0)->where('pivot_materialprod.service_id',$id)->where('pivot_materialprod.is_main',1)->count();
 
             return view('services.service')->with('zero',$zero)->with('designs',$designs)->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
@@ -76,6 +76,10 @@ class ServicesController extends Controller
             ->where('selects.type','size')->get();
             $paperTypes = checkInputSub($id,$service[0]->is_paperType,'paperType');
             $colorPlys = checkInputSub($id,$service[0]->is_paperType,'colorPly');
+
+            $zero = DB::table('materials')->join('pivot_materialprod', 'pivot_materialprod.material_id','=','materials.id')
+            ->where('materials.quantity',0)->where('pivot_materialprod.service_id',$id)->where('pivot_materialprod.is_main',0)->count();
+
             return view('services.service')->with('designs',$designs)->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
         }else{

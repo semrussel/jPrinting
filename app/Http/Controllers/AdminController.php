@@ -118,11 +118,11 @@ class AdminController extends Controller
                 return redirect('/');
             }else{
 
-                $order = DB::table('request')->where('id',$id)->get();
+                $request = DB::table('request')->where('id',$id)->get();
 
                 // return $orders;
 
-                return view('admin.request-view')->with('order',$order);
+                return view('admin.request-view')->with('request',$request);
             }
         }
         

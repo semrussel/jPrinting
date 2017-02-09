@@ -33,12 +33,13 @@
 				<div class="tab-content">
 					<div id="mon" class="tab-pane fade in active">
 
-						<?php 
+						<?php
+
 							$monnam = array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
 							$monfirst=true;
 
 							$monval = array(
-								'Jan' => array (40, 50, 30, 50, 20, 30),
+								'Jan' => array (20, 20, 20, 20, 10, 10),
 								'Feb' => array (60, 120, 30, 50, 25, 100),
 								'Mar' => array (40, 50, 30, 50, 20, 30, 200, 120, 500, 300),
 								'Apr' => array (40, 50, 30, 50, 20, 30),

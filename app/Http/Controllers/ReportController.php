@@ -48,6 +48,26 @@ class ReportController extends Controller
     }
 
     public function comparison() {
+       
+       $main = DB::table('main_prod')->where('is_subcat',0)->get();
+       $sub = DB::table('sub_prod')->get();
+
+       for ($i=0; $i < count($main); $i++) {
+            $wew = $main[$i]->name;
+            for ($j=1; $j <= 12; $j++) { 
+                $mproducts[$wew][$j] = DB::table('orders')->where('product',$main[$i]->name)->whereMonth('created_at', '=', $j)->sum('price');
+            }
+           
+       }
+
+       for ($i=0; $i < count($sub); $i++) {
+            $wew = $sub[$i]->name;
+            for ($j=1; $j <= 12; $j++) { 
+                $sproducts[$wew][$j] = DB::table('orders')->where('product',$sub[$i]->name)->whereMonth('created_at', '=', $j)->sum('price');
+            }
+           
+       }
+
         return view('admin.rep-income-pie');
     }    
 

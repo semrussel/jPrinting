@@ -155,9 +155,11 @@
 			    <div class="col-xs-8 no-pad"><input value="{{ $request[0]->email }}" name="email" type="text" id="width" class="form-control" disabled></div>
 			    <div class="clear"></div><hr>
 
+			    @if($request[0]->attachment != NULL)
 			    <div class="col-xs-12"><p><b>Design: </b></p></div>
-		    	<img class="col-xs-12" src="/img/bl-shirt-01.jpg">
+		    		<img class="col-xs-12" src="{{ url($request[0]->attachment) }}">
 		    	<div class="clear"></div><br>
+		    	@endif
 			</div>
 
 	    </div>

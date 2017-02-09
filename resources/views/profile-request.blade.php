@@ -31,7 +31,7 @@
 			    <!-- -- -->
 
 			    <?php 
-			    	$vpro = ucwords($order[0]->product);
+			    	$vpro = ucwords($quote[0]->product);
 
 			    	$vpaper = 0;
 			    	if (preg_match('[invitations|business cards|tickets|posters|office forms|certificates|notebooks|flyers|borchures]', strtolower($vpro))) { $vpaper = 1; }

@@ -13,25 +13,25 @@
 
 	        <div class="col-md-3 ">
 	        	<div class="stat-box" style="background-color: #2196f3;">
-	        		<p><i class="fa fa-comments" aria-hidden="true"></i>New Feedbacks</p>
+	        		<p><i class="fa fa-comments" aria-hidden="true"></i>Request for Quote</p>
 	        	</div>
-	        	<a href="#"><div class="stat-box-view" style="background-color: #3f51b5;">View More</div></a>
+	        	<a href="{{ url('admin-request-quotes') }}"><div class="stat-box-view" style="background-color: #3f51b5;">View More</div></a>
 	        </div>
 	        <div class="col-md-3 ">
 	        	<div class="stat-box" style="background-color: #8bc34a;">
 	        		<p><i class="fa fa-flag" aria-hidden="true"></i>New Orders</p>
 	        	</div>
-	        	<a href="#"><div class="stat-box-view" style="background-color: #4caf50;">View More</div></a>
+	        	<a href="{{ url('admin-orders') }}"><div class="stat-box-view" style="background-color: #4caf50;">View More</div></a>
 	        </div><div class="col-md-3 ">
 	        	<div class="stat-box" style="background-color: #ffeb3b;">
-	        		<p><i class="fa fa-star" aria-hidden="true"></i>Brand Popularity</p>
+	        		<p><i class="fa fa-star" aria-hidden="true"></i>Product Popularity</p>
 	        	</div>
-	        	<a href="#"><div class="stat-box-view" style="background-color: #ffc107;">View More</div></a>
+	        	<a href="{{ url('admin-reports-comparison') }}"><div class="stat-box-view" style="background-color: #ffc107;">View More</div></a>
 	        </div><div class="col-md-3 ">
 	        	<div class="stat-box" style="background-color: #9c27b0;">
 	        		<p><i class="fa fa-line-chart" aria-hidden="true"></i>Total Profit</p>
 	        	</div>
-	        	<a href="#"><div class="stat-box-view" style="background-color: #673ab7;">View More</div></a>
+	        	<a href="{{ url('admin-reports-income') }}"><div class="stat-box-view" style="background-color: #673ab7;">View More</div></a>
 	        </div>
 
 		    <div class="col-md-8">

@@ -167,7 +167,7 @@
 				    <input type="hidden" value="{{ $order[0]->id }}" name="id">
 				    <div class="col-xs-4 right"><p><b>Bank: </b></p></div>
 				    <div class="col-xs-8 no-pad">
-				    	<select @if($order[0]->price == 0)  disabled @endif @if($order[0]->bank != 'NONE') value="{{ $order[0]->bank }}"  disabled @else value="" @endif name="bank" class="form-control" required>
+				    	<select @if($order[0]->status == 'Cancelled')  disabled @endif @if($order[0]->price == 0)  disabled @endif @if($order[0]->bank != 'NONE') value="{{ $order[0]->bank }}"  disabled @else value="" @endif name="bank" class="form-control" required>
 				    		<option @if($order[0]->bank == 'BDO') selected @endif value="BDO">BDO</option>
 				    		<option @if($order[0]->bank == 'BPI') selected @endif value="BPI">BPI</option>
 				    		<option @if($order[0]->bank == 'SECURITY BANK') selected @endif value="SECURITY BANK">SECURITY BANK</option>

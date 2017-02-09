@@ -38,7 +38,7 @@
 		<td class="tg-yw4l">
 			<p>{{ $details }}</p>
 		</td>
-		<td class="tg-yw4l"></td>
+		<td class="tg-yw4l">{{ $price }}</td>
 	</tr>
 </table>
 <p>Terms: Requiring 50% deposit as initial payment upon PO and cash/ chack upon delivery.

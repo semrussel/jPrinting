@@ -98,8 +98,6 @@ class OrderController extends Controller
     }
 
     public function sendTrans(Request $request){
-        
-        return $request->input('bank');
 
         DB::table('orders')->where('id', $request->input('id'))->update(array('bank' => $request->input('bank'), 'transaction_number' => $request->input('transaction'), 'status' => 'Validating Payment'));
 

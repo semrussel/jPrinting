@@ -15,7 +15,7 @@ return [
     */
 
     'mailgun' => [
-        'domain' => 'sandboxfce61d661a9d4e25ac4da33fcb74505a.mailgun.org',
+        'domain' => 'solutionsresource.com',
         'secret' => 'key-ce016ecf8693e617173ad2f23cc45469',
     ],
 

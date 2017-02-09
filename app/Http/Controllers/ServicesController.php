@@ -80,7 +80,7 @@ class ServicesController extends Controller
             $zero = DB::table('materials')->join('pivot_materialprod', 'pivot_materialprod.material_id','=','materials.id')
             ->where('materials.quantity',0)->where('pivot_materialprod.service_id',$id)->where('pivot_materialprod.is_main',0)->count();
 
-            return view('services.service')->with('designs',$designs)->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
+            return view('services.service')->with('zero',$zero)->with('designs',$designs)->with('service',$service[0])->with('sizes',$sizes)->with('paperTypes',$paperTypes)->with('colorPlys',$colorPlys);
             
         }else{
             return redirect('/login?check=1');

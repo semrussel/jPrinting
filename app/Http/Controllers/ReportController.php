@@ -67,8 +67,22 @@ class ReportController extends Controller
             }
            
        }
+       
+       $monnam = array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+                            $monfirst=true;
+                            for ($i=1; $i <= 12 ; $i++) {
 
-        return view('admin.rep-income-pie');
+                                $wew = $monnam[$i-1];
+                                for ($j=0; $j < count($sub); $j++) { 
+                                    $product = $sub[$j]->name;
+                                    $monsub[$wew][$product] = $sproducts[$product][$i];
+                                }
+                                
+                            }
+        // return $monsub;
+
+
+        return view('admin.rep-income-pie')->with('main',$main)->with('sub',$sub)->with('mproducts',$mproducts)->with('sproducts',$sproducts);
     }    
 
     public function cancel() {

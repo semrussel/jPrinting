@@ -42,6 +42,8 @@ class HomeController extends Controller
 // $context  = stream_context_create($param);
 // return file_get_contents($url, false, $context);
 
+        
+
         return view('index');
     }
 

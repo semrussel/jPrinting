@@ -178,7 +178,7 @@
                 <div class="col-xs-4 col-xs-offset-8 no-pad">
                 	<form action="{{ url('/deliver-order') }}" method="POST">
                         <input type="hidden" name="id" value="{{ $order[0]->id }}"> 
-                        <input type="submit" value="Deliver" class="btn btn-primary" style="width: 100%;">
+                        <input type="submit" value="Delivered" class="btn btn-primary" style="width: 100%;">
                     </form>
                 </div>
                 <div class="clear"></div><br>

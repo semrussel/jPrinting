@@ -36,37 +36,26 @@
 						<?php
 
 							$monnam = array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
-							$monfirst=true;
+                            $monfirst=true;
+                            for ($i=1; $i <= 12 ; $i++) {
 
-							$monval = array(
-								'Jan' => array (20, 20, 20, 20, 10, 10),
-								'Feb' => array (60, 120, 30, 50, 25, 100),
-								'Mar' => array (40, 50, 30, 50, 20, 30, 200, 120, 500, 300),
-								'Apr' => array (40, 50, 30, 50, 20, 30),
-								'May' => array (40, 50, 30, 50, 20, 30),
-								'Jun' => array (40, 50, 30, 50, 20, 30),
-								'Jul' => array (40, 50, 30, 50, 20, 30),
-								'Aug' => array (40, 50, 30, 50, 20, 30),
-								'Sep' => array (40, 50, 30, 50, 20, 30),
-								'Oct' => array (40, 50, 30, 50, 20, 30),
-								'Nov' => array (40, 50, 30, 50, 20, 30),
-								'Dec' => array (40, 50, 30, 50, 20, 30)
-								);
+                                $wew = $monnam[$i-1];
+                                for ($j=0; $j < count($main); $j++) { 
+                                    $product = $main[$j]->name;
+                                    $monval[$wew][$product] = $mproducts[$product][$i];
+                                }
+                                
+                            }
 
-							$monvalsub = array(
-								'Jan' => array (40, 50, 30, 50, 20, 60),
-								'Feb' => array (60, 120, 30, 50, 25, 100),
-								'Mar' => array (40, 50, 30, 50, 20, 30, 200, 120, 250, 100),
-								'Apr' => array (40, 50, 30, 50, 20, 30),
-								'May' => array (40, 50, 30, 50, 20, 30),
-								'Jun' => array (40, 50, 30, 50, 20, 30),
-								'Jul' => array (40, 50, 30, 50, 20, 30),
-								'Aug' => array (40, 50, 30, 50, 20, 30),
-								'Sep' => array (40, 50, 30, 50, 20, 30),
-								'Oct' => array (40, 50, 30, 50, 20, 30),
-								'Nov' => array (40, 50, 30, 50, 20, 30),
-								'Dec' => array (40, 50, 30, 50, 20, 30)
-								);
+                            for ($i=1; $i <= 12 ; $i++) {
+
+                                $wew = $monnam[$i-1];
+                                for ($j=0; $j < count($sub); $j++) { 
+                                    $product = $sub[$j]->name;
+                                    $monsub[$wew][$product] = $sproducts[$product][$i];
+                                }
+                                
+                            }
 
 							$dval = array('Jan' => '','Feb' => '','Mar' => '','Apr' => '','May' => '','Jun' => '','Jul' => '','Aug' => '','Sep' => '','Oct' => '','Nov' => '','Dec' => '');
 							$dvalsub = array('Jan' => '','Feb' => '','Mar' => '','Apr' => '','May' => '','Jun' => '','Jul' => '','Aug' => '','Sep' => '','Oct' => '','Nov' => '','Dec' => '');  
@@ -89,10 +78,15 @@
 								@else <div id="monpill-{{ $mon }}" class="tab-pane fade">
 								@endif
 
-								<?php 
-									foreach ($monval[$mon] as $val) { 
-										$dval[$mon] .= $val.', ';
-										$montotal += $val; } 
+								<?php
+									
+										for ($j=0; $j < count($main); $j++){
+											$product = $main[$j]->name;
+											$dval[$mon] .= $monval[$mon][$product].', ';
+											$montotal += $monval[$mon][$product];
+										}
+									 	
+									
 									$dval[$mon] .= '0'; 
 								?>
 
@@ -101,19 +95,26 @@
 									<canvas id="canPie-{{ $mon }}" width="300" height="200" data-values="{{ $dval[$mon] }}">
 									</canvas>
 									<ol class="legend">
-										@foreach ($monval[$mon] as $prodval)
-											<?php $prodper=number_format(($prodval/$montotal)*100, 0);?>
-											<li class="key s{{ $keycount }}">Sample = <b>P{{ $prodval }}</b> | {{ $prodper }}%</li>
+
+										
+										@for ($j=0; $j < count($main); $j++)
+											<?php
+												$product = $main[$j]->name;
+											?>
+											<li class="key s{{ $keycount }}">{{ $main[$j]->name }} = <b>P{{ $monval[$mon][$product] }}</b></li>
 											<?php $keycount++; ?>
-										@endforeach
+			                            @endfor
+										
 									</ol>
 								</aside>
 
 								<?php 
-									$keycount=1; 
-									foreach ($monvalsub[$mon] as $val) { 
-										$dvalsub[$mon] .= $val.', ';
-										$montotalsub += $val; } 
+									$keycount=1;
+									for ($j=0; $j < count($sub); $j++){ 
+										$product = $sub[$j]->name;
+											$dvalsub[$mon] .= $monsub[$mon][$product].', ';
+											$montotalsub += $monsub[$mon][$product];
+									} 
 									$dvalsub[$mon] .= '0'; 
 								?>
 
@@ -123,11 +124,13 @@
 									<canvas id="canPie-{{ $mon }}-sub" width="300" height="200" data-values="{{ $dvalsub[$mon] }}">
 									</canvas>
 									<ol class="legend">
-										@foreach ($monvalsub[$mon] as $prodval)
-											<?php $prodper=number_format(($prodval/$montotalsub)*100, 0);?>
-											<li class="key s{{ $keycount }}">Sample = <b>P{{ $prodval }}</b> | {{ $prodper }}%</li>
+										@for ($j=0; $j < count($sub); $j++)
+											<?php
+												$product = $sub[$j]->name;
+											?>
+											<li class="key s{{ $keycount }}">{{ $sub[$j]->name }} = <b>P{{ $monsub[$mon][$product] }}</b></li>
 											<?php $keycount++; ?>
-										@endforeach
+										@endfor
 									</ol>
 								</aside>
 
@@ -136,6 +139,7 @@
 						</div>
 
 					</div>
+					<!-- ANNUAL -->
 					<div id="ann" class="tab-pane fade">
 						<span><b>From:</b>
 						<select class="form-control" id="annyear" name="annyear" style="margin:10px 0; width: 30%; display: -webkit-inline-box;">

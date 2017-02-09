@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
         $user->email = 'jprint@jprint.com';
         $user->password = bcrypt('jpr!int');
         $user->type= "admin";
+        $user->cpNum= "639472055426";
       	$user->save();
 
       	$user = new User;
@@ -26,6 +27,7 @@ class UsersTableSeeder extends Seeder
         $user->email = 'user@user.com';
         $user->password = bcrypt('jpr!int');
         $user->type= "client";
+        $user->cpNum= "639472055426";
       	$user->save();
     }
 }

@@ -55,7 +55,37 @@ class OrderController extends Controller
 
     public function sendPrice(Request $request){
         
+        $orders = DB::table('orders')->where('id',$request->input('id'))->get();
+
+        $users = DB::table('users')->where('id',$orders[0]->order_by)->get();
+
         DB::table('orders')->where('id', $request->input('id'))->update(array('price' => $request->input('price'), 'status' => 'Waiting for Payment','expected_delivery' => $request->input('date')));
+        
+        $arr_post_body = array(
+        "message_type" => "SEND",
+        "mobile_number" => $users[0]->cpNum,
+        "shortcode" => "2929025642",
+        "message_id" => "12345678901234567890123456789012",
+        "message" => urlencode("Hi We are from Jimbes Printing! Kindly check your account we already sent the price for your order!"),
+        "client_id" => "37a3dc6152c57afbe664c02a640f1226ef85d5ab33409866cfab8c7c160bdcac",
+        "secret_key" => "7ecf073a12a56781a070fa4a25da3eaf5f24b5a21014117516c400a256c9ff60"
+        );
+
+        $query_string = "";
+        foreach($arr_post_body as $key => $frow)
+        {
+            $query_string .= '&'.$key.'='.$frow;
+        }
+
+        $URL = "https://post.chikka.com/smsapi/request";
+
+        $curl_handler = curl_init();
+        curl_setopt($curl_handler, CURLOPT_URL, $URL);
+        curl_setopt($curl_handler, CURLOPT_POST, count($arr_post_body));
+        curl_setopt($curl_handler, CURLOPT_POSTFIELDS, $query_string);
+        curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, TRUE);
+        $response = curl_exec($curl_handler);
+        curl_close($curl_handler);
 
         return redirect('/admin-orders?success=1');
     }
@@ -76,7 +106,37 @@ class OrderController extends Controller
 
     public function confirm(Request $request){
         
+        $orders = DB::table('orders')->where('id',$request->input('id'))->get();
+
+        $users = DB::table('users')->where('id',$orders[0]->order_by)->get();
+
         DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Processing the Product'));
+
+        $arr_post_body = array(
+        "message_type" => "SEND",
+        "mobile_number" => $users[0]->cpNum,
+        "shortcode" => "2929025642",
+        "message_id" => "12345678901234567890123456789012",
+        "message" => urlencode("Hi We are from Jimbes Printing! We already validate your payment, we are now processing your order kindly check your online account to see the status of your order!"),
+        "client_id" => "37a3dc6152c57afbe664c02a640f1226ef85d5ab33409866cfab8c7c160bdcac",
+        "secret_key" => "7ecf073a12a56781a070fa4a25da3eaf5f24b5a21014117516c400a256c9ff60"
+        );
+
+        $query_string = "";
+        foreach($arr_post_body as $key => $frow)
+        {
+            $query_string .= '&'.$key.'='.$frow;
+        }
+
+        $URL = "https://post.chikka.com/smsapi/request";
+
+        $curl_handler = curl_init();
+        curl_setopt($curl_handler, CURLOPT_URL, $URL);
+        curl_setopt($curl_handler, CURLOPT_POST, count($arr_post_body));
+        curl_setopt($curl_handler, CURLOPT_POSTFIELDS, $query_string);
+        curl_setopt($curl_handler, CURLOPT_RETURNTRANSFER, TRUE);
+        $response = curl_exec($curl_handler);
+        curl_close($curl_handler);
 
         return redirect('/admin-orders?pay=1');
     }
@@ -100,7 +160,17 @@ class OrderController extends Controller
             DB::table('materials')->where('id', $update[$i]->material_id)->update(array('quantity' => $value));
        }
 
-        DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Ready for Pick up / Delivery'));
+        DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Ready for Delivery'));
+
+        return redirect('/admin-orders?process=1');
+    }
+
+    public function deliver(Request $request){
+        
+        $order = DB::table('orders')->where('id',$request->input('id'))->get();
+
+
+        DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Delivered'));
 
         return redirect('/admin-orders?process=1');
     }

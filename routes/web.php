@@ -102,6 +102,7 @@ Route::post('/edit-mainprod', 'ProductsController@editMain');
 Route::post('/edit-subprod', 'ProductsController@editSub');
 
 Route::get('/admin-reports-income', 'ReportController@income');
+Route::get('/admin-reports-comparison', 'ReportController@comparison');
 Route::get('/admin-reports-cancel', 'ReportController@cancel');
 
 Route::get('/admin-design', 'DesignController@index');

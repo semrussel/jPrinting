@@ -24,7 +24,7 @@
 			    <!-- -- -->
 
 			    <?php 
-			    	$vpro = ucwords($order[0]->product);
+			    	$vpro = ucwords($request[0]->product);
 
 			    	$vpaper = 0;
 			    	if (preg_match('[invitations|business cards|tickets|posters|office forms|certificates|notebooks|flyers|borchures]', strtolower($vpro))) { $vpaper = 1; }
@@ -134,7 +134,7 @@
 				    <div class="clear"></div><br>
 
 				    
-				    <div class="col-xs-4 col-xs-offset-8 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
+				    <div class="col-xs-4 col-xs-offset-8 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Send Price' style="width: 100%;"></div>
 				    <div class="clear"></div><br>
 	    		</form>
 	    		@else

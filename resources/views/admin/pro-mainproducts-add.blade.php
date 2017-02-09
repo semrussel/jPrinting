@@ -19,8 +19,8 @@
 
 					<div class="col-xs-4"><p><b>Has Sub Products:</b></p></div>
 					<div class="col-xs-8" id="hassub-group">
-					    <div class="col-xs-6"><input type="radio" name="has" checked="checked" value="1"/> True</div>
-					    <div class="col-xs-6"><input type="radio" name="has" value="0"/> False</div>
+					    <div class="col-xs-6"><input type="radio" name="has" checked="checked" value="1"/> With</div>
+					    <div class="col-xs-6"><input type="radio" name="has" value="0"/> Without</div>
 					</div>
 				    <div class="clear"></div><br>
 

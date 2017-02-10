@@ -148,7 +148,7 @@ class OrderController extends Controller
         }
        
        for ($i=0; $i < count($update); $i++) {
-            $value = $update[$i]->quantity - $order[0]->quantity;
+            $value = $update[$i]->quantity - $orders[0]->quantity;
             DB::table('materials')->where('id', $update[$i]->material_id)->update(array('quantity' => $value));
        }
 

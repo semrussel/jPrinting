@@ -119,7 +119,7 @@
 <!-- container -->
 @if(isset($_GET['success']))
 <script>
-alert('Order Success! Wait for our email regarding the price!');
+alert('Order Success! Wait for our notification thru text message regarding the price!');
 </script>
 @endif
 @if(isset($_GET['cancel']))

@@ -21,7 +21,7 @@ class OrderController extends Controller
 
         $requestQuote = new Order();
         $requestQuote->product = $request->input('product');
-        $requestQuote->price = 0;
+        $requestQuote->price = $request->input('estimated_price');
         $requestQuote->order_by = Auth::user()->id;
         $requestQuote->bank = 'NONE';
         $requestQuote->transaction_number = 'NONE';

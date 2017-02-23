@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('designType');
             $table->string('size');
             $table->integer('price');
-            // $table->integer('add_price');
+            $table->integer('estimated_price');
             // $table->string('reason for add on')->default('None');
             $table->string('bank');
             $table->string('transaction_number');

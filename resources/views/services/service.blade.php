@@ -46,6 +46,10 @@
     <p><b>Additional Details</b></p>
         <textarea name="description" class="form-control" rows="6" id="comment" required>{{ $service->description }}</textarea>
     <div class="clear"></div><br>
+    <p style="font-size: 18px; font-weight: bold;">Estimated Price: P<span id="estimatedPrice">0</span></p>
+    <p style="color: red">Note: That your order will be verified and price may change due to add ons and other things that we need to charge you for it</p>
+    <input type='hidden' name="price" id="price">
+    
 @stop
 
 @section('pricing') 
@@ -171,7 +175,7 @@
     <hr>
 
     <p><b>Quantity</b></p>
-    <div class="col-xs-12 no-pad"><input name="quantity" type="number" id="width" class="form-control" placeholder="1" required></div>
+    <div class="col-xs-12 no-pad"><input name="quantity" type="number" id="quantity" class="form-control" placeholder="1" onchange="setPrice()" required></div>
     <div class="clear"></div><br>
     
     <p><b>Delivery Address</b></p>
@@ -184,8 +188,6 @@
     <br>-->
 
     <input type="hidden" value="{{ $service->name }}" name="product">
-    <p>Estimated Price: <span id="estimatedPrice">150</span></p>
-    <p style="color: red">Note: That your order will be verified and price may change due to add ons and other things that we need to charge you for it</p>
     <div class="col-xs-6 col-xs-offset-6 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 <!-- /.Price Calculator -->
 
@@ -194,4 +196,15 @@
 alert('The product you are about to order is out of stock so expect longer time to process your order');
 </script>
 @endif
+
+<script>
+function setPrice(){
+    var price = {{ $service->price_per_piece }};
+    var quantity = document.getElementById('quantity').value;
+    var estimatedPrice = price * quantity;
+    document.getElementById('estimatedPrice').innerHTML = estimatedPrice;
+    document.getElementById('price').value = estimatedPrice;
+    //alert(estimatedPrice);
+}
+</script>
 @stop

@@ -7,8 +7,8 @@
         <span class="badge" style="background: transparent; width: 10px;"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
         </a>
         <div class="collapse list-group-submenu" id="sub-pro">
-            <a id="sub-mainproducts" href="/admin-products-mainproducts" class="list-group-item sub-item" style="padding-left: 20px;">Main Products</a>
-            <a id="sub-subproducts" href="/admin-products-subproducts" class="list-group-item sub-item" style="padding-left: 20px;">Sub Products</a>
+            <a id="sub-mainproducts" href="/admin-products-mainproducts" class="list-group-item sub-item" style="padding-left: 20px;">Product Category</a>
+            <a id="sub-subproducts" href="/admin-products-subproducts" class="list-group-item sub-item" style="padding-left: 20px;">Sub Products Category</a>
             <a id="sub-design" href="/admin-design" class="list-group-item sub-item" style="padding-left: 20px;">Design</a>
             <!-- <a href="/services-calendars-table" class="list-group-item sub-item">Table Tent Calendar</a> -->
         </div>

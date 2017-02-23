@@ -49,6 +49,7 @@ class ProductsController extends Controller
                 $main->name = $request->input('name');
                 $main->is_subcat = $request->input('has');
                 $main->description = $request->input('description');
+                $main->price_per_piece = $request->input('price_per_piece');
                 if (isset($request->pic)) {
                     $imageName = time().'.'.$request->pic->getClientOriginalExtension();
                     $request->pic->move(public_path('images'), $imageName);
@@ -196,6 +197,7 @@ class ProductsController extends Controller
                 $sub->name = $request->input('product');
                 $sub->main_id = $request->input('mainproduct');
                 $sub->description = $request->input('description');
+                $main->price_per_piece = $request->input('price_per_piece');
 
                 for ($i=0; $i < count($request->input('input')); $i++) { 
                     if ($request->input('input')[$i] == 'Paper Type') {
@@ -492,6 +494,7 @@ class ProductsController extends Controller
         ->update(array('name' => $request->input('name'), 
                     'is_subcat' => $request->input('has'),
                     'description' => $request->input('description'),
+                    'price_per_piece' => $request->input('price_per_piece'),
                     'is_paperType' => $is_paperType,
                     'is_color' => $is_color,
                     'is_colorFly' => $is_colorFly,
@@ -713,6 +716,7 @@ class ProductsController extends Controller
         DB::table('sub_prod')->where('id', $request->input('id'))
         ->update(array('name' => $request->input('product'),
                     'description' => $request->input('description'),
+                    'price_per_piece' => $request->input('price_per_piece'),
                     'is_paperType' => $is_paperType,
                     'is_color' => $is_color,
                     'is_colorFly' => $is_colorFly,

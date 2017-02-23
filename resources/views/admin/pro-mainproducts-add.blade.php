@@ -19,12 +19,18 @@
 
 					<div class="col-xs-4"><p><b>Has Sub Products:</b></p></div>
 					<div class="col-xs-8" id="hassub-group">
-					    <div class="col-xs-6"><input type="radio" name="has" checked="checked" value="1"/> With</div>
-					    <div class="col-xs-6"><input type="radio" name="has" value="0"/> Without</div>
+					    <div class="col-xs-6"><input type="radio" name="has" checked="checked" value="1"/> Yes</div>
+					    <div class="col-xs-6"><input type="radio" name="has" value="0"/> No</div>
 					</div>
 				    <div class="clear"></div><br>
 
 				    <div id="has0" class="desc" style="display:none">
+
+				    	<div class="col-xs-12"><p><b>Price per piece: </b></p></div>
+					    <div class="col-xs-12 no-pad"><input value="" name="price_per_piece" type="number" id="price_per_piece" class="form-control"></div>
+					    <div class="clear"></div>
+					    <div id="div-size"></div>
+						<div class="clear"></div><br>
 
 				    	<div class="col-xs-12"><p><b>Sizes: </b></p></div>
 					    <div class="col-xs-12 no-pad"><input value="" name="12" type="text" id="p-size" class="form-control"></div>

@@ -19,6 +19,7 @@ class CreateMainProductTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('logo')->nullable();
+            $table->integer('price_per_piece')->nullable();
             $table->integer('is_paperType')->nullable();
             $table->integer('is_corner')->nullable();
             $table->integer('is_lam')->nullable();

@@ -88,7 +88,8 @@ class InventoryController extends Controller
             if (Auth::user()->type == 'client') {
                 return redirect('/');
             }else{
-                return view('admin.pro-materials-add');
+                $admins = DB::table('users')->where('type','admin')->get();
+                return view('admin.pro-materials-add')->with('admins',$admins);
             }
         }
     }

@@ -112,12 +112,15 @@ class OrderController extends Controller
 
         DB::table('orders')->where('id', $request->input('id'))->update(array('status' => 'Processing the Product'));
 
+        $exp_date = strtotime($order[0]->expected_delivery);
+        $exp_date = strtotime('+3 day',$exp_date);
+
         $arr_post_body = array(
         "message_type" => "SEND",
         "mobile_number" => $users[0]->cpNum,
         "shortcode" => "2929025642",
         "message_id" => $orders[0]->id.strtotime(date('n')).rand(100,999).rand(1000,9999).rand(10000,99999),
-        "message" => urlencode("Hi We are from Jimbes Printing! We already validate your payment, we are now processing your order kindly check your online account to see the status of your order!"),
+        "message" => urlencode("Hi We are from Jimbes Printing! We already validate your payment, we are now processing your order expect the product to be delivered during this days ".$orders[0]->expected_delivery.'to '.$exp_date),
         "client_id" => "37a3dc6152c57afbe664c02a640f1226ef85d5ab33409866cfab8c7c160bdcac",
         "secret_key" => "7ecf073a12a56781a070fa4a25da3eaf5f24b5a21014117516c400a256c9ff60"
         );

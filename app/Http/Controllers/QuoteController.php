@@ -17,11 +17,7 @@ use Auth;
 class QuoteController extends Controller
 {
     public function index(){
-    	if (Auth::guest()) {
-            return redirect('/login?check=1');
-        }else{
-    	   return view('request-quote');
-        }
+    	return view('request-quote');
     }
 
     public function create(Request $request){

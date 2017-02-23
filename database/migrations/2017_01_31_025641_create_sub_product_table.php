@@ -18,6 +18,7 @@ class CreateSubProductTable extends Migration
             $table->integer('main_id');
             $table->string('name');
             $table->string('description');
+            $table->integer('price_per_piece')->nullable();
             $table->integer('is_paperType')->nullable();
             $table->integer('is_corner')->nullable();
             $table->integer('is_lam')->nullable();

@@ -27,6 +27,12 @@
 				    <div class="col-xs-12 no-pad"><input value="" name="product" type="text" id="width" class="form-control" required></div>
 					<div class="clear"></div><br>
 
+					<div class="col-xs-12"><p><b>Price per piece: </b></p></div>
+					<div class="col-xs-12 no-pad"><input value="" name="price_per_piece" type="number" id="price_per_piece" class="form-control"></div>
+					<div class="clear"></div>
+					<div id="div-size"></div>
+					<div class="clear"></div><br>
+
 				    <div class="col-xs-12"><p><b>Sizes: </b></p></div>
 				    <div class="col-xs-12 no-pad"><input value="" name="12" type="text" id="p-size" class="form-control"></div>
 				    <div id="div-size"></div>

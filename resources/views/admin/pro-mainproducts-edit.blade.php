@@ -17,6 +17,10 @@
 				    <div class="col-xs-12 no-pad"><input value="{{ $product->name }}" name="name" type="text" id="width" class="form-control" required></div>
 					<div class="clear"></div><br>
 
+					<div class="col-xs-12"><p><b>Price per piece: </b></p></div>
+				    <div class="col-xs-12 no-pad"><input value="{{ $product->price_per_piece }}" name="price_per_piece" type="text" id="width" class="form-control" required></div>
+					<div class="clear"></div><br>
+
 					<div class="col-xs-4"><p><b>Has Sub Products:</b></p></div>
 					<div class="col-xs-8" id="hassub-group">
 					    <div class="col-xs-6"><input type="radio" name="has" @if($product->is_subcat == 1 ) checked="checked" @endif value="1"/> True</div>

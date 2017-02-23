@@ -184,6 +184,8 @@
     <br>-->
 
     <input type="hidden" value="{{ $service->name }}" name="product">
+    <p>Estimated Price: <span id="estimatedPrice">150</span></p>
+    <p style="color: red">Note: That your order will be verified and price may change due to add ons and other things that we need to charge you for it</p>
     <div class="col-xs-6 col-xs-offset-6 no-pad"><input type="submit" class="btn btn-primary" id="submitRequest" name="submit" value='Submit' style="width: 100%;"></div>
 <!-- /.Price Calculator -->
 

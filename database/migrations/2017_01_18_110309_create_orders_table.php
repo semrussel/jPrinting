@@ -21,8 +21,8 @@ class CreateOrdersTable extends Migration
             $table->string('file')->nullable();
             $table->string('designType');
             $table->string('size');
-            $table->integer('price');
-            $table->integer('estimated_price');
+            $table->integer('price')->default(0);
+            $table->integer('estimated_price')->default(0);
             // $table->string('reason for add on')->default('None');
             $table->string('bank');
             $table->string('transaction_number');
